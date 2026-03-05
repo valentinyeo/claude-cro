@@ -150,6 +150,9 @@ Load on-demand as needed — do NOT load all at startup.
 | Testing Framework | `cro/references/testing-framework.md` | Generating test hypotheses, calculating sample sizes, ICE scoring |
 | UX Heuristics | `cro/references/ux-heuristics.md` | Running UX evaluations, form analysis, mobile assessment |
 | Quality Gates | `cro/references/quality-gates.md` | Checking minimum requirements, pass/fail criteria |
+| Proven Tests: Ecommerce | `cro/references/proven-tests-ecommerce.md` | Referencing data-backed Shopify/ecommerce A/B tests with documented results |
+| Proven Tests: B2B/SaaS | `cro/references/proven-tests-b2b.md` | Referencing data-backed B2B, SaaS, and consulting landing page tests |
+| Proven Tests: General | `cro/references/proven-tests-general.md` | Referencing universal CRO tests with cross-reference tables by principle and page type |
 
 ---
 
