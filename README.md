@@ -95,6 +95,7 @@ Orchestrator (cro/SKILL.md)
 Sub-skills and agents load reference files on-demand:
 
 - `conversion-benchmarks.md` — Industry conversion rate data
+- `ab-test-case-studies.md` — 47 published A/B test case studies with measured lifts
 - `psychology-principles.md` — Cialdini's principles, cognitive biases, Fogg model
 - `testing-framework.md` — ICE scoring, sample size guidance, hypothesis templates
 - `ux-heuristics.md` — Nielsen's heuristics with conversion focus
@@ -149,6 +150,7 @@ claude-cro/
 |   |-- SKILL.md                  # Main orchestrator
 |   +-- references/
 |       |-- conversion-benchmarks.md
+|       |-- ab-test-case-studies.md
 |       |-- psychology-principles.md
 |       |-- testing-framework.md
 |       |-- ux-heuristics.md
