@@ -335,3 +335,4 @@ WooCommerce plugins, Magento extensions]
 - **Quality gates:** Read `references/quality-gates.md` for e-commerce-specific pass/fail thresholds
 - **Psychology:** Read `references/psychology-principles.md` for scarcity, anchoring, and social proof principles
 - **Benchmarks:** Read `references/conversion-benchmarks.md` for e-commerce conversion rate benchmarks
+- **Proven ecommerce tests:** Read `references/proven-tests-ecommerce.md` for 25 data-backed Shopify/ecommerce A/B tests (PDP, cart, checkout, pricing, mobile) with documented lift percentages and ICE scores
