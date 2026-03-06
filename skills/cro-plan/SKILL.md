@@ -386,4 +386,4 @@ approach]
 - **Benchmarks:** Read `references/conversion-benchmarks.md` for realistic targets
 - **Testing framework:** Read `references/testing-framework.md` for ICE methodology and test design
 - **Industry templates:** Read the appropriate `assets/*.md` file for industry-specific guidance
-- **Proven test databases:** Read `references/proven-tests-ecommerce.md`, `references/proven-tests-b2b.md`, and `references/proven-tests-general.md` for pre-scored test ideas to seed the 90-day roadmap backlog
+- **Proven test databases:** Load the proven-tests file matching the detected industry: `references/proven-tests-ecommerce.md` for ecommerce/Shopify, `references/proven-tests-b2b.md` for B2B/SaaS. Always load `references/proven-tests-general.md` for universal tests. Use as pre-scored test ideas to seed the 90-day roadmap backlog

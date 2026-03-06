@@ -336,3 +336,4 @@ WooCommerce plugins, Magento extensions]
 - **Psychology:** Read `references/psychology-principles.md` for scarcity, anchoring, and social proof principles
 - **Benchmarks:** Read `references/conversion-benchmarks.md` for e-commerce conversion rate benchmarks
 - **Proven ecommerce tests:** Read `references/proven-tests-ecommerce.md` for 25 data-backed Shopify/ecommerce A/B tests (PDP, cart, checkout, pricing, mobile) with documented lift percentages and ICE scores
+- **Proven general tests:** Read `references/proven-tests-general.md` for universal CRO tests (page speed, copy clarity, mobile-first, accessibility) applicable to ecommerce

@@ -92,13 +92,13 @@ or digital products directly to consumers.
 | Test | Hypothesis | ICE Estimate |
 |------|-----------|--------------|
 | PDP: add video to product gallery | Product video will increase ATC rate because it reduces uncertainty about the product | 6.7 |
-| Cart: free shipping threshold bar | Shipping threshold progress bar will increase AOV because it motivates customers to add items | 7.3 |
-| Checkout: 1-page vs multi-step | Single-page checkout will increase completion rate because it reduces perceived steps | 6.0 |
-| PDP: sticky ATC on mobile | Sticky ATC on mobile will increase ATC rate because users can add at any scroll position | 7.7 |
+| Cart: free shipping threshold bar | Shipping threshold progress bar will increase AOV because it motivates customers to add items | 8.0 |
+| Checkout: 1-page vs multi-step | Single-page checkout will increase completion rate because it reduces perceived steps | 7.0 |
+| PDP: sticky ATC on mobile | Sticky ATC on mobile will increase ATC rate because users can add at any scroll position | 8.3 |
 | Cart: cross-sell recommendations | "Complete the look" in cart will increase AOV because of impulse accessory purchases | 6.3 |
 | PDP: review photos section | Displaying customer photos will increase ATC rate because user-generated content builds trust | 6.0 |
 | Category: quick-view modal | Quick-view product modal will increase PDP visits and ATC because it reduces browsing friction | 5.7 |
-| Checkout: express payments first | Showing Apple Pay/Google Pay before the form will increase checkout completion because it reduces perceived effort | 7.0 |
+| Checkout: express payments first | Showing Apple Pay/Google Pay before the form will increase checkout completion because it reduces perceived effort | 8.0 |
 
 ---
 

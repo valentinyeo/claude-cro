@@ -25,10 +25,9 @@ auditing ecommerce properties.
 | **Avg. Lift** | +18–32% add-to-cart rate |
 | **Confidence** | High — replicated across 12+ ecommerce tests |
 | **ICE Score** | I: 8 · C: 9 · E: 8 → **8.3** |
-| **Device Impact** | Strongest on mobile (+25–32%) |
 | **Sources** | ConversionXL CTA Research (2024); GoodUI Pattern #41; VWO case studies |
 
-**Why it works:** On mobile especially, users scroll through product details,
+**Why it works:** On mobile especially (+25–32% lift), users scroll through product details,
 reviews, and images — losing sight of the ATC button. A persistent CTA
 eliminates the friction of scrolling back up to purchase.
 
