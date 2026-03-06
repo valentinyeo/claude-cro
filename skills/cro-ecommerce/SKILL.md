@@ -6,6 +6,8 @@ description: >
   urgency elements, and cross-sell/upsell patterns. Use when user says
   "ecommerce CRO", "product page", "PDP optimization", "cart page", "checkout
   optimization", "pricing page", or "add to cart".
+argument-hint: "<url>"
+allowed-tools: Read, Grep, Glob, Bash, WebFetch
 ---
 
 # CRO E-commerce Analysis
@@ -20,7 +22,7 @@ presentations, and urgency/scarcity elements.
 
 ## Process
 
-1. **Fetch the page** using `scripts/fetch_page.py`. Store the raw HTML for
+1. **Fetch the page** using `${CLAUDE_SKILL_DIR}/../cro/scripts/fetch_page.py`. Store the raw HTML for
    analysis.
 2. **Detect e-commerce platform** by examining HTML source signatures:
    - Shopify: `cdn.shopify.com`, `Shopify.` JS object, `/cart.js` endpoint
@@ -28,14 +30,14 @@ presentations, and urgency/scarcity elements.
    - Magento: `mage/`, `Magento_`, `catalogsearch`
    - BigCommerce: `bigcommerce.com`, `stencil`
    - Custom: No recognizable platform signatures
-3. **Extract e-commerce elements** using `scripts/parse_cro.py`. Focus on
+3. **Extract e-commerce elements** using `${CLAUDE_SKILL_DIR}/../cro/scripts/parse_cro.py`. Focus on
    product data, pricing, cart elements, checkout forms, and trust signals.
 4. **Take screenshots** if Playwright is available (desktop 1440px and mobile
    375px). Use to evaluate add-to-cart prominence, price visibility, and
    checkout layout.
 5. **Evaluate against e-commerce UX patterns** by reading
-   `references/ux-heuristics.md` for general heuristics and
-   `references/quality-gates.md` for e-commerce-specific thresholds.
+   `${CLAUDE_SKILL_DIR}/../cro/references/ux-heuristics.md` for general heuristics and
+   `${CLAUDE_SKILL_DIR}/../cro/references/quality-gates.md` for e-commerce-specific thresholds.
 6. **Score each section** and generate the comprehensive e-commerce CRO report.
 
 ---
@@ -80,7 +82,7 @@ uncertainty and build desire.
 | Per-unit pricing | For multipacks or subscriptions: is the per-unit price displayed? |
 | Currency | Correct currency for the market? Auto-detected or selectable? |
 | Payment installments | Klarna, Afterpay, Affirm messaging? "As low as $X/month"? |
-| Price anchoring | Is the price contextualized? (Reference `references/psychology-principles.md` for anchoring.) |
+| Price anchoring | Is the price contextualized? (Reference `${CLAUDE_SKILL_DIR}/../cro/references/psychology-principles.md` for anchoring.) |
 
 #### Add to Cart Button
 
@@ -184,7 +186,7 @@ For subscription products, service tiers, or B2B e-commerce with plan-based pric
 |-----------|---------------|
 | Plan comparison | Clear columns or cards comparing plan tiers? |
 | Recommended plan | Is one plan visually highlighted as "Most Popular" or "Best Value"? |
-| Price anchoring | Is the highest-priced plan shown first to anchor? (Reference `references/psychology-principles.md`.) |
+| Price anchoring | Is the highest-priced plan shown first to anchor? (Reference `${CLAUDE_SKILL_DIR}/../cro/references/psychology-principles.md`.) |
 | Feature matrix | Clear feature comparison grid? Checkmarks vs X marks? |
 | Readability | Can users quickly identify differences between plans? |
 | CTA per plan | Each plan has its own CTA button? Clear and action-oriented? |
@@ -332,8 +334,8 @@ WooCommerce plugins, Magento extensions]
 - **Copy evaluation:** Use the `cro-copy` sub-skill to audit product descriptions and CTA copy
 - **Competitor comparison:** Use the `cro-benchmark` sub-skill to compare against competitor e-commerce experiences
 - **Tracking audit:** Use the `cro-tracking` sub-skill to verify enhanced e-commerce tracking is configured
-- **Quality gates:** Read `references/quality-gates.md` for e-commerce-specific pass/fail thresholds
-- **Psychology:** Read `references/psychology-principles.md` for scarcity, anchoring, and social proof principles
-- **Benchmarks:** Read `references/conversion-benchmarks.md` for e-commerce conversion rate benchmarks
-- **Proven ecommerce tests:** Read `references/proven-tests-ecommerce.md` for 25 data-backed Shopify/ecommerce A/B tests (PDP, cart, checkout, pricing, mobile) with documented lift percentages and ICE scores
-- **Proven general tests:** Read `references/proven-tests-general.md` for universal CRO tests (page speed, copy clarity, mobile-first, accessibility) applicable to ecommerce
+- **Quality gates:** Read `${CLAUDE_SKILL_DIR}/../cro/references/quality-gates.md` for e-commerce-specific pass/fail thresholds
+- **Psychology:** Read `${CLAUDE_SKILL_DIR}/../cro/references/psychology-principles.md` for scarcity, anchoring, and social proof principles
+- **Benchmarks:** Read `${CLAUDE_SKILL_DIR}/../cro/references/conversion-benchmarks.md` for e-commerce conversion rate benchmarks
+- **Proven ecommerce tests:** Read `${CLAUDE_SKILL_DIR}/../cro/references/proven-tests-ecommerce.md` for 25 data-backed Shopify/ecommerce A/B tests (PDP, cart, checkout, pricing, mobile) with documented lift percentages and ICE scores
+- **Proven general tests:** Read `${CLAUDE_SKILL_DIR}/../cro/references/proven-tests-general.md` for universal CRO tests (page speed, copy clarity, mobile-first, accessibility) applicable to ecommerce

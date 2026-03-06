@@ -5,6 +5,8 @@ description: >
   (Impact x Confidence x Ease). Generates complete test briefs with control
   and variant descriptions. Use when user says "A/B test", "split test",
   "test ideas", "hypothesis", "experiment", or "what should I test".
+argument-hint: "<url>"
+allowed-tools: Read, Grep, Glob, Bash, WebFetch
 ---
 
 # CRO Testing -- A/B Test Hypothesis Generation
@@ -18,12 +20,12 @@ estimates, and duration calculations.
 
 ## Process
 
-1. **Fetch and analyze the page** using `scripts/fetch_page.py` and
-   `scripts/parse_cro.py`. Extract all conversion-relevant elements.
+1. **Fetch and analyze the page** using `${CLAUDE_SKILL_DIR}/../cro/scripts/fetch_page.py` and
+   `${CLAUDE_SKILL_DIR}/../cro/scripts/parse_cro.py`. Extract all conversion-relevant elements.
 2. **Identify conversion issues and opportunities** by evaluating the page
    against CRO best practices. Look for gaps in copy, UX, trust, forms, and
    visual hierarchy.
-3. **Load the testing framework** by reading `references/testing-framework.md`.
+3. **Load the testing framework** by reading `${CLAUDE_SKILL_DIR}/../cro/references/testing-framework.md`.
    This provides hypothesis structure, ICE scoring guidance, sample size
    calculators, and MDE (Minimum Detectable Effect) reference tables.
 4. **Generate hypotheses** for each opportunity. Use the structured hypothesis
@@ -96,8 +98,8 @@ How sure are we that this change will produce a positive result?
 
 **Guidance:** Base confidence on:
 - Published case studies with similar changes
-- Psychology principles from `references/psychology-principles.md`
-- Industry benchmarks from `references/conversion-benchmarks.md`
+- Psychology principles from `${CLAUDE_SKILL_DIR}/../cro/references/psychology-principles.md`
+- Industry benchmarks from `${CLAUDE_SKILL_DIR}/../cro/references/conversion-benchmarks.md`
 - Heuristic evaluation findings
 - Quantitative data (if available from analytics)
 
@@ -340,7 +342,7 @@ Self-assess the quality of the generated hypotheses.
 - **UX evaluation:** Use the `cro-ux` sub-skill for UX issues that suggest interaction-based tests
 - **Form optimization:** Use the `cro-forms` sub-skill for form-specific test hypotheses
 - **Trust audit:** Use the `cro-trust` sub-skill for trust signal gaps that could be tested
-- **Testing framework:** Read `references/testing-framework.md` for MDE tables, sample size calculators, and ICE calibration guidance
-- **Psychology:** Read `references/psychology-principles.md` for the "because" in hypotheses
-- **Benchmarks:** Read `references/conversion-benchmarks.md` for expected lift estimates
-- **Proven tests:** Always load `references/proven-tests-general.md` for universal tests. Additionally load `references/proven-tests-ecommerce.md` for ecommerce/Shopify sites or `references/proven-tests-b2b.md` for B2B/SaaS sites — load only the domain-specific file that matches the detected industry
+- **Testing framework:** Read `${CLAUDE_SKILL_DIR}/../cro/references/testing-framework.md` for MDE tables, sample size calculators, and ICE calibration guidance
+- **Psychology:** Read `${CLAUDE_SKILL_DIR}/../cro/references/psychology-principles.md` for the "because" in hypotheses
+- **Benchmarks:** Read `${CLAUDE_SKILL_DIR}/../cro/references/conversion-benchmarks.md` for expected lift estimates
+- **Proven tests:** Always load `${CLAUDE_SKILL_DIR}/../cro/references/proven-tests-general.md` for universal tests. Additionally load `${CLAUDE_SKILL_DIR}/../cro/references/proven-tests-ecommerce.md` for ecommerce/Shopify sites or `${CLAUDE_SKILL_DIR}/../cro/references/proven-tests-b2b.md` for B2B/SaaS sites — load only the domain-specific file that matches the detected industry

@@ -5,6 +5,8 @@ description: >
   and e-commerce best practices. Assigns severity ratings per issue. Use when
   user says "UX audit", "usability check", "heuristic evaluation", "UX review",
   or "user experience analysis".
+argument-hint: "<url>"
+allowed-tools: Read, Grep, Glob, Bash, WebFetch
 ---
 
 # CRO UX Heuristic Evaluation
@@ -18,14 +20,14 @@ recommendation.
 
 ## Process
 
-1. **Fetch the page** using `scripts/fetch_page.py`. Store the full HTML.
+1. **Fetch the page** using `${CLAUDE_SKILL_DIR}/../cro/scripts/fetch_page.py`. Store the full HTML.
 2. **Take screenshots** if Playwright is available:
    - Desktop at 1440px width
    - Tablet at 768px width
    - Mobile at 375px width
    Use screenshots for visual hierarchy, layout, and responsive behavior
    evaluation.
-3. **Load UX heuristics framework** by reading `references/ux-heuristics.md`.
+3. **Load UX heuristics framework** by reading `${CLAUDE_SKILL_DIR}/../cro/references/ux-heuristics.md`.
    This provides the detailed evaluation criteria and severity scale.
 4. **Evaluate each heuristic** systematically against the page content and
    screenshots.
@@ -329,5 +331,5 @@ is the average of all 10.
 - **Form optimization:** Use the `cro-forms` sub-skill for deep form-specific UX analysis
 - **Trust signals:** Use the `cro-trust` sub-skill for trust and credibility evaluation
 - **A/B testing:** Use the `cro-testing` sub-skill to turn UX findings into test hypotheses
-- **UX heuristics reference:** Read `references/ux-heuristics.md` for expanded evaluation criteria
-- **Quality gates:** Read `references/quality-gates.md` for minimum UX requirements by business type
+- **UX heuristics reference:** Read `${CLAUDE_SKILL_DIR}/../cro/references/ux-heuristics.md` for expanded evaluation criteria
+- **Quality gates:** Read `${CLAUDE_SKILL_DIR}/../cro/references/quality-gates.md` for minimum UX requirements by business type

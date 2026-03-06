@@ -5,6 +5,8 @@ description: >
   feature language, urgency/scarcity elements, readability scores, emotional
   triggers, and CTA text effectiveness. Use when user says "copy analysis",
   "headline check", "CTA copy", "conversion copy", or "copywriting review".
+argument-hint: "<url>"
+allowed-tools: Read, Grep, Glob, Bash, WebFetch
 ---
 
 # CRO Copy Analysis
@@ -17,11 +19,11 @@ persuasion structure, and conversion-specific language patterns.
 
 ## Process
 
-1. **Fetch the page** using `scripts/fetch_page.py`. Store the full HTML.
-2. **Extract text content** using `scripts/parse_cro.py`. This separates
+1. **Fetch the page** using `${CLAUDE_SKILL_DIR}/../cro/scripts/fetch_page.py`. Store the full HTML.
+2. **Extract text content** using `${CLAUDE_SKILL_DIR}/../cro/scripts/parse_cro.py`. This separates
    headlines, subheadlines, body copy, CTA text, testimonial copy, micro-copy,
    and meta content into distinct buckets for targeted analysis.
-3. **Load psychology principles** by reading `references/psychology-principles.md`.
+3. **Load psychology principles** by reading `${CLAUDE_SKILL_DIR}/../cro/references/psychology-principles.md`.
    Use these as the evaluation framework for persuasion and emotional triggers.
 4. **Analyze each copy section** against the criteria below.
 5. **Calculate the Copy Conversion Score** (0-100).
@@ -171,7 +173,7 @@ convert.
 
 ### 9. Emotional Triggers
 
-Read `references/psychology-principles.md` for the complete framework. Evaluate
+Read `${CLAUDE_SKILL_DIR}/../cro/references/psychology-principles.md` for the complete framework. Evaluate
 which of these triggers are activated in the page copy.
 
 | Trigger | Example in Copy |
@@ -348,5 +350,5 @@ feel desperate). Recommend adding power words from underrepresented categories.
 - **UX evaluation:** Use the `cro-ux` sub-skill for layout and interaction analysis
 - **Trust audit:** Use the `cro-trust` sub-skill for social proof element assessment
 - **A/B testing:** Use the `cro-testing` sub-skill to turn copy findings into test hypotheses
-- **Psychology:** Read `references/psychology-principles.md` for the full persuasion principles framework
-- **Quality gates:** Read `references/quality-gates.md` for minimum copy requirements by business type
+- **Psychology:** Read `${CLAUDE_SKILL_DIR}/../cro/references/psychology-principles.md` for the full persuasion principles framework
+- **Quality gates:** Read `${CLAUDE_SKILL_DIR}/../cro/references/quality-gates.md` for minimum copy requirements by business type

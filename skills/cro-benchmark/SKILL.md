@@ -5,6 +5,8 @@ description: >
   propositions, trust signals, form friction, checkout steps, and conversion
   patterns. Use when user says "competitor analysis", "benchmark", "compare
   with competitor", "competitive CRO", or "how does my site compare".
+argument-hint: "<url> <competitor-url>"
+allowed-tools: Read, Grep, Glob, Bash, WebFetch
 ---
 
 # CRO Competitive Benchmark
@@ -21,8 +23,8 @@ gaps, stolen best practices, and differentiation opportunities.
 1. **Accept URLs** -- the user provides a target URL (their site) and one or
    more competitor URLs. If competitors are not specified, suggest looking up
    direct competitors in the same space.
-2. **Fetch all pages** using `scripts/fetch_page.py`. Store HTML for each site.
-3. **Extract CRO elements** from each site using `scripts/parse_cro.py`.
+2. **Fetch all pages** using `${CLAUDE_SKILL_DIR}/../cro/scripts/fetch_page.py`. Store HTML for each site.
+3. **Extract CRO elements** from each site using `${CLAUDE_SKILL_DIR}/../cro/scripts/parse_cro.py`.
    Normalize the extracted elements so they can be compared apples-to-apples.
 4. **Take screenshots** of each site if Playwright is available (desktop at
    1440px and mobile at 375px). Place screenshots side-by-side for visual
@@ -311,5 +313,5 @@ matrix shows relative positioning.
 - **Copy comparison:** Use the `cro-copy` sub-skill for granular copy and messaging analysis per site
 - **UX comparison:** Use the `cro-ux` sub-skill for heuristic evaluation comparison
 - **CRO strategy:** Use the `cro-plan` sub-skill to turn benchmark findings into a strategic roadmap
-- **Psychology:** Read `references/psychology-principles.md` for persuasion principles behind competitor tactics
-- **Benchmarks:** Read `references/conversion-benchmarks.md` for industry norms to contextualize both sites
+- **Psychology:** Read `${CLAUDE_SKILL_DIR}/../cro/references/psychology-principles.md` for persuasion principles behind competitor tactics
+- **Benchmarks:** Read `${CLAUDE_SKILL_DIR}/../cro/references/conversion-benchmarks.md` for industry norms to contextualize both sites

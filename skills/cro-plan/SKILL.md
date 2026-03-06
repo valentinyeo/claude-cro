@@ -6,6 +6,9 @@ description: >
   specific templates available. Use when user says "CRO plan", "CRO strategy",
   "CRO roadmap", "optimization plan", "conversion strategy", or "where should
   I start with CRO".
+argument-hint: "<url>"
+disable-model-invocation: true
+allowed-tools: Read, Grep, Glob, Bash, WebFetch
 ---
 
 # CRO Strategic Plan
@@ -20,7 +23,7 @@ recommendations.
 
 ## Process
 
-1. **Fetch the site** using `scripts/fetch_page.py`. Analyze the homepage and
+1. **Fetch the site** using `${CLAUDE_SKILL_DIR}/../cro/scripts/fetch_page.py`. Analyze the homepage and
    one or two key conversion pages to understand the business.
 2. **Detect industry type** by examining the site's content, product/service
    offerings, and conversion patterns. Map to one of the supported industry
@@ -28,16 +31,16 @@ recommendations.
    or Generic.
 3. **Run a quick assessment** across the core CRO dimensions: value
    proposition, CTAs, trust signals, forms, page speed, mobile experience, and
-   tracking readiness. Use `scripts/parse_cro.py` for element extraction. This
+   tracking readiness. Use `${CLAUDE_SKILL_DIR}/../cro/scripts/parse_cro.py` for element extraction. This
    is a rapid scan, not a full audit -- just enough to identify strengths,
    weaknesses, and maturity level.
 4. **Load the industry template** from `assets/` directory (e.g.,
    `assets/saas.md`, `assets/ecommerce.md`). Use the template's goals,
    metrics, patterns, and test ideas to shape the strategy.
 5. **Reference conversion benchmarks** by reading
-   `references/conversion-benchmarks.md` to set realistic baseline and target
+   `${CLAUDE_SKILL_DIR}/../cro/references/conversion-benchmarks.md` to set realistic baseline and target
    metrics.
-6. **Reference testing framework** by reading `references/testing-framework.md`
+6. **Reference testing framework** by reading `${CLAUDE_SKILL_DIR}/../cro/references/testing-framework.md`
    for ICE scoring methodology and test prioritization.
 7. **Generate the strategic roadmap** with monthly phases, prioritized backlog,
    and resource plan.
@@ -146,7 +149,7 @@ should be deployed in Week 3.
 
 Prioritized list of A/B test ideas scored using the ICE framework.
 
-**ICE Scoring** (reference `references/testing-framework.md`):
+**ICE Scoring** (reference `${CLAUDE_SKILL_DIR}/../cro/references/testing-framework.md`):
 
 | Factor | Scale | Definition |
 |--------|-------|------------|
@@ -383,7 +386,7 @@ approach]
 - **Competitor context:** Use the `cro-benchmark` sub-skill to inform competitive positioning in the strategy
 - **Test design:** Use the `cro-testing` sub-skill to expand test backlog items into full test briefs
 - **Funnel analysis:** Use the `cro-funnel` sub-skill to map the conversion funnel before planning optimizations
-- **Benchmarks:** Read `references/conversion-benchmarks.md` for realistic targets
-- **Testing framework:** Read `references/testing-framework.md` for ICE methodology and test design
+- **Benchmarks:** Read `${CLAUDE_SKILL_DIR}/../cro/references/conversion-benchmarks.md` for realistic targets
+- **Testing framework:** Read `${CLAUDE_SKILL_DIR}/../cro/references/testing-framework.md` for ICE methodology and test design
 - **Industry templates:** Read the appropriate `assets/*.md` file for industry-specific guidance
-- **Proven test databases:** Load the proven-tests file matching the detected industry: `references/proven-tests-ecommerce.md` for ecommerce/Shopify, `references/proven-tests-b2b.md` for B2B/SaaS. Always load `references/proven-tests-general.md` for universal tests. Use as pre-scored test ideas to seed the 90-day roadmap backlog
+- **Proven test databases:** Load the proven-tests file matching the detected industry: `${CLAUDE_SKILL_DIR}/../cro/references/proven-tests-ecommerce.md` for ecommerce/Shopify, `${CLAUDE_SKILL_DIR}/../cro/references/proven-tests-b2b.md` for B2B/SaaS. Always load `${CLAUDE_SKILL_DIR}/../cro/references/proven-tests-general.md` for universal tests. Use as pre-scored test ideas to seed the 90-day roadmap backlog

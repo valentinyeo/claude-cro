@@ -1,0 +1,31 @@
+{
+  "name": "claude-cro",
+  "version": "1.1.0",
+  "description": "CRO (Conversion Rate Optimization) skill package for Claude Code. Audit websites, analyze conversion funnels, generate A/B test hypotheses, evaluate UX and copy, assess trust signals, and build 90-day optimization roadmaps.",
+  "author": "Valentin Yeo",
+  "license": "MIT",
+  "homepage": "https://github.com/valentinyeo/claude-cro",
+  "skills": [
+    "skills/cro",
+    "skills/cro-audit",
+    "skills/cro-page",
+    "skills/cro-funnel",
+    "skills/cro-testing",
+    "skills/cro-copy",
+    "skills/cro-ux",
+    "skills/cro-forms",
+    "skills/cro-ecommerce",
+    "skills/cro-trust",
+    "skills/cro-tracking",
+    "skills/cro-benchmark",
+    "skills/cro-plan"
+  ],
+  "agents": [
+    "agents/cro-ux.md",
+    "agents/cro-copy.md",
+    "agents/cro-tracking.md",
+    "agents/cro-visual.md",
+    "agents/cro-performance.md",
+    "agents/cro-trust.md"
+  ]
+}

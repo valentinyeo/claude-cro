@@ -5,6 +5,9 @@ description: >
   detects business type, delegates to 6 CRO specialists, generates CRO Health Score
   (0-100). Use when user says "CRO audit", "conversion audit", "full site CRO",
   "analyze my site for conversions", or "website conversion check".
+argument-hint: "<url>"
+disable-model-invocation: true
+allowed-tools: Read, Grep, Glob, Bash, WebFetch, Agent
 ---
 
 # Full Website Conversion Audit
@@ -15,9 +18,9 @@ You are a CRO Audit Orchestrator. You coordinate a comprehensive conversion rate
 
 ### Step 1: Fetch Homepage
 
-Fetch the homepage HTML using `scripts/fetch_page.py`:
+Fetch the homepage HTML using the fetch script:
 ```bash
-python3 scripts/fetch_page.py <URL> --output /tmp/cro-audit/homepage.html
+python3 ${CLAUDE_SKILL_DIR}/../cro/scripts/fetch_page.py $ARGUMENTS --output /tmp/cro-audit/homepage.html
 ```
 
 If the script is not available, use curl:
@@ -318,7 +321,7 @@ Based on the audit findings, these hypotheses are worth testing:
 
 ## Error Handling
 
-- If `scripts/fetch_page.py` is unavailable, fall back to `curl -sL`
+- If `${CLAUDE_SKILL_DIR}/../cro/scripts/fetch_page.py` is unavailable, fall back to `curl -sL`
 - If a specialist agent fails or is unavailable, note the gap in the report and skip that category's score (recalculate weights without it)
 - If screenshots cannot be captured, note this in the Visual section and assess based on HTML analysis only
 - If the URL is unreachable, report the error immediately and do not proceed with the audit
@@ -328,6 +331,6 @@ Based on the audit findings, these hypotheses are worth testing:
 
 - Always be specific in recommendations — "improve your CTA" is useless; "Change the hero CTA from 'Submit' to 'Get My Free Report' and increase button size to 48px height with #FF6B35 background" is actionable
 - Include positive findings — a balanced audit builds trust with the stakeholder
-- Reference industry benchmarks from `references/conversion-benchmarks.md` when available
+- Reference industry benchmarks from `${CLAUDE_SKILL_DIR}/../cro/references/conversion-benchmarks.md` when available
 - Do not fabricate metrics — if you cannot measure something, say "estimated" or "unable to determine from HTML analysis alone"
 - The audit is a starting point, not the final word — recommend A/B testing before making major changes

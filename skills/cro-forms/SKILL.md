@@ -5,6 +5,8 @@ description: >
   multi-step vs single-step, smart defaults, error messaging, and mobile input
   types. Use when user says "form optimization", "form UX", "form conversion",
   "reduce form friction", or "form abandonment".
+argument-hint: "<url>"
+allowed-tools: Read, Grep, Glob, Bash, WebFetch
 ---
 
 # CRO Form Optimization
@@ -18,12 +20,12 @@ completions.
 
 ## Process
 
-1. **Fetch the page** using `scripts/fetch_page.py`. Store the full HTML.
-2. **Extract form elements** using `scripts/parse_cro.py`. This identifies every
+1. **Fetch the page** using `${CLAUDE_SKILL_DIR}/../cro/scripts/fetch_page.py`. Store the full HTML.
+2. **Extract form elements** using `${CLAUDE_SKILL_DIR}/../cro/scripts/parse_cro.py`. This identifies every
    `<form>` element, its fields, labels, buttons, validation attributes, and
    surrounding context (trust signals near the form, privacy text, etc.).
-3. **Load form UX principles** by reading `references/ux-heuristics.md` (form
-   section) and `references/quality-gates.md` (field count limits by business
+3. **Load form UX principles** by reading `${CLAUDE_SKILL_DIR}/../cro/references/ux-heuristics.md` (form
+   section) and `${CLAUDE_SKILL_DIR}/../cro/references/quality-gates.md` (field count limits by business
    type and form purpose).
 4. **Analyze each form** individually against the criteria below.
 5. **Calculate the Form Optimization Score** (0-100) for each form, then an
@@ -54,7 +56,7 @@ Every field is friction. Each one must justify its existence.
 
 | Criterion | What to Check | Guidance |
 |-----------|---------------|----------|
-| Total field count | Compare against limits in `references/quality-gates.md` | Lead gen: 3-5 fields max. Newsletter: 1-2 fields. Checkout: minimize. Quote: 5-7 fields max. |
+| Total field count | Compare against limits in `${CLAUDE_SKILL_DIR}/../cro/references/quality-gates.md` | Lead gen: 3-5 fields max. Newsletter: 1-2 fields. Checkout: minimize. Quote: 5-7 fields max. |
 | Required vs optional | Are "optional" fields truly needed? Could they be collected later? | Every optional field should be questioned. If it is rarely filled, remove it. |
 | Field types | Are correct HTML5 input types used? (`email`, `tel`, `number`, `url`, `date`, `search`) | Wrong types mean wrong mobile keyboards and no native validation |
 | Field order | Most to least personal? Easiest fields first? | Name/Email first (low commitment), then phone/company (higher commitment). Never start with high-friction fields. |
@@ -65,7 +67,7 @@ Every field is friction. Each one must justify its existence.
 | Dropdown vs radio | Dropdowns for 5+ options, radio buttons for 2-4 options | Radio buttons are faster -- the user sees all options without clicking |
 | Free text vs structured | Are free text fields used where a dropdown/select would work? | Structured inputs reduce errors and cognitive load |
 
-**Field count benchmarks** (from `references/quality-gates.md`):
+**Field count benchmarks** (from `${CLAUDE_SKILL_DIR}/../cro/references/quality-gates.md`):
 
 | Form Type | Optimal | Maximum | Beyond Maximum |
 |-----------|---------|---------|----------------|
@@ -220,7 +222,7 @@ page Form Optimization Score is the weighted average, with the primary
 conversion form weighted at 70% and all other forms at 30%.
 
 **Field count penalty:** If the total field count exceeds the maximum for the
-form type (per `references/quality-gates.md`), apply a -5 point penalty per
+form type (per `${CLAUDE_SKILL_DIR}/../cro/references/quality-gates.md`), apply a -5 point penalty per
 excess field to the overall score.
 
 ### Score Interpretation
@@ -323,5 +325,5 @@ excess field to the overall score.
 - **Copy analysis:** Use the `cro-copy` sub-skill for form micro-copy (labels, errors, button text)
 - **Trust audit:** Use the `cro-trust` sub-skill for trust elements near and around forms
 - **A/B testing:** Use the `cro-testing` sub-skill to turn form findings into prioritized test hypotheses
-- **UX heuristics:** Read `references/ux-heuristics.md` for form-specific heuristic details
-- **Quality gates:** Read `references/quality-gates.md` for field count limits and form requirements by business type
+- **UX heuristics:** Read `${CLAUDE_SKILL_DIR}/../cro/references/ux-heuristics.md` for form-specific heuristic details
+- **Quality gates:** Read `${CLAUDE_SKILL_DIR}/../cro/references/quality-gates.md` for field count limits and form requirements by business type
