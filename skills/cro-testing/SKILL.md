@@ -343,6 +343,4 @@ Self-assess the quality of the generated hypotheses.
 - **Testing framework:** Read `references/testing-framework.md` for MDE tables, sample size calculators, and ICE calibration guidance
 - **Psychology:** Read `references/psychology-principles.md` for the "because" in hypotheses
 - **Benchmarks:** Read `references/conversion-benchmarks.md` for expected lift estimates
-- **Proven ecommerce tests:** Read `references/proven-tests-ecommerce.md` for 25 data-backed Shopify/ecommerce A/B tests with documented lift percentages and ICE scores
-- **Proven B2B tests:** Read `references/proven-tests-b2b.md` for 25 data-backed B2B, SaaS, and consulting landing page tests with documented results
-- **Proven general tests:** Read `references/proven-tests-general.md` for 25 universal CRO tests that work across industries, with cross-reference tables by psychology principle and page type
+- **Proven tests:** Always load `references/proven-tests-general.md` for universal tests. Additionally load `references/proven-tests-ecommerce.md` for ecommerce/Shopify sites or `references/proven-tests-b2b.md` for B2B/SaaS sites — load only the domain-specific file that matches the detected industry
