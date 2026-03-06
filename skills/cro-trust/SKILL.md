@@ -5,6 +5,8 @@ description: >
   security badges, guarantees, authority indicators, and contact information
   visibility. Use when user says "trust audit", "social proof", "trust signals",
   "credibility check", or "why visitors don't trust my site".
+argument-hint: "<url>"
+allowed-tools: Read, Grep, Glob, Bash, WebFetch
 ---
 
 # CRO Trust Signals Audit
@@ -17,12 +19,12 @@ amount of persuasive copy or beautiful design compensates for missing trust.
 
 ## Process
 
-1. **Fetch the page** using `scripts/fetch_page.py`. Store the full HTML.
-2. **Extract trust elements** using `scripts/parse_cro.py`. This identifies
+1. **Fetch the page** using `${CLAUDE_SKILL_DIR}/../cro/scripts/fetch_page.py`. Store the full HTML.
+2. **Extract trust elements** using `${CLAUDE_SKILL_DIR}/../cro/scripts/parse_cro.py`. This identifies
    testimonials, review widgets, logos, badges, guarantees, contact info,
    certifications, and other trust indicators.
 3. **Detect the business type** to determine industry-specific trust
-   requirements. Read `references/quality-gates.md` for the minimum trust
+   requirements. Read `${CLAUDE_SKILL_DIR}/../cro/references/quality-gates.md` for the minimum trust
    requirements per business type.
 4. **Evaluate each trust category** against the criteria below.
 5. **Perform a gap analysis** -- compare what is present against what is required
@@ -173,7 +175,7 @@ identity. Legitimate businesses make it easy to reach them.
 ### 6. Industry-Specific Requirements
 
 Different business types have different minimum trust requirements. Read
-`references/quality-gates.md` for the complete list.
+`${CLAUDE_SKILL_DIR}/../cro/references/quality-gates.md` for the complete list.
 
 #### E-commerce Minimum Trust Requirements
 
@@ -342,6 +344,6 @@ business type.
 - **UX evaluation:** Use the `cro-ux` sub-skill for trust element placement and visibility
 - **Form optimization:** Use the `cro-forms` sub-skill for form-adjacent trust elements
 - **A/B testing:** Use the `cro-testing` sub-skill to turn trust gaps into test hypotheses
-- **Psychology:** Read `references/psychology-principles.md` for the psychology behind trust and social proof
-- **Quality gates:** Read `references/quality-gates.md` for complete industry-specific trust requirements
-- **Benchmarks:** Read `references/conversion-benchmarks.md` for trust element impact data
+- **Psychology:** Read `${CLAUDE_SKILL_DIR}/../cro/references/psychology-principles.md` for the psychology behind trust and social proof
+- **Quality gates:** Read `${CLAUDE_SKILL_DIR}/../cro/references/quality-gates.md` for complete industry-specific trust requirements
+- **Benchmarks:** Read `${CLAUDE_SKILL_DIR}/../cro/references/conversion-benchmarks.md` for trust element impact data

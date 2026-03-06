@@ -5,6 +5,8 @@ description: >
   risks, friction points, missing micro-conversions, and navigation leaks across
   page sequences. Use when user says "funnel analysis", "conversion funnel",
   "checkout flow", "user journey", "drop-off", or "funnel optimization".
+argument-hint: "<url1> <url2> [url3...]"
+allowed-tools: Read, Grep, Glob, Bash, WebFetch
 ---
 
 # CRO Funnel Analysis
@@ -22,16 +24,16 @@ what changes will recover the most lost conversions.
    sequential steps in a conversion funnel (e.g., landing page -> product page
    -> cart -> checkout -> confirmation). If the user provides a single URL,
    attempt to discover subsequent steps by following primary CTAs.
-2. **Fetch each page** using `scripts/fetch_page.py`. Store the HTML for every
+2. **Fetch each page** using `${CLAUDE_SKILL_DIR}/../cro/scripts/fetch_page.py`. Store the HTML for every
    step in the funnel.
-3. **Extract CRO elements** from each page using `scripts/parse_cro.py`. Pay
+3. **Extract CRO elements** from each page using `${CLAUDE_SKILL_DIR}/../cro/scripts/parse_cro.py`. Pay
    special attention to CTAs, navigation links, exit points, and form elements.
 4. **Take screenshots** of each step if Playwright is available (desktop at
    1440px and mobile at 375px). Screenshots help identify visual consistency
    breaks and CTA prominence gaps between steps.
-5. **Analyze the funnel** using `scripts/analyze_funnel.py`. This maps
+5. **Analyze the funnel** using `${CLAUDE_SKILL_DIR}/../cro/scripts/analyze_funnel.py`. This maps
    step-to-step transitions, calculates risk scores, and identifies leaks.
-6. **Cross-reference benchmarks** by reading `references/conversion-benchmarks.md`
+6. **Cross-reference benchmarks** by reading `${CLAUDE_SKILL_DIR}/../cro/references/conversion-benchmarks.md`
    for expected conversion rates at each step type.
 7. **Generate the report** with a visual funnel map, per-step findings, and
    prioritized recommendations.
@@ -173,7 +175,7 @@ What happens when a user abandons the funnel mid-way?
 
 ### 9. Funnel Benchmarks
 
-Reference `references/conversion-benchmarks.md` for expected rates, then
+Reference `${CLAUDE_SKILL_DIR}/../cro/references/conversion-benchmarks.md` for expected rates, then
 compare:
 
 | Step Type | Typical Conversion | Top Performers |
@@ -294,5 +296,5 @@ on its clarity, CTA effectiveness, friction level, and leak count.
 - **Copy evaluation:** Use the `cro-copy` sub-skill to audit the persuasive copy across funnel steps
 - **Trust continuity:** Use the `cro-trust` sub-skill to evaluate trust signal placement across the journey
 - **Test planning:** Use the `cro-testing` sub-skill to generate full A/B test briefs for funnel experiments
-- **Benchmarks:** Read `references/conversion-benchmarks.md` for industry-specific funnel conversion data
-- **Psychology:** Read `references/psychology-principles.md` for commitment and consistency principles relevant to funnels
+- **Benchmarks:** Read `${CLAUDE_SKILL_DIR}/../cro/references/conversion-benchmarks.md` for industry-specific funnel conversion data
+- **Psychology:** Read `${CLAUDE_SKILL_DIR}/../cro/references/psychology-principles.md` for commitment and consistency principles relevant to funnels

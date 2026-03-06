@@ -3,22 +3,12 @@ name: cro
 description: >
   CRO (Conversion Rate Optimization) skill for auditing websites, analyzing
   conversion funnels, generating A/B test hypotheses, evaluating UX and copy,
-  assessing trust signals, and building optimization roadmaps. Covers landing
-  pages, e-commerce, SaaS, lead gen, and local service sites.
-trigger-keywords:
-  - CRO
-  - conversion
-  - optimize
-  - A/B test
-  - funnel
-  - landing page
-  - conversion rate
-allowed-tools:
-  - Read
-  - Grep
-  - Glob
-  - Bash
-  - WebFetch
+  assessing trust signals, and building optimization roadmaps. Use when the user
+  mentions CRO, conversion, optimize, A/B test, funnel, landing page, or
+  conversion rate. Covers SaaS, e-commerce, lead gen, subscription, local
+  service, and agency/B2B sites.
+argument-hint: "<subcommand> <url>"
+allowed-tools: Read, Grep, Glob, Bash, WebFetch
 ---
 
 # CRO — Conversion Rate Optimization Skill
@@ -48,11 +38,18 @@ then produce prioritized recommendations with A/B test hypotheses.
 
 ## Orchestration Logic
 
-### Full Audit (`/cro audit <url>`)
+### Full Audit (`/cro audit $ARGUMENTS`)
 
-1. **Fetch the page** using WebFetch. Extract the full HTML content.
-2. **Detect business type** using the Industry Detection rules below.
-3. **Spawn 6 subagents in parallel** — each receives the page content and
+1. **Fetch the page** using the fetch script:
+   ```bash
+   python3 ${CLAUDE_SKILL_DIR}/scripts/fetch_page.py $ARGUMENTS
+   ```
+2. **Extract CRO elements** using the parse script:
+   ```bash
+   python3 ${CLAUDE_SKILL_DIR}/scripts/parse_cro.py $ARGUMENTS
+   ```
+3. **Detect business type** using the Industry Detection rules below.
+4. **Spawn 6 subagents in parallel** — each receives the page content and
    business type context:
    - `cro-ux` — UX heuristic evaluation
    - `cro-copy` — Conversion copywriting analysis
@@ -60,9 +57,9 @@ then produce prioritized recommendations with A/B test hypotheses.
    - `cro-visual` — Visual hierarchy and layout analysis
    - `cro-performance` — Page speed and technical performance
    - `cro-trust` — Trust signals and social proof audit
-4. **Collect results** from all 6 subagents.
-5. **Calculate CRO Health Score** using the weighted formula below.
-6. **Generate the final report** with:
+5. **Collect results** from all 6 subagents.
+6. **Calculate CRO Health Score** using the weighted formula below.
+7. **Generate the final report** with:
    - CRO Health Score (0-100) with rating
    - Business type detected
    - Top 5 critical findings (sorted by impact)
@@ -141,18 +138,18 @@ Every finding must be assigned a priority level:
 
 ## Reference Files
 
-Load on-demand as needed — do NOT load all at startup.
+Load on-demand as needed — do NOT load all at startup. Paths are relative to this skill directory.
 
 | File | Path | Use When |
 |------|------|----------|
-| Conversion Benchmarks | `cro/references/conversion-benchmarks.md` | Comparing metrics to industry standards, setting targets |
-| Psychology Principles | `cro/references/psychology-principles.md` | Evaluating persuasion tactics, recommending psychological triggers |
-| Testing Framework | `cro/references/testing-framework.md` | Generating test hypotheses, calculating sample sizes, ICE scoring |
-| UX Heuristics | `cro/references/ux-heuristics.md` | Running UX evaluations, form analysis, mobile assessment |
-| Quality Gates | `cro/references/quality-gates.md` | Checking minimum requirements, pass/fail criteria |
-| Proven Tests: Ecommerce | `cro/references/proven-tests-ecommerce.md` | Referencing data-backed Shopify/ecommerce A/B tests with documented results |
-| Proven Tests: B2B/SaaS | `cro/references/proven-tests-b2b.md` | Referencing data-backed B2B, SaaS, and consulting landing page tests |
-| Proven Tests: General | `cro/references/proven-tests-general.md` | Referencing universal CRO tests with cross-reference tables by principle and page type |
+| Conversion Benchmarks | [references/conversion-benchmarks.md](references/conversion-benchmarks.md) | Comparing metrics to industry standards, setting targets |
+| Psychology Principles | [references/psychology-principles.md](references/psychology-principles.md) | Evaluating persuasion tactics, recommending psychological triggers |
+| Testing Framework | [references/testing-framework.md](references/testing-framework.md) | Generating test hypotheses, calculating sample sizes, ICE scoring |
+| UX Heuristics | [references/ux-heuristics.md](references/ux-heuristics.md) | Running UX evaluations, form analysis, mobile assessment |
+| Quality Gates | [references/quality-gates.md](references/quality-gates.md) | Checking minimum requirements, pass/fail criteria |
+| Proven Tests: Ecommerce | [references/proven-tests-ecommerce.md](references/proven-tests-ecommerce.md) | Referencing data-backed Shopify/ecommerce A/B tests with documented results |
+| Proven Tests: B2B/SaaS | [references/proven-tests-b2b.md](references/proven-tests-b2b.md) | Referencing data-backed B2B, SaaS, and consulting landing page tests |
+| Proven Tests: General | [references/proven-tests-general.md](references/proven-tests-general.md) | Referencing universal CRO tests with cross-reference tables by principle and page type |
 
 ---
 

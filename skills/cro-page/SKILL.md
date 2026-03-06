@@ -17,15 +17,15 @@ a scored report with prioritized recommendations.
 
 ## Process
 
-1. **Fetch the page HTML** using `scripts/fetch_page.py`. Store the raw HTML for
+1. **Fetch the page HTML** using `${CLAUDE_SKILL_DIR}/../cro/scripts/fetch_page.py`. Store the raw HTML for
    downstream analysis.
-2. **Extract CRO elements** using `scripts/parse_cro.py`. This extracts
+2. **Extract CRO elements** using `${CLAUDE_SKILL_DIR}/../cro/scripts/parse_cro.py`. This extracts
    headlines, CTAs, forms, trust signals, images, navigation, and structured
    data into a structured format.
 3. **Take a screenshot** if Playwright is available (desktop at 1440px and mobile
    at 375px). Use the screenshots to evaluate visual hierarchy, above-the-fold
    content, and CTA prominence.
-4. **Analyze against quality gates** by reading `references/quality-gates.md`.
+4. **Analyze against quality gates** by reading `${CLAUDE_SKILL_DIR}/../cro/references/quality-gates.md`.
    Check every extracted element against the minimum conversion requirements for
    the detected business type.
 5. **Score each section** independently (0-100), then calculate the composite
@@ -115,7 +115,7 @@ Assess the persuasiveness and readability of the page copy.
 | Scanability | Headers, bullet points, bold text, short paragraphs? Can the page be skimmed in 30 seconds? |
 | Tone match | Does the copy tone match the target audience? B2B vs B2C, technical vs casual. |
 
-Read `references/psychology-principles.md` for the full list of emotional
+Read `${CLAUDE_SKILL_DIR}/../cro/references/psychology-principles.md` for the full list of emotional
 triggers and persuasion principles to evaluate against.
 
 **Score weighting:** 10% of Page CRO Score.
@@ -126,7 +126,7 @@ Evaluate all forms on the page. If no forms exist, note this and skip.
 
 | Criterion | What to Check |
 |-----------|---------------|
-| Field count | Compare against recommended maximums in `references/quality-gates.md`. Every extra field reduces completion. |
+| Field count | Compare against recommended maximums in `${CLAUDE_SKILL_DIR}/../cro/references/quality-gates.md`. Every extra field reduces completion. |
 | Labels | Top-aligned? Clear? No placeholder-only labels? |
 | Validation | Inline real-time validation? Clear error messages? Fields retain values on error? |
 | Friction level | Required vs optional fields. Can any fields be removed, auto-filled, or deferred? |
@@ -272,6 +272,6 @@ Above-the-Fold and Value Proposition (5% each).
 - **Deep form analysis:** Use the `cro-forms` sub-skill for detailed form optimization
 - **UX heuristics:** Use the `cro-ux` sub-skill for full Nielsen's heuristic evaluation
 - **Test hypotheses:** Use the `cro-testing` sub-skill for full A/B test plan generation
-- **Quality gates:** Read `references/quality-gates.md` for pass/fail thresholds
-- **Psychology:** Read `references/psychology-principles.md` for persuasion principles
-- **Benchmarks:** Read `references/conversion-benchmarks.md` for industry comparison data
+- **Quality gates:** Read `${CLAUDE_SKILL_DIR}/../cro/references/quality-gates.md` for pass/fail thresholds
+- **Psychology:** Read `${CLAUDE_SKILL_DIR}/../cro/references/psychology-principles.md` for persuasion principles
+- **Benchmarks:** Read `${CLAUDE_SKILL_DIR}/../cro/references/conversion-benchmarks.md` for industry comparison data

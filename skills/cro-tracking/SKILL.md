@@ -5,6 +5,8 @@ description: >
   event configuration, enhanced e-commerce tracking, consent management, and
   data layer quality. Use when user says "tracking audit", "analytics check",
   "GA4 setup", "GTM audit", "conversion tracking", or "event tracking".
+argument-hint: "<url>"
+allowed-tools: Read, Grep, Glob, Bash, WebFetch
 ---
 
 # CRO Tracking Audit
@@ -18,10 +20,10 @@ complete tracking stack from tag management to consent compliance.
 
 ## Process
 
-1. **Fetch the page** using `scripts/fetch_page.py`. Store the raw HTML,
+1. **Fetch the page** using `${CLAUDE_SKILL_DIR}/../cro/scripts/fetch_page.py`. Store the raw HTML,
    paying special attention to `<head>` and early `<body>` content where
    tracking scripts are typically placed.
-2. **Extract tracking elements** using `scripts/parse_cro.py`. This detects
+2. **Extract tracking elements** using `${CLAUDE_SKILL_DIR}/../cro/scripts/parse_cro.py`. This detects
    analytics platforms, tag managers, data layer objects, consent banners,
    pixel scripts, and heatmap tools.
 3. **Validate tag placement** -- check that scripts are in the correct
@@ -338,5 +340,5 @@ the 15% weight: 10% to Conversion Events, 5% to Data Layer Quality.
 - **E-commerce tracking:** Use the `cro-ecommerce` sub-skill for shopping-specific conversion patterns
 - **Funnel analysis:** Use the `cro-funnel` sub-skill -- proper funnel tracking is a prerequisite
 - **Test planning:** Use the `cro-testing` sub-skill -- A/B testing requires solid tracking infrastructure
-- **Quality gates:** Read `references/quality-gates.md` for minimum tracking requirements per business type
-- **Benchmarks:** Read `references/conversion-benchmarks.md` for baseline metrics to measure against
+- **Quality gates:** Read `${CLAUDE_SKILL_DIR}/../cro/references/quality-gates.md` for minimum tracking requirements per business type
+- **Benchmarks:** Read `${CLAUDE_SKILL_DIR}/../cro/references/conversion-benchmarks.md` for baseline metrics to measure against

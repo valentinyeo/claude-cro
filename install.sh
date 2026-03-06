@@ -37,20 +37,34 @@ mkdir -p "${AGENTS_DIR}"
 # ── Copy main orchestrator ─────────────────────────────────────────────
 
 echo "Installing main orchestrator..."
-cp "${SCRIPT_DIR}/cro/SKILL.md" "${SKILLS_DIR}/cro/SKILL.md"
+cp "${SCRIPT_DIR}/skills/cro/SKILL.md" "${SKILLS_DIR}/cro/SKILL.md"
 
 # ── Copy reference files ──────────────────────────────────────────────
 
 echo "Installing reference files..."
-if [ -d "${SCRIPT_DIR}/cro/references" ]; then
-    cp "${SCRIPT_DIR}/cro/references/"*.md "${SKILLS_DIR}/cro/references/" 2>/dev/null || true
+if [ -d "${SCRIPT_DIR}/skills/cro/references" ]; then
+    cp "${SCRIPT_DIR}/skills/cro/references/"*.md "${SKILLS_DIR}/cro/references/" 2>/dev/null || true
+fi
+
+# ── Copy scripts ───────────────────────────────────────────────────────
+
+echo "Installing Python scripts..."
+SCRIPT_COUNT=0
+if [ -d "${SCRIPT_DIR}/skills/cro/scripts" ]; then
+    for script_file in "${SCRIPT_DIR}/skills/cro/scripts/"*.py; do
+        if [ -f "${script_file}" ]; then
+            cp "${script_file}" "${SKILLS_DIR}/cro/scripts/"
+            chmod +x "${SKILLS_DIR}/cro/scripts/$(basename "${script_file}")"
+            SCRIPT_COUNT=$((SCRIPT_COUNT + 1))
+        fi
+    done
 fi
 
 # ── Copy sub-skills ────────────────────────────────────────────────────
 
 echo "Installing sub-skills..."
 SKILL_COUNT=0
-for skill_dir in "${SCRIPT_DIR}/skills/"*/; do
+for skill_dir in "${SCRIPT_DIR}/skills/cro-"*/; do
     if [ -d "${skill_dir}" ]; then
         skill_name="$(basename "${skill_dir}")"
         mkdir -p "${SKILLS_DIR}/${skill_name}"
@@ -67,18 +81,6 @@ for agent_file in "${SCRIPT_DIR}/agents/"*.md; do
     if [ -f "${agent_file}" ]; then
         cp "${agent_file}" "${AGENTS_DIR}/"
         AGENT_COUNT=$((AGENT_COUNT + 1))
-    fi
-done
-
-# ── Copy scripts ───────────────────────────────────────────────────────
-
-echo "Installing Python scripts..."
-SCRIPT_COUNT=0
-for script_file in "${SCRIPT_DIR}/scripts/"*.py; do
-    if [ -f "${script_file}" ]; then
-        cp "${script_file}" "${SKILLS_DIR}/cro/scripts/"
-        chmod +x "${SKILLS_DIR}/cro/scripts/$(basename "${script_file}")"
-        SCRIPT_COUNT=$((SCRIPT_COUNT + 1))
     fi
 done
 
@@ -132,7 +134,7 @@ echo "========================================"
 echo "  Installation Complete"
 echo "========================================"
 echo ""
-echo "  Orchestrator:   cro/SKILL.md"
+echo "  Orchestrator:   skills/cro/SKILL.md"
 echo "  Sub-skills:     ${SKILL_COUNT} installed"
 echo "  Agents:         ${AGENT_COUNT} installed"
 echo "  Scripts:        ${SCRIPT_COUNT} installed"
@@ -152,4 +154,7 @@ for agent_file in "${AGENTS_DIR}/cro-"*.md; do
 done
 echo ""
 echo "  Usage: Open Claude Code and type /cro audit <url>"
+echo ""
+echo "  Or install as a plugin:"
+echo "    /plugin install claude-cro@valentinyeo/claude-cro"
 echo ""

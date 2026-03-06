@@ -7,7 +7,7 @@ execution, lazy resource loading, and modular extensibility.
 
 ```
 Layer 1: Orchestrator
-    cro/SKILL.md
+    skills/cro/SKILL.md
     |
     |-- Parses /cro <subcommand> and routes to the correct sub-skill
     |-- Manages full audit workflow (fetch, detect, delegate, collect, score, report)

@@ -8,7 +8,17 @@
 - **Git** — For cloning the repository
 - **Playwright** (optional) — For screenshot capture
 
-## Quick Install
+## Plugin Install (Recommended)
+
+Install directly as a Claude Code plugin:
+
+```
+/plugin install claude-cro@valentinyeo/claude-cro
+```
+
+This automatically discovers all skills and agents. No manual file copying needed.
+
+## Quick Install (Manual)
 
 One-line install for Linux and macOS:
 
@@ -88,11 +98,9 @@ mkdir -p ~/.claude/agents
 ### 2. Copy files
 
 ```bash
-# Main orchestrator
-cp cro/SKILL.md ~/.claude/skills/cro/
-
-# Reference files
-cp cro/references/*.md ~/.claude/skills/cro/references/
+# Main orchestrator + references + scripts
+cp -r skills/cro/* ~/.claude/skills/cro/
+chmod +x ~/.claude/skills/cro/scripts/*.py
 
 # Sub-skills
 for dir in skills/cro-*/; do
@@ -103,10 +111,6 @@ done
 
 # Agents
 cp agents/*.md ~/.claude/agents/
-
-# Scripts
-cp scripts/*.py ~/.claude/skills/cro/scripts/
-chmod +x ~/.claude/skills/cro/scripts/*.py
 ```
 
 ### 3. Install Python packages
