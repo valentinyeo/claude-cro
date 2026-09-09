@@ -352,3 +352,4 @@ feel desperate). Recommend adding power words from underrepresented categories.
 - **A/B testing:** Use the `cro-testing` sub-skill to turn copy findings into test hypotheses
 - **Psychology:** Read `${CLAUDE_SKILL_DIR}/../cro/references/psychology-principles.md` for the full persuasion principles framework
 - **Quality gates:** Read `${CLAUDE_SKILL_DIR}/../cro/references/quality-gates.md` for minimum copy requirements by business type
+- **Brand voice:** For brand-aware rewrite suggestions, run `/cro voice <url>` first. If `reports/{domain}-voice.md` exists, load it to ensure all suggested rewrites match the brand's tone, sacred terminology, and CTA language patterns.

@@ -33,6 +33,8 @@ then produce prioritized recommendations with A/B test hypotheses.
 | `/cro tracking <url>` | Analytics and tracking setup validation |
 | `/cro benchmark <url> <competitor-url>` | Competitor conversion comparison |
 | `/cro plan <url>` | CRO strategy and 90-day roadmap |
+| `/cro voice <url>` | Brand voice analysis and wording master document |
+| `/cro analytics <url>` | Connect analytics sources for data-driven testing |
 
 ---
 
@@ -171,6 +173,8 @@ Each maps to a `/cro` command and can be invoked independently:
 | `cro-tracking` | `/cro tracking` | Analytics and tracking |
 | `cro-benchmark` | `/cro benchmark` | Competitor comparison |
 | `cro-plan` | `/cro plan` | CRO strategy and roadmap |
+| `cro-voice` | `/cro voice` | Brand voice and wording master |
+| `cro-analytics` | `/cro analytics` | Analytics connection and data access |
 
 ---
 

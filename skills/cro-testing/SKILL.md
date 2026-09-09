@@ -22,6 +22,12 @@ estimates, and duration calculations.
 
 1. **Fetch and analyze the page** using `${CLAUDE_SKILL_DIR}/../cro/scripts/fetch_page.py` and
    `${CLAUDE_SKILL_DIR}/../cro/scripts/parse_cro.py`. Extract all conversion-relevant elements.
+   **Brand voice check:** Look for `reports/{domain}-voice.md`. If it exists, load it
+   and ensure all variant copy in test briefs adheres to the voice guidelines
+   (sacred terminology, tone spectrum, CTA language patterns, do/don't rules).
+   **Analytics data check:** If PostHog MCP or another analytics source is
+   available, pull current page traffic and conversion rates to calculate
+   realistic MDE and prioritize tests by actual traffic volume.
 2. **Identify conversion issues and opportunities** by evaluating the page
    against CRO best practices. Look for gaps in copy, UX, trust, forms, and
    visual hierarchy.
@@ -346,3 +352,5 @@ Self-assess the quality of the generated hypotheses.
 - **Psychology:** Read `${CLAUDE_SKILL_DIR}/../cro/references/psychology-principles.md` for the "because" in hypotheses
 - **Benchmarks:** Read `${CLAUDE_SKILL_DIR}/../cro/references/conversion-benchmarks.md` for expected lift estimates
 - **Proven tests:** Always load `${CLAUDE_SKILL_DIR}/../cro/references/proven-tests-general.md` for universal tests. Additionally load `${CLAUDE_SKILL_DIR}/../cro/references/proven-tests-ecommerce.md` for ecommerce/Shopify sites or `${CLAUDE_SKILL_DIR}/../cro/references/proven-tests-b2b.md` for B2B/SaaS sites — load only the domain-specific file that matches the detected industry
+- **Brand voice:** If `reports/{domain}-voice.md` exists, load it to ensure all test variant copy stays on-brand. Run `/cro voice <url>` first to generate this document.
+- **Analytics data:** If PostHog MCP or other analytics are connected, use real traffic and conversion data to calculate sample sizes and prioritize by actual page volume. Run `/cro analytics <url>` to set up connections.

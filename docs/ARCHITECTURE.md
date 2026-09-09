@@ -14,7 +14,7 @@ Layer 1: Orchestrator
     |-- Owns the CRO Health Score calculation
     |-- Loads reference files on-demand
     |
-Layer 2: Sub-Skills (12)
+Layer 2: Sub-Skills (14)
     skills/cro-*/SKILL.md
     |
     |-- Each handles a specific CRO domain (copy, UX, forms, etc.)
@@ -51,6 +51,8 @@ When a user types `/cro <subcommand> <url>`, the orchestrator:
 /cro tracking  -> skills/cro-tracking/SKILL.md
 /cro benchmark -> skills/cro-benchmark/SKILL.md
 /cro plan      -> skills/cro-plan/SKILL.md
+/cro voice     -> skills/cro-voice/SKILL.md
+/cro analytics -> skills/cro-analytics/SKILL.md
 ```
 
 3. Loads the sub-skill's SKILL.md instructions
