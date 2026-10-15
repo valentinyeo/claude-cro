@@ -24,7 +24,8 @@
     "skills/cro-wireframe",
     "skills/cro-build-test",
     "skills/cro-research",
-    "skills/cro-synthetic"
+    "skills/cro-synthetic",
+    "skills/cro-message-test"
   ],
   "agents": [
     "agents/cro-ux.md",
