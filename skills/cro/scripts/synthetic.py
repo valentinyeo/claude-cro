@@ -506,6 +506,10 @@ there on purpose: that stop is not a problem with the site. Reply with JSON only
 
 def observe(page, out_dir, n, max_elements=70):
     shot = os.path.abspath(os.path.join(out_dir, f"step-{n:02d}.jpg"))
+    try:  # script-rendered pages (Google Calendar booking) are blank at domcontentloaded; a blank shot reads as a broken page
+        page.wait_for_function("() => document.body && document.body.innerText.trim().length > 20", timeout=8000)
+    except Exception:
+        pass
     try:
         page.screenshot(path=shot, type="jpeg", quality=60, timeout=15000)
     except Exception:
