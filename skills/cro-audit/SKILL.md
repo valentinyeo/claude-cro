@@ -233,6 +233,9 @@ for the deck, `/cro wireframe <W>` for fix designs).
 Then build the results page, the one place the client reads every result:
 1. Write `<W>/results-notes.json`: per skill run a one-sentence result, status,
    how sure, and what it found (keys and format in `results_hub.py --help`).
+   Give a `score` only for runs the files cannot score (for example personas:
+   share of buyers who reached the goal), and a `verify` list when readiness is
+   not TESTABLE: how each change gets checked without an A/B test.
 2. Write `<W>/experiments.json`: each finding worth acting on becomes an experiment
    with a hypothesis ("Because we saw X, we believe Y will Z for W"), evidence keys,
    steps, metric, duration and decision rule. The method follows the readiness

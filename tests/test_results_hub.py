@@ -45,6 +45,27 @@ class ResultsHubTest(unittest.TestCase):
         self.assertIn("&lt;weak trust&gt;", html)
         self.assertNotIn("<weak trust>", html)
 
+    def test_scores_out_of_ten(self):
+        (self.W / "findings.json").write_text(json.dumps({
+            "score": 61, "categories": [{"name": "Tracking", "score": 10}],
+            "findings": [{"id": "C-1", "title": "No analytics", "priority": "Critical", "category": "tracking"}]}))
+        sp = self.W / "pages" / "home"
+        sp.mkdir(parents=True)
+        (sp / "speed.json").write_text(json.dumps({"lab": {"LCP": "3.0 s", "CLS": "0.000", "TBT": "19 ms"}}))
+        n = json.loads((self.W / "results-notes.json").read_text())
+        n["tracking"] = {"result": "none"}
+        n["personas"] = {"result": "1 of 2", "score": [5, "1 of 2 reached booking"]}
+        n["verify"] = ["Rescore before and after"]
+        (self.W / "results-notes.json").write_text(json.dumps(n))
+        html = rh.build(self.W)
+        self.assertIn("6.1/10", html)              # audit 61/100
+        self.assertIn("1/10", html)                # tracking category 10/100
+        self.assertIn("8.3/10", html)              # speed: LCP needs work (0.5) + 2 good = 2.5 of 3
+        self.assertIn("home: LCP 3.0 s", html)     # listed under To reach 10/10
+        self.assertIn("5/10", html)                # notes override
+        self.assertIn("id='verify'", html)
+        self.assertIn("no score", html)            # message test measures our work, not the page
+
     def test_empty_workspace_still_builds(self):
         for f in ("results-notes.json", "experiments.json"):
             (self.W / f).unlink()

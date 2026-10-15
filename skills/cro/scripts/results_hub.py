@@ -30,7 +30,16 @@ results-notes.json (all keys optional):
      "<skill key>": {"result": "...", "status": "done|partial|failed", "confidence": "...",
                      "found": ["..."], "images": [["path", "caption"]], "links": [["label", "https://..."]],
                      "cost": "...", "time": "..."}}
-Skill keys: audit, tracking, readiness, personas, skeptic, synthetic, wireframe, deck, message_test.
+Skill keys: audit, speed, tracking, readiness, personas, skeptic, synthetic, wireframe, deck, message_test.
+Optional per run: "score": [7, "1 of 2 buyers reached booking"] when the files cannot give one,
+"to_ten": ["..."] to replace the fixes listed under "To reach 10/10".
+Optional top level: "verify": ["..."], how results get checked when traffic is too low for A/B tests.
+
+Scores: each result that measures the site gets a score out of 10, so a page can be fixed and
+rerun until it reaches 10/10. Computed from the files where possible (audit score, lab speed
+against Google's Core Web Vitals limits, the tracking category, share of visitors reaching the
+goal). Runs that measure our own work or the traffic (readiness, skeptic, wireframe, deck,
+message test) get no score.
 """
 
 import argparse
@@ -69,11 +78,15 @@ section.run h2{margin:0 0 4px;font-size:23px}.kicker{font-size:13px;color:var(--
 ul{margin:0 0 6px;padding-left:20px}li{margin:3px 0}a{color:var(--accent)}
 .status{display:inline-block;font-size:12px;font-weight:600;border-radius:20px;padding:2px 10px;border:1px solid var(--line)}
 .status.done{color:var(--good)}.status.partial{color:var(--warn)}.status.failed{color:var(--bad)}
+.score{font-weight:700;white-space:nowrap}.score.hi{color:var(--good)}.score.mid{color:var(--warn)}.score.lo{color:var(--bad)}.score.na{color:var(--muted);font-weight:400}
+.bar{height:6px;border-radius:3px;background:var(--line);margin-top:4px;min-width:60px}.bar i{display:block;height:100%;border-radius:3px;background:currentColor}
+.scorebox{display:flex;align-items:center;gap:16px;border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin:10px 0}.scorebox .big{font-size:30px}
 .meta{font-size:14px;color:var(--muted);margin:12px 0 0}.pager{display:flex;justify-content:space-between;gap:12px;margin-top:16px;font-size:14px;border-top:1px solid var(--line);padding-top:12px}
 @media (max-width:600px){h1{font-size:26px}.images{grid-template-columns:1fr}.hide-mobile{display:none}}"""
 
 ORDER = [
-    ("audit", "Site audit", "How well do the key pages convert, page by page, across UX, copy, trust, visual, speed and tracking?"),
+    ("audit", "Site audit", "How well do the key pages convert, page by page, across UX, copy, trust, visual and tracking?"),
+    ("speed", "Page speed", "How fast do the key pages load on a throttled phone, against Google's Core Web Vitals limits?"),
     ("tracking", "Tracking check", "What measures visits and conversions today, is anything doubled or broken, and what access do we need?"),
     ("readiness", "Test readiness", "Are there enough conversions to run A/B tests, or is research the right method?"),
     ("personas", "Persona walk-throughs", "Can a realistic buyer reach the main conversion in a real browser, and where do they struggle?"),
@@ -133,6 +146,73 @@ def facts_audit(W, F):
     nums += [(f"{c['score']}", c["name"]) for c in sorted(cats, key=lambda c: c["score"])[:2]]
     imgs = [(W / "pages/home/desktop.png", "Home page on desktop"), (W / "pages/home/mobile.png", "Home page on a phone")]
     return dict(nums=nums, found=found, images=imgs, files=["FULL-AUDIT.md", "ACTION-PLAN.md", "findings.json"])
+
+
+LIMITS = {"LCP": (2.5, 4.0), "CLS": (0.1, 0.25), "TBT": (200, 600)}  # good / poor, Google Core Web Vitals (TBT stands in for INP)
+
+
+def _num(v):
+    m = re.match(r"\s*([\d.]+)", str(v or ""))
+    return float(m.group(1)) if m else None
+
+
+def facts_speed(W, F):
+    rows = []
+    for sp in sorted((W / "pages").glob("*/speed.json")) if (W / "pages").exists() else []:
+        d = jload(sp) or {}
+        lab = d.get("lab") or {}
+        vals = {k: _num(lab.get(k)) for k in LIMITS}
+        if any(v is not None for v in vals.values()):
+            rows.append((sp.parent.name, vals, lab, d))
+    if not rows:
+        return None
+    pts, misses = [], []
+    for page, vals, lab, d in rows:
+        for k, (good, poor) in LIMITS.items():
+            v = vals[k]
+            if v is None:
+                continue
+            pts.append(1 if v <= good else 0.5 if v <= poor else 0)
+            if v > good:
+                misses.append(f"{page}: {k} {lab.get(k)} (good is under {good}{' s' if k == 'LCP' else ' ms' if k == 'TBT' else ''})")
+    worst = max(v["LCP"] or 0 for _, v, _, _ in rows)
+    field = any(d.get("field_data") for *_, d in rows)
+    found = [f"{page}: LCP {lab.get('LCP', '?')}, CLS {lab.get('CLS', '?')}, TBT {lab.get('TBT', '?')}, {lab.get('Requests', '?')} requests"
+             for page, _, lab, _ in rows]
+    nums = [(str(len(rows)), "pages measured"), (f"{worst:.1f} s", "slowest main content (LCP)"),
+            ("yes" if field else "no", "real-visitor data")]
+    return dict(nums=nums, found=found, images=[], files=["pages/*/speed.json", "findings/performance.md"],
+                score=(round(10 * sum(pts) / len(pts), 1), "share of pages within Google's speed limits (lab, phone)"),
+                to_ten=misses)
+
+
+def score_for(k, fx, F, W):
+    """(score out of 10 or None, basis, fixes that stand between the site and 10/10)."""
+    F = F or {}
+    fixes = lambda pred: [f"{f['id']}: {f['title']}" for f in F.get("findings", []) if pred(f)]
+    cat = {c["name"].lower(): c["score"] for c in F.get("categories", [])}
+    if k == "audit" and F.get("score") is not None:
+        return F["score"] / 10, "audit health score / 10", fixes(lambda f: f["priority"] in ("Critical", "High"))
+    if k == "speed" and fx and fx.get("score"):
+        return fx["score"][0], fx["score"][1], fx.get("to_ten", [])
+    if k == "tracking" and "tracking" in cat:
+        return cat["tracking"] / 10, "tracking category of the audit / 10", fixes(lambda f: f.get("category") == "tracking")
+    if k == "synthetic":
+        c = jload(W / "synthetic/clusters.json") or {}
+        fun, v = c.get("funnel", {}), c.get("visitors", 0)
+        if v:
+            conv = fun.get("checkout", fun.get("atc", 0))
+            return round(10 * conv / v, 1), f"{conv} of {v} AI visitors reached the goal", \
+                [f"{cl['visitors']} visitors: {cl['headline']}" for cl in c.get("clusters", [])[:4]]
+    return None, "", []
+
+
+def fmt_score(v):
+    if v is None:
+        return "<span class='score na'>no score</span>"
+    cls = "hi" if v >= 8 else "mid" if v >= 5 else "lo"
+    txt = f"{v:.1f}".rstrip("0").rstrip(".")
+    return f"<span class='score {cls}'>{txt}/10<span class='bar'><i style='width:{v * 10:.0f}%'></i></span></span>"
 
 
 def facts_tracking(W, F):
@@ -246,11 +326,17 @@ def build(W, WF=None):
     WF = Path(WF) if WF else None
     F = jload(W / "findings.json") or {}
     N = jload(W / "results-notes.json") or {}
-    facts = {"audit": facts_audit(W, F), "tracking": facts_tracking(W, F), "readiness": facts_readiness(W, F),
+    facts = {"audit": facts_audit(W, F), "speed": facts_speed(W, F), "tracking": facts_tracking(W, F), "readiness": facts_readiness(W, F),
              "personas": facts_personas(W, F), "skeptic": facts_skeptic(W, F), "synthetic": facts_synthetic(W, F),
              "wireframe": facts_wireframe(WF), "deck": facts_deck(W), "message_test": facts_message_test(W)}
     runs = [(k, name, q, facts[k], N.get(k, {})) for k, name, q in ORDER if facts.get(k) or N.get(k)]
     X = jload(W / "experiments.json") or []
+    S = {}
+    for k, _, _, fx, n in runs:
+        v, basis, fix = score_for(k, fx, F, W)
+        if n.get("score"):
+            v, basis = float(n["score"][0]), n["score"][1]
+        S[k] = (None if v is None else max(0.0, min(10.0, v)), basis, n.get("to_ten", fix))
     site = F.get("site") or W.name
     title = N.get("title") or f"{site}: CRO results"
 
@@ -265,14 +351,17 @@ def build(W, WF=None):
                    + (f"<p><b>Next:</b> {esc(ov['next'])}</p>" if ov.get("next") else "") + "</div>")
     out.append("<nav class='index' aria-label='Results'>" + "".join(
         f"<a href='#{k}'>{i}. {esc(name)}</a>" for i, (k, name, *_ ) in enumerate(runs, 1))
-        + (f"<a href='#experiments'><b>Experiments ({len(X)})</b></a>" if X else "") + "</nav>")
+        + (f"<a href='#experiments'><b>Experiments ({len(X)})</b></a>" if X else "")
+        + ("<a href='#verify'>How we verify</a>" if N.get("verify") else "") + "</nav>")
 
-    out.append("<h2>All results</h2><table><tr><th>#</th><th>Skill run</th><th>Result</th><th class='hide-mobile'>Status</th></tr>")
+    out.append("<h2>All results</h2><table><tr><th>#</th><th>Skill run</th><th>Score</th><th>Result</th><th class='hide-mobile'>Status</th></tr>")
     for i, (k, name, q, fx, n) in enumerate(runs, 1):
         st = n.get("status", "done")
-        out.append(f"<tr><td>{i}</td><td><a href='#{k}'>{esc(name)}</a></td><td>{esc(n.get('result', q))}</td>"
+        out.append(f"<tr><td>{i}</td><td><a href='#{k}'>{esc(name)}</a></td><td>{fmt_score(S[k][0])}</td><td>{esc(n.get('result', q))}</td>"
                    f"<td class='hide-mobile'><span class='status {esc(st)}'>{esc(st)}</span></td></tr>")
-    out.append("</table>")
+    out.append("</table><p class='meta'>Scores are out of 10 for each result that measures the site. "
+               "Fix what is listed under \"To reach 10/10\", rerun the same test, and the score updates. "
+               "No score means the run checks our own work or the traffic, not the page.</p>")
 
     for i, (k, name, q, fx, n) in enumerate(runs, 1):
         fx = fx or {}
@@ -282,6 +371,11 @@ def build(W, WF=None):
         out.append(f"<div class='label'>What it tested</div><p style='margin:0'>{esc(q)}</p>")
         if n.get("result"):
             out.append(f"<div class='label'>Result</div><p class='result' style='margin-top:0'><b>{esc(n['result'])}</b></p>")
+        v, basis, fix = S[k]
+        if v is not None:
+            out.append(f"<div class='scorebox'><span class='big'>{fmt_score(v)}</span><span class='meta' style='margin:0'>{esc(basis)}</span></div>")
+            out.append("<div class='label'>To reach 10/10</div>" + ("<ul>" + "".join(f"<li>{esc(x)}</li>" for x in fix) + "</ul>"
+                       if fix else "<p style='margin:0'>Nothing left to fix on this test.</p>"))
         if fx.get("nums"):
             out.append("<div class='nums'>" + "".join(f"<div class='num'><b>{esc(v)}</b><span>{esc(l)}</span></div>" for v, l in fx["nums"]) + "</div>")
         found = n.get("found") or fx.get("found") or []
@@ -327,6 +421,11 @@ def build(W, WF=None):
             out.append("<div class='nums'>" + "".join(f"<div class='num'><b style='font-size:16px'>{esc(e[k])}</b><span>{l}</span></div>"
                        for k, l in (("metric", "what we measure"), ("duration", "how long"), ("decide", "when we call it")) if e.get(k)) + "</div></section>")
         out.append("</section>")
+    if N.get("verify"):
+        out.append("<section id='verify'><h2>How we verify results at this traffic</h2>"
+                   "<p>Too few conversions for an A/B test means no single number proves a change. "
+                   "We stack weaker checks that point the same way:</p><ol>"
+                   + "".join(f"<li>{esc(x)}</li>" for x in N["verify"]) + "</ol></section>")
     out.append("<h2>How these results were made</h2><p>Each section is one skill run on the same site, shown the same way. "
                "Numbers come straight from the run files; the one-line results are the reviewer's reading of them. "
                "Simulated visitors and simulated opinion are early signals, not measured conversion results.</p>")
