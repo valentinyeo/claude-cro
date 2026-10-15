@@ -147,8 +147,9 @@ def run(args, client=None, log=print):
     log(f"4/6 run simulation ({args.rounds} rounds, {args.platform})")
     c.post("/api/simulation/start", {"simulation_id": sim, "platform": args.platform, "max_rounds": args.rounds})
     c.wait("simulation", lambda: c.get(f"/api/simulation/{sim}/run-status"),
-           lambda d: "failed" if (d.get("data") or {}).get("runner_status") in ("failed", "error")
-           else (d.get("data") or {}).get("runner_status") in ("completed", "stopped"), deadline, log)
+           # "stopped" means someone halted it before the last round: not a result to report on.
+           lambda d: "failed" if (d.get("data") or {}).get("runner_status") in ("failed", "error", "stopped")
+           else (d.get("data") or {}).get("runner_status") == "completed", deadline, log)
 
     log("5/6 generate report")
     r = c.post("/api/report/generate", {"simulation_id": sim})["data"]
