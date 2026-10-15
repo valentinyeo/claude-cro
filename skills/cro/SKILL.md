@@ -19,6 +19,7 @@ allowed-tools: Read, Grep, Glob, Bash, WebFetch, Agent
 | `/cro slides <audit-folder> [--pitch\|--client]` | `cro-slides`: HTML deck for a prospect (with offer) or client |
 | `/cro wireframe <url or audit-folder> [finding ids]` | `cro-wireframe`: before/after fix designs, mobile + desktop |
 | `/cro build-test <url> "<hypothesis>"` | `cro-build-test`: variant code, browser preview, test brief |
+| `/cro build-test suite <url> <ACTION-PLAN.md>` | `cro-build-test`: readiness-gated test bundles and index |
 | `/cro program <init\|plan\|launch\|result\|board\|report\|check>` | `cro-program`: a signed client's experiment program |
 | `/cro research [topic\|weekly\|find <finding>]` | `cro-research`: grow and search the published A/B test evidence database |
 | `/cro doctor` | run `doctor.py`: is the setup working? |
@@ -41,7 +42,8 @@ allowed-tools: Read, Grep, Glob, Bash, WebFetch, Agent
    list plus optional `--conversions N` and `--cvr X` / `--visitors N`.
    If the first word is a URL, treat the request as `audit`.
    **Never pass the subcommand word to a script.** For `research`, pass the
-   remaining words unchanged (they are a topic, not a URL).
+   remaining words unchanged (they are a topic, not a URL). For `build-test`,
+   pass everything unchanged: `suite`, quoted hypotheses, finding ids, flags.
 2. Resolve the scripts folder once: `cd "${CLAUDE_SKILL_DIR}/scripts" && pwd`.
    Call that absolute path `CRO_SCRIPTS` and write it out literally in every
    later command (shell variables do not persist between commands).
@@ -58,7 +60,7 @@ allowed-tools: Read, Grep, Glob, Bash, WebFetch, Agent
 
 ## Rules every sub-skill follows
 
-- **Test Readiness Gate first** for audit, test, plan and funnel: read
+- **Test Readiness Gate first** for audit, test, build-test, plan and funnel: read
   `references/test-readiness.md`, get the baseline, run `test_readiness.py`.
   The verdict decides whether the report recommends A/B tests or usability
   research. Never recommend a test backlog to a NOT_TESTABLE site.
@@ -87,6 +89,8 @@ allowed-tools: Read, Grep, Glob, Bash, WebFetch, Agent
 | `doctor.py [--quick]` | Setup health check with one fix per problem |
 | `validate_report.py <dir>` | Checks a finished audit (sections, math, evidence) |
 | `render_wireframe.py before.html --after after.html --annotations a.json -o renders` | Mobile/desktop PNGs and annotated before/after comparisons |
+| `preview_variant.py <url> variant.js [--css variant.css] [--mobile]` | Control/variant screenshots, selector and JS checks |
+| `build_slides.py <slides.json> [--embed] [--render] [--check]` | Build and verify an offline HTML audit deck |
 | `evidence.py <validate\|add\|search\|stats\|verify\|export-md>` | Published A/B test evidence: search, add, verify, catalog |
 
 ## References (load only when needed)

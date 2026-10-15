@@ -38,7 +38,8 @@ def read_manifest(source):
     return manifest
 
 
-def preview(url, variant, css=None, mobile=False, output=None, timeout=30, settle=2):
+def preview(url, variant, css=None, mobile=False, output=None, timeout=30, settle=2,
+            dismiss_selectors=None):
     from playwright.sync_api import sync_playwright
 
     source = Path(variant).read_text(encoding="utf-8")
@@ -51,7 +52,7 @@ def preview(url, variant, css=None, mobile=False, output=None, timeout=30, settl
     report = {
         "url": url, "id": manifest["id"], "mobile": mobile,
         "console_errors": [], "page_errors": [], "selectors": [],
-        "blocked_requests": [], "screenshots": {}, "errors": [],
+        "blocked_requests": [], "screenshots": {}, "errors": [], "dismissed": [],
         "note": "Local preview only. CSP is bypassed for injection; verify the platform and consent flow separately.",
     }
     phase = "control"
@@ -78,7 +79,6 @@ def preview(url, variant, css=None, mobile=False, output=None, timeout=30, settl
                        "service_workers": "block"}
             if mobile:
                 options.update(p.devices["iPhone 13"])
-                options["default_browser_type"] = "chromium"
                 options.pop("default_browser_type", None)
             context = browser.new_context(**options)
             context.route("**/*", guard)
@@ -94,6 +94,7 @@ def preview(url, variant, css=None, mobile=False, output=None, timeout=30, settl
                 pass
             page.wait_for_timeout(settle * 1000)
             report["final_url"] = page.url
+            resolve_and_check(urlparse(page.url).hostname)
             blocked = looks_blocked(response.status if response else 0, page.content())
             if blocked:
                 raise ValueError(f"Page is blocked or empty: {blocked}")
@@ -105,6 +106,16 @@ def preview(url, variant, css=None, mobile=False, output=None, timeout=30, settl
                     page.screenshot(path=str(path), full_page=full, animations="disabled")
                     report["screenshots"][f"{label}_{suffix}"] = str(path.resolve())
 
+            for selector in dismiss_selectors or []:
+                # Explicit opt-in actions only, applied equally to both screenshots.
+                parts = selector.split("::frame::")
+                scope = page
+                for frame_selector in parts[:-1]:
+                    scope = scope.frame_locator(frame_selector)
+                scope.locator(parts[-1]).click(timeout=10000)
+                report["dismissed"].append(selector)
+            if dismiss_selectors:
+                page.wait_for_timeout(settle * 1000)
             screenshots("control")
             phase = "variant"
             if styles is not None:
@@ -119,8 +130,9 @@ def preview(url, variant, css=None, mobile=False, output=None, timeout=30, settl
                 # A manifest cannot make a missing selector look like a successful preview.
                 page.wait_for_function("""m => m.selectors.every(item =>
                     document.querySelectorAll(item.selector).length === item.count) &&
-                    (!window.__croTests || !window.__croTests[m.id] ||
-                     window.__croTests[m.id].applied === true)
+                    (m.runtime_required ?
+                      (window.__croTests && window.__croTests[m.id] && window.__croTests[m.id].applied === true) :
+                      (!window.__croTests || !window.__croTests[m.id] || window.__croTests[m.id].applied === true))
                 """, arg=manifest, timeout=manifest.get("timeout_ms", 10000) + 500)
                 page.wait_for_timeout(settle * 1000)
             except Exception as exc:
@@ -156,12 +168,14 @@ def main():
     ap.add_argument("--output", "-o", help="Output directory (default: beside variant.js)")
     ap.add_argument("--timeout", type=int, default=30, help="Navigation timeout in seconds")
     ap.add_argument("--settle", type=float, default=2, help="Render settling time in seconds")
+    ap.add_argument("--dismiss-selector", action="append", default=[],
+                    help="Click a known overlay close/reject control before both captures; repeatable. Use iframe-selector::frame::button-selector for frames")
     args = ap.parse_args()
     if args.timeout <= 0 or args.settle < 0:
         ap.error("timeout must be positive and settle must be nonnegative")
     try:
         report = preview(args.url, args.variant, args.css, args.mobile,
-                         args.output, args.timeout, args.settle)
+                         args.output, args.timeout, args.settle, args.dismiss_selector)
     except Exception as exc:
         print(json.dumps({"ok": False, "errors": [str(exc)]}, indent=2))
         return 1

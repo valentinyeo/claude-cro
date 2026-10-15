@@ -61,9 +61,12 @@ def link(value, label):
 def validate(data):
     fields(data, "site", "deck")
     mode = data.get("mode", "PITCH")
-    if mode not in {"PITCH", "CLIENT"}:
+    if mode not in ("PITCH", "CLIENT"):
         raise ValueError("mode: use PITCH or CLIENT")
     fields(data.get("consultant"), "name site contact", "consultant")
+    for key in ("title", "logo", "brand"):
+        if key in data:
+            text(data[key], key)
     if not re.fullmatch(r"#[0-9a-fA-F]{6}", data.get("brand", "#21594e")):
         raise ValueError("brand: use a six-digit hex color")
     slides = data.get("slides")
@@ -74,10 +77,13 @@ def validate(data):
         kind = s["type"]
         if kind not in TYPES:
             raise ValueError(f"slide {i}: unknown type {kind}")
-        if "source" in s:
-            text(s["source"], "source")
+        for key in ("source", "image_alt"):
+            if key in s:
+                text(s[key], key)
         if kind == "title":
             fields(s, "subtitle", kind)
+            if "image" in s:
+                text(s["image"], "image")
         elif kind == "bottom-line":
             strings(s.get("sentences"), kind, 3, 3)
         elif kind == "score":
@@ -196,8 +202,9 @@ def slide_body(s, media):
         return (f'<div class="score-layout"><div><div class="score-number">{s["overall"]:g}<small>/100</small></div>'
                 f'<p class="muted">Audit score, not a sales forecast</p><p class="evidence">{esc(s["evidence"])}</p></div><div class="bars">{bars}</div></div>')
     if kind == "test-readiness":
+        qualifier = 'If this baseline holds: ' if s['status'] == 'ASSUMED' else ''
         return (f'<div class="readiness"><span class="badge">{esc(s["verdict"].replace("_", " "))}</span>'
-                f'<p class="readiness-meaning">{esc(MEANINGS[s["verdict"]])}</p>'
+                f'<p class="readiness-meaning">{qualifier}{esc(MEANINGS[s["verdict"]])}</p>'
                 f'<div class="card"><h3>{esc(s["status"])} baseline</h3><p>{esc(s["baseline"])}</p></div>'
                 f'<p class="evidence">{esc(s["evidence"])}</p></div>')
     if kind == "finding":
@@ -252,7 +259,7 @@ function show(index){current=Math.max(0,Math.min(slides.length-1,index));slides.
 window.showSlide=show;
 document.querySelector('#prev').onclick=()=>show(current-1);
 document.querySelector('#next').onclick=()=>show(current+1);
-document.addEventListener('keydown',e=>{if(e.target.closest('a,button,input,textarea,select'))return; if(['ArrowRight','ArrowDown','PageDown',' '].includes(e.key)){e.preventDefault();show(current+1)}if(['ArrowLeft','ArrowUp','PageUp'].includes(e.key)){e.preventDefault();show(current-1)}if(e.key==='Home'){e.preventDefault();show(0)}if(e.key==='End'){e.preventDefault();show(slides.length-1)}});
+document.addEventListener('keydown',e=>{if(e.target.closest('input,textarea,select')||(e.key===' '&&e.target.closest('a,button')))return; if(['ArrowRight','ArrowDown','PageDown',' '].includes(e.key)){e.preventDefault();show(current+1)}if(['ArrowLeft','ArrowUp','PageUp'].includes(e.key)){e.preventDefault();show(current-1)}if(e.key==='Home'){e.preventDefault();show(0)}if(e.key==='End'){e.preventDefault();show(slides.length-1)}});
 document.querySelector('#deck').onclick=e=>{if(e.target.closest('a,button'))return;const r=e.currentTarget.getBoundingClientRect();show(current+(e.clientX-r.left<r.width/3?-1:1))};
 show((Number(location.hash.match(/^#slide-(\\d+)$/)?.[1])||1)-1);
 """
@@ -269,7 +276,7 @@ def build(data, source, output, embed=True):
     for i, s in enumerate(data["slides"], 1):
         source_note = f'<p class="source">Source: {esc(s["source"])}</p>' if s.get("source") else ''
         pages.append(f'<section class="slide {esc(s["type"])}" aria-label="Slide {i}: {esc(s["title"])}">'
-                     f'<div class="kicker"><span>{esc(data["site"])} / {"Initial audit" if mode == "PITCH" else "Audit & roadmap"}</span>{logo}</div>'
+                     f'<div class="kicker"><span>{esc(data["site"])} / {"Initial audit" if mode == "PITCH" else "Audit &amp; roadmap"}</span>{logo}</div>'
                      f'<h1>{esc(s["title"])}</h1><div class="body">{slide_body(s, media)}</div>{source_note}'
                      f'<div class="footer"><span>{esc(consultant["name"])} · {esc(consultant["site"])} · {esc(consultant["contact"])}</span><span>{i:02d} / {len(data["slides"]):02d}</span></div></section>')
     title = esc(data.get("title", f'{data["site"]} | Conversion audit'))
@@ -294,6 +301,7 @@ ISSUES_JS = """() => {
  const body=slide.querySelector('.body').getBoundingClientRect();
  const source=slide.querySelector('.source'); const footer=slide.querySelector('.footer').getBoundingClientRect();
  if(body.bottom>(source?source.getBoundingClientRect().top:footer.top)+2) issues.push('Content overlaps source/footer');
+ if(source && source.getBoundingClientRect().bottom>footer.top+2) issues.push('Source overlaps footer');
  if(document.documentElement.scrollWidth>innerWidth+2)issues.push('Page exceeds viewport width');
  return [...new Set(issues)];
 }"""
@@ -320,6 +328,8 @@ def inspect_deck(output, render=None, check=False, width=1440, height=900):
                 if check:
                     errors.extend(f"slide {i+1} ({width}x{height}): {issue}" for issue in page.evaluate(ISSUES_JS))
                 if render:
+                    # Sticky phone controls otherwise cover content in full-slide captures.
+                    page.locator('.controls').evaluate("e => e.style.visibility = 'hidden'")
                     page.locator('.slide.active').screenshot(path=str(render / f'slide-{i+1:02d}.png'))
         finally:
             browser.close()

@@ -1,0 +1,49 @@
+{
+  "id": "hero-clarity",
+  "title": "Make the hero destination and shipping threshold explicit",
+  "hypothesis": {
+    "if": "we name the men's shoe destination and show the existing shipping threshold beside the hero CTA",
+    "then": "eligible visitors will be more likely to complete a purchase",
+    "because": "the current SHOP MEN label does not name the destination and the shipping threshold is elsewhere on the page"
+  },
+  "evidence": [
+    "Rendered Allbirds homepage: a[data-analytics-full-bleed-hero-cta-name=\"SHOP MEN\"] reads SHOP MEN and links to the men's Dasher NZ product.",
+    "Rendered homepage quote: Free ground shipping on orders over $100. Verify policy and market before launch."
+  ],
+  "baseline_status": "ASSUMED",
+  "rationale": "Demonstration only. These are synthetic calculator inputs, not Allbirds traffic. Confirm eligible audience analytics before planning a launch.",
+  "big_swing": false,
+  "mde_relative_pct": 10,
+  "primary_metric": "Purchase conversion rate: unique assigned eligible visitors with a paid order within 7 days / all unique assigned eligible visitors. Source: existing purchase events joined to platform assignment. Wait 7 days after enrollment closes before final analysis.",
+  "guardrail_metrics": [
+    "Revenue per assigned visitor must not fall by more than 10% relative at the planned horizon.",
+    "Stop for a reproducible new cart or checkout blocker; monitor payment error rate daily and stop if it rises by 2 percentage points for a full day versus control."
+  ],
+  "audience": "US homepage visitors eligible for the experiment, excluding staff, bots and visitors in another hero experiment. Persistent visitor assignment. The shipping claim applies only to the verified US policy.",
+  "target": { "origin": "https://www.allbirds.com", "pathname": "/" },
+  "timeout_ms": 10000,
+  "click_selector": "a[data-analytics-full-bleed-hero-cta-name=\"SHOP MEN\"]",
+  "changes": [
+    {
+      "selector": "a[data-analytics-full-bleed-hero-cta-name=\"SHOP MEN\"]",
+      "count": 1,
+      "action": "set_text",
+      "value": "Shop Men's Shoes"
+    },
+    {
+      "selector": "[data-hero-content] > div:has(> a[data-analytics-full-bleed-hero-cta-name=\"SHOP MEN\"])",
+      "count": 1,
+      "action": "insert_after",
+      "value": "<p>Free ground shipping on orders over $100</p>"
+    }
+  ],
+  "css": "[data-cro-hero-clarity][data-cro-insert] { position: relative; z-index: 2; margin-top: 10px; max-width: 100%; color: #fff; font-size: 12px; line-height: 1.5; text-shadow: 0 1px 3px #000; } [data-cro-hero-clarity][data-cro-insert] p { margin: 0; }",
+  "stop_rules": [
+    "Inspect assignment balance before analysis; flag a sample-ratio mismatch at p < 0.01, investigate and do not declare a winner with unexplained imbalance."
+  ],
+  "qa_checklist": [
+    "Confirm the CTA keeps its original href and accessible name matches the visible label.",
+    "Confirm the shipping threshold remains accurate for the targeted country and no existing shipping-delay notice is hidden.",
+    "Check trust line contrast on the actual hero image and fit at 375px, 390px and desktop widths."
+  ]
+}
