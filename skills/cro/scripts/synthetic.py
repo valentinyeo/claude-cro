@@ -21,7 +21,8 @@ Commands:
   report W/synthetic                                SYNTHETIC-REPORT.md + clusters.json
 
 Model backends: --backend api (ANTHROPIC_API_KEY, default when set), cli (the
-`claude` command, slower), replay (scripted, for tests).
+`claude` command, slower), codex (`codex exec` on the ChatGPT subscription, no
+per-token bill: --model luna, about 13 s a step), replay (scripted, for tests).
 """
 
 import argparse
@@ -44,9 +45,11 @@ from urllib.parse import urljoin, urlparse
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 
-MODELS = {"haiku": "claude-haiku-5-5", "sonnet": "claude-sonnet-5-5", "opus": "claude-opus-5-5"}
+MODELS = {"haiku": "claude-haiku-5-5", "sonnet": "claude-sonnet-5-5", "opus": "claude-opus-5-5",
+          "luna": "gpt-5.6-luna", "sol": "gpt-6.1-sol"}
+SUBSCRIPTION = {"luna", "sol", "gpt-5.6-luna", "gpt-6.1-sol"}  # billed to the ChatGPT plan, not per token
 # Approximate USD per million tokens (input, output), for the pre-run estimate only.
-PRICES = {"haiku": (1.0, 5.0), "sonnet": (3.0, 15.0), "opus": (15.0, 75.0)}
+PRICES = {"haiku": (1.0, 5.0), "sonnet": (3.0, 15.0), "opus": (15.0, 75.0), "luna": (0.0, 0.0), "sol": (0.0, 0.0)}
 TOKENS_PER_STEP = (4500, 350)  # screenshot + elements + history in, JSON out
 
 CATEGORIES = ["overlay_popup", "navigation", "product_info", "price_shipping", "trust", "checkout_cart",
@@ -282,6 +285,7 @@ class Model:
             return self._replay(kind)
         for attempt in range(2):
             raw = self._api(system, text, image, max_tokens) if self.backend == "api" \
+                else self._codex(system, text, image) if self.backend == "codex" \
                 else self._cli(system, text, image)
             try:
                 return extract_json(raw)
@@ -335,6 +339,33 @@ class Model:
         self.usage["input_tokens"] += u.get("input_tokens", 0) + u.get("cache_read_input_tokens", 0)
         self.usage["output_tokens"] += u.get("output_tokens", 0)
         return data.get("result", "")
+
+    def _codex(self, system, text, image):
+        """One `codex exec` turn: subscription billing, screenshot attached, read-only sandbox, no tools needed."""
+        import tempfile
+        with tempfile.NamedTemporaryFile("r", suffix=".txt", delete=False) as out:
+            path = out.name
+        cmd = ["codex", "exec", "-m", self.model, "--skip-git-repo-check", "-s", "read-only",
+               "-c", f'model_reasoning_effort="{os.environ.get("SYNTHETIC_CODEX_EFFORT", "low")}"',
+               "--output-last-message", path]
+        if image:
+            cmd += ["-i", image]
+        cmd.append("-")
+        try:
+            for attempt in range(3):
+                r = subprocess.run(cmd, input=f"{system}\n\n{text}", capture_output=True, text=True, timeout=300,
+                                   cwd=tempfile.gettempdir())
+                reply = Path(path).read_text() if os.path.exists(path) else ""
+                if r.returncode == 0 and reply.strip():
+                    m = re.search(r"tokens used\s*\n?\s*([\d,]+)", r.stderr + r.stdout)
+                    if m:  # codex reports one total; count it as input for the report
+                        self.usage["input_tokens"] += int(m.group(1).replace(",", ""))
+                    return reply
+                time.sleep(5 * (attempt + 1))
+            raise RuntimeError(f"codex exec failed: {(r.stderr or r.stdout)[-300:]}")
+        finally:
+            if os.path.exists(path):
+                os.unlink(path)
 
     def _replay(self, kind):
         script = self.replay or {}
@@ -730,7 +761,7 @@ def visit(v, out_dir, backend, model, goal, max_steps, replay=None, timeout_s=42
             max_steps = 0
 
         for n in range(1, max_steps + 1):
-            if time.time() - started > timeout_s:
+            if time.time() - started > timeout_s * (3 if backend == "codex" else 1):  # codex steps take ~13 s, not ~3
                 end_reason = "visit timeout"
                 break
             if pages and pages[-1] is not page and not pages[-1].is_closed():
@@ -1054,7 +1085,9 @@ def write_report(root, merge_model=None):
          f"**Model:** {model} · **Goal:** {plan.get('goal', '')} · **Traffic template:** {tpl.get('source')}"
          + (f" ({tpl.get('sessions')} real sessions, {round(100 * tpl.get('covered_share', 0))}% covered)" if tpl.get("source") == "CONFIRMED" else
             " (no real analytics: segment mix is a guess)"),
-         f"**Cost:** {usage['input_tokens'] / 1e6:.2f}M input + {usage['output_tokens'] / 1e6:.2f}M output tokens, about ${usd:.2f}",
+         (f"**Cost:** {usage['input_tokens'] / 1e6:.2f}M tokens on the ChatGPT subscription, no per-token bill"
+          if model in SUBSCRIPTION else
+          f"**Cost:** {usage['input_tokens'] / 1e6:.2f}M input + {usage['output_tokens'] / 1e6:.2f}M output tokens, about ${usd:.2f}"),
          "", "> Synthetic visitors are language models acting on real traffic segments. Treat every cluster as a",
          "> hypothesis to confirm with real data (recordings, analytics, user tests). The synthetic funnel below",
          "> is not a conversion forecast.", "",
@@ -1114,7 +1147,7 @@ def main():
     r.add_argument("--visitors", type=int, default=150)
     r.add_argument("--out", required=True)
     for p_ in (r, v_ := sub.add_parser("visit")):
-        p_.add_argument("--backend", choices=["api", "cli", "replay"],
+        p_.add_argument("--backend", choices=["api", "cli", "codex", "replay"],
                         default="api" if os.environ.get("ANTHROPIC_API_KEY") else "cli")
         p_.add_argument("--model", default="haiku")
         p_.add_argument("--goal", choices=["checkout", "atc", "lead"], default="checkout")
@@ -1128,13 +1161,15 @@ def main():
     v_.add_argument("--out", required=True)
     rp = sub.add_parser("report")
     rp.add_argument("folder")
-    rp.add_argument("--backend", choices=["api", "cli", "replay"],
+    rp.add_argument("--backend", choices=["api", "cli", "codex", "replay"],
                     default="api" if os.environ.get("ANTHROPIC_API_KEY") else "cli")
     rp.add_argument("--replay")
     for p_ in (r, rp):
         p_.add_argument("--merge-model", default="sonnet", help="model that joins duplicate clusters (text only)")
         p_.add_argument("--no-merge", action="store_true")
     a = ap.parse_args()
+    if getattr(a, "backend", "") == "codex" and getattr(a, "merge_model", "") == "sonnet":
+        a.merge_model = "sol"  # the merge runs on the same backend, so keep it on the subscription
 
     if a.cmd == "templates":
         if a.assumed:
