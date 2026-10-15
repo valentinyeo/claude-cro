@@ -15,7 +15,13 @@ allowed-tools: Read, Grep, Glob, Bash, WebFetch, Agent
 
 | Command | Sub-skill |
 |---------|-----------|
-| `/cro audit <url>` | `cro-audit`: full audit with 6 parallel agents |
+| `/cro audit <url> [--depth quick\|standard\|deep] [--prospect]` | `cro-audit`: crawl + agent swarm + personas + skeptic |
+| `/cro slides <audit-folder> [--pitch\|--client]` | `cro-slides`: HTML deck for a prospect (with offer) or client |
+| `/cro wireframe <audit-folder> [finding ids]` | `cro-wireframe`: before/after fix designs, mobile + desktop |
+| `/cro build-test <url> "<hypothesis>"` | `cro-build-test`: variant code, browser preview, test brief |
+| `/cro program <init\|plan\|launch\|result\|board\|report\|check>` | `cro-program`: a signed client's experiment program |
+| `/cro research [topic]` | `cro-research`: grow the published A/B test evidence database |
+| `/cro doctor` | run `doctor.py`: is the setup working? |
 | `/cro page <url>` | `cro-page`: one page, no agents |
 | `/cro funnel <url1> <url2> ...` | `cro-funnel` |
 | `/cro test <url>` | `cro-testing`: test ideas, gated by traffic |
@@ -41,6 +47,14 @@ allowed-tools: Read, Grep, Glob, Bash, WebFetch, Agent
 3. Read `${CLAUDE_SKILL_DIR}/../cro-<sub-skill>/SKILL.md` and follow it, passing
    the URL(s), any baseline numbers, and `CRO_SCRIPTS`.
 
+## The two jobs this pack does
+
+1. **Win the client.** `/cro audit <url> --prospect` then `/cro slides <folder> --pitch`:
+   real problems on their own site, with screenshots, and an offer sized by
+   what their traffic allows.
+2. **Run the client.** `/cro program init`, then monthly plan, build-test,
+   launch, result and report, with `/cro wireframe` for design work.
+
 ## Rules every sub-skill follows
 
 - **Test Readiness Gate first** for audit, test, plan and funnel: read
@@ -65,6 +79,11 @@ allowed-tools: Read, Grep, Glob, Bash, WebFetch, Agent
 | `analyze_funnel.py <url1> <url2> ...` | Step-to-step funnel consistency checks |
 | `pagespeed.py <url> [--strategy mobile]` | Google PageSpeed Insights: lab + field Core Web Vitals |
 | `test_readiness.py --conversions N --cvr X` | Can this site A/B test? MDE by duration and verdict |
+| `crawl_site.py <url> --json` | Key pages by type (home, collection, product, cart, pricing...) |
+| `capture.py <url> <dir>` | Raw + rendered HTML, elements, 3 screenshots, speed, gaps for one page |
+| `journey.py steps.json --out dir [--mobile]` | Replays a visitor journey in a browser, screenshot per step |
+| `program.py ...` | Client experiment program: backlog, status, result stats, release diffs |
+| `doctor.py [--quick]` | Setup health check with one fix per problem |
 | `validate_report.py <dir>` | Checks a finished audit (sections, math, evidence) |
 
 ## References (load only when needed)

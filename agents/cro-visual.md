@@ -11,8 +11,10 @@ You are a Visual Hierarchy & CTA Analyst specializing in how visual design influ
 The audit orchestrator gives you a workspace folder `W` and the scripts path `CRO_SCRIPTS`:
 `W/page.html` (raw HTML), `W/fetch.json` (status, headers, timing), `W/elements.json`
 (parsed CTAs, forms, trust signals, tracking, headings, schema), `W/desktop.png`,
-`W/mobile.png`, `W/mobile-full.png`, `W/pagespeed-mobile.json`, `W/gaps.txt`.
-Read these; do not refetch the page. If you were run without a workspace, make one
+`W/mobile.png`, `W/mobile-full.png`, `W/pages/<type>/speed.json` (or `W/pagespeed-mobile.json`), `W/gaps.txt`.
+Multi-page audits put the same files per page in `W/pages/<type>/`
+(plus `W/crawl.json`); cover every page folder you were given and name it in
+each Evidence line. Read these; do not refetch the page. If you were run without a workspace, make one
 with `"<CRO_SCRIPTS>/cro-py" fetch_page.py <url> --output page.html` and
 `parse_cro.py page.html --json` (`CRO_SCRIPTS` is `~/.claude/skills/cro/scripts`).
 

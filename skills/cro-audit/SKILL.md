@@ -1,99 +1,133 @@
 ---
 name: cro-audit
 description: >
-  Full website conversion audit: checks whether the site has enough orders to
-  A/B test, runs 6 CRO specialist agents in parallel, scores the site 0-100,
-  and writes a verified audit plus action plan. Use for /cro audit, "CRO audit",
-  "conversion audit", or "audit my site for conversions".
-argument-hint: "<url> [--conversions N --cvr X]"
+  Deep conversion audit of a whole site with an agent swarm: crawls the key
+  pages, checks whether the site has enough orders to A/B test, runs specialist
+  agents per page, sends persona agents through the buying journey in a real
+  browser, has a skeptic agent try to disprove every finding, then writes a
+  verified audit, action plan and findings.json for the slide deck. Use for
+  /cro audit, "CRO audit", "conversion audit", "audit this prospect's site".
+argument-hint: "<url> [--depth quick|standard|deep] [--conversions N --cvr X] [--prospect]"
 disable-model-invocation: true
 allowed-tools: Read, Write, Grep, Glob, Bash, WebFetch, Agent
 ---
 
-# Full Conversion Audit
+# Full Conversion Audit (swarm)
 
-You coordinate the audit: collect the page once, set the baseline, hand the
-files to 6 specialist agents, merge their findings, then check your own report
-before handing it over.
+You coordinate: capture the site once, set the baseline, fan out agents, merge,
+let the skeptic attack the findings, score, write, verify. You never present a
+finding that the skeptic rejected.
 
 `CRO_SCRIPTS` = the absolute path from `cd "${CLAUDE_SKILL_DIR}/../cro/scripts" && pwd`.
-Write it out literally in each command. Run every script as `"<CRO_SCRIPTS>/cro-py" <script>.py`.
+Write it out literally in each command. Run scripts as `"<CRO_SCRIPTS>/cro-py" <script>.py`.
 
-## Step 1: Workspace and page capture (once, shared by all agents)
+## Depth
+
+| Depth | Pages | Lens agents | Personas | Use for |
+|-------|-------|-------------|----------|---------|
+| `quick` | homepage | 6, one pass | 0 | a fast first look |
+| `standard` (default) | up to 4 key pages | 6, each covering all pages | 2 | prospect pitch decks |
+| `deep` | up to 7 key pages | 6 per page | 4 | paid audits, signed clients |
+
+`--prospect` means the output feeds a pitch deck (`/cro slides`): the owner has
+not hired us yet, so no baseline numbers exist. Mark the baseline ASSUMED and
+keep the verdict provisional.
+
+## Step 1: Workspace, crawl and capture
 
 ```bash
-W="$PWD/cro-audit-<domain>-<YYYY-MM-DD>"; mkdir -p "$W/findings"
+W="$PWD/cro-audit-<domain>-<YYYY-MM-DD>"; mkdir -p "$W/findings" "$W/pages" "$W/personas"
 "<CRO_SCRIPTS>/cro-py" doctor.py --quick
-"<CRO_SCRIPTS>/cro-py" fetch_page.py <url> --output "$W/raw.html" --json > "$W/fetch-raw.json"
-"<CRO_SCRIPTS>/cro-py" fetch_page.py <url> --render --output "$W/page.html" --json > "$W/fetch.json"
-"<CRO_SCRIPTS>/cro-py" parse_cro.py "$W/page.html" --json > "$W/elements.json"
-"<CRO_SCRIPTS>/cro-py" capture_screenshot.py <url> -o "$W/desktop.png" -W 1440 -H 900
-"<CRO_SCRIPTS>/cro-py" capture_screenshot.py <url> -o "$W/mobile.png" --mobile
-"<CRO_SCRIPTS>/cro-py" capture_screenshot.py <url> -o "$W/mobile-full.png" --mobile --full-page
-"<CRO_SCRIPTS>/cro-py" pagespeed.py <url> --strategy mobile --json > "$W/pagespeed-mobile.json"
+"<CRO_SCRIPTS>/cro-py" crawl_site.py <url> --json > "$W/crawl.json"
 ```
 
-- `--render` saves what a visitor's browser sees (JavaScript included) as
-  `page.html`; `raw.html` is the server HTML. An element present in one and not
-  the other is a rendering issue, not a missing element.
-- Exit code 3 / `"blocked"` in `fetch.json` means a bot wall or empty page.
-  Look at `desktop.png`: if it shows the real site, audit from the screenshots
-  and WebFetch and note the gap; if it shows the wall too, stop and tell the
-  user. Never audit a block page as if it were the site.
-- A failed screenshot or PageSpeed call is not fatal: record it in
-  `$W/gaps.txt` and continue.
+Pick the pages from `crawl.json` along the path a buyer walks, by business type
+(`${CLAUDE_SKILL_DIR}/../cro/references/business-types.md`). E-commerce: home,
+collection, product, cart. SaaS: home, pricing, signup, demo. Lead gen and
+services: home, service page, contact, reviews or case study. Capture each page
+into its own folder, one after another:
+
+```bash
+"<CRO_SCRIPTS>/cro-py" capture.py <page-url> "$W/pages/<type>"
+```
+
+Each folder gets `raw.html`, `page.html` (browser-rendered), `fetch.json`,
+`elements.json`, `desktop.png`, `mobile.png`, `mobile-full.png`, `speed.json`,
+`gaps.txt`.
+
+- Exit 3 = the page looks blocked or empty. Open its `desktop.png`: real site
+  visible means audit from screenshots and WebFetch and record the gap; a bot
+  wall means drop the page and tell the user. Never audit a block page.
+- An element in `raw.html` but not in `page.html` (or the reverse) is a
+  rendering issue, not a missing element.
 
 ## Step 2: Business type
 
-Read `${CLAUDE_SKILL_DIR}/../cro/references/business-types.md` and classify from
-`elements.json` and the HTML. Record the main conversion action.
+Classify with `business-types.md`. Record the main conversion action.
 
 ## Step 3: Test Readiness Gate (the baseline)
 
 Read `${CLAUDE_SKILL_DIR}/../cro/references/test-readiness.md` and follow it.
+Numbers in the arguments: CONFIRMED. Otherwise ask the user once; a prospect or
+an unknown answer means ASSUMED, with the estimate explained. Run
+`"<CRO_SCRIPTS>/cro-py" test_readiness.py --conversions N --cvr X` and save to
+`$W/readiness.txt`. The verdict sets the recommendation mode for the report.
 
-- Baseline numbers given in the arguments: use them, mark CONFIRMED.
-- Not given: ask the user once for monthly conversions (orders/leads) and
-  conversion rate or monthly visitors. While waiting, continue with Steps 4-5.
-- User does not know or is not around: estimate, mark ASSUMED, explain the estimate.
+## Step 4: Fan out the swarm (per page)
 
-Run `test_readiness.py` and save its output to `$W/readiness.txt`. The verdict
-decides the recommendation mode for the whole report.
+Launch every agent of this wave in ONE message with the Agent tool
+(`subagent_type` = agent name) so they run in parallel. Every prompt contains:
+the URL, `W`, `CRO_SCRIPTS`, business type and main conversion, the page
+folders it covers, and: "Read the workspace files; do not refetch. Every
+finding needs an Evidence line naming the page folder and file."
 
-## Step 4: Six specialist agents, in parallel
+**Lens agents** (`standard`: one each covering all pages; `deep`: one per lens
+per page, with that page folder in the prompt):
 
-Spawn all six in ONE message with the Agent tool, `subagent_type` set to the agent
-name. Each prompt contains: the URL, the workspace path `$W`, `CRO_SCRIPTS`,
-the business type and main conversion, and this line: "Read the files in the
-workspace; do not refetch the page. Every finding needs an Evidence line."
+| Agent | Looks at | Returns |
+|-------|----------|---------|
+| `cro-ux` | heuristics, navigation, mobile, forms | UX score + Forms score |
+| `cro-copy` | headline, value prop, CTA wording, objections, microcopy | Copy score + rewrites |
+| `cro-trust` | reviews, guarantees, policies, security, social proof | Trust score |
+| `cro-visual` | hierarchy, CTA prominence, design, screenshots | Visual score |
+| `cro-performance` | `speed.json`, resources, third-party scripts | Performance score |
+| `cro-tracking` | analytics, events, consent | Tracking score |
 
-| Agent | Returns |
-|-------|---------|
-| `cro-ux` | UX score and a separate Forms score (or "no form") |
-| `cro-copy` | Copy score |
-| `cro-trust` | Trust score |
-| `cro-visual` | Visual score (uses the screenshots) |
-| `cro-performance` | Performance score (uses `pagespeed-mobile.json`) |
-| `cro-tracking` | Tracking score |
+**Persona agents** (`cro-persona`, same wave), matched to the business.
+E-commerce defaults: (1) mobile visitor from an Instagram ad, lands on a
+product page, impatient; (2) desktop comparison shopper who checks shipping,
+returns and reviews first. Deep adds (3) a returning visitor using search for
+a specific item and (4) a gift buyer unsure of size. SaaS: an evaluator
+comparing plans, and a busy founder signing up on a phone. Give each persona an
+id, device, entry URL, goal and patience level.
 
-If the Agent tool is unavailable, do each analysis yourself in that order.
-If one agent fails, drop its category per `scoring.md` and say so.
+Agents write `W/findings/<name>.md` as they go (partial, then complete). If an
+agent fails or times out, use its partial file and mark that category partial;
+if nothing exists, drop the category per `scoring.md` and say so.
 
-## Step 5: Score
+## Step 5: Merge, then let the skeptic attack
 
-Apply `${CLAUDE_SKILL_DIR}/../cro/references/scoring.md`. Drop missing
-categories and rescale the weights; show the weights actually used.
+1. Read every findings file. Merge duplicates (same element and problem = one
+   finding; list every agent and persona that hit it; more hits = stronger).
+   A persona's real friction outranks a lens opinion when they conflict.
+2. Write `W/candidates.md`: id (F-01...), page, claim, evidence, priority, sources.
+3. Launch `cro-skeptic` with `W` and `CRO_SCRIPTS`. Apply its verdicts: drop
+   REJECT, apply DOWNGRADE and REWORD. Keep its table in the workspace.
 
-## Step 6: Write the two files into `$W`
+## Step 6: Score
 
-Merge duplicate findings across agents (same element = one finding, credit both).
-Rank by priority, then by impact.
+Apply `${CLAUDE_SKILL_DIR}/../cro/references/scoring.md`, rescaling for missing
+categories. With several pages, a category score is the average across pages,
+with the conversion page (product, pricing or form page) counted twice.
 
-### FULL-AUDIT.md
+## Step 7: Write the deliverables into `$W`
+
+**FULL-AUDIT.md**
 
 ```markdown
 # CRO Audit: [domain]
 **Date:** [date] · **URL:** [url] · **Business type:** [type], main conversion: [action]
+**Pages audited:** [list] · **Depth:** [depth] · **Personas:** [n]
 **CRO Health Score:** [N]/100 — [rating]
 
 ## Bottom line
@@ -110,19 +144,25 @@ Rank by priority, then by impact.
 | **Total** | | **100%** | **[sum]** |
 
 ## Top 5 issues
-1. [Issue] — [category] — [priority]. Evidence: [quote/element/number]
+1. [Issue] — [page] — [priority]. Evidence: [file + what it shows]
+
+## What visitors experienced
+[One short paragraph per persona: goal, outcome, worst moment, step screenshot]
 
 ## What already works
 [3-5 strengths worth keeping]
 
-## Findings by category
-[One subsection per agent, findings with priority tag and Evidence line]
+## Findings by page
+[Per page: findings with priority tag, Evidence line, sources]
+
+## Copy rewrites
+[Current text → proposed text: headline, subhead, CTAs, key objections]
 
 ## Gaps in this audit
-[What could not be checked and why: blocked fetch, no field data, login-only pages]
+[Blocked pages, no real-user speed data, login-only pages, assumed baseline]
 ```
 
-### ACTION-PLAN.md
+**ACTION-PLAN.md**
 
 ```markdown
 # CRO Action Plan: [domain]
@@ -130,8 +170,8 @@ Rank by priority, then by impact.
 
 ## Critical
 ### [C-1] [Title]
-- **Category / found by:** [category] / [agent]
-- **Evidence:** [quote, element or number]
+- **Page / found by:** [page] / [agents, personas]
+- **Evidence:** [file + what it shows]
 - **Fix:** [specific change]
 - **Effort:** [Easy/Medium/Hard] · **How to validate:** [ship + baseline | big-swing test | A/B test]
 
@@ -143,33 +183,34 @@ Rank by priority, then by impact.
 ### [L-1] ...
 ```
 
-Then ONE of these, by verdict:
+Then by verdict: READY gets `## A/B Test Backlog` (3-5 ICE-scored hypotheses
+with durations from `readiness.txt`); LIMITED gets `## Research Plan` then
+`## Big-Swing Tests` (max 2); NOT_TESTABLE gets `## Research Plan` only.
 
-- **READY:** `## A/B Test Backlog`: 3-5 hypotheses (If we [change], then
-  [metric] will [rise] because [evidence]), ICE scored, with the duration from
-  `readiness.txt` for the MDE you expect.
-- **LIMITED:** `## Research Plan` (usability playbook from test-readiness.md,
-  tailored to this site's flow) followed by `## Big-Swing Tests`: at most 2,
-  each a large change, 6-8 weeks.
-- **NOT_TESTABLE:** `## Research Plan` only, plus how to track fixes against the
-  baseline. No A/B test section.
+**findings.json** (feeds `/cro slides` and `/cro wireframe`): top-level
+`site, date, business_type, score, rating, categories, readiness, strengths,
+personas` (id, goal, outcome, worst_step_image) and `findings`: a list of
+`{id, title, priority, page, category, problem, evidence, evidence_image,
+why_it_costs_sales, fix, effort, sources, skeptic_verdict, published_tests}`.
 
-## Step 7: Verify, fix, repeat (do not skip)
+When the evidence database exists (`${CLAUDE_SKILL_DIR}/../cro/evidence/`),
+fill `published_tests` for the top findings using the `cro-research` "find
+evidence" mode, with source links. Cite them as other companies' published
+results, never as this site's expected lift.
 
-1. Objective check:
-   `"<CRO_SCRIPTS>/cro-py" validate_report.py "$W"`. Fix every error and run it
-   again until it prints PASS (max 3 rounds; report anything still failing).
-2. Subjective check, as a strict reviewer, then fix:
-   - Would a store owner know exactly what to change from each Fix line?
-     "Improve the CTA" fails; "Change 'Submit' to 'Get my quote' on the hero
-     form" passes.
-   - Is any finding contradicted by a screenshot (e.g. "no CTA above the fold"
-     when `mobile.png` shows one)? Open the screenshots and check the top 5.
-   - Does any sentence promise a lift for this site? Rewrite as a reported
-     industry result or remove.
+## Step 8: Verify, fix, repeat (do not skip)
+
+1. `"<CRO_SCRIPTS>/cro-py" validate_report.py "$W"`. Fix every error and run
+   again until PASS (max 3 rounds; report anything still failing).
+2. Review as a demanding client, then fix:
+   - Could the owner act on every Fix line without asking a question?
+   - Does each of the top 5 hold up when you open its screenshot yourself?
+   - Is anything generic enough to fit any site? Make it specific or cut it.
+   - Any promised lift for this site? Remove it.
    - Does the recommendation mode match the verdict?
 
-## Step 8: Hand-off
+## Step 9: Hand-off
 
-Reply with: score and rating, test readiness verdict, the top 3 actions, and the
-workspace path. Keep it short; the files hold the detail.
+Reply with: score and rating, readiness verdict, top 3 actions, one line per
+persona outcome, the workspace path, and the next command (`/cro slides <W>`
+for the deck, `/cro wireframe <W>` for fix designs).
