@@ -7,6 +7,7 @@ description: >
   or "user experience analysis".
 argument-hint: "<url>"
 allowed-tools: Read, Grep, Glob, Bash, WebFetch
+disable-model-invocation: true
 ---
 
 # CRO UX Heuristic Evaluation
@@ -20,7 +21,7 @@ recommendation.
 
 ## Process
 
-1. **Fetch the page** using `${CLAUDE_SKILL_DIR}/../cro/scripts/fetch_page.py`. Store the full HTML.
+1. **Fetch the page** using `${CLAUDE_SKILL_DIR}/../cro/scripts/cro-py fetch_page.py`. Store the full HTML.
 2. **Take screenshots** if Playwright is available:
    - Desktop at 1440px width
    - Tablet at 768px width

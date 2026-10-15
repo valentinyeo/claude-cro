@@ -7,6 +7,7 @@ description: >
   "headline check", "CTA copy", "conversion copy", or "copywriting review".
 argument-hint: "<url>"
 allowed-tools: Read, Grep, Glob, Bash, WebFetch
+disable-model-invocation: true
 ---
 
 # CRO Copy Analysis
@@ -19,8 +20,8 @@ persuasion structure, and conversion-specific language patterns.
 
 ## Process
 
-1. **Fetch the page** using `${CLAUDE_SKILL_DIR}/../cro/scripts/fetch_page.py`. Store the full HTML.
-2. **Extract text content** using `${CLAUDE_SKILL_DIR}/../cro/scripts/parse_cro.py`. This separates
+1. **Fetch the page** using `${CLAUDE_SKILL_DIR}/../cro/scripts/cro-py fetch_page.py`. Store the full HTML.
+2. **Extract text content** using `${CLAUDE_SKILL_DIR}/../cro/scripts/cro-py parse_cro.py`. This separates
    headlines, subheadlines, body copy, CTA text, testimonial copy, micro-copy,
    and meta content into distinct buckets for targeted analysis.
 3. **Load psychology principles** by reading `${CLAUDE_SKILL_DIR}/../cro/references/psychology-principles.md`.

@@ -21,7 +21,7 @@ import json
 import socket
 import sys
 import time
-from urllib.parse import urlparse
+from urllib.parse import urljoin, urlparse
 
 try:
     import requests
@@ -30,7 +30,8 @@ except ImportError:
     sys.exit(1)
 
 
-DEFAULT_USER_AGENT = "ClaudeCRO/1.0"
+# Browser-like UA: many sites block or strip content for unknown bots
+DEFAULT_USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
 DEFAULT_TIMEOUT = 30
 MAX_REDIRECTS = 5
 
@@ -154,43 +155,38 @@ def fetch_page(
         "User-Agent": user_agent,
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
         "Accept-Language": "en-US,en;q=0.9",
-        "Accept-Encoding": "gzip, deflate, br",
+        "Accept-Encoding": "gzip, deflate",
         "Connection": "keep-alive",
     }
 
     start_time = time.time()
-
     session = requests.Session()
-    session.max_redirects = MAX_REDIRECTS
+    current = url
 
-    try:
-        response = session.get(
-            url,
-            headers=headers,
-            timeout=timeout,
-            allow_redirects=True,
-        )
-    except requests.exceptions.TooManyRedirects:
+    # Follow redirects by hand so every hop is checked before it is requested
+    for _ in range(MAX_REDIRECTS + 1):
+        try:
+            response = session.get(current, headers=headers, timeout=timeout, allow_redirects=False)
+        except requests.exceptions.ConnectionError as exc:
+            raise RuntimeError(f"Connection error fetching '{current}': {exc}")
+        except requests.exceptions.Timeout:
+            raise RuntimeError(f"Timeout ({timeout}s) fetching '{current}'")
+        except requests.exceptions.RequestException as exc:
+            raise RuntimeError(f"Request error fetching '{current}': {exc}")
+
+        if not response.is_redirect:
+            break
+        nxt = urljoin(current, response.headers.get("Location", ""))
+        try:
+            validate_url(nxt)
+            resolve_and_check(urlparse(nxt).hostname)
+        except ValueError as exc:
+            raise RuntimeError(f"SSRF protection triggered on redirect to '{nxt}': {exc}")
+        current = nxt
+    else:
         raise RuntimeError(f"Too many redirects (max {MAX_REDIRECTS}) when fetching '{url}'")
-    except requests.exceptions.ConnectionError as exc:
-        raise RuntimeError(f"Connection error fetching '{url}': {exc}")
-    except requests.exceptions.Timeout:
-        raise RuntimeError(f"Timeout ({timeout}s) fetching '{url}'")
-    except requests.exceptions.RequestException as exc:
-        raise RuntimeError(f"Request error fetching '{url}': {exc}")
 
     elapsed_ms = round((time.time() - start_time) * 1000, 1)
-
-    # Check the final URL after redirects for SSRF as well
-    final_parsed = urlparse(response.url)
-    if final_parsed.hostname and final_parsed.hostname != hostname:
-        try:
-            resolve_and_check(final_parsed.hostname)
-        except ValueError as exc:
-            raise RuntimeError(
-                f"SSRF protection triggered after redirect. "
-                f"Final URL '{response.url}' resolves to a blocked address: {exc}"
-            )
 
     # Build response headers dict (flatten multi-value headers)
     resp_headers = {}

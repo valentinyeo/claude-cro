@@ -1,5 +1,8 @@
 # Proven CRO Tests: Ecommerce & Shopify
 
+> **Read this first.** Lift figures and sources below are industry-reported results collected for idea generation. They have not been independently verified, sources are not linked, and results vary widely by site. Use them to pick ideas, never to promise a result: write "reported in case studies", and size every test with `test_readiness.py`.
+
+
 A curated database of A/B tests with documented results for ecommerce sites,
 Shopify stores, and DTC brands. Use these as high-confidence test ideas when
 auditing ecommerce properties.

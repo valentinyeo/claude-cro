@@ -1,5 +1,8 @@
 # Proven CRO Tests: Universal & Cross-Industry
 
+> **Read this first.** Lift figures and sources below are industry-reported results collected for idea generation. They have not been independently verified, sources are not linked, and results vary widely by site. Use them to pick ideas, never to promise a result: write "reported in case studies", and size every test with `test_readiness.py`.
+
+
 A curated database of A/B tests with documented results that apply across
 industries and website types. These are foundational CRO patterns backed by
 behavioral science and large-scale testing data.

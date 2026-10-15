@@ -5,6 +5,8 @@ description: >
   clarity, value proposition, visual hierarchy, trust signals, form design, and
   page speed impact. Use when user says "analyze this page", "check page
   conversion", "page CRO", or provides a single URL for review.
+disable-model-invocation: true
+allowed-tools: Read, Grep, Glob, Bash, WebFetch
 ---
 
 # CRO Page Analysis
@@ -17,9 +19,9 @@ a scored report with prioritized recommendations.
 
 ## Process
 
-1. **Fetch the page HTML** using `${CLAUDE_SKILL_DIR}/../cro/scripts/fetch_page.py`. Store the raw HTML for
+1. **Fetch the page HTML** using `${CLAUDE_SKILL_DIR}/../cro/scripts/cro-py fetch_page.py`. Store the raw HTML for
    downstream analysis.
-2. **Extract CRO elements** using `${CLAUDE_SKILL_DIR}/../cro/scripts/parse_cro.py`. This extracts
+2. **Extract CRO elements** using `${CLAUDE_SKILL_DIR}/../cro/scripts/cro-py parse_cro.py`. This extracts
    headlines, CTAs, forms, trust signals, images, navigation, and structured
    data into a structured format.
 3. **Take a screenshot** if Playwright is available (desktop at 1440px and mobile

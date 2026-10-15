@@ -158,7 +158,7 @@ def capture_screenshot(
         else:
             context = browser.new_context(
                 viewport={"width": width, "height": height},
-                user_agent="ClaudeCRO/1.0 (Screenshot)",
+                user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
             )
 
         page = context.new_page()
@@ -172,6 +172,13 @@ def capture_screenshot(
             except Exception as exc:
                 browser.close()
                 raise RuntimeError(f"Failed to load page '{url}': {exc}")
+
+        # Redirects happen inside the browser, so re-check where we landed
+        try:
+            check_ssrf(page.url)
+        except ValueError:
+            browser.close()
+            raise
 
         # Wait for JS rendering
         if wait > 0:

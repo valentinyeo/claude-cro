@@ -7,6 +7,7 @@ description: >
   "reduce form friction", or "form abandonment".
 argument-hint: "<url>"
 allowed-tools: Read, Grep, Glob, Bash, WebFetch
+disable-model-invocation: true
 ---
 
 # CRO Form Optimization
@@ -20,8 +21,8 @@ completions.
 
 ## Process
 
-1. **Fetch the page** using `${CLAUDE_SKILL_DIR}/../cro/scripts/fetch_page.py`. Store the full HTML.
-2. **Extract form elements** using `${CLAUDE_SKILL_DIR}/../cro/scripts/parse_cro.py`. This identifies every
+1. **Fetch the page** using `${CLAUDE_SKILL_DIR}/../cro/scripts/cro-py fetch_page.py`. Store the full HTML.
+2. **Extract form elements** using `${CLAUDE_SKILL_DIR}/../cro/scripts/cro-py parse_cro.py`. This identifies every
    `<form>` element, its fields, labels, buttons, validation attributes, and
    surrounding context (trust signals near the form, privacy text, etc.).
 3. **Load form UX principles** by reading `${CLAUDE_SKILL_DIR}/../cro/references/ux-heuristics.md` (form

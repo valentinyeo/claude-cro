@@ -7,6 +7,7 @@ description: >
   with competitor", "competitive CRO", or "how does my site compare".
 argument-hint: "<url> <competitor-url>"
 allowed-tools: Read, Grep, Glob, Bash, WebFetch
+disable-model-invocation: true
 ---
 
 # CRO Competitive Benchmark
@@ -23,8 +24,8 @@ gaps, stolen best practices, and differentiation opportunities.
 1. **Accept URLs** -- the user provides a target URL (their site) and one or
    more competitor URLs. If competitors are not specified, suggest looking up
    direct competitors in the same space.
-2. **Fetch all pages** using `${CLAUDE_SKILL_DIR}/../cro/scripts/fetch_page.py`. Store HTML for each site.
-3. **Extract CRO elements** from each site using `${CLAUDE_SKILL_DIR}/../cro/scripts/parse_cro.py`.
+2. **Fetch all pages** using `${CLAUDE_SKILL_DIR}/../cro/scripts/cro-py fetch_page.py`. Store HTML for each site.
+3. **Extract CRO elements** from each site using `${CLAUDE_SKILL_DIR}/../cro/scripts/cro-py parse_cro.py`.
    Normalize the extracted elements so they can be compared apples-to-apples.
 4. **Take screenshots** of each site if Playwright is available (desktop at
    1440px and mobile at 375px). Place screenshots side-by-side for visual

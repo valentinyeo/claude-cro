@@ -38,7 +38,6 @@ except ImportError:
 
 
 DEFAULT_TIMEOUT = 30
-DEFAULT_USER_AGENT = "ClaudeCRO/1.0"
 
 # Private/reserved IP networks blocked for SSRF prevention
 BLOCKED_NETWORKS = [
@@ -95,39 +94,13 @@ def check_ssrf(hostname: str):
 
 
 def fetch_page(url: str, timeout: int = DEFAULT_TIMEOUT) -> dict:
-    """Fetch a single page and return HTML + metadata."""
-    if not url.startswith(("http://", "https://")):
-        url = "https://" + url
-
-    parsed = urlparse(url)
-    if not parsed.hostname:
-        raise ValueError(f"Invalid URL: {url}")
-
-    check_ssrf(parsed.hostname)
-
-    start = time.time()
-    try:
-        resp = requests.get(
-            url,
-            timeout=timeout,
-            headers={
-                "User-Agent": DEFAULT_USER_AGENT,
-                "Accept": "text/html,application/xhtml+xml,*/*",
-            },
-            allow_redirects=True,
-        )
-    except requests.exceptions.RequestException as exc:
-        raise RuntimeError(f"Failed to fetch '{url}': {exc}")
-
-    elapsed = round((time.time() - start) * 1000, 1)
-
-    return {
-        "url": url,
-        "final_url": resp.url,
-        "status_code": resp.status_code,
-        "html": resp.text,
-        "response_time_ms": elapsed,
-    }
+    """Fetch a single page via fetch_page.py so redirects get the same private-address checks."""
+    import importlib.util
+    spec = importlib.util.spec_from_file_location(
+        "fetch_page_mod", os.path.join(os.path.dirname(os.path.abspath(__file__)), "fetch_page.py"))
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return mod.fetch_page(url, timeout=timeout)
 
 
 def extract_page_data(html: str, base_url: str) -> dict:

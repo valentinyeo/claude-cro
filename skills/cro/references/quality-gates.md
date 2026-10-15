@@ -53,7 +53,7 @@ A page that fails any "Critical" gate has a fundamental conversion issue.
 | Metric | Good | Needs Improvement | Poor |
 |--------|------|-------------------|------|
 | **LCP (Largest Contentful Paint)** | <= 2.5s | 2.5-4.0s | > 4.0s |
-| **FID (First Input Delay)** | <= 100ms | 100-300ms | > 300ms |
+| **INP (Interaction to Next Paint)** | <= 200ms | 200-500ms | > 500ms |
 | **INP (Interaction to Next Paint)** | <= 200ms | 200-500ms | > 500ms |
 | **CLS (Cumulative Layout Shift)** | <= 0.1 | 0.1-0.25 | > 0.25 |
 | **TTFB (Time to First Byte)** | <= 800ms | 800-1800ms | > 1800ms |
@@ -66,7 +66,7 @@ A page that fails any "Critical" gate has a fundamental conversion issue.
 | LCP 2.5-4.0s | | X | |
 | CLS > 0.25 | X (layout shifts destroy trust) | | |
 | CLS 0.1-0.25 | | X | |
-| FID/INP > 300ms | | X (unresponsive interactions) | |
+| INP > 500ms | | X (unresponsive interactions) | |
 | TTFB > 1800ms | | X (server issues) | |
 | Render-blocking resources > 3 | | | X |
 | Unoptimized images (>500KB) | | X | |

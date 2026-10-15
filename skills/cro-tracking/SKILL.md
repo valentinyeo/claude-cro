@@ -7,6 +7,7 @@ description: >
   "GA4 setup", "GTM audit", "conversion tracking", or "event tracking".
 argument-hint: "<url>"
 allowed-tools: Read, Grep, Glob, Bash, WebFetch
+disable-model-invocation: true
 ---
 
 # CRO Tracking Audit
@@ -20,10 +21,10 @@ complete tracking stack from tag management to consent compliance.
 
 ## Process
 
-1. **Fetch the page** using `${CLAUDE_SKILL_DIR}/../cro/scripts/fetch_page.py`. Store the raw HTML,
+1. **Fetch the page** using `${CLAUDE_SKILL_DIR}/../cro/scripts/cro-py fetch_page.py`. Store the raw HTML,
    paying special attention to `<head>` and early `<body>` content where
    tracking scripts are typically placed.
-2. **Extract tracking elements** using `${CLAUDE_SKILL_DIR}/../cro/scripts/parse_cro.py`. This detects
+2. **Extract tracking elements** using `${CLAUDE_SKILL_DIR}/../cro/scripts/cro-py parse_cro.py`. This detects
    analytics platforms, tag managers, data layer objects, consent banners,
    pixel scripts, and heatmap tools.
 3. **Validate tag placement** -- check that scripts are in the correct
