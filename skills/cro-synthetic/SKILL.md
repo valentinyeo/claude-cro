@@ -42,7 +42,7 @@ segment or per session. Any of these work; column names are detected:
 Then: `S templates <export.csv> -o W/synthetic/templates.json` and show the
 user the top segments it prints. Segments under 1% are dropped beyond the top 40.
 
-No data at all: `S templates --assumed -o ...`. The report then says
+No data at all: `S templates --assumed ecommerce|lead|saas -o ...` (pick the business type). The report then says
 **ASSUMED** on every page; say so to the user and prefer a smaller run.
 
 ## Step 2: Size and permission
