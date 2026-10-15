@@ -96,8 +96,8 @@ class Validator(unittest.TestCase):
         shutil.rmtree(self.d)
 
     def write(self, audit, plan):
-        (self.d / "FULL-AUDIT.md").write_text(audit)
-        (self.d / "ACTION-PLAN.md").write_text(plan)
+        (self.d / "FULL-AUDIT.md").write_text(audit, encoding="utf-8")
+        (self.d / "ACTION-PLAN.md").write_text(plan, encoding="utf-8")
         return vr.check(self.d)
 
     def test_good_report_passes(self):
