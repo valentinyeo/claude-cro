@@ -52,6 +52,8 @@ class Templates(unittest.TestCase):
 
     def test_assumed_is_labelled(self):
         self.assertEqual(syn.assumed_templates()["source"], "ASSUMED")
+        for b in syn.ASSUMED:
+            self.assertAlmostEqual(sum(t["share"] for t in syn.assumed_templates(b)["templates"]), 1.0)
         self.assertAlmostEqual(sum(t["share"] for t in syn.assumed_templates()["templates"]), 1.0)
 
 
@@ -84,6 +86,21 @@ class Guards(unittest.TestCase):
         syn.stage_of("https://shop.example/checkouts/cn/abc", "other", s)
         self.assertTrue(s.get("checkout"))
         self.assertEqual(syn.furthest(s), "checkout")
+
+
+class Lead(unittest.TestCase):
+    def test_booking_page_counts_only_for_lead_goal(self):
+        s = {}
+        syn.stage_of("https://calendar.app.google/LZT", "other", s, "checkout")
+        self.assertFalse(s.get("checkout"))
+        syn.stage_of("https://calendar.app.google/LZT", "other", s, "lead")
+        self.assertTrue(s.get("checkout"))
+        self.assertEqual(s["lead_via"], "reached the booking page")
+
+    def test_contact_links(self):
+        for href in ("mailto:a@b.com", "tel:+447", "https://wa.me/447"):
+            self.assertTrue(syn.CONTACT_HREF.match(href), href)
+        self.assertFalse(syn.CONTACT_HREF.match("https://linkedin.com/in/x"))
 
 
 class Parsing(unittest.TestCase):

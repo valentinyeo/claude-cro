@@ -684,6 +684,7 @@ Examples:
     )
     parser.add_argument("source", help="HTML file path or URL to analyze")
     parser.add_argument("--json", action="store_true", dest="json_output", help="Output as JSON")
+    parser.add_argument("--base-url", help="page URL to resolve relative links against when SOURCE is a saved file")
     parser.add_argument(
         "--elements", "-e",
         default="all",
@@ -693,6 +694,7 @@ Examples:
     args = parser.parse_args()
 
     html, base_url = load_html(args.source)
+    base_url = args.base_url or base_url
     data = parse_cro(html, base_url, args.elements)
 
     if args.json_output:

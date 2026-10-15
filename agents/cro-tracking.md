@@ -33,6 +33,12 @@ this site; industry numbers are "reported in case studies".
 
 ## Analysis steps
 
+0. **Start from `W/tracking.json` and `W/TRACKING.md`** (from `tracking_audit.py`):
+   what really fired in the browser, IDs, double counting, duplicate tags,
+   firing before consent, and the access list. Every issue there becomes a
+   finding with its page as evidence. Check the rest (events, forms, consent
+   wording) on top. Never claim a value you cannot see (traffic, conversion
+   counts); put the access needed to read it in your report instead.
 1. **Fetch page HTML** from `W/page.html` and `W/fetch.json`
 2. **Extract tracking scripts and data layer** from `W/elements.json`
 3. **Detect analytics platforms**:

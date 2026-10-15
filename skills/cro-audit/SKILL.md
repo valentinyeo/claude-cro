@@ -55,6 +55,13 @@ Each folder gets `raw.html`, `page.html` (browser-rendered), `fetch.json`,
 `elements.json`, `desktop.png`, `mobile.png`, `mobile-full.png`, `speed.json`,
 `gaps.txt`.
 
+Then inventory every tracker and pixel the captured pages really fire (network
+requests, not just page code), with duplicates and the access to ask for:
+
+```bash
+"<CRO_SCRIPTS>/cro-py" tracking_audit.py <page-url> <page-url> ... --out "$W/tracking.json" --md "$W/TRACKING.md"
+```
+
 - Exit 3 = the page looks blocked or empty. Open its `desktop.png`: real site
   visible means audit from screenshots and WebFetch and record the gap; a bot
   wall means drop the page and tell the user. Never audit a block page.
@@ -191,7 +198,15 @@ with durations from `readiness.txt`); LIMITED gets `## Research Plan` then
 `site, date, business_type, score, rating, categories, readiness, strengths,
 personas` (id, goal, outcome, worst_step_image) and `findings`: a list of
 `{id, title, priority, page, category, problem, evidence, evidence_image,
-why_it_costs_sales, fix, effort, sources, skeptic_verdict, published_tests}`.
+why_it_costs_sales, fix, effort, sources, skeptic_verdict, published_tests}`,
+plus `tracking`: `{has_analytics, tools (vendor + IDs), issues, access_requests}`
+copied from `tracking.json`.
+
+**Measurement and access** (in FULL-AUDIT.md, after Test Readiness): what
+fires today (tool, IDs, pages), every duplicate or misconfiguration from
+`tracking.json` as a finding, and the exact access requests list. The audit
+cannot read the values behind a tag; asking for that access is how the
+baseline becomes CONFIRMED. No analytics at all is a Critical finding.
 
 When the evidence database exists (`${CLAUDE_SKILL_DIR}/../cro/evidence/`),
 fill `published_tests` for the top findings using the `cro-research` "find

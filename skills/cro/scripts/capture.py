@@ -48,7 +48,7 @@ def main():
     blocked = json.load(open(f"{d}/fetch.json")).get("blocked")
     if blocked:
         gaps.append(f"page looks blocked: {blocked}")
-    if run(["parse_cro.py", f"{d}/page.html", "--json"], f"{d}/elements.json").returncode:
+    if run(["parse_cro.py", f"{d}/page.html", "--base-url", a.url, "--json"], f"{d}/elements.json").returncode:
         gaps.append("parse_cro failed")
 
     for name, extra in (("desktop.png", ["-W", "1440", "-H", "900"]),

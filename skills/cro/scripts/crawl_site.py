@@ -35,7 +35,8 @@ PAGE_TYPES = [
     ("demo", r"/demo|/book|/schedule|/consultation|/quote"),
     ("contact", r"/contact"),
     ("about", r"/about|/our-story|/team"),
-    ("reviews", r"/reviews|/testimonials|/case-stud|/customers"),
+    ("reviews", r"/reviews|/testimonials|case-stud|/customers|/portfolio|/work/|/success-stor"),
+    ("service", r"/services?\b|/solutions?\b|/what-we-do|/consulting|/offerings?\b"),
     ("faq", r"/faq|/help|/support"),
     ("blog", r"/blog|/articles|/journal|/news"),
 ]
