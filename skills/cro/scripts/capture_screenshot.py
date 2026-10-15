@@ -194,6 +194,16 @@ def capture_screenshot(
         if wait > 0:
             page.wait_for_timeout(wait * 1000)
 
+        if full_page:
+            # Scroll through first: lazy images and scroll-reveal sections stay blank in a full-page
+            # shot of a page nobody scrolled, which looks like a broken page but is not one.
+            height = page.evaluate("document.body.scrollHeight")
+            for y in range(0, min(height, 40000), 400):
+                page.evaluate(f"window.scrollTo(0, {y})")
+                page.wait_for_timeout(80)
+            page.evaluate("window.scrollTo(0, 0)")
+            page.wait_for_timeout(500)
+
         # Take screenshot
         page.screenshot(path=output, full_page=full_page)
 
