@@ -1,0 +1,8 @@
+{"persona": {"name": "Test Tess", "age": 30, "situation": "needs walking shoes", "goal": "buy shoes", "intent": "ready_to_buy", "patience": "low", "tech_comfort": "medium", "voice": "short", "worries": ["returns"]},
+ "steps": [
+  {"page_type": "home", "thought": "a popup", "action": "click", "label": "No thanks", "friction": [{"severity": "high", "category": "overlay_popup", "issue": "Discount popup covers the whole homepage on arrival", "quote": "let me see the shoes first"}]},
+  {"page_type": "home", "thought": "go shop", "action": "click", "label": "Shop the Runner", "friction": []},
+  {"page_type": "product", "thought": "add it", "action": "click", "label": "Add to cart", "friction": [{"severity": "medium", "category": "price_shipping", "issue": "No delivery time shown on the product page", "quote": "when would it arrive?"}]},
+  {"page_type": "cart", "thought": "check out", "action": "click", "label": "Checkout", "friction": []},
+  {"page_type": "checkout", "thought": "done", "action": "done", "friction": []}],
+ "exit": {"outcome": "went to checkout", "why": "liked it", "biggest_frustration": "Discount popup covered the page", "what_would_have_helped": "delay the popup", "would_return": "yes", "trust": 4}}

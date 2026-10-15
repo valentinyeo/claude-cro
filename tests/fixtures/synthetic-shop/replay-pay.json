@@ -1,0 +1,8 @@
+{"persona": {"name": "Pay Pat", "age": 41, "situation": "in a hurry", "goal": "buy shoes", "intent": "ready_to_buy", "patience": "low", "tech_comfort": "high", "voice": "brisk", "worries": []},
+ "steps": [
+  {"page_type": "home", "action": "click", "label": "No thanks", "friction": []},
+  {"page_type": "home", "action": "click", "label": "Shop the Runner", "friction": []},
+  {"page_type": "product", "action": "click", "label": "Add to cart", "friction": []},
+  {"page_type": "cart", "action": "click", "label": "Pay now", "friction": []},
+  {"page_type": "cart", "action": "give_up", "friction": []}],
+ "exit": {"outcome": "paid fast", "why": "express pay", "biggest_frustration": "none", "what_would_have_helped": "", "would_return": "yes", "trust": 5}}
