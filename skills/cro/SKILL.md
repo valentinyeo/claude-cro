@@ -22,6 +22,7 @@ allowed-tools: Read, Grep, Glob, Bash, WebFetch, Agent
 | `/cro build-test suite <url> <ACTION-PLAN.md>` | `cro-build-test`: readiness-gated test bundles and index |
 | `/cro program <init\|plan\|launch\|result\|board\|report\|check>` | `cro-program`: a signed client's experiment program |
 | `/cro research [topic\|weekly\|find <finding>]` | `cro-research`: grow and search the published A/B test evidence database |
+| `/cro synthetic <url> [--traffic export.csv] [--visitors N]` | `cro-synthetic`: 100-200 LLM visitors modelled on real traffic shop the site and report friction |
 | `/cro doctor` | run `doctor.py`: is the setup working? |
 | `/cro page <url>` | `cro-page`: one page, no agents |
 | `/cro funnel <url1> <url2> ...` | `cro-funnel` |
@@ -92,6 +93,7 @@ allowed-tools: Read, Grep, Glob, Bash, WebFetch, Agent
 | `preview_variant.py <url> variant.js [--css variant.css] [--mobile]` | Control/variant screenshots, selector and JS checks |
 | `build_slides.py <slides.json> [--embed] [--render] [--check]` | Build and verify an offline HTML audit deck |
 | `evidence.py <validate\|add\|search\|stats\|verify\|export-md>` | Published A/B test evidence: search, add, verify, catalog |
+| `synthetic.py <templates\|run\|report>` | Real traffic to visitor templates, LLM browser visitors, ranked friction report |
 
 ## References (load only when needed)
 

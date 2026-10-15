@@ -47,6 +47,12 @@ Then open Claude Code and run:
 | `/cro tracking <url>` | Analytics and tracking setup validation |
 | `/cro benchmark <url> <competitor>` | Competitor conversion comparison |
 | `/cro plan <url>` | CRO strategy and 90-day roadmap |
+| `/cro slides <audit-folder> [--pitch\|--client]` | HTML slide deck of the audit, with an offer for prospects |
+| `/cro wireframe <url or audit-folder>` | Before/after fix wireframes, mobile and desktop |
+| `/cro build-test <url> "<hypothesis>"` | A/B test variant code, browser preview and test brief |
+| `/cro program <init\|plan\|launch\|result\|report>` | Run a client's experiment program |
+| `/cro research [topic]` | Grow and search the published A/B test evidence database |
+| `/cro synthetic <url> [--traffic export.csv]` | 100-200 LLM visitors modelled on real analytics shop the site and report friction |
 
 ## CRO Health Score
 

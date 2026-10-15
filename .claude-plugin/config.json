@@ -1,7 +1,7 @@
 {
   "name": "claude-cro",
   "version": "2.0.0",
-  "description": "CRO skill pack for Claude Code: deep site audits with an agent swarm (lens agents, browser personas, skeptic), test readiness gate, customer slide decks, wireframes, A/B test builder, client experiment program, and a sourced A/B test evidence database.",
+  "description": "CRO skill pack for Claude Code: deep site audits with an agent swarm (lens agents, browser personas, skeptic), test readiness gate, customer slide decks, wireframes, A/B test builder, client experiment program, synthetic traffic (LLM visitors modelled on real analytics), and a sourced A/B test evidence database.",
   "author": "Valentin Yeo",
   "license": "MIT",
   "homepage": "https://github.com/valentinyeo/claude-cro",
@@ -23,7 +23,8 @@
     "skills/cro-slides",
     "skills/cro-wireframe",
     "skills/cro-build-test",
-    "skills/cro-research"
+    "skills/cro-research",
+    "skills/cro-synthetic"
   ],
   "agents": [
     "agents/cro-ux.md",
