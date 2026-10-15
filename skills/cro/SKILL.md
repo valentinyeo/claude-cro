@@ -93,6 +93,7 @@ allowed-tools: Read, Grep, Glob, Bash, WebFetch, Agent
 | `preview_variant.py <url> variant.js [--css variant.css] [--mobile]` | Control/variant screenshots, selector and JS checks |
 | `build_slides.py <slides.json> [--embed] [--render] [--check]` | Build and verify an offline HTML audit deck |
 | `evidence.py <validate\|add\|search\|stats\|verify\|export-md>` | Published A/B test evidence: search, add, verify, catalog |
+| `tracking_audit.py <url> ... --out t.json --md T.md` | Every tracker and pixel that really fires, duplicates, consent, access to ask for |
 | `synthetic.py <templates\|run\|report>` | Real traffic to visitor templates, LLM browser visitors, ranked friction report |
 
 ## References (load only when needed)

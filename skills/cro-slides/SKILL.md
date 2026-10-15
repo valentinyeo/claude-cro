@@ -72,6 +72,9 @@ PITCH sequence:
 3. `score`: overall and category bars, with source and missing-data limits.
 4. `test-readiness`: audited verdict, baseline, CONFIRMED/ASSUMED status, and
    what this means in everyday language. The renderer supplies that explanation.
+4b. `tracking` (from findings.json `tracking`): `found` (what is measured
+   today, duplicates and gaps in plain words, max 5) and `access` (the access
+   we need, max 5). Always include it: it is how the next numbers get real.
 5. Up to **five** `finding` slides, strongest first. One finding per slide.
    Show the actual site, explain the problem, evidence, possible sales friction,
    and a concrete fix. Do not inflate one issue into multiple findings.

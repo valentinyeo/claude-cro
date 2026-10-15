@@ -32,6 +32,7 @@ def fixture():
             {'type': 'strengths', 'title': 'Keep what works', 'items': ['Clear product image (desktop.png).', 'Visible close control (desktop.png).']},
             {'type': 'roadmap', 'title': 'The first 90 days', 'phases': [{'label': 'Days 1-30', 'items': ['Check tracking and observe five shoppers.']}, {'label': 'Days 31-60', 'items': ['Ship and review the first fixes.']}, {'label': 'Days 61-90', 'items': ['Repeat customer research and compare the baseline.']}], 'measurement': 'Compare four weeks before and after; record campaigns and seasonality. This is directional, not causal proof.'},
             {'type': 'offer', 'title': 'One focused engagement', 'packages': [{'name': 'Research and fixes', 'price': '$4,000 / month (sample only)', 'timeline': '90 days', 'deliverables': ['Audit fixes', 'Customer research', 'Baseline report']}], 'proof': 'Share shipped work, research observations and measured orders. No guaranteed lift.'},
+            {'type': 'tracking', 'title': 'Nothing measures visits or leads today', 'found': ['No analytics or pixel fires on any page.', 'No record of form submissions per month.'], 'access': ['Cloudflare analytics read access.', 'Search Console restricted user.', 'Lead count for the last 3 months.']},
             {'type': 'next-steps', 'title': 'Agree on the first priority', 'items': ['Confirm traffic and orders.', 'Choose the first research round.'], 'url': 'https://example.org/call', 'label': 'Book a call'},
             {'type': 'appendix', 'title': 'Sources and limits', 'items': ['FULL-AUDIT.md', 'ACTION-PLAN.md', 'readiness.txt', 'No access to checkout or analytics.']},
         ]}
@@ -165,22 +166,22 @@ class SlidesTests(unittest.TestCase):
             browser = p.chromium.launch()
             page = browser.new_page(viewport={'width': 1440, 'height': 900})
             page.goto(deck.as_uri())
-            self.assertEqual(page.locator('#counter').inner_text(), '1 / 11')
+            self.assertEqual(page.locator('#counter').inner_text(), '1 / 12')
             page.keyboard.press('ArrowRight')
-            self.assertEqual(page.locator('#counter').inner_text(), '2 / 11')
+            self.assertEqual(page.locator('#counter').inner_text(), '2 / 12')
             page.locator('#next').click()
-            self.assertEqual(page.locator('#counter').inner_text(), '3 / 11')
+            self.assertEqual(page.locator('#counter').inner_text(), '3 / 12')
             page.keyboard.press('ArrowRight')
-            self.assertEqual(page.locator('#counter').inner_text(), '4 / 11')
+            self.assertEqual(page.locator('#counter').inner_text(), '4 / 12')
             page.keyboard.press('ArrowLeft')
-            self.assertEqual(page.locator('#counter').inner_text(), '3 / 11')
+            self.assertEqual(page.locator('#counter').inner_text(), '3 / 12')
             page.locator('.slide.active h1').click(position={'x': 5, 'y': 5})
-            self.assertEqual(page.locator('#counter').inner_text(), '2 / 11')
+            self.assertEqual(page.locator('#counter').inner_text(), '2 / 12')
             page.locator('body').click(position={'x': 1, 'y': 1})
             page.keyboard.press('End')
-            self.assertEqual(page.locator('#counter').inner_text(), '11 / 11')
+            self.assertEqual(page.locator('#counter').inner_text(), '12 / 12')
             page.keyboard.press('Home')
-            self.assertEqual(page.locator('#counter').inner_text(), '1 / 11')
+            self.assertEqual(page.locator('#counter').inner_text(), '1 / 12')
             page.evaluate('showSlide(4)')
             shot = page.locator('.slide.active .shot').bounding_box()
             img = page.locator('.slide.active .shot img').bounding_box()
@@ -208,8 +209,8 @@ class SlidesTests(unittest.TestCase):
         result = subprocess.run([sys.executable, str(SCRIPT), str(source), '-o', str(self.folder / 'cli.html'), '--embed', '--check', '--render', str(self.folder / 'cli-render')], capture_output=True, text=True)
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
         self.assertIn('PASS:', result.stdout)
-        self.assertEqual(len(list((self.folder / 'cli-render').glob('slide-*.png'))), 11)
-        self.assertEqual(len(list((self.folder / 'cli-render/phone').glob('slide-*.png'))), 11)
+        self.assertEqual(len(list((self.folder / 'cli-render').glob('slide-*.png'))), 12)
+        self.assertEqual(len(list((self.folder / 'cli-render/phone').glob('slide-*.png'))), 12)
         source.write_text('{bad json')
         result = subprocess.run([sys.executable, str(SCRIPT), str(source)], capture_output=True, text=True)
         self.assertEqual(result.returncode, 1)
