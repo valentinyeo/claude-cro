@@ -229,3 +229,13 @@ results, never as this site's expected lift.
 Reply with: score and rating, readiness verdict, top 3 actions, one line per
 persona outcome, the workspace path, and the next command (`/cro slides <W>`
 for the deck, `/cro wireframe <W>` for fix designs).
+
+Then build the results page, the one place the client reads every result:
+1. Write `<W>/results-notes.json`: per skill run a one-sentence result, status,
+   how sure, and what it found (keys and format in `results_hub.py --help`).
+2. Write `<W>/experiments.json`: each finding worth acting on becomes an experiment
+   with a hypothesis ("Because we saw X, we believe Y will Z for W"), evidence keys,
+   steps, metric, duration and decision rule. The method follows the readiness
+   verdict: no A/B test on a NOT_TESTABLE site.
+3. Run `results_hub.py <W> [--wireframe <WF>]`, check `<W>/results.html` at phone
+   width, and publish it as a Claude artifact so anyone with the link can read it.
