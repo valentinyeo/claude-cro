@@ -1,0 +1,49 @@
+{
+  "id": "buyakilt",
+  "title": "Buyakilt.com: Add filters for kilt type and pattern.",
+  "company": "Buyakilt.com",
+  "industry": "Apparel",
+  "business_type": "E-commerce",
+  "page_type": "category",
+  "element": "product-filters",
+  "change": {
+    "control": "Category pages offer no tested product-filter interface.",
+    "variant": "Add filters for kilt type and pattern."
+  },
+  "result": {
+    "metric": "revenue",
+    "relative_lift_pct": 76.1,
+    "direction": "win",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": null,
+  "test_duration": null,
+  "date_published": null,
+  "source_url": "https://wingify.com/success-stories/buyakilt/",
+  "source_type": "platform case study",
+  "quote": "76.1% increase in the revenue",
+  "verification": "verified",
+  "evidence_strength": "B",
+  "principles": [
+    "friction",
+    "product-discovery"
+  ],
+  "added_date": "2026-10-15",
+  "added_by": "evidence",
+  "research_type": "ab-test",
+  "notes": "Conversions also rose 26%, and cart visits 19.76%. No sample size or significance is published.",
+  "verification_details": {
+    "checked_at": "2026-10-15T10:29:07+00:00",
+    "source_loaded": true,
+    "company_found": true,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://wingify.com/success-stories/buyakilt/",
+    "content_sha256": "5d620e01bbd051bbcfa5da650a373720375a7972d4736f0b8b993bd85fee58fa",
+    "reason": "company, lift and supporting quote confirmed; not a statistical replication"
+  }
+}

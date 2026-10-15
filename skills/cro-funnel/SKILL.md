@@ -7,6 +7,7 @@ description: >
   "checkout flow", "user journey", "drop-off", or "funnel optimization".
 argument-hint: "<url1> <url2> [url3...]"
 allowed-tools: Read, Grep, Glob, Bash, WebFetch
+disable-model-invocation: true
 ---
 
 # CRO Funnel Analysis
@@ -20,18 +21,19 @@ what changes will recover the most lost conversions.
 
 ## Process
 
+0. **Test Readiness Gate (do first).** Read `${CLAUDE_SKILL_DIR}/../cro/references/test-readiness.md`, get the baseline (monthly conversions + CVR or visitors; ask once, else mark ASSUMED) and run `${CLAUDE_SKILL_DIR}/../cro/scripts/cro-py test_readiness.py --conversions N --cvr X`. Use the conversions of the funnel's final step. The verdict decides whether fixes are proposed as A/B tests or as research-backed fixes.
 1. **Accept funnel URLs** -- the user provides 2 or more URLs representing
    sequential steps in a conversion funnel (e.g., landing page -> product page
    -> cart -> checkout -> confirmation). If the user provides a single URL,
    attempt to discover subsequent steps by following primary CTAs.
-2. **Fetch each page** using `${CLAUDE_SKILL_DIR}/../cro/scripts/fetch_page.py`. Store the HTML for every
+2. **Fetch each page** using `${CLAUDE_SKILL_DIR}/../cro/scripts/cro-py fetch_page.py`. Store the HTML for every
    step in the funnel.
-3. **Extract CRO elements** from each page using `${CLAUDE_SKILL_DIR}/../cro/scripts/parse_cro.py`. Pay
+3. **Extract CRO elements** from each page using `${CLAUDE_SKILL_DIR}/../cro/scripts/cro-py parse_cro.py`. Pay
    special attention to CTAs, navigation links, exit points, and form elements.
 4. **Take screenshots** of each step if Playwright is available (desktop at
    1440px and mobile at 375px). Screenshots help identify visual consistency
    breaks and CTA prominence gaps between steps.
-5. **Analyze the funnel** using `${CLAUDE_SKILL_DIR}/../cro/scripts/analyze_funnel.py`. This maps
+5. **Analyze the funnel** using `${CLAUDE_SKILL_DIR}/../cro/scripts/cro-py analyze_funnel.py`. This maps
    step-to-step transitions, calculates risk scores, and identifies leaks.
 6. **Cross-reference benchmarks** by reading `${CLAUDE_SKILL_DIR}/../cro/references/conversion-benchmarks.md`
    for expected conversion rates at each step type.

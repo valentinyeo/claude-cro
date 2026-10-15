@@ -1,0 +1,53 @@
+{
+  "id": "citycliq",
+  "title": "CityCliq: Replace the positioning with Create a webpage for your business.",
+  "company": "CityCliq",
+  "industry": "Website builder",
+  "business_type": "SaaS",
+  "page_type": "home",
+  "element": "headline",
+  "change": {
+    "control": "Homepage positioning: Businesses grow faster online!",
+    "variant": "Replace the positioning with Create a webpage for your business."
+  },
+  "result": {
+    "metric": "click-throughs to pricing",
+    "relative_lift_pct": 90,
+    "direction": "win",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": {
+    "confidence_pct": 98,
+    "p_value": null,
+    "reported": "98% confidence reported by publisher"
+  },
+  "test_duration": "2 weeks",
+  "date_published": null,
+  "source_url": "https://wingify.com/success-stories/citycliq/",
+  "source_type": "platform case study",
+  "quote": "Create a webpage for your business 47.8% 90% Yes",
+  "verification": "verified",
+  "evidence_strength": "B",
+  "principles": [
+    "clarity",
+    "value-proposition"
+  ],
+  "added_date": "2026-10-15",
+  "added_by": "evidence",
+  "research_type": "ab-test",
+  "notes": "Four-arm positioning experiment. Another message had a -20% observed result without statistical significance; the headline win is not a purchase lift.",
+  "verification_details": {
+    "checked_at": "2026-10-15T10:29:07+00:00",
+    "source_loaded": true,
+    "company_found": true,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://wingify.com/success-stories/citycliq/",
+    "content_sha256": "3fc7932b875273826f37be849130318b623e664a915ece64bea61364815afc9c",
+    "reason": "company, lift and supporting quote confirmed; not a statistical replication"
+  }
+}

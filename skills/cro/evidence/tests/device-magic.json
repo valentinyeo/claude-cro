@@ -1,0 +1,53 @@
+{
+  "id": "device-magic",
+  "title": "Device Magic: Replace the video with a rotating image slider.",
+  "company": "Device Magic",
+  "industry": "Mobile forms",
+  "business_type": "SaaS",
+  "page_type": "home",
+  "element": "hero-media",
+  "change": {
+    "control": "Homepage explains the product with a video.",
+    "variant": "Replace the video with a rotating image slider."
+  },
+  "result": {
+    "metric": "completed signups",
+    "relative_lift_pct": 31,
+    "direction": "win",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": {
+    "confidence_pct": null,
+    "p_value": null,
+    "reported": "Result described as statistically significant; no threshold published."
+  },
+  "test_duration": null,
+  "date_published": null,
+  "source_url": "https://wingify.com/success-stories/device-magic/",
+  "source_type": "platform case study",
+  "quote": "total increase in subsequent sign-ups was 31%",
+  "verification": "verified",
+  "evidence_strength": "B",
+  "principles": [
+    "clarity",
+    "product-demonstration"
+  ],
+  "added_date": "2026-10-15",
+  "added_by": "evidence",
+  "research_type": "ab-test",
+  "notes": "Homepage-to-signup-page clicks rose 35%, a different metric. Source warns that the apparent early winner reversed.",
+  "verification_details": {
+    "checked_at": "2026-10-15T10:29:07+00:00",
+    "source_loaded": true,
+    "company_found": true,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://wingify.com/success-stories/device-magic/",
+    "content_sha256": "abde14b73bed67830729b47652876c43eaf577352878a23fe0e8287f94fa789b",
+    "reason": "company, lift and supporting quote confirmed; not a statistical replication"
+  }
+}

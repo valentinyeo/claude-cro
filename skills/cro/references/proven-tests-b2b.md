@@ -1,5 +1,8 @@
 # Proven CRO Tests: B2B, SaaS & Consulting Landing Pages
 
+> **Read this first.** Lift figures and sources below are industry-reported results collected for idea generation. They have not been independently verified, sources are not linked, and results vary widely by site. Use them to pick ideas, never to promise a result: write "reported in case studies", and size every test with `test_readiness.py`.
+
+
 A curated database of A/B tests with documented results for B2B websites,
 SaaS platforms, consulting firms, and lead generation landing pages. Use these
 as high-confidence test ideas when auditing service-based and lead-gen properties.

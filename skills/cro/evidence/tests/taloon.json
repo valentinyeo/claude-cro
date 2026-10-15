@@ -1,0 +1,53 @@
+{
+  "id": "taloon",
+  "title": "Taloon: Remove social sharing buttons from product pages.",
+  "company": "Taloon",
+  "industry": "Hardware",
+  "business_type": "E-commerce",
+  "page_type": "product",
+  "element": "social-sharing",
+  "change": {
+    "control": "Product pages show Google+, Pinterest and Facebook sharing buttons.",
+    "variant": "Remove social sharing buttons from product pages."
+  },
+  "result": {
+    "metric": "add-to-cart click-throughs",
+    "relative_lift_pct": 11.9,
+    "direction": "win",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": {
+    "confidence_pct": 95,
+    "p_value": null,
+    "reported": "95% confidence reported by publisher"
+  },
+  "test_duration": "2 weeks",
+  "date_published": null,
+  "source_url": "https://wingify.com/success-stories/taloon/",
+  "source_type": "platform case study",
+  "quote": "Compared with the original, the variation recorded an 11.9% increase in CTA click-throughs.",
+  "verification": "verified",
+  "evidence_strength": "B",
+  "principles": [
+    "distraction",
+    "social-proof"
+  ],
+  "added_date": "2026-10-15",
+  "added_by": "evidence",
+  "research_type": "ab-test",
+  "notes": "Body reports 11.9%; headline rounds differently to 11.92%. Metric is CTA clicks, not purchases.",
+  "verification_details": {
+    "checked_at": "2026-10-15T10:29:13+00:00",
+    "source_loaded": true,
+    "company_found": true,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://wingify.com/success-stories/taloon/",
+    "content_sha256": "76ab9aa6538b869ec289941d83a479804a13b75c7200c045213c276b0f43c682",
+    "reason": "company, lift and supporting quote confirmed; not a statistical replication"
+  }
+}

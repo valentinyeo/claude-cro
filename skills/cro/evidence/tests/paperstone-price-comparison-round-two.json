@@ -1,0 +1,56 @@
+{
+  "id": "paperstone-price-comparison-round-two",
+  "title": "Paperstone: Place competitor comparisons below Add to Basket, pair prices with highlighted savings and use a corporate design.",
+  "company": "Paperstone",
+  "industry": "Office supplies",
+  "business_type": "E-commerce",
+  "page_type": "product",
+  "element": "price-comparison",
+  "change": {
+    "control": "Original product pages without competitor price comparison.",
+    "variant": "Place competitor comparisons below Add to Basket, pair prices with highlighted savings and use a corporate design."
+  },
+  "result": {
+    "metric": "purchase conversion rate",
+    "relative_lift_pct": 10.67,
+    "direction": "win",
+    "desired_direction": "increase"
+  },
+  "sample_size": {
+    "total": 12100,
+    "unit": "unique visitors (over 12,100 reported)"
+  },
+  "conversions": null,
+  "significance": {
+    "confidence_pct": 95,
+    "p_value": null,
+    "reported": "95% confidence reported by publisher"
+  },
+  "test_duration": null,
+  "date_published": null,
+  "source_url": "https://wingify.com/success-stories/paperstone/",
+  "source_type": "platform case study",
+  "quote": "The second test was conclusive for an increase of 10.67% in conversion rate (at a 95% confidence)",
+  "verification": "verified",
+  "evidence_strength": "A",
+  "principles": [
+    "clarity",
+    "price-transparency"
+  ],
+  "added_date": "2026-10-15",
+  "added_by": "evidence",
+  "research_type": "ab-test",
+  "notes": "Publisher reports over 12,100 visitors, so total is a published lower bound, not an exact sample. Add-to-basket result was inconclusive. First design also had inconclusive results.",
+  "verification_details": {
+    "checked_at": "2026-10-15T10:29:11+00:00",
+    "source_loaded": true,
+    "company_found": true,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://wingify.com/success-stories/paperstone/",
+    "content_sha256": "c81d034d42b28a96866e6f93b20e64a2101944f4a3cdcabb36a1d2fa9088d947",
+    "reason": "company, lift and supporting quote confirmed; not a statistical replication"
+  }
+}

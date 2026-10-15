@@ -1,0 +1,53 @@
+{
+  "id": "nameon",
+  "title": "nameOn: Keep the welcome bonus and checkout CTAs and change the checkout button from yellow to blue.",
+  "company": "nameOn",
+  "industry": "Personalized gifts",
+  "business_type": "E-commerce",
+  "page_type": "cart",
+  "element": "cta",
+  "change": {
+    "control": "Nine competing calls to action on the cart page.",
+    "variant": "Keep the welcome bonus and checkout CTAs and change the checkout button from yellow to blue."
+  },
+  "result": {
+    "metric": "revenue",
+    "relative_lift_pct": 11.4,
+    "direction": "win",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": {
+    "confidence_pct": 99,
+    "p_value": null,
+    "reported": "99% confidence reported by publisher"
+  },
+  "test_duration": "about 6 weeks",
+  "date_published": null,
+  "source_url": "https://wingify.com/success-stories/nameon/",
+  "source_type": "platform case study",
+  "quote": "11.40% increase with 99 % statistical significance.",
+  "verification": "verified",
+  "evidence_strength": "B",
+  "principles": [
+    "friction",
+    "visual-hierarchy"
+  ],
+  "added_date": "2026-10-15",
+  "added_by": "evidence",
+  "research_type": "ab-test",
+  "notes": "Publisher labels the headline metric revenue but describes the body result as overall performance. Multiple elements changed; attribution to button color alone is not supported.",
+  "verification_details": {
+    "checked_at": "2026-10-15T10:29:10+00:00",
+    "source_loaded": true,
+    "company_found": true,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://wingify.com/success-stories/nameon/",
+    "content_sha256": "7269b7315e2c4ed9b59945ee19b87d54a81cf22ba3918fe84701804e74f31d6a",
+    "reason": "company, lift and supporting quote confirmed; not a statistical replication"
+  }
+}

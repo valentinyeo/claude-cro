@@ -1,0 +1,54 @@
+{
+  "id": "workzone",
+  "title": "WorkZone: Change customer logos to black and white.",
+  "company": "WorkZone",
+  "industry": "Project management",
+  "business_type": "SaaS",
+  "page_type": "lead-form",
+  "element": "customer-logos",
+  "change": {
+    "control": "Demo request page displays colored testimonial logos.",
+    "variant": "Change customer logos to black and white."
+  },
+  "result": {
+    "metric": "demo form submissions",
+    "relative_lift_pct": 34,
+    "direction": "win",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": {
+    "confidence_pct": 99,
+    "p_value": null,
+    "reported": "99% confidence reported by publisher"
+  },
+  "test_duration": "22 days",
+  "date_published": null,
+  "source_url": "https://wingify.com/success-stories/workzone/",
+  "source_type": "platform case study",
+  "quote": "34% increase in form submissions and a statistical significance of 99%.",
+  "verification": "verified",
+  "evidence_strength": "B",
+  "principles": [
+    "visual-hierarchy",
+    "distraction",
+    "social-proof"
+  ],
+  "added_date": "2026-10-15",
+  "added_by": "evidence",
+  "research_type": "ab-test",
+  "notes": "Test targeted new visitors only.",
+  "verification_details": {
+    "checked_at": "2026-10-15T10:29:15+00:00",
+    "source_loaded": true,
+    "company_found": true,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://wingify.com/success-stories/workzone/",
+    "content_sha256": "3403eda4ca170ede41d3d4b8f94a21ad2806a5002ced63fac581fcfd1841666c",
+    "reason": "company, lift and supporting quote confirmed; not a statistical replication"
+  }
+}

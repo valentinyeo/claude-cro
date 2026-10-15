@@ -1,5 +1,8 @@
 # Conversion Rate Benchmarks
 
+> **Read this first.** These ranges are rough industry estimates without linked sources. They have not been independently verified, sources are not linked, and results vary widely by site. Use them to pick ideas, never to promise a result: write "reported in case studies", and size every test with `test_readiness.py`.
+
+
 Industry-standard conversion rate data for contextualizing CRO findings.
 Use these benchmarks to set realistic targets and identify underperformance.
 

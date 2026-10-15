@@ -7,6 +7,7 @@ description: >
   "test ideas", "hypothesis", "experiment", or "what should I test".
 argument-hint: "<url>"
 allowed-tools: Read, Grep, Glob, Bash, WebFetch
+disable-model-invocation: true
 ---
 
 # CRO Testing -- A/B Test Hypothesis Generation
@@ -20,8 +21,13 @@ estimates, and duration calculations.
 
 ## Process
 
-1. **Fetch and analyze the page** using `${CLAUDE_SKILL_DIR}/../cro/scripts/fetch_page.py` and
-   `${CLAUDE_SKILL_DIR}/../cro/scripts/parse_cro.py`. Extract all conversion-relevant elements.
+0. **Test Readiness Gate (do first).** Read `${CLAUDE_SKILL_DIR}/../cro/references/test-readiness.md`, get the baseline (monthly conversions + CVR or visitors; ask once, else mark ASSUMED) and run `${CLAUDE_SKILL_DIR}/../cro/scripts/cro-py test_readiness.py --conversions N --cvr X`. The verdict sets the output:
+   - READY: full ICE-ranked backlog below.
+   - LIMITED: at most 2 big-swing tests (6-8 weeks each) plus the usability research plan; list small ideas as "ship as fix, do not test".
+   - NOT_TESTABLE: no test backlog. Output the usability research plan and ship-and-measure list instead, and say why in one sentence.
+   Every brief states the duration the calculator gives for its expected lift.
+1. **Fetch and analyze the page** using `${CLAUDE_SKILL_DIR}/../cro/scripts/cro-py fetch_page.py` and
+   `${CLAUDE_SKILL_DIR}/../cro/scripts/cro-py parse_cro.py`. Extract all conversion-relevant elements.
 2. **Identify conversion issues and opportunities** by evaluating the page
    against CRO best practices. Look for gaps in copy, UX, trust, forms, and
    visual hierarchy.

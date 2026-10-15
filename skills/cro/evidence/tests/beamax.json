@@ -1,0 +1,48 @@
+{
+  "id": "beamax",
+  "title": "Beamax: Change the promotional text link from blue to red.",
+  "company": "Beamax",
+  "industry": "Projection screens",
+  "business_type": "E-commerce",
+  "page_type": "home",
+  "element": "link-color",
+  "change": {
+    "control": "Homepage promotional link is blue.",
+    "variant": "Change the promotional text link from blue to red."
+  },
+  "result": {
+    "metric": "promotional link click-through rate",
+    "relative_lift_pct": 53.13,
+    "direction": "win",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": null,
+  "test_duration": null,
+  "date_published": null,
+  "source_url": "https://wingify.com/success-stories/beamax/",
+  "source_type": "platform case study",
+  "quote": "The improvement of red link compared to the original blue link was quite significant: 53.13%",
+  "verification": "verified",
+  "evidence_strength": "B",
+  "principles": [
+    "visual-hierarchy"
+  ],
+  "added_date": "2026-10-15",
+  "added_by": "evidence",
+  "research_type": "ab-test",
+  "notes": "A third banner treatment also beat control but lost to the red text link. No numerical significance or sample size is published; do not generalize red as a winning color.",
+  "verification_details": {
+    "checked_at": "2026-10-15T10:29:05+00:00",
+    "source_loaded": true,
+    "company_found": true,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://wingify.com/success-stories/beamax/",
+    "content_sha256": "051c695880ec1441c96ebb5eb093e9a15f54d05c7b8f11af3679a6c35bf5b1df",
+    "reason": "company, lift and supporting quote confirmed; not a statistical replication"
+  }
+}

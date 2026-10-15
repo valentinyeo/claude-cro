@@ -8,6 +8,7 @@ description: >
   optimization", "pricing page", or "add to cart".
 argument-hint: "<url>"
 allowed-tools: Read, Grep, Glob, Bash, WebFetch
+disable-model-invocation: true
 ---
 
 # CRO E-commerce Analysis
@@ -22,7 +23,7 @@ presentations, and urgency/scarcity elements.
 
 ## Process
 
-1. **Fetch the page** using `${CLAUDE_SKILL_DIR}/../cro/scripts/fetch_page.py`. Store the raw HTML for
+1. **Fetch the page** using `${CLAUDE_SKILL_DIR}/../cro/scripts/cro-py fetch_page.py`. Store the raw HTML for
    analysis.
 2. **Detect e-commerce platform** by examining HTML source signatures:
    - Shopify: `cdn.shopify.com`, `Shopify.` JS object, `/cart.js` endpoint
@@ -30,7 +31,7 @@ presentations, and urgency/scarcity elements.
    - Magento: `mage/`, `Magento_`, `catalogsearch`
    - BigCommerce: `bigcommerce.com`, `stencil`
    - Custom: No recognizable platform signatures
-3. **Extract e-commerce elements** using `${CLAUDE_SKILL_DIR}/../cro/scripts/parse_cro.py`. Focus on
+3. **Extract e-commerce elements** using `${CLAUDE_SKILL_DIR}/../cro/scripts/cro-py parse_cro.py`. Focus on
    product data, pricing, cart elements, checkout forms, and trust signals.
 4. **Take screenshots** if Playwright is available (desktop 1440px and mobile
    375px). Use to evaluate add-to-cart prominence, price visibility, and

@@ -17,11 +17,12 @@ Examples:
 
 import argparse
 import ipaddress
+import re
 import json
 import socket
 import sys
 import time
-from urllib.parse import urlparse
+from urllib.parse import urljoin, urlparse
 
 try:
     import requests
@@ -30,7 +31,8 @@ except ImportError:
     sys.exit(1)
 
 
-DEFAULT_USER_AGENT = "ClaudeCRO/1.0"
+# Browser-like UA: many sites block or strip content for unknown bots
+DEFAULT_USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36"
 DEFAULT_TIMEOUT = 30
 MAX_REDIRECTS = 5
 
@@ -126,6 +128,84 @@ def validate_url(url: str) -> str:
     return url
 
 
+BLOCK_TITLES = re.compile(
+    r"too many requests|access denied|just a moment|attention required|verify you are human|"
+    r"are you a robot|captcha|request blocked|forbidden|bot protection|pardon our interruption",
+    re.I,
+)
+
+
+def looks_blocked(status_code: int, html: str):
+    """Return a reason string when the response is a bot-block or error page, else None."""
+    if status_code in (401, 403, 429, 503):
+        return f"HTTP {status_code}"
+    m = re.search(r"<title[^>]*>(.*?)</title>", html or "", re.I | re.S)
+    if m and BLOCK_TITLES.search(m.group(1)):
+        return f"block page title: {m.group(1).strip()[:80]}"
+    text = re.sub(r"<script.*?</script>|<style.*?</style>|<[^>]+>", " ", html or "", flags=re.S)
+    if len(text.split()) < 40:
+        return "almost no visible text (JavaScript-only page or block page)"
+    return None
+
+
+def guard_browser(context) -> None:
+    """Abort any browser request (page, redirect, subresource) to a private address."""
+    cache = {}
+
+    def handler(route):
+        host = urlparse(route.request.url).hostname
+        if host and host not in cache:
+            try:
+                resolve_and_check(host)
+                cache[host] = True
+            except ValueError:
+                cache[host] = False
+        if host and not cache[host]:
+            route.abort("blockedbyclient")
+        else:
+            route.continue_()
+
+    context.route("**/*", handler)
+
+
+def render_page(url: str, timeout: int = DEFAULT_TIMEOUT, user_agent: str = DEFAULT_USER_AGENT) -> dict:
+    """Load the page in headless Chromium and return the rendered DOM (what a visitor sees)."""
+    from playwright.sync_api import sync_playwright
+
+    validate_url(url)
+    resolve_and_check(urlparse(url).hostname)
+    start = time.time()
+    with sync_playwright() as p:
+        browser = p.chromium.launch(headless=True)
+        try:
+            ctx = browser.new_context(user_agent=user_agent, viewport={"width": 1440, "height": 900})
+            guard_browser(ctx)
+            page = ctx.new_page()
+            resp = page.goto(url, wait_until="domcontentloaded", timeout=timeout * 1000)
+            try:
+                page.wait_for_load_state("networkidle", timeout=10000)
+            except Exception:
+                pass
+            final = page.url
+            resolve_and_check(urlparse(final).hostname)
+            html = page.content()
+            status = resp.status if resp else 0
+            headers = dict(resp.headers) if resp else {}
+        finally:
+            browser.close()
+    return {
+        "url": url,
+        "final_url": final,
+        "status_code": status,
+        "headers": headers,
+        "html": html,
+        "response_time_ms": round((time.time() - start) * 1000, 1),
+        "resolved_ip": None,
+        "content_length": len(html.encode("utf-8")),
+        "encoding": "utf-8",
+    }
+
+
 def fetch_page(
     url: str,
     timeout: int = DEFAULT_TIMEOUT,
@@ -154,43 +234,38 @@ def fetch_page(
         "User-Agent": user_agent,
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
         "Accept-Language": "en-US,en;q=0.9",
-        "Accept-Encoding": "gzip, deflate, br",
+        "Accept-Encoding": "gzip, deflate",
         "Connection": "keep-alive",
     }
 
     start_time = time.time()
-
     session = requests.Session()
-    session.max_redirects = MAX_REDIRECTS
+    current = url
 
-    try:
-        response = session.get(
-            url,
-            headers=headers,
-            timeout=timeout,
-            allow_redirects=True,
-        )
-    except requests.exceptions.TooManyRedirects:
+    # Follow redirects by hand so every hop is checked before it is requested
+    for _ in range(MAX_REDIRECTS + 1):
+        try:
+            response = session.get(current, headers=headers, timeout=timeout, allow_redirects=False)
+        except requests.exceptions.ConnectionError as exc:
+            raise RuntimeError(f"Connection error fetching '{current}': {exc}")
+        except requests.exceptions.Timeout:
+            raise RuntimeError(f"Timeout ({timeout}s) fetching '{current}'")
+        except requests.exceptions.RequestException as exc:
+            raise RuntimeError(f"Request error fetching '{current}': {exc}")
+
+        if not response.is_redirect:
+            break
+        nxt = urljoin(current, response.headers.get("Location", ""))
+        try:
+            validate_url(nxt)
+            resolve_and_check(urlparse(nxt).hostname)
+        except ValueError as exc:
+            raise RuntimeError(f"SSRF protection triggered on redirect to '{nxt}': {exc}")
+        current = nxt
+    else:
         raise RuntimeError(f"Too many redirects (max {MAX_REDIRECTS}) when fetching '{url}'")
-    except requests.exceptions.ConnectionError as exc:
-        raise RuntimeError(f"Connection error fetching '{url}': {exc}")
-    except requests.exceptions.Timeout:
-        raise RuntimeError(f"Timeout ({timeout}s) fetching '{url}'")
-    except requests.exceptions.RequestException as exc:
-        raise RuntimeError(f"Request error fetching '{url}': {exc}")
 
     elapsed_ms = round((time.time() - start_time) * 1000, 1)
-
-    # Check the final URL after redirects for SSRF as well
-    final_parsed = urlparse(response.url)
-    if final_parsed.hostname and final_parsed.hostname != hostname:
-        try:
-            resolve_and_check(final_parsed.hostname)
-        except ValueError as exc:
-            raise RuntimeError(
-                f"SSRF protection triggered after redirect. "
-                f"Final URL '{response.url}' resolves to a blocked address: {exc}"
-            )
 
     # Build response headers dict (flatten multi-value headers)
     resp_headers = {}
@@ -227,21 +302,46 @@ Examples:
     parser.add_argument("--json", action="store_true", dest="json_output", help="Output metadata as JSON")
     parser.add_argument("--timeout", "-t", type=int, default=DEFAULT_TIMEOUT, help=f"Request timeout in seconds (default: {DEFAULT_TIMEOUT})")
     parser.add_argument("--user-agent", "-u", default=DEFAULT_USER_AGENT, help=f'User-Agent string (default: "{DEFAULT_USER_AGENT}")')
+    parser.add_argument("--render", action="store_true",
+                        help="Load in headless Chromium and save the rendered DOM (falls back to plain HTTP if Playwright is missing)")
 
     args = parser.parse_args()
 
+    result, how, note = None, "http", None
     try:
-        result = fetch_page(
-            url=args.url,
-            timeout=args.timeout,
-            user_agent=args.user_agent,
-        )
+        if args.render:
+            try:
+                result, how = render_page(args.url, args.timeout, args.user_agent), "browser"
+            except ImportError:
+                note = "Playwright not installed; used plain HTTP"
+            except Exception as exc:
+                note = f"browser render failed ({exc}); used plain HTTP"
+        if result is None:
+            result = fetch_page(url=args.url, timeout=args.timeout, user_agent=args.user_agent)
+            # Bot walls and JavaScript-only pages often load fine in a real browser
+            if looks_blocked(result["status_code"], result["html"]) and not args.render:
+                try:
+                    rendered = render_page(args.url, args.timeout, args.user_agent)
+                    if not looks_blocked(rendered["status_code"], rendered["html"]):
+                        result, how = rendered, "browser"
+                        note = "plain HTTP looked blocked; used browser render"
+                except Exception:
+                    pass
     except (ValueError, RuntimeError) as exc:
         if args.json_output:
             print(json.dumps({"error": str(exc)}, indent=2))
         else:
             print(f"Error: {exc}", file=sys.stderr)
         sys.exit(1)
+
+    blocked = looks_blocked(result["status_code"], result["html"])
+    result["fetched_with"] = how
+    result["blocked"] = blocked
+    if note:
+        print(f"Note: {note}", file=sys.stderr)
+    if blocked:
+        print(f"WARNING: page looks blocked or empty ({blocked}). Do not audit this HTML as the real page; "
+              "use screenshots or WebFetch and record the gap.", file=sys.stderr)
 
     # Write HTML to file if requested
     if args.output:
@@ -265,6 +365,8 @@ Examples:
             "resolved_ip": result["resolved_ip"],
             "content_length": result["content_length"],
             "encoding": result["encoding"],
+            "fetched_with": result["fetched_with"],
+            "blocked": result["blocked"],
         }
         if not args.output:
             # If no output file specified, include HTML in JSON
@@ -284,6 +386,8 @@ Examples:
             print(f"Encoding: {result['encoding']}")
             print("---")
             print(result["html"])
+    if blocked:
+        sys.exit(3)
 
 
 if __name__ == "__main__":

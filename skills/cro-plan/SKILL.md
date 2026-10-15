@@ -23,15 +23,15 @@ recommendations.
 
 ## Process
 
-1. **Fetch the site** using `${CLAUDE_SKILL_DIR}/../cro/scripts/fetch_page.py`. Analyze the homepage and
+1. **Fetch the site** using `${CLAUDE_SKILL_DIR}/../cro/scripts/cro-py fetch_page.py`. Analyze the homepage and
    one or two key conversion pages to understand the business.
-2. **Detect industry type** by examining the site's content, product/service
-   offerings, and conversion patterns. Map to one of the supported industry
-   templates: SaaS, E-commerce, Local Service, Lead Generation, Subscription,
-   or Generic.
+2. **Detect business type** with `${CLAUDE_SKILL_DIR}/../cro/references/business-types.md`;
+   its last column names the template in `assets/`.
+2b. **Test Readiness Gate (do first).** Read `${CLAUDE_SKILL_DIR}/../cro/references/test-readiness.md`, get the baseline (monthly conversions + CVR or visitors; ask once, else mark ASSUMED) and run `${CLAUDE_SKILL_DIR}/../cro/scripts/cro-py test_readiness.py --conversions N --cvr X`. A NOT_TESTABLE or LIMITED verdict makes month 1 a research month
+   (usability tests, recordings, polls) and caps the plan's A/B tests at what the calculator allows.
 3. **Run a quick assessment** across the core CRO dimensions: value
    proposition, CTAs, trust signals, forms, page speed, mobile experience, and
-   tracking readiness. Use `${CLAUDE_SKILL_DIR}/../cro/scripts/parse_cro.py` for element extraction. This
+   tracking readiness. Use `${CLAUDE_SKILL_DIR}/../cro/scripts/cro-py parse_cro.py` for element extraction. This
    is a rapid scan, not a full audit -- just enough to identify strengths,
    weaknesses, and maturity level.
 4. **Load the industry template** from `assets/` directory (e.g.,
@@ -256,7 +256,9 @@ Load and reference the appropriate template from `assets/`:
 | Local Service | Read `assets/local-service.md` |
 | Lead Generation | Read `assets/lead-gen.md` |
 | Subscription | Read `assets/subscription.md` |
-| Other / Unknown | Read `assets/generic.md` |
+| Agency / B2B services | Read `assets/lead-gen.md` |
+| Content / Media | Read `assets/subscription.md` |
+| Marketplace, Non-profit, Other | Read `assets/generic.md` |
 
 Apply the template's industry-specific goals, common patterns, recommended
 tests, and benchmarks to the roadmap. If the site spans multiple categories

@@ -1,0 +1,49 @@
+{
+  "id": "getresponse",
+  "title": "GetResponse: Add a Free Trial button beside Buy Now.",
+  "company": "GetResponse",
+  "industry": "Email marketing",
+  "business_type": "SaaS",
+  "page_type": "home",
+  "element": "cta",
+  "change": {
+    "control": "Homepage prominently offers Buy Now but not Free Trial.",
+    "variant": "Add a Free Trial button beside Buy Now."
+  },
+  "result": {
+    "metric": "free-account registrations",
+    "relative_lift_pct": 158.6,
+    "direction": "win",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": null,
+  "test_duration": null,
+  "date_published": null,
+  "source_url": "https://wingify.com/success-stories/getresponse/",
+  "source_type": "platform case study",
+  "quote": "the number of free accounts increased by 158.6%",
+  "verification": "verified",
+  "evidence_strength": "B",
+  "principles": [
+    "friction",
+    "incentive"
+  ],
+  "added_date": "2026-10-15",
+  "added_by": "evidence",
+  "research_type": "ab-test",
+  "notes": "Publisher headline labels CTR, but the body explicitly describes created free accounts. Paid accounts reportedly stayed at the same level, with no numeric estimate or equivalence test.",
+  "verification_details": {
+    "checked_at": "2026-10-15T10:29:08+00:00",
+    "source_loaded": true,
+    "company_found": true,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://wingify.com/success-stories/getresponse/",
+    "content_sha256": "0ce827a9b28e027c4099bc9f0c70c48d0c6438218f96cba9d2dbc9ca4bd759c7",
+    "reason": "company, lift and supporting quote confirmed; not a statistical replication"
+  }
+}

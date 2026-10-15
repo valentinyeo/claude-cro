@@ -1,3 +1,5 @@
 scripts/__pycache__/
 __pycache__/
 *.pyc
+.unlazy/
+.unlazy-hook-state.json

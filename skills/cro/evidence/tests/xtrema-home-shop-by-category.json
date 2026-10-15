@@ -1,0 +1,56 @@
+{
+  "id": "xtrema-home-shop-by-category",
+  "title": "Xtrema: Add mobile-friendly icon-led Shop by Category navigation below the hero.",
+  "company": "Xtrema",
+  "industry": "Cookware",
+  "business_type": "E-commerce",
+  "page_type": "home",
+  "element": "category-navigation",
+  "change": {
+    "control": "Sub-hero has a Shop Best Sellers button.",
+    "variant": "Add mobile-friendly icon-led Shop by Category navigation below the hero."
+  },
+  "result": {
+    "metric": "collection views",
+    "relative_lift_pct": 40.41,
+    "direction": "win",
+    "desired_direction": "increase"
+  },
+  "sample_size": {
+    "total": 7937,
+    "unit": "visitors"
+  },
+  "conversions": null,
+  "significance": {
+    "confidence_pct": 100,
+    "p_value": null,
+    "reported": "100% confidence reported by publisher"
+  },
+  "test_duration": "8 days",
+  "date_published": null,
+  "source_url": "https://www.convert.com/case-studies/optimize-product-discovery/",
+  "source_type": "platform case study",
+  "quote": "Percentage Increase in Collection Views : 40.41%",
+  "verification": "verified",
+  "evidence_strength": "A",
+  "principles": [
+    "friction",
+    "product-discovery"
+  ],
+  "added_date": "2026-10-15",
+  "added_by": "evidence",
+  "research_type": "ab-test",
+  "notes": "Short runtime; 100% is the publisher-reported statistical significance, not certainty. Collection views are an intermediate metric, not sales.",
+  "verification_details": {
+    "checked_at": "2026-10-15T10:29:15+00:00",
+    "source_loaded": true,
+    "company_found": true,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://www.convert.com/case-studies/optimize-product-discovery/",
+    "content_sha256": "c21a72bddc30ecbb9668efb60cbf9d70eedc90158d88b0cb73447b5cc2f00e0b",
+    "reason": "company, lift and supporting quote confirmed; not a statistical replication"
+  }
+}

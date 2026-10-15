@@ -1,0 +1,56 @@
+{
+  "id": "xtrema-direct-product-navigation",
+  "title": "Xtrema: Expose product categories with direct product links in top navigation.",
+  "company": "Xtrema",
+  "industry": "Cookware",
+  "business_type": "E-commerce",
+  "page_type": "global",
+  "element": "navigation",
+  "change": {
+    "control": "Top navigation uses a generic Shop dropdown.",
+    "variant": "Expose product categories with direct product links in top navigation."
+  },
+  "result": {
+    "metric": "product views",
+    "relative_lift_pct": 16.7,
+    "direction": "win",
+    "desired_direction": "increase"
+  },
+  "sample_size": {
+    "total": 9249,
+    "unit": "visitors"
+  },
+  "conversions": null,
+  "significance": {
+    "confidence_pct": 100,
+    "p_value": null,
+    "reported": "100% confidence reported by publisher"
+  },
+  "test_duration": "5 days",
+  "date_published": null,
+  "source_url": "https://www.convert.com/case-studies/optimize-product-discovery/",
+  "source_type": "platform case study",
+  "quote": "Percentage Increase in Product Views: 16.7%",
+  "verification": "verified",
+  "evidence_strength": "A",
+  "principles": [
+    "friction",
+    "product-discovery"
+  ],
+  "added_date": "2026-10-15",
+  "added_by": "evidence",
+  "research_type": "ab-test",
+  "notes": "Very short runtime. Publisher-reported 100% significance is rounded, not certainty. Product views are not purchases. Projected annual program revenue is not this test result.",
+  "verification_details": {
+    "checked_at": "2026-10-15T10:29:15+00:00",
+    "source_loaded": true,
+    "company_found": true,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://www.convert.com/case-studies/optimize-product-discovery/",
+    "content_sha256": "c21a72bddc30ecbb9668efb60cbf9d70eedc90158d88b0cb73447b5cc2f00e0b",
+    "reason": "company, lift and supporting quote confirmed; not a statistical replication"
+  }
+}

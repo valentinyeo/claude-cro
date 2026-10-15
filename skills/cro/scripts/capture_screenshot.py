@@ -87,6 +87,15 @@ def check_ssrf(url: str):
             )
 
 
+def _guard(context):
+    import importlib.util
+    spec = importlib.util.spec_from_file_location(
+        "fetch_page_mod", os.path.join(os.path.dirname(os.path.abspath(__file__)), "fetch_page.py"))
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    mod.guard_browser(context)
+
+
 def capture_screenshot(
     url: str,
     output: str = "screenshot.png",
@@ -158,9 +167,10 @@ def capture_screenshot(
         else:
             context = browser.new_context(
                 viewport={"width": width, "height": height},
-                user_agent="ClaudeCRO/1.0 (Screenshot)",
+                user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36",
             )
 
+        _guard(context)
         page = context.new_page()
 
         try:
@@ -172,6 +182,13 @@ def capture_screenshot(
             except Exception as exc:
                 browser.close()
                 raise RuntimeError(f"Failed to load page '{url}': {exc}")
+
+        # Redirects happen inside the browser, so re-check where we landed
+        try:
+            check_ssrf(page.url)
+        except ValueError:
+            browser.close()
+            raise
 
         # Wait for JS rendering
         if wait > 0:

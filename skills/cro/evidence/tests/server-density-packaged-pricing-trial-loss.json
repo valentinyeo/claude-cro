@@ -1,0 +1,58 @@
+{
+  "id": "server-density-packaged-pricing-trial-loss",
+  "title": "Server Density: Replace per-unit pricing with packages starting at $99 per month.",
+  "company": "Server Density",
+  "industry": "Infrastructure monitoring",
+  "business_type": "SaaS",
+  "page_type": "pricing",
+  "element": "pricing-model",
+  "change": {
+    "control": "Configurable per-server and per-website pricing.",
+    "variant": "Replace per-unit pricing with packages starting at $99 per month."
+  },
+  "result": {
+    "metric": "free-trial signups",
+    "relative_lift_pct": -24.96,
+    "direction": "loss",
+    "desired_direction": "increase"
+  },
+  "sample_size": {
+    "total": 3875,
+    "control": 1950,
+    "variant": 1925,
+    "unit": "visitors"
+  },
+  "conversions": {
+    "control": 135,
+    "variant": 100,
+    "unit": "free-trial signups"
+  },
+  "significance": null,
+  "test_duration": null,
+  "date_published": null,
+  "source_url": "https://wingify.com/success-stories/server-density/",
+  "source_type": "platform case study",
+  "quote": "Although the number of free sign-ups dropped by 24.96%, the total revenue increased by 114%.",
+  "verification": "verified",
+  "evidence_strength": "B",
+  "principles": [
+    "pricing",
+    "value-proposition"
+  ],
+  "added_date": "2026-10-15",
+  "added_by": "evidence",
+  "research_type": "ab-test",
+  "notes": "Loss on free-trial signups, not on overall business value: reported revenue rose 114%. No significance is stated for the free-trial metric; a result-table image reports 93% chance to beat original without identifying the metric. Publisher percentage is retained, not recalculated from rounded rates or raw signup counts.",
+  "verification_details": {
+    "checked_at": "2026-10-15T10:29:12+00:00",
+    "source_loaded": true,
+    "company_found": true,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://wingify.com/success-stories/server-density/",
+    "content_sha256": "30f0d1e7eab1e98bc6baa894f5635147adf3e51fe4dd2119b05c0eaa9f5b538e",
+    "reason": "company, lift and supporting quote confirmed; not a statistical replication"
+  }
+}

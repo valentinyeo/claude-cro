@@ -112,10 +112,7 @@ def load_html(source: str) -> tuple:
                 result = fetch_mod.fetch_page(source)
                 return result["html"], result["final_url"]
 
-            # Fallback: use requests directly
-            import requests
-            resp = requests.get(source, timeout=30, headers={"User-Agent": "ClaudeCRO/1.0"})
-            return resp.text, resp.url
+            raise RuntimeError("fetch_page.py not found next to parse_cro.py")
         except Exception as exc:
             print(f"Error fetching URL '{source}': {exc}", file=sys.stderr)
             sys.exit(1)

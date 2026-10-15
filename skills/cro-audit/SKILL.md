@@ -1,336 +1,216 @@
 ---
 name: cro-audit
 description: >
-  Full website conversion audit with parallel subagent delegation. Analyzes key pages,
-  detects business type, delegates to 6 CRO specialists, generates CRO Health Score
-  (0-100). Use when user says "CRO audit", "conversion audit", "full site CRO",
-  "analyze my site for conversions", or "website conversion check".
-argument-hint: "<url>"
+  Deep conversion audit of a whole site with an agent swarm: crawls the key
+  pages, checks whether the site has enough orders to A/B test, runs specialist
+  agents per page, sends persona agents through the buying journey in a real
+  browser, has a skeptic agent try to disprove every finding, then writes a
+  verified audit, action plan and findings.json for the slide deck. Use for
+  /cro audit, "CRO audit", "conversion audit", "audit this prospect's site".
+argument-hint: "<url> [--depth quick|standard|deep] [--conversions N --cvr X] [--prospect]"
 disable-model-invocation: true
-allowed-tools: Read, Grep, Glob, Bash, WebFetch, Agent
+allowed-tools: Read, Write, Grep, Glob, Bash, WebFetch, Agent
 ---
 
-# Full Website Conversion Audit
+# Full Conversion Audit (swarm)
 
-You are a CRO Audit Orchestrator. You coordinate a comprehensive conversion rate optimization audit by delegating to specialist agents, synthesizing their findings, and producing actionable reports.
+You coordinate: capture the site once, set the baseline, fan out agents, merge,
+let the skeptic attack the findings, score, write, verify. You never present a
+finding that the skeptic rejected.
 
-## Process
+`CRO_SCRIPTS` = the absolute path from `cd "${CLAUDE_SKILL_DIR}/../cro/scripts" && pwd`.
+Write it out literally in each command. Run scripts as `"<CRO_SCRIPTS>/cro-py" <script>.py`.
 
-### Step 1: Fetch Homepage
+## Depth
 
-Fetch the homepage HTML using the fetch script:
+| Depth | Pages | Lens agents | Personas | Use for |
+|-------|-------|-------------|----------|---------|
+| `quick` | homepage | 6, one pass | 0 | a fast first look |
+| `standard` (default) | up to 4 key pages | 6, each covering all pages | 2 | prospect pitch decks |
+| `deep` | up to 7 key pages | 6 per page | 4 | paid audits, signed clients |
+
+`--prospect` means the output feeds a pitch deck (`/cro slides`): the owner has
+not hired us yet, so no baseline numbers exist. Mark the baseline ASSUMED and
+keep the verdict provisional.
+
+## Step 1: Workspace, crawl and capture
+
 ```bash
-python3 ${CLAUDE_SKILL_DIR}/../cro/scripts/fetch_page.py $ARGUMENTS --output /tmp/cro-audit/homepage.html
+W="$PWD/cro-audit-<domain>-<YYYY-MM-DD>"; mkdir -p "$W/findings" "$W/pages" "$W/personas"
+"<CRO_SCRIPTS>/cro-py" doctor.py --quick
+"<CRO_SCRIPTS>/cro-py" crawl_site.py <url> --json > "$W/crawl.json"
 ```
 
-If the script is not available, use curl:
+Pick the pages from `crawl.json` along the path a buyer walks, by business type
+(`${CLAUDE_SKILL_DIR}/../cro/references/business-types.md`). E-commerce: home,
+collection, product, cart. SaaS: home, pricing, signup, demo. Lead gen and
+services: home, service page, contact, reviews or case study. Capture each page
+into its own folder, one after another:
+
 ```bash
-mkdir -p /tmp/cro-audit
-curl -sL -o /tmp/cro-audit/homepage.html -w "%{http_code} %{time_total}s" "<URL>"
+"<CRO_SCRIPTS>/cro-py" capture.py <page-url> "$W/pages/<type>"
 ```
 
-### Step 2: Detect Business Type
+Each folder gets `raw.html`, `page.html` (browser-rendered), `fetch.json`,
+`elements.json`, `desktop.png`, `mobile.png`, `mobile-full.png`, `speed.json`,
+`gaps.txt`.
 
-Analyze homepage signals to classify the business:
+- Exit 3 = the page looks blocked or empty. Open its `desktop.png`: real site
+  visible means audit from screenshots and WebFetch and record the gap; a bot
+  wall means drop the page and tell the user. Never audit a block page.
+- An element in `raw.html` but not in `page.html` (or the reverse) is a
+  rendering issue, not a missing element.
 
-| Business Type | Detection Signals |
-|--------------|-------------------|
-| **E-commerce** | Product listings, cart icon, price elements, "Add to Cart", product categories, SKU references |
-| **SaaS** | "Sign up", "Free trial", "Start free", pricing tiers, feature comparison, "Login", app screenshots |
-| **Lead Generation** | Contact form prominent, "Get a Quote", "Request Demo", "Schedule a Call", phone number prominent |
-| **Content/Media** | Article layout, author bylines, publish dates, categories/tags, subscribe prompts, ad placements |
-| **Professional Services** | Team/about emphasis, case studies, service descriptions, credentials, "Contact Us" prominent |
-| **Marketplace** | Buyer and seller language, listing format, categories, search prominent, "Sell" and "Buy" CTAs |
-| **Non-profit** | "Donate", mission statement, impact metrics, volunteer calls, cause-related imagery |
+## Step 2: Business type
 
-The business type determines which quality gates, trust expectations, and conversion definitions to apply.
+Classify with `business-types.md`. Record the main conversion action.
 
-### Step 3: Identify Key Pages
+## Step 3: Test Readiness Gate (the baseline)
 
-Beyond the homepage, identify and note key pages for analysis:
-- **Homepage** (always included)
-- **Primary conversion page** (pricing, product page, sign-up, contact)
-- **About / Trust page** (about us, team, credentials)
-- **Key landing page** (if identifiable from navigation or common URL patterns)
+Read `${CLAUDE_SKILL_DIR}/../cro/references/test-readiness.md` and follow it.
+Numbers in the arguments: CONFIRMED. Otherwise ask the user once; a prospect or
+an unknown answer means ASSUMED, with the estimate explained. Run
+`"<CRO_SCRIPTS>/cro-py" test_readiness.py --conversions N --cvr X` and save to
+`$W/readiness.txt`. The verdict sets the recommendation mode for the report.
 
-For the initial audit, focus on the URL provided. Note additional pages as recommendations for expanded audit.
+## Step 4: Fan out the swarm (per page)
 
-### Step 4: Delegate to Specialist Agents
+Launch every agent of this wave in ONE message with the Agent tool
+(`subagent_type` = agent name) so they run in parallel. Every prompt contains:
+the URL, `W`, `CRO_SCRIPTS`, business type and main conversion, the page
+folders it covers, and: "Read the workspace files; do not refetch. Every
+finding needs an Evidence line naming the page folder and file."
 
-Spawn all 6 specialist agents in parallel using the Task tool. Each agent receives:
-- The target URL
-- The detected business type
-- Instructions to write findings in their standard report format
+**Lens agents** (`standard`: one each covering all pages; `deep`: one per lens
+per page, with that page folder in the prompt):
 
-**Agent roster:**
+| Agent | Looks at | Returns |
+|-------|----------|---------|
+| `cro-ux` | heuristics, navigation, mobile, forms | UX score + Forms score |
+| `cro-copy` | headline, value prop, CTA wording, objections, microcopy | Copy score + rewrites |
+| `cro-trust` | reviews, guarantees, policies, security, social proof | Trust score |
+| `cro-visual` | hierarchy, CTA prominence, design, screenshots | Visual score |
+| `cro-performance` | `speed.json`, resources, third-party scripts | Performance score |
+| `cro-tracking` | analytics, events, consent | Tracking score |
 
-| Agent | File | Focus Area |
-|-------|------|------------|
-| `cro-ux` | `agents/cro-ux.md` | Heuristic evaluation, navigation, mobile UX, form UX, conversion paths |
-| `cro-copy` | `agents/cro-copy.md` | Headlines, CTAs, value proposition, benefit language, readability, psychology |
-| `cro-tracking` | `agents/cro-tracking.md` | GA4, GTM, conversion events, data layer, consent, heatmaps |
-| `cro-visual` | `agents/cro-visual.md` | Screenshots, above-fold analysis, CTA visibility, visual hierarchy, images |
-| `cro-performance` | `agents/cro-performance.md` | Load time, resource analysis, image optimization, third-party script impact |
-| `cro-trust` | `agents/cro-trust.md` | Social proof, security signals, guarantees, authority, contact transparency |
+**Persona agents** (`cro-persona`, same wave), matched to the business.
+E-commerce defaults: (1) mobile visitor from an Instagram ad, lands on a
+product page, impatient; (2) desktop comparison shopper who checks shipping,
+returns and reviews first. Deep adds (3) a returning visitor using search for
+a specific item and (4) a gift buyer unsure of size. SaaS: an evaluator
+comparing plans, and a busy founder signing up on a phone. Give each persona an
+id, device, entry URL, goal and patience level.
 
-**Spawning pattern:**
-```
-For each agent:
-  1. Read the agent's .md file to load its identity and instructions
-  2. Spawn a Task with the agent's prompt, URL, and business type
-  3. Collect the agent's report when complete
-```
+Agents write `W/findings/<name>.md` as they go (partial, then complete). If an
+agent fails or times out, use its partial file and mark that category partial;
+if nothing exists, drop the category per `scoring.md` and say so.
 
-Run all 6 in parallel for efficiency. If the Task tool is unavailable (running inline), execute each analysis sequentially in this order: UX, Copy, Trust, Visual, Performance, Tracking.
+## Step 5: Merge, then let the skeptic attack
 
-### Step 5: Collect Results
+1. Read every findings file. Merge duplicates (same element and problem = one
+   finding; list every agent and persona that hit it; more hits = stronger).
+   A persona's real friction outranks a lens opinion when they conflict.
+2. Write `W/candidates.md`: id (F-01...), page, claim, evidence, priority, sources.
+3. Launch `cro-skeptic` with `W` and `CRO_SCRIPTS`. Apply its verdicts: drop
+   REJECT, apply DOWNGRADE and REWORD. Keep its table in the workspace.
 
-Gather all 6 agent reports. Each report includes:
-- A category score (0-100)
-- Detailed findings
-- Priority recommendations
+## Step 6: Score
 
-### Step 6: Calculate CRO Health Score
+Apply `${CLAUDE_SKILL_DIR}/../cro/references/scoring.md`, rescaling for missing
+categories. With several pages, a category score is the average across pages,
+with the conversion page (product, pricing or form page) counted twice.
 
-Compute the weighted aggregate score:
+## Step 7: Write the deliverables into `$W`
 
-| Category | Weight | Source |
-|----------|--------|--------|
-| UX | 25% | cro-ux agent |
-| Copy | 20% | cro-copy agent |
-| Trust | 15% | cro-trust agent |
-| Visual | 15% | cro-visual agent |
-| Forms | 10% | Derived from cro-ux form findings + page analysis |
-| Performance | 10% | cro-performance agent |
-| Tracking | 5% | cro-tracking agent |
-
-**Formula:**
-```
-CRO Health Score = (UX * 0.25) + (Copy * 0.20) + (Trust * 0.15) + (Visual * 0.15) + (Forms * 0.10) + (Performance * 0.10) + (Tracking * 0.05)
-```
-
-**Form Score derivation:** If the page has forms, derive the score from the UX agent's form-specific findings. If the page has no forms, redistribute the 10% weight equally to UX and Copy (UX becomes 30%, Copy becomes 25%).
-
-### Step 7: Generate Reports
-
-Produce two output files in the current working directory (or `/tmp/cro-audit/` if no project context):
-
----
-
-## Output File 1: FULL-AUDIT.md
+**FULL-AUDIT.md**
 
 ```markdown
-# CRO Audit Report: [Domain Name]
-**Date:** [YYYY-MM-DD]
-**URL Analyzed:** [URL]
-**Business Type:** [Detected type]
+# CRO Audit: [domain]
+**Date:** [date] · **URL:** [url] · **Business type:** [type], main conversion: [action]
+**Pages audited:** [list] · **Depth:** [depth] · **Personas:** [n]
+**CRO Health Score:** [N]/100 — [rating]
 
----
+## Bottom line
+[3 sentences: biggest problem, biggest opportunity, what to do first.]
 
-## Executive Summary
+## Test Readiness
+[Section exactly as in test-readiness.md]
 
-### CRO Health Score: [X]/100 — [Rating]
-
+## Score
 | Category | Score | Weight | Weighted |
 |----------|-------|--------|----------|
-| UX | [X]/100 | 25% | [X] |
-| Copy | [X]/100 | 20% | [X] |
-| Trust | [X]/100 | 15% | [X] |
-| Visual | [X]/100 | 15% | [X] |
-| Forms | [X]/100 | 10% | [X] |
-| Performance | [X]/100 | 10% | [X] |
-| Tracking | [X]/100 | 5% | [X] |
-| **Total** | | **100%** | **[CRO Health Score]** |
+| UX | [n]/100 | [w]% | [n×w/100, 1 decimal] |
+| ... one row per scored category ... |
+| **Total** | | **100%** | **[sum]** |
 
-### Score Breakdown
-UX:          [========--] XX/100
-Copy:        [=======---] XX/100
-Trust:       [======----] XX/100
-Visual:      [=========-] XX/100
-Forms:       [=====-----] XX/100
-Performance: [========--] XX/100
-Tracking:    [====------] XX/100
+## Top 5 issues
+1. [Issue] — [page] — [priority]. Evidence: [file + what it shows]
 
-### Top 5 Critical Issues (Blocking Conversions)
-1. [Issue — Category — Severity]
-2. [Issue — Category — Severity]
-3. [Issue — Category — Severity]
-4. [Issue — Category — Severity]
-5. [Issue — Category — Severity]
+## What visitors experienced
+[One short paragraph per persona: goal, outcome, worst moment, step screenshot]
 
-### Top 5 Quick Wins (Easy + High Impact)
-1. [Win — Category — Expected Impact]
-2. [Win — Category — Expected Impact]
-3. [Win — Category — Expected Impact]
-4. [Win — Category — Expected Impact]
-5. [Win — Category — Expected Impact]
+## What already works
+[3-5 strengths worth keeping]
 
----
+## Findings by page
+[Per page: findings with priority tag, Evidence line, sources]
 
-## UX Analysis
-[Full cro-ux agent report]
+## Copy rewrites
+[Current text → proposed text: headline, subhead, CTAs, key objections]
 
----
-
-## Copy Analysis
-[Full cro-copy agent report]
-
----
-
-## Trust Signal Analysis
-[Full cro-trust agent report]
-
----
-
-## Visual Hierarchy Analysis
-[Full cro-visual agent report]
-
----
-
-## Performance Impact Analysis
-[Full cro-performance agent report]
-
----
-
-## Tracking & Analytics Analysis
-[Full cro-tracking agent report]
-
----
-
-## Form Analysis
-[Derived from UX agent's form findings, expanded with additional form-specific analysis]
+## Gaps in this audit
+[Blocked pages, no real-user speed data, login-only pages, assumed baseline]
 ```
 
----
-
-## Output File 2: ACTION-PLAN.md
+**ACTION-PLAN.md**
 
 ```markdown
-# CRO Action Plan: [Domain Name]
-**Date:** [YYYY-MM-DD]
-**CRO Health Score:** [X]/100
+# CRO Action Plan: [domain]
+**Date:** [date] · **Score:** [N]/100 · **Test readiness:** [verdict]
 
----
-
-## How to Use This Plan
-- Items are sorted by priority (Critical > High > Medium > Low)
-- Start with Critical items — these are actively blocking conversions
-- Each item includes expected impact and effort level to help with prioritization
-- Use the Impact/Effort matrix to identify your best ROI improvements
-
----
-
-## Critical Priority (Fix Immediately — Blocks Conversions)
-
+## Critical
 ### [C-1] [Title]
-- **Category:** [UX/Copy/Trust/Visual/Performance/Tracking]
-- **Found by:** [Agent name]
-- **Expected Conversion Impact:** High
-- **Implementation Effort:** [Easy/Medium/Hard]
-- **Description:** [What the issue is]
-- **Recommendation:** [Specific steps to fix]
+- **Page / found by:** [page] / [agents, personas]
+- **Evidence:** [file + what it shows]
+- **Fix:** [specific change]
+- **Effort:** [Easy/Medium/Hard] · **How to validate:** [ship + baseline | big-swing test | A/B test]
 
-### [C-2] [Title]
-...
-
----
-
-## High Priority (Fix Within 1 Week — Major Conversion Impact)
-
-### [H-1] [Title]
-- **Category:** [UX/Copy/Trust/Visual/Performance/Tracking]
-- **Found by:** [Agent name]
-- **Expected Conversion Impact:** High/Medium
-- **Implementation Effort:** [Easy/Medium/Hard]
-- **Description:** [What the issue is]
-- **Recommendation:** [Specific steps to fix]
-
-...
-
----
-
-## Medium Priority (Fix Within 1 Month — Optimization Opportunity)
-
-### [M-1] [Title]
-- **Category:** [UX/Copy/Trust/Visual/Performance/Tracking]
-- **Found by:** [Agent name]
-- **Expected Conversion Impact:** Medium
-- **Implementation Effort:** [Easy/Medium/Hard]
-- **Description:** [What the issue is]
-- **Recommendation:** [Specific steps to fix]
-
-...
-
----
-
-## Low Priority (Backlog — Polish & Fine-Tune)
-
-### [L-1] [Title]
-- **Category:** [UX/Copy/Trust/Visual/Performance/Tracking]
-- **Found by:** [Agent name]
-- **Expected Conversion Impact:** Low
-- **Implementation Effort:** [Easy/Medium/Hard]
-- **Description:** [What the issue is]
-- **Recommendation:** [Specific steps to fix]
-
-...
-
----
-
-## Impact/Effort Matrix
-
-|  | Easy Effort | Medium Effort | Hard Effort |
-|--|-------------|---------------|-------------|
-| **High Impact** | [Quick Wins — do first] | [Major Projects] | [Strategic Investments] |
-| **Medium Impact** | [Fill-ins] | [Plan carefully] | [Consider ROI] |
-| **Low Impact** | [If time permits] | [Backlog] | [Skip or defer] |
-
----
-
-## Recommended A/B Test Ideas
-Based on the audit findings, these hypotheses are worth testing:
-
-1. **Test:** [What to test]
-   **Hypothesis:** [If we change X, then Y will improve because Z]
-   **Primary metric:** [Conversion rate / CTR / etc.]
-   **Based on:** [Which agent finding]
-
-2. ...
-
----
-
-## Next Steps
-1. Address all Critical items immediately
-2. Schedule High priority items for the current sprint/week
-3. Create tickets for Medium priority items in your backlog
-4. Consider running recommended A/B tests on High/Medium items before full implementation
-5. Re-audit in 30-60 days to measure progress
+## High
+### [H-1] ...
+## Medium
+### [M-1] ...
+## Low
+### [L-1] ...
 ```
 
----
+Then by verdict: READY gets `## A/B Test Backlog` (3-5 ICE-scored hypotheses
+with durations from `readiness.txt`); LIMITED gets `## Research Plan` then
+`## Big-Swing Tests` (max 2); NOT_TESTABLE gets `## Research Plan` only.
 
-## Score Ratings Reference
+**findings.json** (feeds `/cro slides` and `/cro wireframe`): top-level
+`site, date, business_type, score, rating, categories, readiness, strengths,
+personas` (id, goal, outcome, worst_step_image) and `findings`: a list of
+`{id, title, priority, page, category, problem, evidence, evidence_image,
+why_it_costs_sales, fix, effort, sources, skeptic_verdict, published_tests}`.
 
-| Score | Rating | Recommended Action |
-|-------|--------|-------------------|
-| 90-100 | Exceptional | Maintain and iterate with A/B testing. Focus on marginal gains. |
-| 70-89 | Strong | Optimize details, run targeted A/B tests on weak areas. |
-| 50-69 | Moderate | Significant opportunity exists. Prioritize Critical and High items. |
-| 30-49 | Weak | Major overhaul needed. Start with Critical items, expect multiple iterations. |
-| 0-29 | Critical | Fundamental conversion issues. Comprehensive redesign recommended. |
+When the evidence database exists (`${CLAUDE_SKILL_DIR}/../cro/evidence/`),
+fill `published_tests` for the top findings using the `cro-research` "find
+evidence" mode, with source links. Cite them as other companies' published
+results, never as this site's expected lift.
 
-## Error Handling
+## Step 8: Verify, fix, repeat (do not skip)
 
-- If `${CLAUDE_SKILL_DIR}/../cro/scripts/fetch_page.py` is unavailable, fall back to `curl -sL`
-- If a specialist agent fails or is unavailable, note the gap in the report and skip that category's score (recalculate weights without it)
-- If screenshots cannot be captured, note this in the Visual section and assess based on HTML analysis only
-- If the URL is unreachable, report the error immediately and do not proceed with the audit
-- If the page is behind authentication, note this and audit only what is publicly accessible
+1. `"<CRO_SCRIPTS>/cro-py" validate_report.py "$W"`. Fix every error and run
+   again until PASS (max 3 rounds; report anything still failing).
+2. Review as a demanding client, then fix:
+   - Could the owner act on every Fix line without asking a question?
+   - Does each of the top 5 hold up when you open its screenshot yourself?
+   - Is anything generic enough to fit any site? Make it specific or cut it.
+   - Any promised lift for this site? Remove it.
+   - Does the recommendation mode match the verdict?
 
-## Important Notes
+## Step 9: Hand-off
 
-- Always be specific in recommendations — "improve your CTA" is useless; "Change the hero CTA from 'Submit' to 'Get My Free Report' and increase button size to 48px height with #FF6B35 background" is actionable
-- Include positive findings — a balanced audit builds trust with the stakeholder
-- Reference industry benchmarks from `${CLAUDE_SKILL_DIR}/../cro/references/conversion-benchmarks.md` when available
-- Do not fabricate metrics — if you cannot measure something, say "estimated" or "unable to determine from HTML analysis alone"
-- The audit is a starting point, not the final word — recommend A/B testing before making major changes
+Reply with: score and rating, readiness verdict, top 3 actions, one line per
+persona outcome, the workspace path, and the next command (`/cro slides <W>`
+for the deck, `/cro wireframe <W>` for fix designs).

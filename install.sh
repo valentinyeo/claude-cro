@@ -51,7 +51,7 @@ fi
 echo "Installing Python scripts..."
 SCRIPT_COUNT=0
 if [ -d "${SCRIPT_DIR}/skills/cro/scripts" ]; then
-    for script_file in "${SCRIPT_DIR}/skills/cro/scripts/"*.py; do
+    for script_file in "${SCRIPT_DIR}/skills/cro/scripts/"*.py "${SCRIPT_DIR}/skills/cro/scripts/cro-py"; do
         if [ -f "${script_file}" ]; then
             cp "${script_file}" "${SKILLS_DIR}/cro/scripts/"
             chmod +x "${SKILLS_DIR}/cro/scripts/$(basename "${script_file}")"
@@ -84,47 +84,31 @@ for agent_file in "${SCRIPT_DIR}/agents/"*.md; do
     fi
 done
 
-# ── Install Python dependencies ────────────────────────────────────────
+# ── Install Python dependencies (private venv: system pip is often locked) ──
 
 echo ""
-echo "Installing Python dependencies..."
-if command -v pip3 &>/dev/null; then
-    PIP_CMD="pip3"
-elif command -v pip &>/dev/null; then
-    PIP_CMD="pip"
-else
-    echo "  Warning: pip not found. Install Python dependencies manually:"
-    echo "    pip install -r ${SCRIPT_DIR}/requirements.txt"
-    PIP_CMD=""
-fi
-
-if [ -n "${PIP_CMD}" ]; then
-    if ${PIP_CMD} install -r "${SCRIPT_DIR}/requirements.txt" 2>/dev/null; then
-        echo "  Python dependencies installed."
+echo "Installing Python dependencies into ${SKILLS_DIR}/cro/.venv ..."
+VENV="${SKILLS_DIR}/cro/.venv"
+make_env() {
+    # uv works even where python3-venv/ensurepip is missing (common on Ubuntu servers)
+    if command -v uv &>/dev/null; then
+        uv venv -q --allow-existing "${VENV}" && uv pip install -q --python "${VENV}/bin/python" -r "${SCRIPT_DIR}/requirements.txt"
     else
-        echo "  Warning: Some Python dependencies failed to install."
-        echo "  You can install them manually: ${PIP_CMD} install -r ${SCRIPT_DIR}/requirements.txt"
+        python3 -m venv "${VENV}" && "${VENV}/bin/pip" install -q -r "${SCRIPT_DIR}/requirements.txt"
     fi
-fi
-
-# ── Install Playwright browsers (optional) ─────────────────────────────
-
-echo ""
-echo "Installing Playwright browser (optional)..."
-if command -v playwright &>/dev/null; then
-    if playwright install chromium 2>/dev/null; then
-        echo "  Chromium browser installed for Playwright."
+}
+if make_env; then
+    echo "  Python dependencies installed."
+    if "${VENV}/bin/python" -m playwright install chromium >/dev/null; then
+        echo "  Chromium installed for screenshots."
     else
-        echo "  Warning: Failed to install Chromium for Playwright."
-        echo "  Screenshot capture will not work until you run:"
-        echo "    playwright install chromium"
+        echo "  Warning: Chromium install failed; screenshots will be skipped."
+        echo "    Retry: ${VENV}/bin/python -m playwright install chromium"
     fi
-elif python3 -m playwright install chromium 2>/dev/null; then
-    echo "  Chromium browser installed for Playwright."
 else
-    echo "  Playwright not found. Screenshot capture is optional."
-    echo "  To enable it later, run:"
-    echo "    pip install playwright && playwright install chromium"
+    echo "  ERROR: could not build the Python env. Scripts will not run."
+    echo "    Install uv (https://docs.astral.sh/uv/) or python3-venv, then retry: python3 -m venv ${VENV} && ${VENV}/bin/pip install -r ${SCRIPT_DIR}/requirements.txt"
+    exit 1
 fi
 
 # ── Summary ────────────────────────────────────────────────────────────

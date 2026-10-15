@@ -1,0 +1,49 @@
+{
+  "id": "wikijob-testimonials-lower-page-flat",
+  "title": "WikiJob: Display the same customer testimonials further down the page.",
+  "company": "WikiJob",
+  "industry": "Career preparation",
+  "business_type": "E-commerce",
+  "page_type": "landing",
+  "element": "testimonials",
+  "change": {
+    "control": "Sales page without testimonials further down the page.",
+    "variant": "Display the same customer testimonials further down the page."
+  },
+  "result": {
+    "metric": "conversion rate",
+    "relative_lift_pct": null,
+    "direction": "flat",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": null,
+  "test_duration": null,
+  "date_published": null,
+  "source_url": "https://wingify.com/success-stories/wikijob/",
+  "source_type": "platform case study",
+  "quote": "A previous test displayed the same testimonials further down the page and had no discernible impact on conversion.",
+  "verification": "unverified",
+  "evidence_strength": "C",
+  "principles": [
+    "social-proof",
+    "visual-hierarchy"
+  ],
+  "added_date": "2026-10-15",
+  "added_by": "evidence",
+  "research_type": "ab-test",
+  "notes": "Prior separate test mentioned qualitatively in the later winning test report. No numeric lift, sample or significance is published. Flat means no discernible impact reported, not proven equivalence.",
+  "verification_details": {
+    "checked_at": "2026-10-15T10:29:14+00:00",
+    "source_loaded": true,
+    "company_found": true,
+    "lift_found": false,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://wingify.com/success-stories/wikijob/",
+    "content_sha256": "c547dcaa0a66e44069320a91f45fb3e57e8e573eb93310d69d6b9b393947d92e",
+    "reason": "not confirmed: lift"
+  }
+}
