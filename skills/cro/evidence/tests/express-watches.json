@@ -1,0 +1,53 @@
+{
+  "id": "express-watches",
+  "title": "Express Watches: Add a larger Trust Pilot review widget and tagline beneath Add to Basket.",
+  "company": "Express Watches",
+  "industry": "Watches",
+  "business_type": "E-commerce",
+  "page_type": "product",
+  "element": "reviews",
+  "change": {
+    "control": "Product pages have an authorized-dealer badge and small Trust Pilot badge.",
+    "variant": "Add a larger Trust Pilot review widget and tagline beneath Add to Basket."
+  },
+  "result": {
+    "metric": "purchases",
+    "relative_lift_pct": 58.29,
+    "direction": "win",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": {
+    "confidence_pct": 99,
+    "p_value": null,
+    "reported": "99% confidence reported by publisher"
+  },
+  "test_duration": "over 2 months",
+  "date_published": null,
+  "source_url": "https://wingify.com/success-stories/express-watches/",
+  "source_type": "platform case study",
+  "quote": "The variation beat the original, with purchases increasing by 58.29%. The statistical significance was 99%.",
+  "verification": "verified",
+  "evidence_strength": "B",
+  "principles": [
+    "social-proof",
+    "trust"
+  ],
+  "added_date": "2026-10-15",
+  "added_by": "evidence",
+  "research_type": "ab-test",
+  "notes": "Thousands of participants are mentioned, but no exact sample size is published.",
+  "verification_details": {
+    "checked_at": "2026-10-15T10:29:08+00:00",
+    "source_loaded": true,
+    "company_found": true,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://wingify.com/success-stories/express-watches/",
+    "content_sha256": "1fd8e1804f88aab1f2055892bd7ca5a582a6a711a3c5a82d34609243dc4ae7d9",
+    "reason": "company, lift and supporting quote confirmed; not a statistical replication"
+  }
+}

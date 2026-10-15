@@ -1,0 +1,53 @@
+{
+  "id": "betfair",
+  "title": "Betfair: Replace the mobile promotion with social-proof content.",
+  "company": "Betfair",
+  "industry": "Betting exchange",
+  "business_type": "Marketplace",
+  "page_type": "landing",
+  "element": "social-proof",
+  "change": {
+    "control": "Landing page promotes the mobile offering.",
+    "variant": "Replace the mobile promotion with social-proof content."
+  },
+  "result": {
+    "metric": "click-throughs to start registration",
+    "relative_lift_pct": 7,
+    "direction": "win",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": {
+    "confidence_pct": 96,
+    "p_value": null,
+    "reported": "96% confidence reported by publisher"
+  },
+  "test_duration": null,
+  "date_published": null,
+  "source_url": "https://wingify.com/success-stories/betfair/",
+  "source_type": "platform case study",
+  "quote": "7% uplift in CTR to start Registration",
+  "verification": "verified",
+  "evidence_strength": "B",
+  "principles": [
+    "social-proof",
+    "distraction"
+  ],
+  "added_date": "2026-10-15",
+  "added_by": "evidence",
+  "research_type": "ab-test",
+  "notes": "Social-proof, reciprocity and scarcity variants all had positive estimates, but only the social-proof variant was statistically significant. No sample size is published.",
+  "verification_details": {
+    "checked_at": "2026-10-15T10:29:06+00:00",
+    "source_loaded": true,
+    "company_found": true,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://wingify.com/success-stories/betfair/",
+    "content_sha256": "99907cbf57cff75aa608e117b8648b9c84271d0ef2864a09772fc380771076c1",
+    "reason": "company, lift and supporting quote confirmed; not a statistical replication"
+  }
+}

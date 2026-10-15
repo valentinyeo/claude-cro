@@ -17,10 +17,10 @@ allowed-tools: Read, Grep, Glob, Bash, WebFetch, Agent
 |---------|-----------|
 | `/cro audit <url> [--depth quick\|standard\|deep] [--prospect]` | `cro-audit`: crawl + agent swarm + personas + skeptic |
 | `/cro slides <audit-folder> [--pitch\|--client]` | `cro-slides`: HTML deck for a prospect (with offer) or client |
-| `/cro wireframe <audit-folder> [finding ids]` | `cro-wireframe`: before/after fix designs, mobile + desktop |
+| `/cro wireframe <url or audit-folder> [finding ids]` | `cro-wireframe`: before/after fix designs, mobile + desktop |
 | `/cro build-test <url> "<hypothesis>"` | `cro-build-test`: variant code, browser preview, test brief |
 | `/cro program <init\|plan\|launch\|result\|board\|report\|check>` | `cro-program`: a signed client's experiment program |
-| `/cro research [topic]` | `cro-research`: grow the published A/B test evidence database |
+| `/cro research [topic\|weekly\|find <finding>]` | `cro-research`: grow and search the published A/B test evidence database |
 | `/cro doctor` | run `doctor.py`: is the setup working? |
 | `/cro page <url>` | `cro-page`: one page, no agents |
 | `/cro funnel <url1> <url2> ...` | `cro-funnel` |
@@ -40,7 +40,8 @@ allowed-tools: Read, Grep, Glob, Bash, WebFetch, Agent
 1. Split `$ARGUMENTS`: the first word is the subcommand, the rest is the URL
    list plus optional `--conversions N` and `--cvr X` / `--visitors N`.
    If the first word is a URL, treat the request as `audit`.
-   **Never pass the subcommand word to a script.**
+   **Never pass the subcommand word to a script.** For `research`, pass the
+   remaining words unchanged (they are a topic, not a URL).
 2. Resolve the scripts folder once: `cd "${CLAUDE_SKILL_DIR}/scripts" && pwd`.
    Call that absolute path `CRO_SCRIPTS` and write it out literally in every
    later command (shell variables do not persist between commands).
@@ -85,6 +86,8 @@ allowed-tools: Read, Grep, Glob, Bash, WebFetch, Agent
 | `program.py ...` | Client experiment program: backlog, status, result stats, release diffs |
 | `doctor.py [--quick]` | Setup health check with one fix per problem |
 | `validate_report.py <dir>` | Checks a finished audit (sections, math, evidence) |
+| `render_wireframe.py before.html --after after.html --annotations a.json -o renders` | Mobile/desktop PNGs and annotated before/after comparisons |
+| `evidence.py <validate\|add\|search\|stats\|verify\|export-md>` | Published A/B test evidence: search, add, verify, catalog |
 
 ## References (load only when needed)
 
@@ -98,4 +101,5 @@ allowed-tools: Read, Grep, Glob, Bash, WebFetch, Agent
 | `references/psychology-principles.md` | Persuasion and copy |
 | `references/testing-framework.md` | Hypotheses, ICE, sample size, test hygiene |
 | `references/conversion-benchmarks.md` | Rough industry ranges (estimates) |
-| `references/proven-tests-*.md` | Test ideas with industry-reported lifts (unverified) |
+| `evidence/CATALOG.md`, `evidence/SCHEMA.md` | Source-linked published A/B tests; prefer these over proven-tests |
+| `references/proven-tests-*.md` | Older idea lists with industry-reported lifts (unverified, no links) |

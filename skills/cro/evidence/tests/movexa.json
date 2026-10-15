@@ -1,0 +1,53 @@
+{
+  "id": "movexa",
+  "title": "Movexa: Add the word supplement to the landing-page headline.",
+  "company": "Movexa",
+  "industry": "Supplements",
+  "business_type": "E-commerce",
+  "page_type": "landing",
+  "element": "headline",
+  "change": {
+    "control": "Headline does not identify Movexa as a supplement.",
+    "variant": "Add the word supplement to the landing-page headline."
+  },
+  "result": {
+    "metric": "purchases",
+    "relative_lift_pct": 89.97,
+    "direction": "win",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": {
+    "confidence_pct": 98,
+    "p_value": null,
+    "reported": "98% confidence reported by publisher"
+  },
+  "test_duration": null,
+  "date_published": null,
+  "source_url": "https://wingify.com/success-stories/movexa/",
+  "source_type": "platform case study",
+  "quote": "With a statistical significance of 98%, the variation beat the control. Purchases increased by 89.97%.",
+  "verification": "verified",
+  "evidence_strength": "B",
+  "principles": [
+    "clarity",
+    "value-proposition"
+  ],
+  "added_date": "2026-10-15",
+  "added_by": "evidence",
+  "research_type": "ab-test",
+  "notes": "Brand of Vitamin Boat Corporation. No sample size or duration is published.",
+  "verification_details": {
+    "checked_at": "2026-10-15T10:29:10+00:00",
+    "source_loaded": true,
+    "company_found": true,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://wingify.com/success-stories/movexa/",
+    "content_sha256": "98615ff0ef141f5dc1b1e65c8576c0c61d14cf680ff2a8485041f3b36bb49098",
+    "reason": "company, lift and supporting quote confirmed; not a statistical replication"
+  }
+}

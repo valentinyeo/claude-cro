@@ -1,0 +1,53 @@
+{
+  "id": "nuface",
+  "title": "NuFace: Show Free shipping over $75! above the Shop NuFace button.",
+  "company": "NuFace",
+  "industry": "Skincare",
+  "business_type": "E-commerce",
+  "page_type": "home",
+  "element": "shipping-offer",
+  "change": {
+    "control": "Homepage does not prominently show the free-shipping threshold.",
+    "variant": "Show Free shipping over $75! above the Shop NuFace button."
+  },
+  "result": {
+    "metric": "purchases",
+    "relative_lift_pct": 90,
+    "direction": "win",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": {
+    "confidence_pct": 96,
+    "p_value": null,
+    "reported": "96% confidence reported by publisher"
+  },
+  "test_duration": null,
+  "date_published": null,
+  "source_url": "https://wingify.com/success-stories/nuface/",
+  "source_type": "platform case study",
+  "quote": "90% increase in purchases; 7.3% increase in average order value",
+  "verification": "verified",
+  "evidence_strength": "B",
+  "principles": [
+    "friction",
+    "incentive"
+  ],
+  "added_date": "2026-10-15",
+  "added_by": "evidence",
+  "research_type": "ab-test",
+  "notes": "Average order value also rose 7.32%. No sample size or duration is published.",
+  "verification_details": {
+    "checked_at": "2026-10-15T10:29:10+00:00",
+    "source_loaded": true,
+    "company_found": true,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://wingify.com/success-stories/nuface/",
+    "content_sha256": "e35ea3448789954b13fafad3057bcd4f0732dba2baf466ddd080a07bfd688a29",
+    "reason": "company, lift and supporting quote confirmed; not a statistical replication"
+  }
+}

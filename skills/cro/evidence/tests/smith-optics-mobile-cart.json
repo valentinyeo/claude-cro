@@ -1,0 +1,57 @@
+{
+  "id": "smith-optics-mobile-cart",
+  "title": "Smith Optics: Redesign the mobile cart with login at the top, larger editing targets and a primary checkout CTA.",
+  "company": "Smith Optics",
+  "industry": "Eyewear and sportswear",
+  "business_type": "E-commerce",
+  "page_type": "cart",
+  "element": "mobile-cart",
+  "change": {
+    "control": "Mobile cart has hard-to-find login, difficult item editing and an unclear next step.",
+    "variant": "Redesign the mobile cart with login at the top, larger editing targets and a primary checkout CTA."
+  },
+  "result": {
+    "metric": "visits to checkout",
+    "relative_lift_pct": 8,
+    "direction": "win",
+    "desired_direction": "increase"
+  },
+  "sample_size": {
+    "control": 6647,
+    "variant": 6647,
+    "unit": "visitors per variant"
+  },
+  "conversions": null,
+  "significance": {
+    "confidence_pct": 95,
+    "p_value": null,
+    "reported": "95% confidence reported by publisher"
+  },
+  "test_duration": "20 days",
+  "date_published": null,
+  "source_url": "https://www.convert.com/case-studies/surefoot/",
+  "source_type": "platform case study",
+  "quote": "The test resulted in an 8% lift in visits to checkout at 95% statistical significance, 3.4% lift in transactions",
+  "verification": "verified",
+  "evidence_strength": "A",
+  "principles": [
+    "friction",
+    "visual-hierarchy"
+  ],
+  "added_date": "2026-10-15",
+  "added_by": "evidence",
+  "research_type": "ab-test",
+  "notes": "Multiple elements changed together. The 95% significance applies to checkout visits; the source does not explicitly attach it to the separate 3.4% transaction lift.",
+  "verification_details": {
+    "checked_at": "2026-10-15T10:29:12+00:00",
+    "source_loaded": true,
+    "company_found": true,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://www.convert.com/case-studies/surefoot/",
+    "content_sha256": "ea6f6c1b257f9b80d1219be7130d70039b6b963bcaa125bf50efd18ffc9b6e58",
+    "reason": "company, lift and supporting quote confirmed; not a statistical replication"
+  }
+}

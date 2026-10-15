@@ -137,8 +137,8 @@ def render_wireframes(source, output, after=None, annotations_path=None):
                 for device, (width, height) in VIEWPORTS.items():
                     context = browser.new_context(
                         viewport={"width": width, "height": height},
-                        device_scale_factor=1, is_mobile=device == "mobile",
-                        has_touch=device == "mobile", java_script_enabled=False,
+                        device_scale_factor=1, has_touch=device == "mobile",
+                        java_script_enabled=False,
                         service_workers="block",
                     )
                     blocked = []
@@ -190,7 +190,10 @@ def render_wireframes(source, output, after=None, annotations_path=None):
                             };
                         }""")
                         png = output / f"{label}-{device}.png"
-                        page.screenshot(path=str(png), full_page=True, animations="disabled", caret="hide")
+                        page.screenshot(path=str(png), full_page=True,
+                            clip={"x": 0, "y": 0, "width": width,
+                                  "height": max(height, metrics["content_height"])},
+                            animations="disabled", caret="hide")
                         manifest["renders"].append({"variant": label, "device": device,
                             "viewport": {"width": width, "height": height},
                             "png": str(png), **metrics})

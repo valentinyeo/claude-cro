@@ -1,0 +1,53 @@
+{
+  "id": "payu",
+  "title": "PayU: Remove the email field while retaining the phone number.",
+  "company": "PayU",
+  "industry": "Payments",
+  "business_type": "SaaS",
+  "page_type": "checkout",
+  "element": "form-fields",
+  "change": {
+    "control": "Payment checkout requires both phone number and email.",
+    "variant": "Remove the email field while retaining the phone number."
+  },
+  "result": {
+    "metric": "checkout conversion rate",
+    "relative_lift_pct": 5.8,
+    "direction": "win",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": {
+    "confidence_pct": null,
+    "p_value": null,
+    "reported": "Statistically significant improvement reported; confidence threshold not published."
+  },
+  "test_duration": null,
+  "date_published": null,
+  "source_url": "https://wingify.com/success-stories/payu/",
+  "source_type": "platform case study",
+  "quote": "The results demonstrated that dropping the email field showed a statistically significant improvement of 5.8% compared to the control.",
+  "verification": "verified",
+  "evidence_strength": "B",
+  "principles": [
+    "friction",
+    "form-simplicity"
+  ],
+  "added_date": "2026-10-15",
+  "added_by": "evidence",
+  "research_type": "ab-test",
+  "notes": "Body gives 5.8%; headline rounds to 6%. The test concerns merchant payment users, not PayU merchant signup. Legal receipt requirements are context specific.",
+  "verification_details": {
+    "checked_at": "2026-10-15T10:29:12+00:00",
+    "source_loaded": true,
+    "company_found": true,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://wingify.com/success-stories/payu/",
+    "content_sha256": "01c7fa4ae13c8c3bda4153e5fbf5a1eeab36eece89220f8c8cf56b648a12cb92",
+    "reason": "company, lift and supporting quote confirmed; not a statistical replication"
+  }
+}

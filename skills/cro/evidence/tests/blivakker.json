@@ -1,0 +1,52 @@
+{
+  "id": "blivakker",
+  "title": "BliVakker.No: Remove Facebook login and retain the email field.",
+  "company": "BliVakker.No",
+  "industry": "Cosmetics",
+  "business_type": "E-commerce",
+  "page_type": "checkout",
+  "element": "social-login",
+  "change": {
+    "control": "Checkout login offers an email field and Facebook login.",
+    "variant": "Remove Facebook login and retain the email field."
+  },
+  "result": {
+    "metric": "conversions",
+    "relative_lift_pct": 3,
+    "direction": "win",
+    "desired_direction": "increase"
+  },
+  "sample_size": {
+    "total": 8000,
+    "unit": "visitors"
+  },
+  "conversions": null,
+  "significance": null,
+  "test_duration": null,
+  "date_published": null,
+  "source_url": "https://wingify.com/success-stories/blivakker/",
+  "source_type": "platform case study",
+  "quote": "It was the variation without the Facebook login that delivered 3% more conversions.",
+  "verification": "verified",
+  "evidence_strength": "B",
+  "principles": [
+    "friction",
+    "distraction"
+  ],
+  "added_date": "2026-10-15",
+  "added_by": "evidence",
+  "research_type": "ab-test",
+  "notes": "Publisher says about half the visitors saw each version. Exact per-arm sample sizes and statistical confidence are not published.",
+  "verification_details": {
+    "checked_at": "2026-10-15T10:29:06+00:00",
+    "source_loaded": true,
+    "company_found": true,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://wingify.com/success-stories/blivakker/",
+    "content_sha256": "fbcaf755358b514723f8f0dcddcca8011a030a2d2002784c21f4b325f7b2c24a",
+    "reason": "company, lift and supporting quote confirmed; not a statistical replication"
+  }
+}

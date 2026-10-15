@@ -1,0 +1,49 @@
+{
+  "id": "staatsloterij-mobile-xl-loss",
+  "title": "Staatsloterij: Add explanatory text and an arrow directing attention to the mobile XL toggle.",
+  "company": "Staatsloterij",
+  "industry": "Lottery",
+  "business_type": "E-commerce",
+  "page_type": "checkout",
+  "element": "tooltip",
+  "change": {
+    "control": "Mobile checkout XL toggle has limited explanation.",
+    "variant": "Add explanatory text and an arrow directing attention to the mobile XL toggle."
+  },
+  "result": {
+    "metric": "mobile transactions",
+    "relative_lift_pct": -1.1,
+    "direction": "loss",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": null,
+  "test_duration": "17 days",
+  "date_published": null,
+  "source_url": "https://wingify.com/success-stories/staatsloterij/",
+  "source_type": "platform case study",
+  "quote": "The XL explanation had a negative impact on the number of transactions (-1.10%.)",
+  "verification": "verified",
+  "evidence_strength": "B",
+  "principles": [
+    "clarity",
+    "visual-hierarchy"
+  ],
+  "added_date": "2026-10-15",
+  "added_by": "evidence",
+  "research_type": "ab-test",
+  "notes": "Mobile segment only. Desktop transactions rose 1.04%. The 8.25% headline is a different engagement metric; significance and segment sample sizes are unpublished.",
+  "verification_details": {
+    "checked_at": "2026-10-15T10:29:13+00:00",
+    "source_loaded": true,
+    "company_found": true,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://wingify.com/success-stories/staatsloterij/",
+    "content_sha256": "23e47204ddea4d5efd4f4356013c55cd69d3f712efbbfd8434ef15473ea4e973",
+    "reason": "company, lift and supporting quote confirmed; not a statistical replication"
+  }
+}

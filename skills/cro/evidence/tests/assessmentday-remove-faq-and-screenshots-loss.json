@@ -1,0 +1,49 @@
+{
+  "id": "assessmentday-remove-faq-and-screenshots-loss",
+  "title": "AssessmentDay: Remove both the FAQs and screenshot sections.",
+  "company": "AssessmentDay",
+  "industry": "Career preparation",
+  "business_type": "E-commerce",
+  "page_type": "landing",
+  "element": "page-content",
+  "change": {
+    "control": "Affiliate landing page includes both FAQs and screenshots.",
+    "variant": "Remove both the FAQs and screenshot sections."
+  },
+  "result": {
+    "metric": "sales conversion rate",
+    "relative_lift_pct": -3,
+    "direction": "loss",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": null,
+  "test_duration": null,
+  "date_published": null,
+  "source_url": "https://wingify.com/success-stories/assessmentday/",
+  "source_type": "platform case study",
+  "quote": "the conversion rate actually dropped by about 3%.",
+  "verification": "verified",
+  "evidence_strength": "B",
+  "principles": [
+    "friction",
+    "clarity"
+  ],
+  "added_date": "2026-10-15",
+  "added_by": "evidence",
+  "research_type": "ab-test",
+  "notes": "Approximate observed loss; significance is not stated. Removing only FAQs reportedly increased sales 62%, and removing only screenshots increased sales 56%. Do not infer that less content is always better.",
+  "verification_details": {
+    "checked_at": "2026-10-15T10:29:05+00:00",
+    "source_loaded": true,
+    "company_found": true,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://wingify.com/success-stories/assessmentday/",
+    "content_sha256": "94947f793636e86605ab763a35b59efd278146d68d9bb1dfd93e64cdea1254c4",
+    "reason": "company, lift and supporting quote confirmed; not a statistical replication"
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "id": "lyyti",
+  "title": "Lyyti: Tabulate plan features and repeat free-trial CTAs while demoting Request a Quote.",
+  "company": "Lyyti",
+  "industry": "Event management",
+  "business_type": "SaaS",
+  "page_type": "pricing",
+  "element": "pricing-table",
+  "change": {
+    "control": "Pricing page has short feature descriptions and competing trial and quote CTAs.",
+    "variant": "Tabulate plan features and repeat free-trial CTAs while demoting Request a Quote."
+  },
+  "result": {
+    "metric": "visits to lead generation page",
+    "relative_lift_pct": 93.71,
+    "direction": "win",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": {
+    "confidence_pct": 96,
+    "p_value": null,
+    "reported": "96% confidence reported by publisher"
+  },
+  "test_duration": "over 5 months",
+  "date_published": null,
+  "source_url": "https://wingify.com/success-stories/lyyti/",
+  "source_type": "platform case study",
+  "quote": "increasing visits to the lead generation page by 93.71%, with a statistical significance of 96%.",
+  "verification": "verified",
+  "evidence_strength": "B",
+  "principles": [
+    "clarity",
+    "visual-hierarchy"
+  ],
+  "added_date": "2026-10-15",
+  "added_by": "evidence",
+  "research_type": "ab-test",
+  "notes": "Metric is visits to signup, not completed trials or paid customers. Long runtime and multi-element redesign limit generalization.",
+  "verification_details": {
+    "checked_at": "2026-10-15T10:29:09+00:00",
+    "source_loaded": true,
+    "company_found": true,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://wingify.com/success-stories/lyyti/",
+    "content_sha256": "d1382c0e1e1024fdfa01560ce5a57ef3492a2ce8cb705f6f69d26f23f99c6f1e",
+    "reason": "company, lift and supporting quote confirmed; not a statistical replication"
+  }
+}

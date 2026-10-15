@@ -1,0 +1,53 @@
+{
+  "id": "veeam-software",
+  "title": "Veeam Software: Change the link text to Request pricing.",
+  "company": "Veeam Software",
+  "industry": "Data protection software",
+  "business_type": "SaaS",
+  "page_type": "product",
+  "element": "cta-copy",
+  "change": {
+    "control": "Product page link says Request a quote.",
+    "variant": "Change the link text to Request pricing."
+  },
+  "result": {
+    "metric": "click-through rate to sales inquiry",
+    "relative_lift_pct": 161.66,
+    "direction": "win",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": {
+    "confidence_pct": 100,
+    "p_value": null,
+    "reported": "100% confidence reported by publisher"
+  },
+  "test_duration": null,
+  "date_published": null,
+  "source_url": "https://wingify.com/success-stories/veeam-software/",
+  "source_type": "platform case study",
+  "quote": "A straight 161.66% increase in the click-through rate from 0.54% to 1.40% with 100% statistical confidence",
+  "verification": "verified",
+  "evidence_strength": "B",
+  "principles": [
+    "clarity",
+    "price-transparency"
+  ],
+  "added_date": "2026-10-15",
+  "added_by": "evidence",
+  "research_type": "ab-test",
+  "notes": "Publisher explains 100% is a rounded 99.9x%, not certainty. Clicks are not submitted leads. Do not recalculate the lift from rounded displayed rates.",
+  "verification_details": {
+    "checked_at": "2026-10-15T10:29:14+00:00",
+    "source_loaded": true,
+    "company_found": true,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://wingify.com/success-stories/veeam-software/",
+    "content_sha256": "85a3977b0df589e3ad593c858b8ab0cb7366af78952ff200c8f4e5a6a8eed155",
+    "reason": "company, lift and supporting quote confirmed; not a statistical replication"
+  }
+}
