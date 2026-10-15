@@ -23,7 +23,7 @@ Write it out literally in each command. Run every script as `"<CRO_SCRIPTS>/cro-
 
 ```bash
 W="$PWD/cro-audit-<domain>-<YYYY-MM-DD>"; mkdir -p "$W"
-"<CRO_SCRIPTS>/cro-py" fetch_page.py <url> --output "$W/page.html" --json > "$W/fetch.json"
+"<CRO_SCRIPTS>/cro-py" fetch_page.py <url> --render --output "$W/page.html" --json > "$W/fetch.json"
 "<CRO_SCRIPTS>/cro-py" parse_cro.py "$W/page.html" --json > "$W/elements.json"
 "<CRO_SCRIPTS>/cro-py" capture_screenshot.py <url> -o "$W/desktop.png" -W 1440 -H 900
 "<CRO_SCRIPTS>/cro-py" capture_screenshot.py <url> -o "$W/mobile.png" --mobile
@@ -31,9 +31,11 @@ W="$PWD/cro-audit-<domain>-<YYYY-MM-DD>"; mkdir -p "$W"
 "<CRO_SCRIPTS>/cro-py" pagespeed.py <url> --strategy mobile --json > "$W/pagespeed-mobile.json"
 ```
 
-- If the fetch fails or returns a 403/challenge page (Cloudflare, "verify you
-  are human", near-empty body), say so, use the screenshots and WebFetch as
-  fallback sources, and note the gap in the report. Never audit a block page.
+- `--render` saves what a visitor's browser sees (JavaScript included).
+- Exit code 3 / `"blocked"` in `fetch.json` means a bot wall or empty page.
+  Look at `desktop.png`: if it shows the real site, audit from the screenshots
+  and WebFetch and note the gap; if it shows the wall too, stop and tell the
+  user. Never audit a block page as if it were the site.
 - A failed screenshot or PageSpeed call is not fatal: record it in
   `$W/gaps.txt` and continue.
 

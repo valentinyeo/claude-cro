@@ -89,7 +89,15 @@ done
 echo ""
 echo "Installing Python dependencies into ${SKILLS_DIR}/cro/.venv ..."
 VENV="${SKILLS_DIR}/cro/.venv"
-if python3 -m venv "${VENV}" && "${VENV}/bin/pip" install -q -r "${SCRIPT_DIR}/requirements.txt"; then
+make_env() {
+    # uv works even where python3-venv/ensurepip is missing (common on Ubuntu servers)
+    if command -v uv &>/dev/null; then
+        uv venv -q --allow-existing "${VENV}" && uv pip install -q --python "${VENV}/bin/python" -r "${SCRIPT_DIR}/requirements.txt"
+    else
+        python3 -m venv "${VENV}" && "${VENV}/bin/pip" install -q -r "${SCRIPT_DIR}/requirements.txt"
+    fi
+}
+if make_env; then
     echo "  Python dependencies installed."
     if "${VENV}/bin/python" -m playwright install chromium >/dev/null; then
         echo "  Chromium installed for screenshots."
@@ -99,7 +107,7 @@ if python3 -m venv "${VENV}" && "${VENV}/bin/pip" install -q -r "${SCRIPT_DIR}/r
     fi
 else
     echo "  ERROR: could not build the Python env. Scripts will not run."
-    echo "    Needs python3-venv. Retry: python3 -m venv ${VENV} && ${VENV}/bin/pip install -r ${SCRIPT_DIR}/requirements.txt"
+    echo "    Install uv (https://docs.astral.sh/uv/) or python3-venv, then retry: python3 -m venv ${VENV} && ${VENV}/bin/pip install -r ${SCRIPT_DIR}/requirements.txt"
     exit 1
 fi
 
