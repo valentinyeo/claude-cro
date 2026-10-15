@@ -23,6 +23,7 @@ allowed-tools: Read, Grep, Glob, Bash, WebFetch, Agent
 | `/cro program <init\|plan\|launch\|result\|board\|report\|check>` | `cro-program`: a signed client's experiment program |
 | `/cro research [topic\|weekly\|find <finding>]` | `cro-research`: grow and search the published A/B test evidence database |
 | `/cro synthetic <url> [--traffic export.csv] [--visitors N]` | `cro-synthetic`: 100-200 LLM visitors modelled on real traffic shop the site and report friction |
+| `/cro message-test <brief or audit-folder> "<question>"` | `cro-message-test`: a simulated crowd of buyers (MiroFish, Haiku) compares offers, prices or headlines and lists objections |
 | `/cro doctor` | run `doctor.py`: is the setup working? |
 | `/cro page <url>` | `cro-page`: one page, no agents |
 | `/cro funnel <url1> <url2> ...` | `cro-funnel` |
@@ -95,6 +96,7 @@ allowed-tools: Read, Grep, Glob, Bash, WebFetch, Agent
 | `evidence.py <validate\|add\|search\|stats\|verify\|export-md>` | Published A/B test evidence: search, add, verify, catalog |
 | `tracking_audit.py <url> ... --out t.json --md T.md` | Every tracker and pixel that really fires, duplicates, consent, access to ask for |
 | `synthetic.py <templates\|run\|report>` | Real traffic to visitor templates, LLM browser visitors, ranked friction report |
+| `message_test.py <run\|check>` | Drive a local MiroFish run: brief, graph, simulation, report with caveat and cost |
 
 ## References (load only when needed)
 

@@ -53,6 +53,7 @@ Then open Claude Code and run:
 | `/cro program <init\|plan\|launch\|result\|report>` | Run a client's experiment program |
 | `/cro research [topic]` | Grow and search the published A/B test evidence database |
 | `/cro synthetic <url> [--traffic export.csv]` | 100-200 LLM visitors modelled on real analytics shop the site and report friction |
+| `/cro message-test <brief> "<question>"` | Simulated buyers (MiroFish, installed separately) compare offers, prices or headlines before anything goes live |
 
 ## CRO Health Score
 
