@@ -52,6 +52,11 @@ class Analyze(unittest.TestCase):
         r = ta.analyze([page(["https://www.google-analytics.com/collect?v=1&tid=UA-1234-1&t=pageview", GTAG, GA_PV])])
         self.assertIn("retired_tool", [i["issue"] for i in r["issues"]])
 
+    def test_testing_tool_is_listed_but_not_analytics(self):
+        r = ta.analyze([page(["https://appbe.endlesstesting.ai/api/sdk.js"])])
+        self.assertFalse(r["has_analytics"])
+        self.assertIn("testing_tool", [i["issue"] for i in r["issues"]])
+
     def test_cloudflare_web_analytics_counts_as_analytics(self):
         r = ta.analyze([page(["https://static.cloudflareinsights.com/beacon.min.js/v8b", "https://s.example/cdn-cgi/rum?"])])
         self.assertTrue(r["has_analytics"])

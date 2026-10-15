@@ -64,7 +64,18 @@ VENDORS = [
     ("FullStory", r"fullstory\.com/s/fs\.js|rs\.fullstory\.com", None, None, "hit"),
     ("Vercel Analytics", r"/_vercel/insights", None, None, "hit"),
     ("Umami", r"umami\.is/script\.js|/api/send$", None, None, "hit"),
+    # experimentation tools: not analytics, but they change what visitors see
+    ("Endless Testing", r"endlesstesting\.ai/api/sdk", None, None, "testing"),
+    ("VWO", r"dev\.visualwebsiteoptimizer\.com|vwo\.com/j\.php", "q:a", None, "testing"),
+    ("Optimizely", r"cdn\.optimizely\.com/js/(\d+)", r"r:optimizely\.com/js/(\d+)", None, "testing"),
+    ("AB Tasty", r"try\.abtasty\.com", None, None, "testing"),
+    ("Convert", r"cdn-\d+\.convertexperiments\.com", None, None, "testing"),
+    ("Kameleoon", r"kameleoon\.(eu|io|com)", None, None, "testing"),
+    ("GrowthBook", r"cdn\.growthbook\.io|growthbook", None, None, "testing"),
+    ("Statsig", r"statsigapi\.net|cdn\.statsig", None, None, "testing"),
+    ("Google Optimize (retired)", r"googleoptimize\.com", None, None, "testing"),
 ]
+TESTING_TOOLS = {n for n, _, _, _, k in VENDORS if k == "testing"}
 COMPILED = [(n, re.compile(p, re.I), idr, evr, kind) for n, p, idr, evr, kind in VENDORS]
 
 ACCESS = {
@@ -171,7 +182,13 @@ def analyze(pages):
         if vendor == "Universal Analytics (retired)":
             issues.append({"severity": "medium", "page": "site", "issue": "retired_tool",
                            "detail": f"Universal Analytics {', '.join(sorted(real_ids))} stopped processing data in 2024; remove it"})
-    analytics = [v for v in inventory if v not in ("Meta Pixel", "TikTok Pixel", "LinkedIn Insight", "Google Ads",
+    testing = sorted(v for v in inventory if v in TESTING_TOOLS)
+    if testing:
+        issues.append({"severity": "medium", "page": "site", "issue": "testing_tool",
+                       "detail": f"A/B testing tool running: {', '.join(testing)}. Check the test plan against the "
+                                 f"readiness verdict: with too few conversions a test cannot reach a result, and "
+                                 f"without analytics there is nothing to read it against"})
+    analytics = [v for v in inventory if v not in TESTING_TOOLS and v not in ("Meta Pixel", "TikTok Pixel", "LinkedIn Insight", "Google Ads",
                                                    "Microsoft Ads (UET)", "Pinterest Tag", "Snap Pixel", "Reddit Pixel",
                                                    "X (Twitter) Pixel", "Universal Analytics (retired)")]
     if not analytics:

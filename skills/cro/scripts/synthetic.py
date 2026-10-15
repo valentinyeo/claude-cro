@@ -441,10 +441,21 @@ MINDSETS = ["just curious, no plan to buy today", "comparing with a competitor i
             "needs it by a date", "came back to finish a purchase they started", "checking the price after a recommendation"]
 
 
-def persona_hint(visitor_id):
+B2B_ROLES = ["head of product", "growth or CRO lead", "marketing manager", "founder of a small online business",
+             "e-commerce manager", "product manager", "agency owner looking for a partner", "CTO or tech lead",
+             "UX or design lead", "analyst asked to find a consultant", "recruiter or hiring manager", "operations director"]
+B2B_MINDSETS = ["just curious after a post, no project yet", "comparing two or three consultants",
+                "has a specific problem to solve this quarter", "checking credibility after a referral",
+                "needs a budget figure for a proposal", "looking for a quick answer before committing to a call",
+                "came back after a first visit", "researching for later"]
+HINTS = {"lead": (B2B_ROLES, B2B_MINDSETS), "saas": (B2B_ROLES, B2B_MINDSETS)}
+
+
+def persona_hint(visitor_id, business="ecommerce"):
     """Fixed per-visitor hints so 150 visitors do not all become the same person."""
     r = random.Random(visitor_id)
-    return f"age {r.choice(AGES)}, {r.choice(LIVES)}, {r.choice(MINDSETS)}"
+    lives, minds = HINTS.get(business, (LIVES, MINDSETS))
+    return f"age {r.choice(AGES)}, {r.choice(lives)}, {r.choice(minds)}"
 
 
 SYSTEM_PERSONA = """You create one believable website visitor from a real traffic segment. Reply with JSON only:
@@ -453,6 +464,8 @@ SYSTEM_PERSONA = """You create one believable website visitor from a real traffi
  "patience": "low|medium|high", "tech_comfort": "low|medium|high", "budget_sensitivity": "low|medium|high",
  "worries": ["1-3 concerns specific to this person and this kind of product"],
  "voice": "how they talk, a few words"}
+The person must be someone who would really land on THIS site from this channel, given what the landing
+page says it offers; a few visitors can be a poor fit, as in real traffic, but most belong to its audience.
 Build the person from the hint you are given. Make them ordinary, not a stereotype. Match intent to the segment's real conversion rate when given:
 most real visitors do not buy."""
 
@@ -636,22 +649,29 @@ def visit(v, out_dir, backend, model, goal, max_steps, replay=None, timeout_s=42
     m = Model(backend, model, replay)
     t = v["template"]
     started = time.time()
-    seg = (f"Segment: lands on {v['start_url']} ({t['landing']}), device {t['device']}, channel {t['channel']}, "
-           f"{t['user']} visitor, countries {', '.join(t.get('countries') or []) or 'unknown'}, "
-           f"real conversion rate {'%.1f%%' % (100 * t['cvr']) if t.get('cvr') is not None else 'unknown'}. "
-           f"Real paths these visitors took: {'; '.join(t.get('example_paths') or []) or 'not given'}. "
-           f"Site: {urlparse(v['start_url']).netloc}. Hint for this person: {persona_hint(v['id'])}.")
-    persona = m.ask(SYSTEM_PERSONA, seg, kind="persona", max_tokens=1200)
-    Path(out_dir, "persona.json").write_text(json.dumps({"template": t, "persona": persona}, indent=2))
+    business = v.get("business") or "ecommerce"
+    start_host = urlparse(v["start_url"]).netloc.lower().removeprefix("www.")
 
-    came_how = {"paid social": " after tapping an ad in their feed", "paid search": " after clicking a search ad",
-                "organic search": " from a search result", "email": " from a marketing email",
-                "organic social": " from a social media post", "referral": " from a link on another site",
-                "affiliate": " from a review or deal site", "direct": " by typing the address"}.get(t["channel"], "")
-    fields = {k: persona.get(k, "") for k in ("name", "age", "situation", "goal", "intent", "patience", "tech_comfort", "voice")}
-    fields["worries"] = ", ".join(persona.get("worries") or [])
-    system = SYSTEM_STEP.format(device=t["device"], channel=t["channel"], came_how=came_how,
-                                categories="|".join(CATEGORIES), **fields)
+    def make_persona(site_ctx):
+        """The person is built from what the landing page says it offers, so a consultancy gets buyers, not shoppers."""
+        seg = (f"Segment: lands on {v['start_url']} ({t['landing']}), device {t['device']}, channel {t['channel']}, "
+               f"{t['user']} visitor, countries {', '.join(t.get('countries') or []) or 'unknown'}, "
+               f"real conversion rate {'%.1f%%' % (100 * t['cvr']) if t.get('cvr') is not None else 'unknown'}. "
+               f"Real paths these visitors took: {'; '.join(t.get('example_paths') or []) or 'not given'}. "
+               f"Business type: {business}. What the landing page says (title, description, first headings): {site_ctx}. "
+               f"Hint for this person: {persona_hint(v['id'], business)}.")
+        persona = m.ask(SYSTEM_PERSONA, seg, kind="persona", max_tokens=1200)
+        Path(out_dir, "persona.json").write_text(json.dumps({"template": t, "site": site_ctx, "persona": persona}, indent=2))
+        came_how = {"paid social": " after tapping an ad in their feed", "paid search": " after clicking a search ad",
+                    "organic search": " from a search result", "email": " from a marketing email",
+                    "organic social": " from a social media post", "referral": " from a link on another site",
+                    "affiliate": " from a review or deal site", "direct": " by typing the address"}.get(t["channel"], "")
+        fields = {k: persona.get(k, "") for k in ("name", "age", "situation", "goal", "intent", "patience", "tech_comfort", "voice")}
+        fields["worries"] = ", ".join(persona.get("worries") or [])
+        return persona, SYSTEM_STEP.format(device=t["device"], channel=t["channel"], came_how=came_how,
+                                           categories="|".join(CATEGORIES), **fields)
+
+    persona, system = {}, ""
 
     state = {"landed": True, "trackers_blocked": 0, "trackers_allowed": 0}
     log, history, noted, end_reason = [], [], [], "max_steps"
@@ -695,6 +715,12 @@ def visit(v, out_dir, backend, model, goal, max_steps, replay=None, timeout_s=42
             if blocked and "almost no visible text" not in blocked:
                 end_reason = f"blocked: {blocked}"
                 max_steps = 0
+            else:
+                site_ctx = page.evaluate("""() => [document.title,
+                    (document.querySelector('meta[name=description]') || {}).content || '',
+                    ...[...document.querySelectorAll('h1,h2')].slice(0, 4).map(h => h.innerText)]
+                    .filter(Boolean).join(' | ').replace(/\\s+/g, ' ').slice(0, 600)""")
+                persona, system = make_persona(site_ctx)
         except Exception as exc:
             end_reason = "landing page failed: " + str(exc).splitlines()[0][:160]
             max_steps = 0
@@ -753,6 +779,10 @@ def visit(v, out_dir, backend, model, goal, max_steps, replay=None, timeout_s=42
             stage_of(page.url, "", state, goal)
             log.append(entry)
             history.append(f"step {n} ({page_type}): {action} {entry['element_label'] or ''} -> {entry['result']}")
+            host = urlparse(page.url).netloc.lower().removeprefix("www.")
+            if host and host != start_host and not state.get("checkout") and not page.url.startswith("file:"):
+                end_reason = f"left the site for {host}"  # what happens elsewhere is not this site's friction
+                break
             if goal == "atc" and state.get("atc"):
                 end_reason = "converted: added to cart"
                 break
@@ -833,7 +863,8 @@ def cmd_run(a):
         start = resolve_landing(site, t["landing"], crawl_cache)
         for i in range(counts.get(t["id"], 0)):
             k += 1
-            plan.append({"id": f"v{k:03d}", "n": i + 1, "template": t, "start_url": start})
+            plan.append({"id": f"v{k:03d}", "n": i + 1, "template": t, "start_url": start,
+                         "business": a.business or tpl.get("business") or ("lead" if a.goal == "lead" else "ecommerce")})
     (out / "plan.json").write_text(json.dumps({"url": a.url, "templates_source": tpl["source"], "model": a.model,
                                                 "goal": a.goal, "visitors": plan}, indent=2))
     (out / "templates.json").write_text(json.dumps(tpl, indent=2))
@@ -1086,6 +1117,7 @@ def main():
         p_.add_argument("--max-steps", type=int, default=20)
         p_.add_argument("--replay")
     r.add_argument("--concurrency", type=int, default=6)
+    r.add_argument("--business", choices=sorted(ASSUMED), help="shapes who the visitors are (default: from templates)")
     r.add_argument("--yes", action="store_true")
     r.add_argument("--fresh", action="store_true", help="re-run visitors that already finished")
     v_.add_argument("--visitor", required=True)
