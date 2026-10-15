@@ -3,5 +3,8 @@
 DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PY="${DIR}/../.venv/bin/python"
 [ -x "$PY" ] || PY="${DIR}/../.venv/Scripts/python.exe"
-[ -x "$PY" ] || PY=python3
+if [ ! -x "$PY" ]; then
+    PY=python3
+    echo "cro-py: skill Python env not found, using system python3. Run: \"${DIR}/cro-py\" doctor.py" >&2
+fi
 exec "$PY" "${DIR}/$1" "${@:2}"

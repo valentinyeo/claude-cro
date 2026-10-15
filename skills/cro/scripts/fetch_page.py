@@ -148,6 +148,26 @@ def looks_blocked(status_code: int, html: str):
     return None
 
 
+def guard_browser(context) -> None:
+    """Abort any browser request (page, redirect, subresource) to a private address."""
+    cache = {}
+
+    def handler(route):
+        host = urlparse(route.request.url).hostname
+        if host and host not in cache:
+            try:
+                resolve_and_check(host)
+                cache[host] = True
+            except ValueError:
+                cache[host] = False
+        if host and not cache[host]:
+            route.abort("blockedbyclient")
+        else:
+            route.continue_()
+
+    context.route("**/*", handler)
+
+
 def render_page(url: str, timeout: int = DEFAULT_TIMEOUT, user_agent: str = DEFAULT_USER_AGENT) -> dict:
     """Load the page in headless Chromium and return the rendered DOM (what a visitor sees)."""
     from playwright.sync_api import sync_playwright
@@ -158,7 +178,9 @@ def render_page(url: str, timeout: int = DEFAULT_TIMEOUT, user_agent: str = DEFA
     with sync_playwright() as p:
         browser = p.chromium.launch(headless=True)
         try:
-            page = browser.new_context(user_agent=user_agent, viewport={"width": 1440, "height": 900}).new_page()
+            ctx = browser.new_context(user_agent=user_agent, viewport={"width": 1440, "height": 900})
+            guard_browser(ctx)
+            page = ctx.new_page()
             resp = page.goto(url, wait_until="domcontentloaded", timeout=timeout * 1000)
             try:
                 page.wait_for_load_state("networkidle", timeout=10000)

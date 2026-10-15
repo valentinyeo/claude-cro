@@ -19,6 +19,7 @@ import argparse
 import json
 import os
 import sys
+from urllib.parse import urlparse
 
 import requests
 
@@ -101,6 +102,15 @@ LOCAL_JS = """
 """
 
 
+def _fetch_mod():
+    import importlib.util
+    spec = importlib.util.spec_from_file_location(
+        "fetch_page_mod", os.path.join(os.path.dirname(os.path.abspath(__file__)), "fetch_page.py"))
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return mod
+
+
 def run_local(url: str, strategy: str) -> dict:
     """Throttled lab measurement in headless Chromium (no Google API needed)."""
     from playwright.sync_api import sync_playwright
@@ -112,6 +122,8 @@ def run_local(url: str, strategy: str) -> dict:
                 ctx = browser.new_context(**p.devices["Pixel 7"])
             else:
                 ctx = browser.new_context(viewport={"width": 1440, "height": 900})
+            _fetch_mod().guard_browser(ctx)
+            _fetch_mod().resolve_and_check(urlparse(url).hostname)
             page = ctx.new_page()
             cdp = ctx.new_cdp_session(page)
             if strategy == "mobile":
