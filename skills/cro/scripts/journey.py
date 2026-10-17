@@ -25,6 +25,8 @@ import json
 import os
 import sys
 import time
+import os as _os, sys as _sys; _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))  # noqa: E401,E702
+from netenv import dns_unavailable_but_proxied, launch_chromium  # noqa: E402,F401
 
 _spec = importlib.util.spec_from_file_location(
     "fetch_page_mod", os.path.join(os.path.dirname(os.path.abspath(__file__)), "fetch_page.py"))
@@ -55,7 +57,7 @@ def run(steps, out, mobile):
     os.makedirs(out, exist_ok=True)
     log, ok = [], True
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=True)
+        browser = launch_chromium(p)
         ctx = browser.new_context(**p.devices["iPhone 13"]) if mobile else browser.new_context(
             viewport={"width": 1440, "height": 900}, user_agent=fp.DEFAULT_USER_AGENT)
         fp.guard_browser(ctx)

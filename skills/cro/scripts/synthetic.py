@@ -42,6 +42,8 @@ from collections import Counter, defaultdict
 from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 from urllib.parse import urljoin, urlparse
+import os as _os, sys as _sys; _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))  # noqa: E401,E702
+from netenv import dns_unavailable_but_proxied, launch_chromium  # noqa: E402,F401
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 
@@ -711,7 +713,7 @@ def visit(v, out_dir, backend, model, goal, max_steps, replay=None, timeout_s=42
     state = {"landed": True, "trackers_blocked": 0, "trackers_allowed": 0}
     log, history, noted, end_reason = [], [], [], "max_steps"
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=True)
+        browser = launch_chromium(p)
         dev = {"mobile": p.devices["iPhone 13"], "tablet": p.devices["iPad (gen 7)"]}.get(t["device"])
         ctx = browser.new_context(**dev) if dev else browser.new_context(
             viewport={"width": 1440, "height": 900}, user_agent=fp.DEFAULT_USER_AGENT)

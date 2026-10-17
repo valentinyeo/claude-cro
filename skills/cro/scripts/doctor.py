@@ -15,6 +15,8 @@ import argparse
 import importlib
 import os
 import sys
+import os as _os, sys as _sys; _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))  # noqa: E401,E702
+from netenv import dns_unavailable_but_proxied, launch_chromium  # noqa: E402,F401
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 VENV = os.path.normpath(os.path.join(HERE, "..", ".venv"))
@@ -47,14 +49,14 @@ def main():
                 raise FileNotFoundError(path)
             print("  ok   chromium binary")
             if not a.quick:
-                b = p.chromium.launch(headless=True)
+                b = launch_chromium(p)
                 b.close()
                 print("  ok   chromium launches")
     except ImportError:
         warns.append("Playwright missing: no screenshots, rendering or local speed test. Fix: re-run install.sh.")
     except Exception as exc:
         warns.append(f"Headless browser not usable ({str(exc)[:100]}). Fix: '{sys.executable} -m playwright install chromium'"
-                     " (Linux may also need: '{sys.executable} -m playwright install-deps chromium').")
+                     f" (Linux may also need: '{sys.executable} -m playwright install-deps chromium').")
 
     if not a.quick and not fails:
         sys.path.insert(0, HERE)
@@ -63,7 +65,7 @@ def main():
             r = fetch_page.fetch_page("https://example.com", timeout=15)
             print(f"  ok   internet (example.com HTTP {r['status_code']})")
         except Exception as exc:
-            fails.append(f"Cannot fetch https://example.com ({exc}). Check network or proxy.")
+            fails.append(f"Cannot fetch https://example.com ({exc}). Check network or proxy. In Claude Code on the web, set the cloud environment network access to Full, or allow your site.")
         try:
             import requests
             r = requests.get("https://www.googleapis.com/pagespeedonline/v5/runPagespeed",

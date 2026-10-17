@@ -22,6 +22,8 @@ import sys
 from urllib.parse import urlparse
 
 import requests
+import os as _os, sys as _sys; _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))  # noqa: E401,E702
+from netenv import dns_unavailable_but_proxied, launch_chromium  # noqa: E402,F401
 
 API = "https://www.googleapis.com/pagespeedonline/v5/runPagespeed"
 FIELD = {
@@ -116,7 +118,7 @@ def run_local(url: str, strategy: str) -> dict:
     from playwright.sync_api import sync_playwright
 
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=True)
+        browser = launch_chromium(p)
         try:
             if strategy == "mobile":
                 ctx = browser.new_context(**p.devices["Pixel 7"])
