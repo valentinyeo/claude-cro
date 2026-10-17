@@ -66,6 +66,20 @@ class ResultsHubTest(unittest.TestCase):
         self.assertIn("id='verify'", html)
         self.assertIn("no score", html)            # message test measures our work, not the page
 
+    def test_book_a_call_line_default_override_and_off(self):
+        html = rh.build(self.W)
+        self.assertIn("id='cta'", html)
+        self.assertIn("<a href='https://calendar.app.google/LZTWmL4jhseNKNc3A'>", html)
+        n = json.loads((self.W / "results-notes.json").read_text())
+        n["cta"] = "Questions? Call Acme Agency: https://acme.example/call"
+        (self.W / "results-notes.json").write_text(json.dumps(n))
+        html = rh.build(self.W)
+        self.assertIn("<a href='https://acme.example/call'>", html)
+        self.assertNotIn("calendar.app.google", html)
+        n["cta"] = False
+        (self.W / "results-notes.json").write_text(json.dumps(n))
+        self.assertNotIn("id='cta'", rh.build(self.W))
+
     def test_empty_workspace_still_builds(self):
         for f in ("results-notes.json", "experiments.json"):
             (self.W / f).unlink()

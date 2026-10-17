@@ -29,6 +29,8 @@ About 20 minutes. Specialist agents review UX, copy, trust, visuals, speed and t
 
 **4. Read the results:** `/cro results <audit-folder>` builds one page: a score out of 10 per area, what stands between each score and 10/10, and the experiments to run next, each with its hypothesis.
 
+See a real one first: the maintainer's own site, audited with this pack: https://valentinyeo.github.io/claude-cro/examples/valentinyeo.com/
+
 **5. Fix one thing and measure it.** Start with the top Critical finding. The audit says whether your traffic is big enough for an A/B test. If not, use the before-and-after checks on the results page instead.
 
 ## How the method works

@@ -15,7 +15,9 @@ class ClientAgnosticTest(unittest.TestCase):
         hits = []
         for entry in SCAN:
             p = ROOT / entry
-            files = [p] if p.is_file() else [f for f in p.rglob("*") if f.is_file()]
+            files = [p] if p.is_file() else [f for f in p.rglob("*") if f.is_file()
+                                             and not any(part.startswith(".") for part in f.relative_to(ROOT).parts)
+                                             and "examples" not in f.relative_to(ROOT).parts]  # the owner's own site, by choice
             for f in files:
                 if f.name == Path(__file__).name or f.name == "GATES.md" or f.suffix in {".png", ".jpg", ".pyc"}:
                     continue
