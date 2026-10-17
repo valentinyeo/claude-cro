@@ -20,7 +20,7 @@ Solutions to common issues with Claude CRO.
    ```bash
    ls ~/.claude/skills/cro-*/SKILL.md
    ```
-   You should see 12 sub-skill directories.
+   You should see 20 cro skill directories.
 
 3. **Restart Claude Code.** Skills are loaded at startup. After running the
    installer, restart your Claude Code session.
@@ -105,7 +105,7 @@ range.
 
 **Solutions:**
 
-1. **Full audits use 6 parallel agents.** Each agent processes the full page
+1. **Full audits use 6 parallel lens agents plus browser personas and a skeptic.** Each agent processes the full page
    HTML. On large pages (100KB+ HTML), this can be slow. This is expected
    behavior.
 

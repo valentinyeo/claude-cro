@@ -14,7 +14,7 @@ Layer 1: Orchestrator
     |-- Owns the CRO Health Score calculation
     |-- Loads reference files on-demand
     |
-Layer 2: Sub-Skills (12)
+Layer 2: Sub-Skills (19)
     skills/cro-*/SKILL.md
     |
     |-- Each handles a specific CRO domain (copy, UX, forms, etc.)

@@ -1,0 +1,42 @@
+{
+  "name": "cro",
+  "version": "2.0.0",
+  "description": "Learn to raise your website's conversion rate with Claude Code: audit your own site, see why visitors leave, get fixes and A/B test ideas sized to your traffic, and run the tests.",
+  "author": {
+    "name": "Valentin Yeo",
+    "url": "https://valentinyeo.com"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/valentinyeo/claude-cro",
+  "skills": [
+    "./skills/cro",
+    "./skills/cro-audit",
+    "./skills/cro-page",
+    "./skills/cro-funnel",
+    "./skills/cro-testing",
+    "./skills/cro-copy",
+    "./skills/cro-ux",
+    "./skills/cro-forms",
+    "./skills/cro-ecommerce",
+    "./skills/cro-trust",
+    "./skills/cro-tracking",
+    "./skills/cro-benchmark",
+    "./skills/cro-plan",
+    "./skills/cro-program",
+    "./skills/cro-slides",
+    "./skills/cro-wireframe",
+    "./skills/cro-build-test",
+    "./skills/cro-research",
+    "./skills/cro-synthetic",
+    "./skills/cro-message-test"
+  ],
+  "repository": "https://github.com/valentinyeo/claude-cro",
+  "keywords": [
+    "cro",
+    "conversion-rate-optimization",
+    "ab-testing",
+    "landing-page",
+    "website-audit",
+    "claude-code"
+  ]
+}

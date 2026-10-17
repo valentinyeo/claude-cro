@@ -13,7 +13,7 @@
 Install directly as a Claude Code plugin:
 
 ```
-/plugin install claude-cro@valentinyeo/claude-cro
+/plugin install cro --marketplace valentinyeo/claude-cro
 ```
 
 This automatically discovers all skills and agents. No manual file copying needed.
@@ -50,7 +50,7 @@ chmod +x install.sh
 The installer will:
 - Create `~/.claude/skills/` and `~/.claude/agents/` directories
 - Copy the main orchestrator to `~/.claude/skills/cro/`
-- Copy all 12 sub-skills to `~/.claude/skills/cro-*/`
+- Copy all 20 skills to `~/.claude/skills/cro-*/`
 - Copy agent definitions to `~/.claude/agents/`
 - Copy Python scripts to `~/.claude/skills/cro/scripts/`
 - Install Python dependencies (`requests`, `beautifulsoup4`, `lxml`)

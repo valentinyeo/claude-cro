@@ -13,7 +13,7 @@ never a conversion forecast.
 
 Usage:
     message_test.py run <brief.md> --question "Which offer ..." --out <dir>
-                        [--name "valentinyeo offer"] [--rounds 12] [--platform reddit|twitter|parallel]
+                        [--name "my offer"] [--rounds 12] [--platform reddit|twitter|parallel]
                         [--api http://127.0.0.1:5001] [--relay http://127.0.0.1:5011] [--timeout 5400]
     message_test.py check [--api ...] [--relay ...]
 
