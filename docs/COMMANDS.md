@@ -1,6 +1,6 @@
 # Command Reference
 
-Complete reference for all 12 `/cro` commands. Each command can be run
+Reference for the core `/cro` commands; the README lists every command. Each command can be run
 independently from Claude Code.
 
 ---

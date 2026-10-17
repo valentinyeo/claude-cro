@@ -53,8 +53,11 @@ allowed-tools: Read, Grep, Glob, Bash, WebFetch, Agent
 3. Read `${CLAUDE_SKILL_DIR}/../cro-<sub-skill>/SKILL.md` and follow it, passing
    the URL(s), any baseline numbers, and `CRO_SCRIPTS`.
 
-## The two jobs this pack does
+## The jobs this pack does
 
+0. **Improve your own site.** `/cro audit <url>`, then `/cro results <folder>`:
+   the owner learns what loses visitors, why, and which fix to try first.
+   Explain each finding in plain words; never assume the reader is a CRO expert.
 1. **Win the client.** `/cro audit <url> --prospect` then `/cro slides <folder> --pitch`:
    real problems on their own site, with screenshots, and an offer sized by
    what their traffic allows.

@@ -1,0 +1,17 @@
+{
+  "name": "valentinyeo-cro",
+  "owner": {
+    "name": "Valentin Yeo",
+    "url": "https://valentinyeo.com"
+  },
+  "plugins": [
+    {
+      "name": "cro",
+      "source": "./",
+      "description": "Learn to raise your website's conversion rate with Claude Code: audit your own site, see why visitors leave, get fixes and A/B test ideas sized to your traffic, and run the tests."
+    }
+  ],
+  "metadata": {
+    "description": "CRO skill pack for Claude Code: audit your own website and improve its conversion rate."
+  }
+}

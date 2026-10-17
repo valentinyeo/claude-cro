@@ -29,7 +29,7 @@ from test_readiness import assess  # noqa: E402
 module = importlib.util.spec_from_file_location("render_test", SKILL / "scripts" / "render_test.py")
 renderer = importlib.util.module_from_spec(module)
 module.loader.exec_module(renderer)
-SCRATCH = Path(os.environ.get("BUILDTEST_SCRATCH", "/tmp/claude-1000/-home-valentin-projects-claude-cro/b9de462a-95fc-48af-838d-9cb44d54afd2/scratchpad/buildtest"))
+SCRATCH = Path(os.environ.get("BUILDTEST_SCRATCH", os.path.join(tempfile.gettempdir(), "cro-buildtest")))
 SCRATCH.mkdir(parents=True, exist_ok=True)
 
 TEXT = "An ordinary store with a working purchase path and enough meaningful content for a real page preview. " * 8
