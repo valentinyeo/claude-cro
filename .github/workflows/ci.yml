@@ -22,11 +22,12 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Planted fixtures, answer keys and generated cases are up to date
+      - name: Planted, subtle and blind fixtures, answer keys and cases are up to date
         run: |
           python evals/tools/plant.py --check
           python evals/tools/make_cases.py --check
           python evals/tools/make_winner.py --check
+          python evals/tools/check.py answer-keys
           python evals/tools/check.py fixtures
       - name: Committed eval results recompute and stay above the score floor
         run: python evals/tools/check.py results

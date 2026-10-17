@@ -1,0 +1,37 @@
+{
+  "fixture": "fixtures/endlesstesting.ai.blind.html",
+  "clean": "fixtures/endlesstesting.ai.clean.html",
+  "tier": "blind",
+  "defects": [
+    {
+      "id": "cta-destination-mismatch",
+      "label": "Download CTA leads to contact-sales instead of a guide",
+      "found": "(download|guide)[^\\n]{0,160}(sales|contact|mismatch|instead|does not|doesn't)|(sales|contact|mismatch)[^\\n]{0,160}(download|guide)",
+      "snippet": "<p><a class=\"blind-primary\" href=\"/contact-sales\" style=\"display:inline-block;padding:16px 28px;background:#2563eb;color:#fff;font-weight:700\">Download the free setup guide</a></p>"
+    },
+    {
+      "id": "blaming-error",
+      "label": "Email validation error blames the visitor instead of helping them recover",
+      "found": "(error|validation|email)[^\\n]{0,120}(blam|accus|scold|sham|hostile|punitive)|(blam|accus|scold|sham|hostile|punitive)[^\\n]{0,120}(error|validation|email|user|visitor)",
+      "snippet": "You failed to enter a valid email address. Try again."
+    },
+    {
+      "id": "anonymous-testimonial",
+      "label": "Testimonial beside the primary CTA has no named person or company",
+      "found": "(testimonial|quote|endorsement)[^\\n]{0,120}(anonym|unattribut|unnamed|no (name|author|company|attribution)|without[^\\n]{0,30}(name|attribution)|generic attribution)|(anonym|unattribut|unnamed)[^\\n]{0,120}(testimonial|quote|endorsement)",
+      "snippet": "<figure class=\"blind-testimonial\"><blockquote>Getting started was easier than we expected.</blockquote><figcaption>A happy customer</figcaption></figure>"
+    },
+    {
+      "id": "late-contract-term",
+      "label": "12-month minimum commitment disclosed only in the footer after the CTAs",
+      "found": "(12[- ]month|twelve[- ]month|annual|minimum (commitment|term)|contract)[^\\n]{0,160}(footer|after[^\\n]{0,35}(cta|call.to.action|button)|buried|late|upfront|up.front|disclos)|(footer|buried|late|upfront|up.front|disclos)[^\\n]{0,160}(12[- ]month|twelve[- ]month|annual|minimum (commitment|term)|contract)",
+      "snippet": "<p class=\"blind-terms\">Service terms: Minimum commitment of 12 months; cancellation takes effect at the end of the term.</p>"
+    },
+    {
+      "id": "image-only-headline",
+      "label": "Hero headline is an image with empty alt and no accessible text",
+      "found": "(headline|heading|h1)[^\\n]{0,140}(image[- ]only|empty alt|missing alt|no alt|blank alt|no alternative text|without[^\\n]{0,30}(alt|text alternative)|screen.reader|inaccessible)|(image[- ]only|empty alt|missing alt|no alt|blank alt|screen.reader)[^\\n]{0,140}(headline|heading|h1)",
+      "snippet": "<img class=\"blind-headline\" alt=\"\""
+    }
+  ]
+}
