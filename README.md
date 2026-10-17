@@ -79,7 +79,7 @@ Full reference: [docs/COMMANDS.md](docs/COMMANDS.md).
 
 ## Want it done for you?
 
-The method is free. Running it well takes time: building the variants, running the tests, reading the results honestly. If you'd rather have an expert run the program on your site, book a free 30-minute call with Valentin Yeo, who maintains this pack: https://calendar.app.google/LZTWmL4jhseNKNc3A (more at https://valentinyeo.com)
+The method is free. Running it well takes time: building the variants, running the tests, reading the results honestly. If you'd rather have an expert run the program on your site, book a free 20-minute teardown of your site with Valentin Yeo, who maintains this pack: https://cal.com/valentinyeo/teardown (more at https://valentinyeo.com)
 
 ## What's inside
 
