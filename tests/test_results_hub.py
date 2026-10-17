@@ -69,13 +69,13 @@ class ResultsHubTest(unittest.TestCase):
     def test_book_a_call_line_default_override_and_off(self):
         html = rh.build(self.W)
         self.assertIn("id='cta'", html)
-        self.assertIn("<a href='https://calendar.app.google/LZTWmL4jhseNKNc3A'>Book a free 30-minute call</a>", html)
+        self.assertIn("<a href='https://cal.com/valentinyeo/teardown'>Book a free 20-minute teardown</a>", html)
         n = json.loads((self.W / "results-notes.json").read_text())
         n["cta"] = "Questions? Call Acme Agency: https://acme.example/call"
         (self.W / "results-notes.json").write_text(json.dumps(n))
         html = rh.build(self.W)
         self.assertIn("<a href='https://acme.example/call' style='overflow-wrap:anywhere'>https://acme.example/call</a>", html)
-        self.assertNotIn("calendar.app.google", html)
+        self.assertNotIn("cal.com/valentinyeo", html)
         n["cta"] = False
         (self.W / "results-notes.json").write_text(json.dumps(n))
         self.assertNotIn("id='cta'", rh.build(self.W))

@@ -99,7 +99,7 @@ ORDER = [
 
 
 CTA = ("Made with the free [claude-cro pack](https://github.com/valentinyeo/claude-cro).\n"
-       "Want an expert to run these experiments for you? [Book a free 30-minute call](https://calendar.app.google/LZTWmL4jhseNKNc3A).")
+       "Want an expert to run these experiments for you? [Book a free 20-minute teardown](https://cal.com/valentinyeo/teardown).")
 
 
 def linkify(escaped):
