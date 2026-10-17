@@ -1,0 +1,17 @@
+{
+  "ok": true,
+  "steps": [
+    {
+      "n": 1,
+      "step": {
+        "goto": "https://cal.com/valentinyeo/teardown"
+      },
+      "status": "ok",
+      "ms": 4449,
+      "url": "https://cal.com/valentinyeo/teardown",
+      "title": "Free 20-minute teardown | Valentin Yeo | Cal.com",
+      "screenshot": "c/step-01.png"
+    }
+  ],
+  "js_errors": []
+}

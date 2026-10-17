@@ -1,0 +1,18 @@
+{
+  "url": "https://valentinyeo.com/contact.html",
+  "strategy": "mobile",
+  "source": "local-lab (headless Chromium, throttled; not Lighthouse, no real-user data)",
+  "performance_score": null,
+  "field_data": null,
+  "field_data_scope": null,
+  "lab": {
+    "LCP": "1.0 s (FAST)",
+    "CLS": "0.000 (FAST)",
+    "TBT": "8 ms (FAST)",
+    "FCP": "1.0 s",
+    "TTFB": "525 ms",
+    "Requests": "9",
+    "Transfer": "26 KB"
+  },
+  "opportunities": []
+}

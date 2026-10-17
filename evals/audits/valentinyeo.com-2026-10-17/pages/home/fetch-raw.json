@@ -1,0 +1,32 @@
+{
+  "url": "https://valentinyeo.com/",
+  "final_url": "https://valentinyeo.com/",
+  "status_code": 200,
+  "headers": {
+    "Date": "Sat, 17 Oct 2026 15:29:45 GMT",
+    "Content-Type": "text/html; charset=utf-8",
+    "Transfer-Encoding": "chunked",
+    "Connection": "keep-alive",
+    "x-content-type-options": "nosniff",
+    "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=uEe1IyNiTO3IY9SILjU%2B67AHdEd%2FO1EZ85ja0X8OL%2F9TQKlJUdKw8PakEGmYiGCZ9YLTcBmmockARzE1UAmpwlDHQTF32lSQ4LvmrDamk6CpwSjHFWyeGAqzexEW44izUio%3D\"}]}",
+    "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+    "Access-Control-Allow-Origin": "*",
+    "Cache-Control": "public, max-age=0, must-revalidate",
+    "referrer-policy": "strict-origin-when-cross-origin",
+    "Link": "<https://fonts.googleapis.com>; rel=\"preconnect\"",
+    "vary": "accept-encoding",
+    "Server-Timing": "cfCacheStatus;desc=\"DYNAMIC\", cfEdge;dur=31,cfOrigin;dur=37",
+    "Server": "cloudflare",
+    "cf-cache-status": "DYNAMIC",
+    "Content-Encoding": "gzip",
+    "CF-RAY": "a4c0573599bfdc40-IAD",
+    "alt-svc": "h3=\":443\"; ma=86400"
+  },
+  "response_time_ms": 272.6,
+  "resolved_ip": "172.67.140.229",
+  "content_length": 35759,
+  "encoding": "utf-8",
+  "fetched_with": "http",
+  "blocked": null,
+  "html_file": "/home/user/crotest/cro-audit-valentinyeo.com-2026-10-17/pages/home/raw.html"
+}

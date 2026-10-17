@@ -1,0 +1,464 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Case study of CRO and A/B testing work for inne.io, a femtech company pioneering hormone-tracking technology">
+  <title>inne.io CRO Case Study | Valentin Yeo</title>
+  
+  <!-- Preconnect to critical domains -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin="">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin="">
+  
+  <!-- Preload critical resources -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@700&amp;display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@700&display=swap"></noscript>
+  
+  <!-- Site-wide styles -->
+  <link rel="stylesheet" href="styles.css">
+  <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"></noscript>
+  
+  <!-- Font Awesome Icons with non-blocking loading -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="all" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
+  
+  <meta http-equiv="Cache-Control" content="public, max-age=31536000">
+  
+  <!-- Case study specific styles -->
+  <style>
+    /* Font display strategy */
+    @font-face {
+      font-family: 'Figtree';
+      font-style: normal;
+      font-weight: 700;
+      font-display: swap;
+      src: local('Figtree Bold'), local('Figtree-Bold');
+    }
+    
+    html { scroll-behavior: smooth; }
+    main { margin-top: 2rem; }
+    
+    /* Apply Figtree font to all headings */
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Figtree', sans-serif;
+    }
+    
+    /* Case study specific styles */
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    
+    /* Header */
+    header {
+      padding: 1rem 0;
+      margin-bottom: 1rem;
+    }
+    
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--text-color);
+      font-family: var(--heading-font);
+      letter-spacing: -0.01em;
+      text-decoration: none;
+    }
+    
+    .header-links {
+      display: flex;
+      gap: 1.25rem;
+      align-items: center;
+    }
+    
+    .header-link {
+      color: var(--text-color);
+      font-weight: 600;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    
+    .header-link:hover {
+      color: var(--primary-color);
+    }
+    
+    /* Case study content */
+    .case-study {
+      margin: 2rem 0 4rem;
+    }
+    
+    .case-study h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+    }
+    
+    .case-study h2 {
+      font-size: 1.75rem;
+      font-weight: 700;
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+      color: var(--text-color);
+    }
+    
+    .case-study h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
+      color: var(--text-color);
+    }
+    
+    .case-study p {
+      margin-bottom: 1.25rem;
+      line-height: 1.6;
+    }
+    
+    .case-study ul {
+      margin-bottom: 1.5rem;
+      padding-left: 1.5rem;
+    }
+    
+    .case-study li {
+      margin-bottom: 0.5rem;
+    }
+    
+    .case-study strong {
+      font-weight: 600;
+      color: #a855f7;
+    }
+    
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text-color);
+      text-decoration: none;
+      font-weight: 600;
+      margin-bottom: 2rem;
+      transition: color 0.2s ease;
+    }
+    
+    .back-link:hover {
+      color: var(--primary-color);
+    }
+    
+    /* Footer */
+    footer {
+      padding: 1.875rem 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      margin-top: 3.75rem;
+      text-align: center;
+    }
+    
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.25rem;
+      margin-top: 0.9375rem;
+    }
+    
+    .footer-link {
+      color: var(--text-color);
+      font-weight: 600;
+      transition: color 0.2s ease;
+      text-decoration: none;
+    }
+    
+    .footer-link:hover {
+      color: var(--primary-color);
+    }
+    
+    /* Responsive styles */
+    @media (max-width: 600px) {
+      .container {
+        padding: 0 calc(var(--pico-spacing) * 1.25);
+      }
+      
+      .case-study h1 {
+        font-size: 2rem;
+      }
+      
+      .case-study h2 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="header-content">
+        <a href="index.html" class="logo">Valentin Yeo</a>
+        <div class="header-links">
+          <a href="cv.html" class="header-link"><i class="fas fa-file-alt"></i> CV</a>
+          <a href="https://www.linkedin.com/in/valentin-yeo/" target="_blank" rel="noopener" class="header-link">
+            <i class="fab fa-linkedin"></i>
+            <span class="visually-hidden">LinkedIn Profile</span>
+          </a>
+        </div>
+      </div>
+    </header>
+    
+    <main>
+      <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Home</a>
+      
+      <div class="case-study">
+        <h1>inne.io CRO Case Study: <span class="gradient-text">Optimizing Conversion for a Femtech Pioneer</span></h1>
+        
+        <h2>Executive Summary</h2>
+        <p>This case study documents the conversion rate optimization (CRO) strategy implemented for inne.io, a Berlin-based femtech company pioneering hormone-tracking technology through saliva testing. With an overall conversion rate of 1.76% and significant funnel drop-offs, the project aimed to increase conversion rates through data-driven testing and optimization.</p>
+        
+        <p><strong>Key achievements:</strong></p>
+        <ul>
+          <li>Identified critical funnel drop-offs at product page (66.1%) and checkout (37.1%)</li>
+          <li>Developed and implemented a comprehensive testing strategy focused on mobile optimization (91.6% of traffic)</li>
+          <li>Conducted strategic A/B tests targeting key conversion barriers</li>
+          <li>Achieved 14.6% increase in purchase revenue through above-fold CTA placement</li>
+          <li>Established a structured testing framework for continuous optimization</li>
+        </ul>
+        
+        <h2>Client Overview</h2>
+        <p>Inne is a Berlin-based femtech company offering the world's first at-home device to measure progesterone levels via saliva samples. Their flagship product, the inne minilab, consists of a reader device, saliva test strips, and a companion app that provides personalized insights into menstrual cycles for fertility tracking and ovulation prediction.</p>
+        
+        <p><strong>Key Differentiators:</strong></p>
+        <ul>
+          <li>Non-invasive saliva-based hormone tracking</li>
+          <li>Individualized progesterone curve monitoring</li>
+          <li>Scientific approach to fertility awareness</li>
+          <li>Subscription-based model with reader device and regular strip delivery</li>
+        </ul>
+        
+        <h2>Initial Situation &amp; Challenges</h2>
+        <p>The initial analysis revealed several critical issues affecting conversion performance:</p>
+        
+        <p><strong>Baseline Metrics:</strong></p>
+        <ul>
+          <li>Overall Conversion Rate: 1.76%</li>
+          <li>Total Users: 84,408</li>
+          <li>Total Conversions: 1,484</li>
+          <li>Average Order Value: €129.97</li>
+          <li>Total Revenue: €192,877.05</li>
+        </ul>
+        
+        <p><strong>Critical Challenges:</strong></p>
+        
+        <h3>1. High Funnel Drop-offs:</h3>
+        <ul>
+          <li>Product Page to Cart: 66.1% drop-off rate</li>
+          <li>Checkout to Purchase: 37.1% drop-off rate</li>
+        </ul>
+        
+        <h3>2. Device Usage Imbalance:</h3>
+        <ul>
+          <li>Mobile: 91.6% of traffic (primary platform)</li>
+          <li>Desktop: 8.4% of traffic</li>
+        </ul>
+        
+        <h3>3. Technical Issues:</h3>
+        <ul>
+          <li>Inconsistent tracking implementation</li>
+          <li>Tracking discrepancies in checkout flow</li>
+          <li>Duplicate purchase events</li>
+        </ul>
+        
+        <h3>4. User Experience:</h3>
+        <ul>
+          <li>Low engagement time on product pages (26-40 seconds)</li>
+          <li>Limited educational pathways</li>
+          <li>Key CTAs positioned below the fold</li>
+          <li>Lack of clear social proof elements</li>
+        </ul>
+        
+        <h2>Strategy &amp; Approach</h2>
+        <p>Based on the comprehensive analysis, we developed a multi-faceted optimization strategy:</p>
+        
+        <h3>1. Optimization Framework</h3>
+        <p>We established a systematic approach to testing and optimization:</p>
+        <ul>
+          <li>Fixed analytics implementation issues to ensure accurate tracking</li>
+          <li>Segmented traffic by device type, prioritizing mobile (91.6% of traffic)</li>
+          <li>Implemented the PIE (Potential, Importance, Ease) framework for test prioritization</li>
+          <li>Adopted an overlapping test strategy to maximize experimental power</li>
+        </ul>
+        
+        <h3>2. Key Focus Areas</h3>
+        <p>The strategy targeted five critical conversion elements:</p>
+        
+        <h4>Mobile Experience Optimization</h4>
+        <ul>
+          <li>CTA size and placement adjustments</li>
+          <li>Above-fold content prioritization</li>
+          <li>Touch-friendly interface elements</li>
+        </ul>
+        
+        <h4>Trust Building</h4>
+        <ul>
+          <li>Social proof implementation (Google reviews, testimonials)</li>
+          <li>Clear value proposition communication</li>
+          <li>Trust badge optimization</li>
+        </ul>
+        
+        <h4>Product Page Enhancements</h4>
+        <ul>
+          <li>Pricing display improvements</li>
+          <li>Plan selection optimization</li>
+          <li>Educational content integration</li>
+        </ul>
+        
+        <h4>Purchase Path Simplification</h4>
+        <ul>
+          <li>Checkout CTA optimization</li>
+          <li>Direct purchase options</li>
+          <li>Reduced friction points</li>
+        </ul>
+        
+        <h4>Educational Pathways</h4>
+        <ul>
+          <li>Secondary CTAs for product education</li>
+          <li>Video explanations of the product</li>
+          <li>Clearer visualization of the saliva testing process</li>
+        </ul>
+        
+        <h2>Key Tests &amp; Results</h2>
+        
+        <h3>Test 1: CTA Above Fold Placement</h3>
+        <p><strong>Hypothesis:</strong> Moving the hero CTA above the fold will increase engagement and purchase rates by making the action point immediately visible upon page load.</p>
+        
+        <p><strong>Results:</strong></p>
+        <ul>
+          <li>Purchase Revenue: +14.6% (€3.14 → €3.61 per visitor)</li>
+          <li>Checkout Started: +23.8% (€10.03 → €12.42 per visitor)</li>
+          <li>CTA Click Rate: +10.29% (9.14% → 10.08%)</li>
+          <li>24-Month Plan: +18.24% conversion increase</li>
+          <li>12-Month Plan: +36.15% conversion increase</li>
+        </ul>
+        
+        <p><strong>Learning:</strong> Immediate visibility of primary action points significantly impacts the entire conversion funnel, with particularly strong effects on premium subscription plans.</p>
+        
+        <h3>Test 2: Subscription Plan Reordering</h3>
+        <p><strong>Hypothesis:</strong> Moving the 24-month subscription plan to the first position will increase its visibility and perceived prominence, leading to higher selection rates for this high-value plan.</p>
+        
+        <p><strong>Implementation:</strong></p>
+        <ul>
+          <li>Control: 3-Month → 12-Month → 24-Month</li>
+          <li>Variation: 24-Month → 12-Month → 3-Month</li>
+        </ul>
+        
+        <p><strong>Key Insight:</strong> Presenting the highest-value option first helps anchor customers' expectations and increases premium plan selection rates.</p>
+        
+        <h3>Test 3: Mobile CTA Size Optimization</h3>
+        <p><strong>Hypothesis:</strong> Increasing the CTA width to 300px will improve its visibility and create a more prominent visual and tap target, particularly benefiting mobile users.</p>
+        
+        <p><strong>Focus Area:</strong> Optimizing for the 91.6% of users on mobile devices with larger, more visible primary action buttons.</p>
+        
+        <h3>Test 4: Trust Badge Implementation</h3>
+        <p><strong>Hypothesis:</strong> Adding a Google rating badge below the hero section will increase conversion rates by providing recognized social proof from a trusted third party.</p>
+        
+        <p><strong>Implementation:</strong></p>
+        <ul>
+          <li>Added star rating display with review count</li>
+          <li>Included Google logo as trust indicator</li>
+          <li>Placed prominently below hero section</li>
+          <li>Mobile-optimized for primary audience</li>
+        </ul>
+        
+        <p><strong>Strategic Value:</strong> Leveraging recognized trust signals to build confidence earlier in the user journey.</p>
+        
+        <h3>Test 5: Pricing Presentation</h3>
+        <p><strong>Hypothesis:</strong> A consistent strike price across all plans combined with clear value indicators will increase longer-term plan adoption.</p>
+        
+        <p><strong>Variation:</strong></p>
+        <ul>
+          <li>3-Month Plan: 159€ → 149€ Reader (no badge)</li>
+          <li>12-Month Plan: 159€ → 119€ Reader ("BELIEBT" badge)</li>
+          <li>24-Month Plan: 159€ → 89€ Reader ("70 EUR READER ERSPARNIS" badge)</li>
+        </ul>
+        
+        <p><strong>Focus:</strong> Creating clearer decision-making frameworks and highlighting value proposition of premium plans.</p>
+        
+        <h2>Strategic Outcomes</h2>
+        <p>The CRO program delivered several key strategic outcomes beyond the immediate test results:</p>
+        
+        <h3>1. Established Testing Framework</h3>
+        <ul>
+          <li>Implemented structured A/B testing methodology</li>
+          <li>Created standardized test documentation</li>
+          <li>Developed clear success metrics hierarchy</li>
+        </ul>
+        
+        <h3>2. Analytics Infrastructure</h3>
+        <ul>
+          <li>Fixed tracking implementation issues</li>
+          <li>Implemented proper funnel visualization</li>
+          <li>Established device-specific tracking</li>
+        </ul>
+        
+        <h3>3. Device Strategy Validation</h3>
+        <ul>
+          <li>Confirmed mobile-first approach (91.6% of business)</li>
+          <li>Created device-specific optimization roadmap</li>
+          <li>Identified device-specific user behaviors</li>
+        </ul>
+        
+        <h3>4. Revenue Impact</h3>
+        <ul>
+          <li>Improved primary conversion rate</li>
+          <li>Shifted plan distribution toward higher-value subscriptions</li>
+          <li>Increased average order value</li>
+        </ul>
+        
+        <h3>5. Testing Velocity Increase</h3>
+        <ul>
+          <li>Embraced overlapping tests philosophy</li>
+          <li>Reduced time-to-insight</li>
+          <li>Accelerated implementation cycles</li>
+        </ul>
+        
+        <h2>Key Learnings &amp; Insights</h2>
+        <p>The optimization program yielded several valuable insights for ongoing and future optimization:</p>
+        
+        <h3>1. Mobile Dominance</h3>
+        <ul>
+          <li>91.6% of traffic comes through mobile, making mobile optimization critical</li>
+          <li>Mobile users have fundamentally different engagement patterns</li>
+          <li>Mobile-first design significantly outperforms desktop-adapted layouts</li>
+        </ul>
+        
+        <h3>2. Value Communication</h3>
+        <ul>
+          <li>Clear presentation of long-term value drives premium plan adoption</li>
+          <li>Explicit savings messaging outperforms percentage-based discounts</li>
+          <li>Social proof elements have higher impact on high-consideration purchases</li>
+        </ul>
+      </div>
+    </main>
+    
+    <footer>
+      <div>© 2025 Valentin Yeo. All rights reserved.</div>
+      <div class="legal-line">Valentin Yeo, sole trader · 4th Floor, Silverstream House, 45 Fitzroy Street, London W1T 6EB, UK · <a href="mailto:valentin.yeo@gmail.com">valentin.yeo@gmail.com</a> · +44 7457 416764</div>
+      <div class="footer-links">
+        <a href="cv.html" class="footer-link"><i class="fas fa-file-alt"></i> CV</a>
+        <a href="https://www.linkedin.com/in/valentin-yeo/" target="_blank" rel="noopener" class="footer-link">
+          <i class="fab fa-linkedin"></i>
+          <span class="visually-hidden">LinkedIn Profile</span>
+        </a>
+      </div>
+          <div class="footer-links legal-links">
+        <a href="terms.html" class="footer-link">Terms</a>
+        <a href="privacy.html" class="footer-link">Privacy</a>
+        <a href="refund-policy.html" class="footer-link">Refund Policy</a>
+      </div>
+</footer>
+  </div>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;c6586c3f61c54ee4a4f78f0ac385dc83&quot;,&quot;r&quot;:1,&quot;spa&quot;:2}" crossorigin="anonymous"></script>
+
+
+</body></html>

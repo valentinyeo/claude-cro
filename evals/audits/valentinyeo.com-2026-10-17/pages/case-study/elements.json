@@ -1,0 +1,70 @@
+{
+  "ctas": [],
+  "forms": [],
+  "trust_signals": {
+    "testimonials": [],
+    "review_widgets": [],
+    "client_logos": [],
+    "security_badges": [],
+    "guarantees": [],
+    "certifications": []
+  },
+  "tracking": {
+    "scripts_found": [],
+    "data_layer": false,
+    "consent_management": false
+  },
+  "headlines": {
+    "h1": [
+      "inne.io CRO Case Study:Optimizing Conversion for a Femtech Pioneer"
+    ],
+    "h2": [
+      "Executive Summary",
+      "Client Overview",
+      "Initial Situation & Challenges",
+      "Strategy & Approach",
+      "Key Tests & Results",
+      "Strategic Outcomes",
+      "Key Learnings & Insights"
+    ],
+    "h3": [
+      "1. High Funnel Drop-offs:",
+      "2. Device Usage Imbalance:",
+      "3. Technical Issues:",
+      "4. User Experience:",
+      "1. Optimization Framework",
+      "2. Key Focus Areas",
+      "Test 1: CTA Above Fold Placement",
+      "Test 2: Subscription Plan Reordering",
+      "Test 3: Mobile CTA Size Optimization",
+      "Test 4: Trust Badge Implementation",
+      "Test 5: Pricing Presentation",
+      "1. Established Testing Framework",
+      "2. Analytics Infrastructure",
+      "3. Device Strategy Validation",
+      "4. Revenue Impact",
+      "5. Testing Velocity Increase",
+      "1. Mobile Dominance",
+      "2. Value Communication"
+    ]
+  },
+  "meta": {
+    "title": "inne.io CRO Case Study | Valentin Yeo",
+    "description": "Case study of CRO and A/B testing work for inne.io, a femtech company pioneering hormone-tracking technology",
+    "og_tags": {},
+    "twitter_tags": {},
+    "canonical": "",
+    "robots": "",
+    "viewport": "width=device-width,initial-scale=1"
+  },
+  "images": [],
+  "links": {
+    "internal_count": 7,
+    "external_count": 2,
+    "total": 9,
+    "internal_urls_unique": 5,
+    "external_urls_unique": 1
+  },
+  "schema": [],
+  "social_proof_patterns": []
+}

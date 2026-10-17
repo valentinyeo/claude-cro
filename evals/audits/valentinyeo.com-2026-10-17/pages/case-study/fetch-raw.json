@@ -1,0 +1,31 @@
+{
+  "url": "https://valentinyeo.com/inne-case-study.html",
+  "final_url": "https://valentinyeo.com/inne-case-study",
+  "status_code": 200,
+  "headers": {
+    "Date": "Sat, 17 Oct 2026 15:30:27 GMT",
+    "Content-Type": "text/html; charset=utf-8",
+    "Transfer-Encoding": "chunked",
+    "Connection": "keep-alive",
+    "x-content-type-options": "nosniff",
+    "Report-To": "{\"group\":\"cf-nel\",\"max_age\":604800,\"endpoints\":[{\"url\":\"https://a.nel.cloudflare.com/report/v4?s=bPcZE3ty%2ByelA1mdPTsTBAfhCqqppt00vSZRI1VyGxgPk0NS9iJSKA4p8ig2lce8b4EKD1wAVB12jLNlPYpPlQLGKEXUcYzEKjQbP0IoqA6YaZ39V1eIX00gB2lUNrnQhbA%3D\"}]}",
+    "Nel": "{\"report_to\":\"cf-nel\",\"success_fraction\":0.0,\"max_age\":604800}",
+    "Access-Control-Allow-Origin": "*",
+    "Cache-Control": "public, max-age=0, must-revalidate",
+    "referrer-policy": "strict-origin-when-cross-origin",
+    "vary": "accept-encoding",
+    "Server-Timing": "cfCacheStatus;desc=\"DYNAMIC\", cfEdge;dur=33,cfOrigin;dur=42",
+    "Server": "cloudflare",
+    "cf-cache-status": "DYNAMIC",
+    "Content-Encoding": "gzip",
+    "CF-RAY": "a4c05839ec6b50e2-IAD",
+    "alt-svc": "h3=\":443\"; ma=86400"
+  },
+  "response_time_ms": 403.1,
+  "resolved_ip": "172.67.140.229",
+  "content_length": 18272,
+  "encoding": "utf-8",
+  "fetched_with": "http",
+  "blocked": null,
+  "html_file": "/home/user/crotest/cro-audit-valentinyeo.com-2026-10-17/pages/case-study/raw.html"
+}

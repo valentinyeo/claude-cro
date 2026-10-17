@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Contact Valentin Yeo for CRO and A/B Testing expertise">
+  <title>Contact | Valentin Yeo</title>
+  
+  <!-- Preconnect to critical domains -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  
+  <!-- Preload critical resources -->
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Figtree:wght@700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@700&display=swap"></noscript>
+  
+  <!-- Site-wide styles -->
+  <link rel="stylesheet" href="styles.css">
+  <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"></noscript>
+  
+  <!-- Font Awesome Icons with non-blocking loading -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"></noscript>
+  
+  <meta http-equiv="Cache-Control" content="public, max-age=31536000">
+  
+  <!-- Contact-specific styles -->
+  <style>
+    /* Font display strategy */
+    @font-face {
+      font-family: 'Figtree';
+      font-style: normal;
+      font-weight: 700;
+      font-display: swap;
+      src: local('Figtree Bold'), local('Figtree-Bold');
+    }
+    
+    html { scroll-behavior: smooth; }
+    main { margin-top: 2rem; }
+    
+    /* Contact-specific styles */
+    
+    /* Apply Figtree font to all headings */
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Figtree', sans-serif;
+    }
+    
+    main {
+      flex: 1;
+      padding: 1rem 0;
+    }
+    
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+    
+    /* Header */
+    header {
+      padding: 1rem 0;
+      margin-bottom: 1rem;
+    }
+    
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--text-color);
+      font-family: var(--heading-font);
+      letter-spacing: -0.01em;
+      text-decoration: none;
+    }
+    
+    .header-links {
+      display: flex;
+      gap: 1.25rem;
+      align-items: center;
+    }
+    
+    .header-link {
+      color: var(--text-color);
+      font-weight: 600;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    
+    .header-link:hover {
+      color: var(--primary-color);
+    }
+    
+    /* Contact section */
+    .contact-section {
+      margin: 2rem 0 4rem;
+    }
+    
+    .contact-section h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 1.5rem;
+    }
+    
+    .contact-info {
+      margin-bottom: 2.5rem;
+      background: var(--light-gray);
+      border-radius: var(--pico-border-radius);
+      padding: 2rem;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .contact-info-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+    }
+    
+    .contact-info-item:last-child {
+      margin-bottom: 0;
+    }
+    
+    .contact-info-icon {
+      font-size: 1.5rem;
+      color: var(--primary-color);
+      width: 2rem;
+      text-align: center;
+    }
+    
+    .contact-info-text {
+      font-size: 1.125rem;
+    }
+    
+    .contact-info-link {
+      color: var(--text-color);
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+    
+    .contact-info-link:hover {
+      color: var(--primary-color);
+    }
+    
+    /* Contact info note */
+    .contact-info-note {
+      background: var(--light-gray);
+      border-radius: var(--pico-border-radius);
+      padding: 2rem;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      text-align: center;
+      font-size: 1.125rem;
+      line-height: 1.6;
+    }
+    
+    .contact-info-note p {
+      margin: 0;
+    }
+    
+    /* Form styles */
+    .contact-form {
+      background: var(--light-gray);
+      border-radius: var(--pico-border-radius);
+      padding: 2rem;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .form-group {
+      margin-bottom: 1.5rem;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      color: var(--text-color);
+    }
+    
+    input, textarea {
+      width: 100%;
+      padding: 0.75rem;
+      border-radius: var(--pico-border-radius);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      background-color: rgba(255, 255, 255, 0.05);
+      color: var(--text-color);
+      font-family: var(--font-family);
+      font-size: 1rem;
+      transition: border-color 0.2s ease, background-color 0.2s ease;
+    }
+    
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: var(--primary-color);
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+    
+    textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+    
+    .submit-button {
+      display: inline-block;
+      background: linear-gradient(90deg, #a855f7 0%, #3b82f6 100%);
+      color: #fff;
+      padding: 0.875rem 1.5rem;
+      border-radius: var(--pico-border-radius);
+      font-weight: 600;
+      font-size: 1rem;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(99, 91, 255, 0.2);
+      transition: all 0.3s ease;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+    }
+    
+    .submit-button:hover {
+      background: linear-gradient(90deg, #9333ea 0%, #2563eb 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 12px rgba(99, 91, 255, 0.3);
+    }
+    
+    /* Footer */
+    footer {
+      padding: 1.875rem 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      margin-top: 3.75rem;
+      text-align: center;
+    }
+    
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.25rem;
+      margin-top: 0.9375rem;
+    }
+    
+    .footer-link {
+      color: var(--text-color);
+      font-weight: 600;
+      transition: color 0.2s ease;
+      text-decoration: none;
+    }
+    
+    .footer-link:hover {
+      color: var(--primary-color);
+    }
+    
+    /* Responsive styles */
+    @media (min-width: 768px) {
+      .submit-button {
+        width: auto;
+        min-width: 200px;
+      }
+    }
+    
+    @media (max-width: 600px) {
+      .container {
+        padding: 0 calc(var(--pico-spacing) * 1.25);
+      }
+      
+      .contact-section h1 {
+        font-size: 2rem;
+      }
+      
+      .contact-info, .contact-form {
+        padding: 1.5rem;
+      }
+    }
+  </style>
+
+  <!-- 1) AB config with a fixed backend base -->
+  <script id="ab-config">
+    (function () {
+      var params = new URLSearchParams(window.location.search);
+      var testId = params.get('testId');
+
+      window.AB_CONFIG = {
+        base: 'https://appbe.endlesstesting.ai',
+        analyticsPath: '/api/events',
+        blockUntilVariants: false
+      };
+
+      if (testId) {
+        window.AB_CONFIG.testId = testId;
+        console.info('[AB SDK] Using testId from URL:', testId);
+      } else {
+        console.warn('[AB SDK] Missing ?testId=<uuid> in URL.');
+      }
+    })();
+  </script>
+
+  <!-- 2) Load the SDK AFTER hydration (plain HTML: defer is fine) -->
+  <script id="ab-sdk" defer src="https://appbe.endlesstesting.ai/api/sdk.js"></script>
+
+  <!-- 3) (Optional) Hook for SDK ready / load events -->
+  <script id="ab-reveal-hook">
+    (function () {
+      function reveal() {
+        // No visual block anymore; this hook just logs readiness.
+      }
+
+      // Prefer explicit "ready" signal from the SDK
+      window.addEventListener('ab:ready', function () {
+        reveal();
+        console.info('[AB SDK] ab:ready.');
+      }, { once: true });
+
+      // Fallbacks: script load or error
+      window.addEventListener('load', function () {
+        var tag = document.getElementById('ab-sdk');
+        if (!tag) { reveal(); return; }
+
+        if (tag.readyState && (tag.readyState === 'loaded' || tag.readyState === 'complete')) {
+          reveal();
+          console.info('[AB SDK] SDK already loaded.');
+        } else {
+          tag.addEventListener('load', function () {
+            reveal();
+            console.info('[AB SDK] SDK loaded.');
+          }, { once: true });
+
+          tag.addEventListener('error', function () {
+            reveal();
+            console.error('[AB SDK] Failed to load SDK.');
+          }, { once: true });
+        }
+      }, { once: true });
+    })();
+  </script>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="header-content">
+        <a href="index.html" class="logo">Valentin Yeo</a>
+        <div class="header-links">
+          <a href="cv.html" class="header-link"><i class="fas fa-file-alt"></i> CV</a>
+          <a href="https://www.linkedin.com/in/valentin-yeo/" target="_blank" rel="noopener" class="header-link">
+            <i class="fab fa-linkedin"></i>
+            <span class="visually-hidden">LinkedIn Profile</span>
+          </a>
+        </div>
+      </div>
+    </header>
+    
+    <main>
+      <div class="contact-section">
+        <h1>Get in <span class="gradient-text">Touch</span></h1>
+        
+        <div class="contact-info">
+          <div class="contact-info-item">
+            <div class="contact-info-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="contact-info-text">
+              <a href="/cdn-cgi/l/email-protection#7701161b1219031e19590e121837101a161e1b5914181a" class="contact-info-link"><span class="__cf_email__" data-cfemail="05736469606b716c6b2b7c606a456268646c692b666a68">[email&#160;protected]</span></a>
+            </div>
+          </div>
+          
+          <div class="contact-info-item">
+            <div class="contact-info-icon">
+              <i class="fab fa-whatsapp"></i>
+            </div>
+            <div class="contact-info-text">
+              <a href="https://wa.me/447457416764" target="_blank" rel="noopener" class="contact-info-link">+44 7457 416764</a>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="contact-info-icon">
+              <i class="fas fa-briefcase"></i>
+            </div>
+            <div class="contact-info-text">
+              <a href="https://www.upwork.com/freelancers/valentinyeo" target="_blank" rel="noopener" class="contact-info-link">Upwork Profile</a>
+            </div>
+          </div>
+
+          <div class="contact-info-item">
+            <div class="contact-info-icon">
+              <i class="fas fa-location-dot"></i>
+            </div>
+            <div class="contact-info-text">4th Floor, Silverstream House, 45 Fitzroy Street, London W1T 6EB, United Kingdom</div>
+          </div>
+        </div>
+        
+        <!-- Contact information only, no form -->
+        <div class="contact-info-note">
+          <p>Please use one of the contact methods above to get in touch. I'll respond as soon as possible.</p>
+        </div>
+      </div>
+    </main>
+    
+    <footer>
+      <div>© 2025 Valentin Yeo. All rights reserved.</div>
+      <div class="legal-line">Valentin Yeo, sole trader &middot; 4th Floor, Silverstream House, 45 Fitzroy Street, London W1T 6EB, UK &middot; <a href="/cdn-cgi/l/email-protection#dfa9beb3bab1abb6b1f1a6bab09fb8b2beb6b3f1bcb0b2"><span class="__cf_email__" data-cfemail="0177606d646f75686f2f78646e41666c60686d2f626e6c">[email&#160;protected]</span></a> &middot; +44 7457 416764</div>
+      <div class="footer-links">
+        <a href="https://github.com/valentinyeo" target="_blank" rel="noopener" class="footer-link">GitHub</a>
+        <a href="https://x.com/valentinyeo" target="_blank" rel="noopener" class="footer-link">X</a>
+        <a href="cv.html" class="footer-link"><i class="fas fa-file-alt"></i> CV</a>
+        <a href="https://www.linkedin.com/in/valentin-yeo/" target="_blank" rel="noopener" class="footer-link">
+          <i class="fab fa-linkedin"></i>
+          <span class="visually-hidden">LinkedIn Profile</span>
+        </a>
+      </div>
+      <div class="footer-links legal-links">
+        <a href="terms.html" class="footer-link">Terms</a>
+        <a href="privacy.html" class="footer-link">Privacy</a>
+        <a href="refund-policy.html" class="footer-link">Refund Policy</a>
+      </div>
+    </footer>
+  </div>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon='{"version":"2024.11.0","token":"c6586c3f61c54ee4a4f78f0ac385dc83","r":1,"spa":2}' crossorigin="anonymous"></script>
+</body>
+</html>

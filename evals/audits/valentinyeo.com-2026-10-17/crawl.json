@@ -1,0 +1,27 @@
+{
+  "site": "https://valentinyeo.com/",
+  "source": "homepage links + sitemap.xml",
+  "links_seen": 8,
+  "pages": {
+    "home": [
+      "https://valentinyeo.com/"
+    ],
+    "reviews": [
+      "https://valentinyeo.com/inne-case-study.html"
+    ],
+    "contact": [
+      "https://valentinyeo.com/contact.html"
+    ]
+  },
+  "missing": [
+    "cart",
+    "product",
+    "collection",
+    "pricing",
+    "signup",
+    "demo",
+    "about",
+    "service"
+  ],
+  "blocked": null
+}

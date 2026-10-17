@@ -1,0 +1,40 @@
+{
+  "pages": [
+    "https://valentinyeo.com/",
+    "https://valentinyeo.com/inne-case-study.html",
+    "https://valentinyeo.com/contact.html"
+  ],
+  "inventory": [
+    {
+      "vendor": "Cloudflare Web Analytics",
+      "ids": [],
+      "pages": 3,
+      "loads": 3,
+      "hits": 3,
+      "events": {}
+    },
+    {
+      "vendor": "Endless Testing",
+      "ids": [],
+      "pages": 2,
+      "loads": 0,
+      "hits": 2,
+      "events": {}
+    }
+  ],
+  "has_analytics": true,
+  "issues": [
+    {
+      "severity": "medium",
+      "page": "site",
+      "issue": "testing_tool",
+      "detail": "A/B testing tool running: Endless Testing. Check the test plan against the readiness verdict: with too few conversions a test cannot reach a result, and without analytics there is nothing to read it against"
+    }
+  ],
+  "access_requests": [
+    "Cloudflare: an API token with Account Analytics Read (or a Web Analytics viewer seat)",
+    "Google Search Console: restricted user, to see search queries and landing pages",
+    "Conversion count for the last 3 months (orders, leads or form submissions from the inbox or CRM), so the test readiness baseline is CONFIRMED rather than ASSUMED"
+  ],
+  "html_ids": []
+}

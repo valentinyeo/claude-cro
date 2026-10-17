@@ -1,0 +1,118 @@
+{
+  "ctas": [
+    {
+      "text": "Free teardown",
+      "tag": "a",
+      "type": "link",
+      "href": "https://cal.com/valentinyeo/teardown",
+      "classes": "nav-cta",
+      "is_cta_pattern": false
+    },
+    {
+      "text": "Get your free 20 minute teardown",
+      "tag": "a",
+      "type": "link",
+      "href": "https://cal.com/valentinyeo/teardown",
+      "classes": "btn-primary",
+      "is_cta_pattern": true
+    },
+    {
+      "text": "See the results",
+      "tag": "a",
+      "type": "link",
+      "href": "#cases",
+      "classes": "btn-text",
+      "is_cta_pattern": false
+    },
+    {
+      "text": "Contact",
+      "tag": "a",
+      "type": "link",
+      "href": "https://valentinyeo.com/contact.html",
+      "classes": "",
+      "is_cta_pattern": true
+    }
+  ],
+  "forms": [],
+  "trust_signals": {
+    "testimonials": [
+      {
+        "text": "\"Before his help, we relied on developer-implemented tests which severely limited our testing velocity. We went from running a handful of tests to a robust testing calendar at both businesses.\"",
+        "tag": "blockquote"
+      },
+      {
+        "text": "What Clients Say\"Before his help, we relied on developer-implemented tests which severely limited our testing velocity. We went from running a handful of tests to a robust testing calendar at both bus",
+        "tag": "section"
+      },
+      {
+        "text": "\"Before his help, we relied on developer-implemented tests which severely limited our testing velocity. We went from running a handful of tests to a robust testing calendar at both businesses.\"",
+        "tag": "blockquote"
+      },
+      {
+        "text": "JP BissonCEO, Truely & International Drivers Association",
+        "tag": "div"
+      },
+      {
+        "text": "CEO, Truely & International Drivers Association",
+        "tag": "div"
+      }
+    ],
+    "review_widgets": [],
+    "client_logos": [],
+    "security_badges": [],
+    "guarantees": [],
+    "certifications": []
+  },
+  "tracking": {
+    "scripts_found": [],
+    "data_layer": false,
+    "consent_management": false
+  },
+  "headlines": {
+    "h1": [
+      "More A/B tests,shipped faster."
+    ],
+    "h2": [
+      "Results,not promises",
+      "How Iship tests faster",
+      "Three ways towork together",
+      "See what your siteshould test first."
+    ],
+    "h3": [
+      "Run tests side by side",
+      "Ship on clear signals",
+      "Done for you, or with your team",
+      "Done-For-You CRO",
+      "CRO Audit",
+      "Hourly Consulting"
+    ]
+  },
+  "meta": {
+    "title": "Valentin Yeo | CRO & A/B Testing Consultant",
+    "description": "CRO and A/B testing consultant. 100+ tests for inne, Eduki from 5 to 120+ tests a quarter, 11 years at trivago. More tests, shipped faster.",
+    "og_tags": {
+      "og:title": "Valentin Yeo | CRO & A/B Testing Consultant",
+      "og:description": "CRO and A/B testing consultant. 100+ tests for inne, Eduki from 5 to 120+ tests a quarter, 11 years at trivago. More tests, shipped faster.",
+      "og:type": "website",
+      "og:url": "https://valentinyeo.com"
+    },
+    "twitter_tags": {
+      "twitter:card": "summary_large_image",
+      "twitter:title": "Valentin Yeo | CRO & A/B Testing Consultant",
+      "twitter:description": "CRO and A/B testing consultant. 100+ tests for inne, Eduki from 5 to 120+ tests a quarter, 11 years at trivago. More tests, shipped faster."
+    },
+    "canonical": "",
+    "robots": "",
+    "viewport": "width=device-width,initial-scale=1"
+  },
+  "images": [],
+  "links": {
+    "internal_count": 10,
+    "external_count": 9,
+    "total": 19,
+    "internal_urls_unique": 9,
+    "external_urls_unique": 7
+  },
+  "schema": [],
+  "social_proof_patterns": []
+}

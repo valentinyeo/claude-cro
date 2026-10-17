@@ -1,0 +1,52 @@
+{
+  "ok": false,
+  "steps": [
+    {
+      "n": 1,
+      "step": {
+        "goto": "https://valentinyeo.com/inne-case-study.html"
+      },
+      "status": "ok",
+      "ms": 2377,
+      "url": "https://valentinyeo.com/inne-case-study",
+      "title": "inne.io CRO Case Study | Valentin Yeo",
+      "screenshot": "b/step-01.png"
+    },
+    {
+      "n": 2,
+      "step": {
+        "scroll": 900
+      },
+      "status": "ok",
+      "ms": 817,
+      "url": "https://valentinyeo.com/inne-case-study",
+      "title": "inne.io CRO Case Study | Valentin Yeo",
+      "screenshot": "b/step-02.png"
+    },
+    {
+      "n": 3,
+      "step": {
+        "goto": "https://valentinyeo.com/contact.html"
+      },
+      "status": "ok",
+      "ms": 2944,
+      "url": "https://valentinyeo.com/contact",
+      "title": "Contact | Valentin Yeo",
+      "screenshot": "b/step-03.png"
+    },
+    {
+      "n": 4,
+      "step": {
+        "fill": "input[type=email]",
+        "value": "test@example.com"
+      },
+      "status": "failed",
+      "error": "no visible element for 'input[type=email]'",
+      "ms": 10175,
+      "url": "https://valentinyeo.com/contact",
+      "title": "Contact | Valentin Yeo",
+      "screenshot": "b/step-04.png"
+    }
+  ],
+  "js_errors": []
+}

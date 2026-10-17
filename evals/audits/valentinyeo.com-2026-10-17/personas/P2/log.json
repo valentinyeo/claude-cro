@@ -1,0 +1,17 @@
+{
+  "ok": true,
+  "steps": [
+    {
+      "n": 1,
+      "step": {
+        "goto": "https://valentinyeo.com/"
+      },
+      "status": "ok",
+      "ms": 3069,
+      "url": "https://valentinyeo.com/",
+      "title": "Valentin Yeo | CRO & A/B Testing Consultant",
+      "screenshot": "/home/user/crotest/cro-audit-valentinyeo.com-2026-10-17/personas/P2/step-01.png"
+    }
+  ],
+  "js_errors": []
+}

@@ -1,0 +1,18 @@
+{
+  "url": "https://valentinyeo.com/inne-case-study.html",
+  "strategy": "mobile",
+  "source": "local-lab (headless Chromium, throttled; not Lighthouse, no real-user data)",
+  "performance_score": null,
+  "field_data": null,
+  "field_data_scope": null,
+  "lab": {
+    "LCP": "1.7 s (FAST)",
+    "CLS": "0.000 (FAST)",
+    "TBT": "43 ms (FAST)",
+    "FCP": "1.7 s",
+    "TTFB": "882 ms",
+    "Requests": "6",
+    "Transfer": "26 KB"
+  },
+  "opportunities": []
+}

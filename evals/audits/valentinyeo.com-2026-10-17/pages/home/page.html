@@ -1,0 +1,1276 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Valentin Yeo | CRO &amp; A/B Testing Consultant</title>
+  <meta name="description" content="CRO and A/B testing consultant. 100+ tests for inne, Eduki from 5 to 120+ tests a quarter, 11 years at trivago. More tests, shipped faster.">
+  <meta name="author" content="Valentin Yeo">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Valentin Yeo | CRO &amp; A/B Testing Consultant">
+  <meta property="og:description" content="CRO and A/B testing consultant. 100+ tests for inne, Eduki from 5 to 120+ tests a quarter, 11 years at trivago. More tests, shipped faster.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://valentinyeo.com">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Valentin Yeo | CRO &amp; A/B Testing Consultant">
+  <meta name="twitter:description" content="CRO and A/B testing consultant. 100+ tests for inne, Eduki from 5 to 120+ tests a quarter, 11 years at trivago. More tests, shipped faster.">
+
+  <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --stone-50: #faf9f7;
+      --stone-100: #f0eee9;
+      --stone-200: #e2dfd8;
+      --stone-300: #ccc8bd;
+      --stone-400: #a8a294;
+      --stone-500: #8a8377;
+      --stone-600: #6b655a;
+      --charcoal: #2c2826;
+      --charcoal-light: #3d3835;
+      --charcoal-deep: #1a1715;
+      --warm-black: #0f0d0c;
+      --accent: #c4703e;
+      --accent-hover: #b5622f;
+      --rule: var(--stone-200);
+      --serif: 'DM Serif Display', Georgia, 'Times New Roman', serif;
+      --sans: 'Inter', -apple-system, system-ui, sans-serif;
+      --mono: ui-monospace, 'SF Mono', SFMono-Regular, 'Cascadia Code', 'Fira Code', Menlo, monospace;
+      --page-pad: clamp(20px, 4vw, 64px);
+      --section-gap: clamp(64px, 8vw, 120px);
+    }
+
+    html {
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--sans);
+      background: var(--stone-50);
+      color: var(--charcoal);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ========================================
+       NAVIGATION
+       ======================================== */
+
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 100;
+      padding: 0 var(--page-pad);
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--stone-50);
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .nav-name {
+      font-family: var(--serif);
+      font-size: 1.125rem;
+      color: var(--charcoal);
+      text-decoration: none;
+      letter-spacing: -0.01em;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .nav-links a {
+      font-size: 0.8125rem;
+      font-weight: 500;
+      color: var(--stone-600);
+      text-decoration: none;
+      letter-spacing: 0.02em;
+      transition: color 0.15s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a:focus-visible {
+      color: var(--charcoal);
+    }
+
+    .nav-cta {
+      font-weight: 600 !important;
+      color: var(--stone-50) !important;
+      background: var(--charcoal);
+      padding: 8px 22px;
+      border-radius: 100px;
+      transition: background 0.15s ease;
+    }
+
+    .nav-cta:hover,
+    .nav-cta:focus-visible {
+      background: var(--charcoal-light);
+      color: var(--stone-50) !important;
+    }
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+      color: var(--charcoal);
+    }
+
+    .nav-toggle svg {
+      display: block;
+      width: 22px;
+      height: 22px;
+    }
+
+    /* ========================================
+       HERO : asymmetric split
+       ======================================== */
+
+    .hero {
+      padding-top: 64px;
+      min-height: 100vh;
+      min-height: 100dvh;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      grid-template-rows: 1fr;
+    }
+
+    .hero-left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(48px, 8vw, 120px) var(--page-pad);
+      padding-right: clamp(24px, 3vw, 48px);
+    }
+
+    .hero-headline {
+      font-family: var(--serif);
+      font-size: clamp(2.75rem, 4.5vw, 4.25rem);
+      line-height: 1.08;
+      letter-spacing: -0.02em;
+      color: var(--charcoal-deep);
+      max-width: 540px;
+    }
+
+    .hero-headline em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .hero-right {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: clamp(48px, 8vw, 120px) clamp(32px, 5vw, 80px);
+      padding-left: clamp(32px, 4vw, 64px);
+      border-left: 1px solid var(--rule);
+    }
+
+    .hero-body {
+      font-size: clamp(0.9375rem, 1.1vw, 1.0625rem);
+      line-height: 1.75;
+      color: var(--stone-600);
+      max-width: 440px;
+      margin-bottom: 40px;
+    }
+
+    .hero-body strong {
+      color: var(--charcoal);
+      font-weight: 600;
+    }
+
+    .hero-cta-row {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    /* ========================================
+       BUTTONS
+       ======================================== */
+
+    .btn-primary {
+      display: inline-block;
+      font-family: var(--sans);
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--stone-50);
+      background: var(--charcoal);
+      padding: 14px 32px;
+      border-radius: 100px;
+      text-decoration: none;
+      letter-spacing: 0.01em;
+      transition: background 0.15s ease;
+    }
+
+    .btn-primary:hover,
+    .btn-primary:focus-visible {
+      background: var(--charcoal-light);
+    }
+
+    .btn-primary:active {
+      background: var(--warm-black);
+    }
+
+    .btn-text {
+      display: inline-block;
+      font-family: var(--sans);
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--stone-600);
+      text-decoration: none;
+      border-bottom: 1px solid var(--stone-300);
+      padding-bottom: 2px;
+      transition: color 0.15s ease, border-color 0.15s ease;
+    }
+
+    .btn-text:hover,
+    .btn-text:focus-visible {
+      color: var(--charcoal);
+      border-color: var(--charcoal);
+    }
+
+    /* ========================================
+       STATS ROW
+       ======================================== */
+
+    .stats {
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+      padding: 40px var(--page-pad);
+    }
+
+    .stats-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: clamp(24px, 4vw, 56px);
+    }
+
+    .stat {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .stat-number {
+      font-family: var(--serif);
+      font-size: clamp(1.75rem, 2.5vw, 2.5rem);
+      line-height: 1.1;
+      color: var(--charcoal-deep);
+      letter-spacing: -0.02em;
+    }
+
+    .stat-label {
+      font-family: var(--mono);
+      font-size: 0.6875rem;
+      font-weight: 500;
+      color: var(--stone-500);
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-top: 6px;
+    }
+
+    .stat--accent .stat-number {
+      color: var(--accent);
+    }
+
+    /* ========================================
+       SECTION UTILITY
+       ======================================== */
+
+    .section {
+      padding: var(--section-gap) var(--page-pad);
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-rule {
+      border: none;
+      border-top: 1px solid var(--rule);
+      margin: 0;
+    }
+
+    .section-label {
+      font-family: var(--mono);
+      font-size: 0.6875rem;
+      font-weight: 500;
+      color: var(--stone-400);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 32px;
+    }
+
+    .section-label + .section-heading {
+      margin-top: -16px;
+    }
+
+    .section-heading {
+      font-family: var(--serif);
+      font-size: clamp(1.75rem, 2.5vw, 2.5rem);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      color: var(--charcoal-deep);
+      margin-bottom: 48px;
+    }
+
+    .section-heading em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    /* ========================================
+       CLIENT LOGOS
+       ======================================== */
+
+    .clients {
+      padding: 48px var(--page-pad);
+    }
+
+    .clients-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .clients-label {
+      font-family: var(--mono);
+      font-size: 0.6875rem;
+      font-weight: 500;
+      color: var(--stone-400);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    .clients-row {
+      display: flex;
+      align-items: center;
+      gap: clamp(24px, 4vw, 48px);
+      flex-wrap: wrap;
+    }
+
+    .logo-item {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 60px;
+    }
+
+    .logo-bg {
+      background-image: url(images/sprite-color.webp);
+      background-repeat: no-repeat;
+      display: block;
+      transform: scale(0.7);
+      filter: brightness(0);
+      opacity: 0.5;
+      transition: opacity 0.2s ease;
+    }
+
+    .logo-bg:hover {
+      opacity: 0.8;
+    }
+
+    .logo-trivago { background-position: 0 -223px; width: 160px; height: 51px; }
+    .logo-eduki { background-position: -415px -133px; width: 160px; height: 58px; }
+    .logo-inne { background-position: 0 -306px; width: 160px; height: 37px; }
+    .logo-hairskin { background-position: -416px -238px; width: 160px; height: 22px; }
+    .logo-truely { background-position: -423px -307px; width: 145px; height: 31px; }
+
+    /* ========================================
+       TESTIMONIAL
+       ======================================== */
+
+    .testimonial {
+      padding: var(--section-gap) var(--page-pad);
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .testimonial-quote {
+      font-family: var(--serif);
+      font-size: clamp(1.375rem, 2vw, 1.75rem);
+      line-height: 1.45;
+      color: var(--charcoal-deep);
+      max-width: 680px;
+      margin-bottom: 32px;
+    }
+
+    .testimonial-quote::before {
+      content: none;
+    }
+
+    .testimonial-attribution {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .testimonial-photo {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background-image: url(images/sprite-color.webp);
+      background-repeat: no-repeat;
+      background-size: auto;
+      flex-shrink: 0;
+    }
+
+    .testimonial-photo--jp {
+      background-position: -129px 0;
+      width: 60px;
+      height: 60px;
+      background-size: auto;
+      overflow: hidden;
+    }
+
+    .testimonial-author-name {
+      font-weight: 600;
+      font-size: 0.875rem;
+      color: var(--charcoal);
+    }
+
+    .testimonial-author-title {
+      font-size: 0.8125rem;
+      color: var(--stone-500);
+    }
+
+    /* ========================================
+       SERVICES
+       ======================================== */
+
+    .services-list {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .service-item {
+      padding: 40px 0;
+      border-bottom: 1px solid var(--rule);
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 32px;
+      align-items: start;
+    }
+
+    .service-item:first-child {
+      border-top: 1px solid var(--rule);
+    }
+
+    .service-name {
+      font-family: var(--serif);
+      font-size: clamp(1.25rem, 1.5vw, 1.5rem);
+      line-height: 1.25;
+      color: var(--charcoal-deep);
+    }
+
+    .service-desc {
+      font-size: 0.9375rem;
+      line-height: 1.7;
+      color: var(--stone-600);
+      max-width: 520px;
+    }
+
+    .service-desc strong {
+      color: var(--charcoal);
+      font-weight: 600;
+    }
+
+    /* ========================================
+       CASE STUDIES
+       ======================================== */
+
+    .cases-list {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .case-item {
+      padding: 32px 0;
+      border-bottom: 1px solid var(--rule);
+      display: grid;
+      grid-template-columns: 140px 1fr auto;
+      gap: 32px;
+      align-items: baseline;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .case-item:first-child {
+      border-top: 1px solid var(--rule);
+    }
+
+    .case-item:hover .case-company,
+    .case-item:hover .case-description {
+      color: var(--charcoal-deep);
+    }
+
+    .case-item:hover .case-metric {
+      color: var(--charcoal-deep);
+    }
+
+    .case-metric {
+      font-family: var(--serif);
+      font-size: clamp(1.5rem, 2vw, 2rem);
+      line-height: 1.1;
+      color: var(--accent);
+      letter-spacing: -0.02em;
+      white-space: nowrap;
+      transition: color 0.15s ease;
+    }
+
+    .case-info {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .case-company {
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--charcoal);
+      transition: color 0.15s ease;
+    }
+
+    .case-description {
+      font-size: 0.875rem;
+      color: var(--stone-500);
+      line-height: 1.5;
+      transition: color 0.15s ease;
+    }
+
+    .case-arrow {
+      font-size: 1.25rem;
+      color: var(--stone-400);
+      transition: transform 0.15s ease;
+    }
+
+    .case-item:hover .case-arrow {
+      transform: translateX(4px);
+    }
+
+    /* ========================================
+       PROCESS
+       ======================================== */
+
+    .process-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 48px;
+    }
+
+    .process-step {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .process-number {
+      font-family: var(--serif);
+      font-size: 2.5rem;
+      line-height: 1;
+      color: var(--stone-200);
+      margin-bottom: 16px;
+    }
+
+    .process-title {
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--charcoal);
+      margin-bottom: 8px;
+    }
+
+    .process-desc {
+      font-size: 0.875rem;
+      line-height: 1.65;
+      color: var(--stone-500);
+    }
+
+    /* ========================================
+       FINAL CTA
+       ======================================== */
+
+    .final-cta {
+      padding: var(--section-gap) var(--page-pad);
+      max-width: 1100px;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    .final-cta-heading {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 3vw, 3rem);
+      line-height: 1.12;
+      letter-spacing: -0.02em;
+      color: var(--charcoal-deep);
+      margin-bottom: 24px;
+    }
+
+    .final-cta-heading em {
+      font-style: italic;
+      color: var(--accent);
+    }
+
+    .final-cta-row {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      margin-bottom: 32px;
+    }
+
+    .final-cta-alternatives {
+      font-size: 0.8125rem;
+      color: var(--stone-500);
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .final-cta-alternatives a {
+      color: var(--stone-600);
+      text-decoration: none;
+      border-bottom: 1px solid var(--stone-300);
+      padding-bottom: 1px;
+      transition: color 0.15s ease, border-color 0.15s ease;
+    }
+
+    .final-cta-alternatives a:hover {
+      color: var(--charcoal);
+      border-color: var(--charcoal);
+    }
+
+    .final-cta-note {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      color: var(--stone-400);
+      margin-top: 16px;
+    }
+
+    /* ========================================
+       FOOTER
+       ======================================== */
+
+    .footer {
+      border-top: 1px solid var(--rule);
+      padding: 40px var(--page-pad);
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-copy {
+      font-size: 0.8125rem;
+      color: var(--stone-400);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+    }
+
+    .footer-links a {
+      font-size: 0.8125rem;
+      color: var(--stone-500);
+      text-decoration: none;
+      transition: color 0.15s ease;
+    }
+
+    .footer-links a:hover,
+    .footer-links a:focus-visible {
+      color: var(--charcoal);
+    }
+
+    /* ========================================
+       BACK LINK (temporary)
+       ======================================== */
+
+    .back-link {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      font-size: 0.75rem;
+      color: var(--stone-400);
+      text-decoration: none;
+      z-index: 90;
+      transition: color 0.15s ease;
+    }
+
+    .back-link:hover {
+      color: var(--charcoal);
+    }
+
+    /* ========================================
+       FOCUS STATES
+       ======================================== */
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+    }
+
+    /* ========================================
+       REDUCED MOTION
+       ======================================== */
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+      }
+    }
+
+    /* ========================================
+       RESPONSIVE : tablet
+       ======================================== */
+
+    @media (max-width: 1024px) {
+      .hero {
+        grid-template-columns: 1fr;
+        min-height: auto;
+      }
+
+      .hero-left {
+        padding-bottom: 0;
+      }
+
+      .hero-right {
+        border-left: none;
+        border-top: 1px solid var(--rule);
+        padding-top: clamp(40px, 5vw, 64px);
+      }
+
+      .service-item {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .case-item {
+        grid-template-columns: 100px 1fr auto;
+        gap: 20px;
+      }
+
+      .process-list {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+    }
+
+    /* ========================================
+       RESPONSIVE : mobile
+       ======================================== */
+
+    @media (max-width: 640px) {
+      .nav-links {
+        display: none;
+        position: fixed;
+        top: 64px;
+        left: 0;
+        right: 0;
+        background: var(--stone-50);
+        border-bottom: 1px solid var(--rule);
+        flex-direction: column;
+        padding: 24px;
+        gap: 20px;
+        align-items: flex-start;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        padding: 8px 0;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+      }
+
+      .nav-toggle {
+        display: block;
+        min-width: 44px;
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .hero-headline {
+        font-size: clamp(2.25rem, 9vw, 3rem);
+      }
+
+      .hero-left {
+        padding: 40px 20px 0 20px;
+      }
+
+      .hero-right {
+        padding: 32px 20px 40px 20px;
+      }
+
+      .hero-cta-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+      }
+
+      .btn-primary {
+        width: 100%;
+        text-align: center;
+      }
+
+      .stats-inner {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 24px;
+      }
+
+      .stat {
+        min-width: calc(50% - 16px);
+      }
+
+      .clients-row {
+        gap: 16px;
+      }
+
+      .logo-bg {
+        transform: scale(0.55);
+      }
+
+      .case-item {
+        grid-template-columns: 1fr;
+        gap: 8px;
+        padding: 24px 0;
+      }
+
+      .case-metric {
+        font-size: 1.25rem;
+      }
+
+      .case-arrow {
+        display: none;
+      }
+
+      .final-cta-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+      }
+
+      .final-cta-alternatives {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+      }
+
+      .footer-links {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
+    .footer-legal { max-width: 1100px; margin: 12px auto 0; padding: 0 24px; font-size: 13px; color: inherit; opacity: .7; }
+    .process-desc a { color: inherit; text-decoration: underline; }
+    .tool-note { margin: 48px 0 0; max-width: 680px; font-size: 17px; line-height: 1.6; }
+    .tool-note a { color: inherit; text-decoration: underline; }
+
+    /* Readable type (2026-10-17): one sans for everything, larger darker text, no tiny caps labels */
+    :root { --serif: var(--sans); --mono: var(--sans); --stone-600: #4d4740; --stone-500: #5f584f; --stone-400: #6b655a; }
+    .nav-name { font-weight: 700; letter-spacing: -0.01em; }
+    .hero-headline { font-weight: 700; font-size: clamp(2.25rem, 4vw, 3.5rem); line-height: 1.12; letter-spacing: -0.025em; }
+    .section-heading, .final-cta-heading { font-weight: 700; letter-spacing: -0.02em; }
+    .hero-headline em, .section-heading em, .final-cta-heading em { font-style: normal; }
+    .service-name, .process-title, .case-company { font-weight: 600; letter-spacing: -0.01em; }
+    .stat-number, .case-metric { font-weight: 700; letter-spacing: -0.02em; }
+    .testimonial-quote { font-weight: 500; font-size: clamp(1.25rem, 1.8vw, 1.5rem); line-height: 1.5; }
+    .hero-body, .service-desc, .process-desc, .case-description, .tool-note { font-size: 1.125rem; line-height: 1.65; }
+    .section-label, .clients-label, .stat-label { text-transform: none; letter-spacing: 0; font-size: 0.9375rem; font-weight: 600; }
+    .btn-primary, .btn-text { font-size: 1rem; white-space: nowrap; }
+    .nav-links a { font-size: 0.9375rem; }
+    .logo-text { font-size: 1.125rem; font-weight: 700; letter-spacing: -0.03em; color: #8a8377; opacity: .85; white-space: nowrap; }
+    @media (min-width: 900px) {
+      .clients-row { display: grid; grid-template-columns: repeat(7, 1fr); gap: 12px; }
+      .logo-bg { transform: scale(0.7); }
+      .logo-text { font-size: 1.375rem; white-space: nowrap; }
+    }
+  </style>
+  <!-- 1) AB config with a fixed backend base -->
+  <script id="ab-config">
+    (function () {
+      var params = new URLSearchParams(window.location.search);
+      var testId = params.get('testId');
+
+      window.AB_CONFIG = {
+        base: 'https://appbe.endlesstesting.ai',
+        analyticsPath: '/api/events',
+        blockUntilVariants: false
+      };
+
+      if (testId) {
+        window.AB_CONFIG.testId = testId;
+        console.info('[AB SDK] Using testId from URL:', testId);
+      } else {
+        console.warn('[AB SDK] Missing ?testId=<uuid> in URL.');
+      }
+    })();
+  </script>
+
+  <!-- 2) Load the SDK AFTER hydration (plain HTML: defer is fine) -->
+  <script id="ab-sdk" defer="" src="https://appbe.endlesstesting.ai/api/sdk.js"></script>
+
+  <!-- 3) (Optional) Hook for SDK ready / load events -->
+  <script id="ab-reveal-hook">
+    (function () {
+      function reveal() {
+        // No visual block anymore; this hook just logs readiness.
+      }
+
+      // Prefer explicit "ready" signal from the SDK
+      window.addEventListener('ab:ready', function () {
+        reveal();
+        console.info('[AB SDK] ab:ready.');
+      }, { once: true });
+
+      // Fallbacks: script load or error
+      window.addEventListener('load', function () {
+        var tag = document.getElementById('ab-sdk');
+        if (!tag) { reveal(); return; }
+
+        if (tag.readyState && (tag.readyState === 'loaded' || tag.readyState === 'complete')) {
+          reveal();
+          console.info('[AB SDK] SDK already loaded.');
+        } else {
+          tag.addEventListener('load', function () {
+            reveal();
+            console.info('[AB SDK] SDK loaded.');
+          }, { once: true });
+
+          tag.addEventListener('error', function () {
+            reveal();
+            console.error('[AB SDK] Failed to load SDK.');
+          }, { once: true });
+        }
+      }, { once: true });
+    })();
+  </script>
+<style id="ab-highlight-styles">
+      body[data-ab-dev="1"] [data-ab-highlight="1"] {
+        outline: 2px solid rgba(76, 101, 255, 0.7) !important;
+        outline-offset: 3px !important;
+        border-radius: 3px !important;
+        position: relative !important;
+      }
+      body[data-ab-dev="1"] [data-ab-highlight="1"]::after {
+        content: attr(data-ab-test-name) !important;
+        position: absolute !important;
+        top: -22px !important;
+        left: 0 !important;
+        background: #4c65ff !important;
+        color: #fff !important;
+        font-size: 10px !important;
+        font-family: system-ui, sans-serif !important;
+        padding: 2px 6px !important;
+        border-radius: 3px !important;
+        white-space: nowrap !important;
+        z-index: 2147483646 !important;
+        pointer-events: none !important;
+        line-height: 14px !important;
+        font-weight: 500 !important;
+        letter-spacing: 0.01em !important;
+      }
+      body:not([data-ab-dev="1"]) [data-ab-highlight="1"] {
+        outline: none !important;
+        outline-offset: 0 !important;
+      }
+
+      #ab-dev-switcher {
+        position: fixed;
+        z-index: 2147483647;
+        right: 14px;
+        bottom: 14px;
+        background: rgba(20,22,34,0.95);
+        color: #e7e9f1;
+        border: 1px solid rgba(255,255,255,0.12);
+        border-radius: 10px;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.45);
+        font: 12px/1.4 system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+        padding: 10px 12px;
+        min-width: 240px;
+        max-width: 500px;
+        width: min(90vw, 360px);
+        backdrop-filter: saturate(130%) blur(2px);
+      }
+
+      #ab-dev-switcher .row { display:flex; gap:8px; align-items:center; overflow:hidden; }
+      #ab-dev-switcher .title { font-weight:600; opacity:.9; margin-bottom:6px; display:flex; gap:6px; }
+      #ab-dev-switcher select, #ab-dev-switcher button {
+        font: inherit; color: inherit; background: #000;
+        border: 1px solid rgba(255,255,255,0.14); border-radius: 8px; padding: 6px 8px;
+      }
+      #ab-dev-switcher .sub { opacity:.7; font-size:11px; margin-top:6px; max-width:70%; }
+      #ab-dev-switcher .pill { padding:2px 6px; border-radius:6px; background: rgba(255,255,255,0.08); font-size:11px; }
+  </style></head>
+<body>
+
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <a href="index.html" class="nav-name">Valentin Yeo</a>
+
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" onclick="var e=this.getAttribute('aria-expanded')==='false';this.setAttribute('aria-expanded',e);document.querySelector('.nav-links').classList.toggle('open')">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="3" y1="6" x2="21" y2="6"></line>
+        <line x1="3" y1="12" x2="21" y2="12"></line>
+        <line x1="3" y1="18" x2="21" y2="18"></line>
+      </svg>
+    </button>
+
+    <div class="nav-links">
+      <a href="#cases">Results</a>
+      <a href="#services">Services</a>
+      <a href="cv.html">About</a>
+      <a href="https://cal.com/valentinyeo/teardown" target="_blank" rel="noopener" class="nav-cta">Free teardown</a>
+    </div>
+  </nav>
+
+  <main>
+
+    <section class="hero">
+      <div class="hero-left">
+        <h1 class="hero-headline">More A/B tests, <em>shipped faster.</em></h1>
+      </div>
+
+      <div class="hero-right">
+        <p class="hero-body">
+          I'm a CRO and A/B testing consultant. I've run over <strong>100 tests for inne</strong>,
+          took <strong>Eduki</strong> from 5 to 120+ tests a quarter, and spent 11 years at
+          <strong>trivago</strong> running hundreds more.
+        </p>
+        <div class="hero-cta-row">
+          <a href="https://cal.com/valentinyeo/teardown" target="_blank" rel="noopener" class="btn-primary">Get your free 20 minute teardown</a>
+          <a href="#cases" class="btn-text">See the results</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="stats" role="region" aria-label="Key metrics">
+      <div class="stats-inner">
+        <div class="stat">
+          <span class="stat-number">100+</span>
+          <span class="stat-label">Tests run for inne</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">120+</span>
+          <span class="stat-label">Tests a quarter at Eduki, up from 5</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">11 yrs</span>
+          <span class="stat-label">Product design at trivago</span>
+        </div>
+        <div class="stat stat--accent">
+          <span class="stat-number">100%</span>
+          <span class="stat-label">Job Success on Upwork</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="clients">
+      <div class="clients-inner">
+        <p class="clients-label">Selected Clients</p>
+        <div class="clients-row">
+          <div class="logo-item"><span class="logo-bg logo-trivago" role="img" aria-label="Trivago"></span></div>
+          <div class="logo-item"><span class="logo-bg logo-eduki" role="img" aria-label="Eduki"></span></div>
+          <div class="logo-item"><span class="logo-bg logo-inne" role="img" aria-label="inne"></span></div>
+          <div class="logo-item"><span class="logo-bg logo-hairskin" role="img" aria-label="Hairskin"></span></div>
+          <div class="logo-item"><span class="logo-bg logo-truely" role="img" aria-label="Truely"></span></div>
+          <div class="logo-item"><span class="logo-text">vetsak</span></div>
+          <div class="logo-item"><span class="logo-text">Teeth Lovers</span></div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="section-rule">
+
+    <section class="testimonial">
+      <p class="section-label">What Clients Say</p>
+      <blockquote class="testimonial-quote">
+        "Before his help, we relied on developer-implemented tests which severely limited our testing velocity. We went from running a handful of tests to a robust testing calendar at both businesses."
+      </blockquote>
+      <div class="testimonial-attribution">
+        <div class="testimonial-photo testimonial-photo--jp" role="img" aria-label="JP Bisson"></div>
+        <div>
+          <div class="testimonial-author-name">JP Bisson</div>
+          <div class="testimonial-author-title">CEO, Truely &amp; International Drivers Association</div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-rule">
+
+    <section id="cases" class="section">
+      <p class="section-label">Selected Work</p>
+      <h2 class="section-heading">Results, <em>not promises</em></h2>
+      <div class="cases-list">
+        <a href="inne-case-study.html" class="case-item">
+          <span class="case-metric">+14.6%</span>
+          <div class="case-info">
+            <span class="case-company">inne</span>
+            <span class="case-description">Purchase revenue from one above-the-fold CTA test, out of 100+ tests run</span>
+          </div>
+          <span class="case-arrow" aria-hidden="true">→</span>
+        </a>
+        <a href="eduki-case-study.html" class="case-item">
+          <span class="case-metric">120+</span>
+          <div class="case-info">
+            <span class="case-company">Eduki</span>
+            <span class="case-description">Tests a quarter, up from 5, with test setup time cut by 60%</span>
+          </div>
+          <span class="case-arrow" aria-hidden="true">→</span>
+        </a>
+        <a href="https://www.upwork.com/freelancers/valentinyeo" target="_blank" rel="noopener" class="case-item">
+          <span class="case-metric">2</span>
+          <div class="case-info">
+            <span class="case-company">Truely &amp; International Drivers Association</span>
+            <span class="case-description">Both teams learned to build and launch their own tests, without developers</span>
+          </div>
+          <span class="case-arrow" aria-hidden="true">→</span>
+        </a>
+        <a href="trivago-case-study.html" class="case-item">
+          <span class="case-metric">100s</span>
+          <div class="case-info">
+            <span class="case-company">trivago</span>
+            <span class="case-description">A/B tests over 11 years, from 2nd product designer to a top 10 app in Germany</span>
+          </div>
+          <span class="case-arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+    </section>
+
+    <hr class="section-rule">
+
+    <section class="section">
+      <p class="section-label">How I Work</p>
+      <h2 class="section-heading">How I <em>ship tests faster</em></h2>
+      <div class="process-list">
+        <div class="process-step">
+          <span class="process-number">1</span>
+          <h3 class="process-title">Run tests side by side</h3>
+          <p class="process-desc">
+            Several tests at once, not one after another.
+            <a href="https://www.statsig.com/blog/embracing-overlapping-a-b-tests-and-the-danger-of-isolating-experiments" target="_blank" rel="noopener">Why overlapping tests are safe</a>.
+          </p>
+        </div>
+        <div class="process-step">
+          <span class="process-number">2</span>
+          <h3 class="process-title">Ship on clear signals</h3>
+          <p class="process-desc">
+            When a test can't reach full significance in time, I ship reversible changes on a clear direction
+            and keep watching, so the site improves every month.
+          </p>
+        </div>
+        <div class="process-step">
+          <span class="process-number">3</span>
+          <h3 class="process-title">Done for you, or with your team</h3>
+          <p class="process-desc">
+            I run the whole program myself, or set up the tools and train your team
+            to launch tests on their own. You choose, per project.
+          </p>
+        </div>
+      </div>
+      <p class="tool-note">
+        Every audit starts with <a href="https://github.com/valentinyeo/claude-cro" target="_blank" rel="noopener">claude-cro</a>,
+        my open-source CRO audit skill for Claude Code. Run it on your own site for free, or
+        <a href="https://valentinyeo.github.io/claude-cro/examples/valentinyeo.com/" target="_blank" rel="noopener">see the audit it made of this site</a>.
+      </p>
+    </section>
+
+    <hr class="section-rule">
+
+    <section id="services" class="section">
+      <p class="section-label">Services</p>
+      <h2 class="section-heading">Three ways to <em>work together</em></h2>
+      <div class="services-list">
+        <div class="service-item">
+          <h3 class="service-name">Done-For-You CRO</h3>
+          <p class="service-desc">
+            Audit, test plan, design and build. Depending on your traffic,
+            we run <strong>5 to 45 tests per month</strong>.
+          </p>
+        </div>
+        <div class="service-item">
+          <h3 class="service-name">CRO Audit</h3>
+          <p class="service-desc">
+            A prioritized list of what to fix, with mockups your team can build from,
+            plus a 1 hour implementation call.
+          </p>
+        </div>
+        <div class="service-item">
+          <h3 class="service-name">Hourly Consulting</h3>
+          <p class="service-desc">
+            Analytics, heatmaps and test strategy, for teams that already test
+            and want a senior second opinion.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <hr class="section-rule">
+
+    <section class="final-cta">
+      <h2 class="final-cta-heading">See what your site <em>should test first.</em></h2>
+      <div class="final-cta-row">
+        <a href="https://cal.com/valentinyeo/teardown" target="_blank" rel="noopener" class="btn-primary">Get your free 20 minute teardown</a>
+      </div>
+      <div class="final-cta-alternatives">
+        <span>Or reach out directly:</span>
+        <a href="mailto:valentin.yeo@gmail.com">Email</a>
+        <a href="https://wa.me/447457416764" target="_blank" rel="noopener">WhatsApp</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <span class="footer-copy">© 2026 Valentin Yeo</span>
+      <div class="footer-links">
+        <a href="cv.html">CV</a>
+        <a href="https://www.linkedin.com/in/valentin-yeo/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="contact.html">Contact</a>
+        <a href="terms.html">Terms</a>
+        <a href="privacy.html">Privacy</a>
+        <a href="refund-policy.html">Refund Policy</a>
+      </div>
+    </div>
+    <p class="footer-legal">Valentin Yeo, sole trader · 4th Floor, Silverstream House, 45 Fitzroy Street, London W1T 6EB, UK · <a href="mailto:valentin.yeo@gmail.com">valentin.yeo@gmail.com</a> · +44 7457 416764</p>
+  </footer>
+
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/vce701823e78c4301a35b7e07294d87301792088814092" integrity="sha512-UKNk8GbxkABxKcXYuLkO16EleLGUkcvJWtpSNmExE0Too3ZaFAxTscNWEc1OdAv5/BikHawapSCaiD2XCmp+Bw==" data-cf-beacon="{&quot;version&quot;:&quot;2024.11.0&quot;,&quot;token&quot;:&quot;c6586c3f61c54ee4a4f78f0ac385dc83&quot;,&quot;r&quot;:1,&quot;spa&quot;:2}" crossorigin="anonymous"></script>
+
+
+</body></html>

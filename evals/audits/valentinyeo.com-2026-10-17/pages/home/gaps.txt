@@ -1,0 +1,1 @@
+PageSpeed API unavailable: lab-only local measurement, no real-user data

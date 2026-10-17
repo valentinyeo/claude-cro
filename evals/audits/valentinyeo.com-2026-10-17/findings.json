@@ -1,0 +1,424 @@
+{
+ "site": "https://valentinyeo.com",
+ "date": "2026-10-17",
+ "business_type": "services / lead generation",
+ "score": 64,
+ "rating": "Moderate",
+ "categories": [
+  {
+   "name": "UX",
+   "score": 66,
+   "weight": 27.8
+  },
+  {
+   "name": "Copy",
+   "score": 64,
+   "weight": 22.2
+  },
+  {
+   "name": "Trust",
+   "score": 58,
+   "weight": 16.7
+  },
+  {
+   "name": "Visual",
+   "score": 64,
+   "weight": 16.7
+  },
+  {
+   "name": "Performance",
+   "score": 86,
+   "weight": 11.1
+  },
+  {
+   "name": "Tracking",
+   "score": 28,
+   "weight": 5.6
+  }
+ ],
+ "readiness": {
+  "verdict": "NOT_TESTABLE",
+  "baseline": "ASSUMED",
+  "conversions_per_month": 8,
+  "cvr": 2.0,
+  "visitors_per_month": 400,
+  "mdl_4w": 320.5,
+  "mdl_8w": 201.3
+ },
+ "strengths": [
+  "One clear promise and dominant button above the fold",
+  "Specific, checkable results",
+  "Transparent contact and legal details",
+  "Very light, fast pages",
+  "Clear booking page"
+ ],
+ "personas": [
+  {
+   "id": "P1",
+   "goal": "judge credibility and book the teardown (desktop head of growth)",
+   "outcome": "reached the calendar, would book but hesitated on proof and price",
+   "worst_step_image": "personas/P1/b/step-03.png"
+  },
+  {
+   "id": "P2",
+   "goal": "book the teardown on mobile (DTC founder)",
+   "outcome": "reached the calendar in one tap, did not book",
+   "worst_step_image": "personas/P2/step-01.png"
+  }
+ ],
+ "findings": [
+  {
+   "id": "F-01",
+   "title": "Case studies end with no way to book",
+   "priority": "High",
+   "page": "case-study",
+   "category": "ux",
+   "problem": "The inne, Eduki and trivago case studies have no teardown button; the only link on is 'Back to Home'.",
+   "evidence": "pages/case-study/page.html: 0 cal.com links; elements.json ctas: []",
+   "evidence_image": "pages/case-study/desktop.png",
+   "why_it_costs_sales": "A reader who has just seen the strongest proof has no next step and may leave.",
+   "fix": "Add the home header and button, a button after the summary, and a closing CTA block.",
+   "effort": "Easy",
+   "sources": [
+    "ux",
+    "copy",
+    "trust",
+    "visual",
+    "P1"
+   ],
+   "skeptic_verdict": "DOWNGRADE",
+   "published_tests": []
+  },
+  {
+   "id": "F-02",
+   "title": "Contact page has no booking path",
+   "priority": "High",
+   "page": "contact",
+   "category": "ux",
+   "problem": "Contact lists email, WhatsApp, Upwork and an address with equal weight and no booking link or form.",
+   "evidence": "pages/contact/elements.json forms: []; copy: 'use one of the contact methods above'",
+   "evidence_image": "pages/contact/desktop.png",
+   "why_it_costs_sales": "Visitors who go to Contact to take the next step must write an email instead of booking in one click.",
+   "fix": "Make the H1 'Book your free 20 minute teardown' with the cal.com button first.",
+   "effort": "Easy",
+   "sources": [
+    "ux",
+    "copy",
+    "visual",
+    "tracking",
+    "P1"
+   ],
+   "skeptic_verdict": "DOWNGRADE",
+   "published_tests": []
+  },
+  {
+   "id": "F-11",
+   "title": "The booking click is not measured",
+   "priority": "High",
+   "page": "all",
+   "category": "tracking",
+   "problem": "Only Cloudflare page views are recorded; no click or booking event is visible for the cal.com CTA.",
+   "evidence": "tracking.json events {}; no click handler in pages/home/page.html",
+   "evidence_image": "",
+   "why_it_costs_sales": "Without a click count you cannot tell which page or source produces teardown requests.",
+   "fix": "Add a cta_click event to every cal.com link and connect bookings to analytics.",
+   "effort": "Easy",
+   "sources": [
+    "tracking"
+   ],
+   "skeptic_verdict": "REWORD",
+   "published_tests": []
+  },
+  {
+   "id": "F-07",
+   "title": "Only one of five case-study tests reports a result",
+   "priority": "High",
+   "page": "case-study",
+   "category": "copy",
+   "problem": "Test 1 has numbers but no sample size, runtime or significance; Tests 2-5 give hypotheses only.",
+   "evidence": "pages/case-study/page.html Test 1 to Test 5",
+   "evidence_image": "pages/case-study/desktop.png",
+   "why_it_costs_sales": "A skeptical buyer asks about the other results and the claim '100+ tests' rests on one winner.",
+   "fix": "Add sample size and runtime for Test 1; publish outcomes or mark Tests 2-5 'not published'.",
+   "effort": "Medium",
+   "sources": [
+    "copy",
+    "trust",
+    "P1"
+   ],
+   "skeptic_verdict": "REWORD",
+   "published_tests": []
+  },
+  {
+   "id": "F-04",
+   "title": "The teardown is not explained next to the button",
+   "priority": "Medium",
+   "page": "home",
+   "category": "copy",
+   "problem": "Hero and closing CTA say only 'Get your free 20 minute teardown'; the no-obligation explanation is on cal.com after the click.",
+   "evidence": "pages/home/page.html CTA; personas/P2/step-05.png",
+   "evidence_image": "personas/P2/step-01.png",
+   "why_it_costs_sales": "'Teardown' is jargon; a visitor unsure what they get may not click.",
+   "fix": "Add one line under each button saying what the call is and what to bring.",
+   "effort": "Easy",
+   "sources": [
+    "copy",
+    "trust",
+    "P1",
+    "P2"
+   ],
+   "skeptic_verdict": "DOWNGRADE",
+   "published_tests": []
+  },
+  {
+   "id": "F-05",
+   "title": "Proof rests on one testimonial and text-only client names",
+   "priority": "Medium",
+   "page": "home",
+   "category": "trust",
+   "problem": "One testimonial (Truely/IDA CEO, no numbers); vetsak and Teeth Lovers are plain text.",
+   "evidence": "pages/home/page.html What Clients Say, Selected Clients",
+   "evidence_image": "personas/P1/step-02.png",
+   "why_it_costs_sales": "A skeptical buyer sees little third-party validation next to the booking button.",
+   "fix": "Add 2-3 testimonials with a number and client logos.",
+   "effort": "Medium",
+   "sources": [
+    "trust",
+    "visual",
+    "P1",
+    "P2"
+   ],
+   "skeptic_verdict": "REWORD",
+   "published_tests": []
+  },
+  {
+   "id": "F-06",
+   "title": "The page does not say who the offer is for",
+   "priority": "Medium",
+   "page": "home",
+   "category": "copy",
+   "problem": "No mention of ecommerce, DTC or online stores; inne and Eduki are named but unexplained.",
+   "evidence": "pages/home/page.html hero (grep: no 'ecommerce'/'DTC')",
+   "evidence_image": "personas/P2/step-01.png",
+   "why_it_costs_sales": "Visitors cannot tell if the service fits their business.",
+   "fix": "Add a 'for ...' line and a few words per client.",
+   "effort": "Easy",
+   "sources": [
+    "copy",
+    "P1",
+    "P2"
+   ],
+   "skeptic_verdict": "ACCEPT",
+   "published_tests": []
+  },
+  {
+   "id": "F-08",
+   "title": "Services show no price signal",
+   "priority": "Medium",
+   "page": "home",
+   "category": "P1",
+   "problem": "Services list no price, range or starting point.",
+   "evidence": "pages/home/page.html Services",
+   "evidence_image": "personas/P1/step-03.png",
+   "why_it_costs_sales": "Buyers cannot judge affordability before booking.",
+   "fix": "Add a 'from' price or 'priced by traffic'.",
+   "effort": "Easy",
+   "sources": [
+    "P1",
+    "P2"
+   ],
+   "skeptic_verdict": "REWORD",
+   "published_tests": []
+  },
+  {
+   "id": "F-03",
+   "title": "Inner pages use an older template with low-contrast accents",
+   "priority": "Medium",
+   "page": "case-study",
+   "category": "visual",
+   "problem": "Case study and contact have no nav or teardown button; amber #F59E0B on white is 2.15:1, purple labels 3.96:1.",
+   "evidence": "pages/case-study/page.html styles; computed contrast",
+   "evidence_image": "pages/case-study/desktop.png",
+   "why_it_costs_sales": "The pages feel like a different, older site and the accent text is hard to read.",
+   "fix": "Reuse the home header and theme; use an accent with 4.5:1 contrast for text.",
+   "effort": "Medium",
+   "sources": [
+    "ux",
+    "visual",
+    "P1"
+   ],
+   "skeptic_verdict": "REWORD",
+   "published_tests": []
+  },
+  {
+   "id": "F-09",
+   "title": "No CTA follows the reader on mobile",
+   "priority": "Low",
+   "page": "home",
+   "category": "ux",
+   "problem": "Header teardown button is behind the hamburger; the hero and closing buttons are the only entries.",
+   "evidence": "pages/home/page.html .nav-links hidden under 640px",
+   "evidence_image": "pages/home/mobile.png",
+   "why_it_costs_sales": "A reader who scrolls past the hero must scroll back to book.",
+   "fix": "Add a slim sticky button after the hero.",
+   "effort": "Easy",
+   "sources": [
+    "ux",
+    "visual"
+   ],
+   "skeptic_verdict": "REWORD",
+   "published_tests": []
+  },
+  {
+   "id": "F-18",
+   "title": "Booking page opens in a new tab with an empty timezone",
+   "priority": "Low",
+   "page": "cal.com",
+   "category": "P2",
+   "problem": "Timezone selector shows 'Select...'; link has target=_blank.",
+   "evidence": "personas/P2/step-05.png",
+   "evidence_image": "personas/P2/step-05.png",
+   "why_it_costs_sales": "Extra step before slots make sense.",
+   "fix": "Open in the same tab or prefill the timezone.",
+   "effort": "Easy",
+   "sources": [
+    "P1",
+    "P2"
+   ],
+   "skeptic_verdict": "REWORD",
+   "published_tests": []
+  },
+  {
+   "id": "F-12",
+   "title": "A/B testing SDK loaded with no test configured",
+   "priority": "Low",
+   "page": "home",
+   "category": "tracking",
+   "problem": "Endless Testing loads on home and contact; no test ID unless passed in the URL.",
+   "evidence": "tracking.json (loads 0, hits 2)",
+   "evidence_image": "",
+   "why_it_costs_sales": "Extra script with no purpose; site cannot run a test anyway on the assumed baseline.",
+   "fix": "Remove it or finish the setup once the baseline is confirmed.",
+   "effort": "Easy",
+   "sources": [
+    "tracking",
+    "performance"
+   ],
+   "skeptic_verdict": "REWORD",
+   "published_tests": []
+  },
+  {
+   "id": "F-10",
+   "title": "Truely card links to Upwork, not a case study",
+   "priority": "Low",
+   "page": "home",
+   "category": "ux",
+   "problem": "The Truely & IDA card goes to the Upwork profile; other cards go to on-site case studies.",
+   "evidence": "pages/home/page.html case-item links",
+   "evidence_image": "",
+   "why_it_costs_sales": "Reader leaves the site.",
+   "fix": "Link to an on-site page or label it clearly.",
+   "effort": "Easy",
+   "sources": [
+    "ux"
+   ],
+   "skeptic_verdict": "REWORD",
+   "published_tests": []
+  },
+  {
+   "id": "F-15",
+   "title": "Gmail address and no photo of Valentin on the home page",
+   "priority": "Low",
+   "page": "home",
+   "category": "trust",
+   "problem": "Business email is Gmail; About goes to the CV page; no photo on home.",
+   "evidence": "pages/home/page.html footer, nav",
+   "evidence_image": "",
+   "why_it_costs_sales": "Slightly weaker credibility for a consultant selling to CEOs.",
+   "fix": "Use a domain email, add a photo, make About a real page.",
+   "effort": "Easy",
+   "sources": [
+    "trust",
+    "visual",
+    "P2"
+   ],
+   "skeptic_verdict": "DOWNGRADE",
+   "published_tests": []
+  },
+  {
+   "id": "F-16",
+   "title": "Footer year is 2025 on inner pages",
+   "priority": "Low",
+   "page": "case-study",
+   "category": "ux",
+   "problem": "Case study and contact say \u00a9 2025; home says 2026.",
+   "evidence": "pages/case-study/page.html footer",
+   "evidence_image": "",
+   "why_it_costs_sales": "Looks stale.",
+   "fix": "Update to 2026.",
+   "effort": "Easy",
+   "sources": [
+    "ux",
+    "trust",
+    "copy",
+    "P1"
+   ],
+   "skeptic_verdict": "ACCEPT",
+   "published_tests": []
+  },
+  {
+   "id": "F-17",
+   "title": "Small links and a blank band on mobile",
+   "priority": "Low",
+   "page": "home",
+   "category": "P2",
+   "problem": "'See the results', Email and WhatsApp are small text links; an empty band appeared under the header in one scroll capture.",
+   "evidence": "personas/P2/step-03.png, step-04.png",
+   "evidence_image": "personas/P2/step-03.png",
+   "why_it_costs_sales": "Hard to tap; the band may look like missing content.",
+   "fix": "44px tap targets; re-check on a real phone.",
+   "effort": "Easy",
+   "sources": [
+    "P2",
+    "ux"
+   ],
+   "skeptic_verdict": "ACCEPT",
+   "published_tests": []
+  },
+  {
+   "id": "F-19",
+   "title": "Case study is text only",
+   "priority": "Low",
+   "page": "case-study",
+   "category": "ux",
+   "problem": "No test screenshots or images.",
+   "evidence": "pages/case-study/page.html (0 img)",
+   "evidence_image": "pages/case-study/desktop.png",
+   "why_it_costs_sales": "Long page, harder to scan.",
+   "fix": "Add test screenshots if the client allows.",
+   "effort": "Medium",
+   "sources": [
+    "ux",
+    "visual"
+   ],
+   "skeptic_verdict": "DOWNGRADE",
+   "published_tests": []
+  }
+ ],
+ "tracking": {
+  "has_analytics": true,
+  "tools": [
+   "Cloudflare Web Analytics (page views only)",
+   "Endless Testing SDK (no test configured)"
+  ],
+  "issues": [
+   "No click or booking event on cal.com links",
+   "A/B SDK loaded with no test ID"
+  ],
+  "access_requests": [
+   "Cloudflare Web Analytics viewer or API token",
+   "Google Search Console restricted user",
+   "cal.com booking export / monthly lead count for last 3 months"
+  ]
+ }
+}

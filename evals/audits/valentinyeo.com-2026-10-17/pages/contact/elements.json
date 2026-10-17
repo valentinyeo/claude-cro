@@ -1,0 +1,43 @@
+{
+  "ctas": [],
+  "forms": [],
+  "trust_signals": {
+    "testimonials": [],
+    "review_widgets": [],
+    "client_logos": [],
+    "security_badges": [],
+    "guarantees": [],
+    "certifications": []
+  },
+  "tracking": {
+    "scripts_found": [],
+    "data_layer": false,
+    "consent_management": false
+  },
+  "headlines": {
+    "h1": [
+      "Get inTouch"
+    ],
+    "h2": [],
+    "h3": []
+  },
+  "meta": {
+    "title": "Contact | Valentin Yeo",
+    "description": "Contact Valentin Yeo for CRO and A/B Testing expertise",
+    "og_tags": {},
+    "twitter_tags": {},
+    "canonical": "",
+    "robots": "",
+    "viewport": "width=device-width,initial-scale=1"
+  },
+  "images": [],
+  "links": {
+    "internal_count": 6,
+    "external_count": 6,
+    "total": 12,
+    "internal_urls_unique": 5,
+    "external_urls_unique": 5
+  },
+  "schema": [],
+  "social_proof_patterns": []
+}
