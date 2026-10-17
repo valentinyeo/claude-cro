@@ -3,3 +3,5 @@ __pycache__/
 *.pyc
 .unlazy/
 .unlazy-hook-state.json
+evals/private/
+evals/results/

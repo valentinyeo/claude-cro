@@ -1,0 +1,118 @@
+{
+  "tests": [
+    {
+      "id": "t01",
+      "evidence_id": "smith-optics-mobile-cart",
+      "winner": "B",
+      "winner_is": "variant"
+    },
+    {
+      "id": "t02",
+      "evidence_id": "xtrema-direct-product-navigation",
+      "winner": "B",
+      "winner_is": "variant"
+    },
+    {
+      "id": "t03",
+      "evidence_id": "betfair",
+      "winner": "B",
+      "winner_is": "variant"
+    },
+    {
+      "id": "t04",
+      "evidence_id": "lyyti",
+      "winner": "B",
+      "winner_is": "variant"
+    },
+    {
+      "id": "t05",
+      "evidence_id": "citycliq",
+      "winner": "A",
+      "winner_is": "variant"
+    },
+    {
+      "id": "t06",
+      "evidence_id": "staatsloterij-mobile-xl-loss",
+      "winner": "B",
+      "winner_is": "control"
+    },
+    {
+      "id": "t07",
+      "evidence_id": "express-watches",
+      "winner": "A",
+      "winner_is": "variant"
+    },
+    {
+      "id": "t08",
+      "evidence_id": "veeam-software",
+      "winner": "A",
+      "winner_is": "variant"
+    },
+    {
+      "id": "t09",
+      "evidence_id": "nuface",
+      "winner": "A",
+      "winner_is": "variant"
+    },
+    {
+      "id": "t10",
+      "evidence_id": "workzone",
+      "winner": "A",
+      "winner_is": "variant"
+    },
+    {
+      "id": "t11",
+      "evidence_id": "server-density-packaged-pricing-trial-loss",
+      "winner": "A",
+      "winner_is": "control"
+    },
+    {
+      "id": "t12",
+      "evidence_id": "xtrema-home-shop-by-category",
+      "winner": "B",
+      "winner_is": "variant"
+    },
+    {
+      "id": "t13",
+      "evidence_id": "movexa",
+      "winner": "A",
+      "winner_is": "variant"
+    },
+    {
+      "id": "t14",
+      "evidence_id": "assessmentday-remove-faq-and-screenshots-loss",
+      "winner": "B",
+      "winner_is": "control"
+    },
+    {
+      "id": "t15",
+      "evidence_id": "paperstone-price-comparison-round-two",
+      "winner": "A",
+      "winner_is": "variant"
+    },
+    {
+      "id": "t16",
+      "evidence_id": "flying-scot",
+      "winner": "A",
+      "winner_is": "variant"
+    },
+    {
+      "id": "t17",
+      "evidence_id": "taloon",
+      "winner": "B",
+      "winner_is": "variant"
+    },
+    {
+      "id": "t18",
+      "evidence_id": "160-driving-academy",
+      "winner": "A",
+      "winner_is": "variant"
+    },
+    {
+      "id": "t19",
+      "evidence_id": "nameon",
+      "winner": "B",
+      "winner_is": "variant"
+    }
+  ]
+}

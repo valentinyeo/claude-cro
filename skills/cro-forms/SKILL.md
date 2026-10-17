@@ -21,7 +21,8 @@ completions.
 
 ## Process
 
-1. **Fetch the page** using `${CLAUDE_SKILL_DIR}/../cro/scripts/cro-py fetch_page.py`. Store the full HTML.
+1. **Fetch the page** using `${CLAUDE_SKILL_DIR}/../cro/scripts/cro-py fetch_page.py`. Store the full HTML. Given a saved HTML
+   file, or no Bash, Read the file and list the forms from the markup by hand.
 2. **Extract form elements** using `${CLAUDE_SKILL_DIR}/../cro/scripts/cro-py parse_cro.py`. This identifies every
    `<form>` element, its fields, labels, buttons, validation attributes, and
    surrounding context (trust signals near the form, privacy text, etc.).
@@ -88,7 +89,7 @@ How fields are labeled directly impacts completion rate.
 | Criterion | What to Check | Best Practice |
 |-----------|---------------|---------------|
 | Label position | Where are labels relative to fields? | Top-aligned labels are fastest to complete (Matteo Penzo eye-tracking study). Left-aligned is acceptable. Inline/placeholder-only is NOT recommended. |
-| Placeholder text | Are placeholders used AS labels, or as supplementary hints? | Placeholders should supplement labels, never replace them. They disappear on focus, losing context. |
+| Placeholder text | Are placeholders used AS labels, or as supplementary hints? Check the markup: an `<input>` with a `placeholder` and no `<label>` or `aria-label` is placeholder-only. | Placeholders should supplement labels, never replace them. They disappear on focus, losing context. |
 | Label clarity | Are labels unambiguous? "Name" could mean full name, first name, or username. | Be specific: "Full Name", "Email Address", "Phone Number (optional)" |
 | Help text | Is there supplementary text for complex fields? | Below the field, in smaller text. Show format examples: "e.g., +1 (555) 123-4567" |
 | Required indicators | How are required fields marked? | Asterisk (*) with a legend explaining it. OR mark optional fields instead (if most are required). |
@@ -194,6 +195,7 @@ Trust elements directly adjacent to the form have outsized impact on completion.
 |---------|---------------|--------|
 | Privacy statement | Text like "We respect your privacy" or "No spam, ever" near submit button? | Reduces form anxiety. Should be within 50px of the submit button. |
 | Privacy policy link | Link to full privacy policy near the form? | Required by GDPR. Should open in new tab, not navigate away. |
+| Consent checkboxes | Is any marketing, newsletter or partner opt-in ticked by default? | Never pre-tick. Pre-ticked boxes are not valid consent under GDPR and PECR, and visitors who notice them trust the form less. |
 | Data usage explanation | Brief note on what happens with the submitted data? | "We'll use your email to send your free guide and weekly tips. Unsubscribe anytime." |
 | Security indicators | Lock icon, "Secure form" text, encryption mention? | Especially important for forms collecting payment or sensitive data |
 | "No credit card" | For free trials: "No credit card required" text near the submit button? | One of the highest-impact single text additions for SaaS trial forms |

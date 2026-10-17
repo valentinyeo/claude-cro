@@ -15,6 +15,21 @@ jobs:
       - run: python tests/lint_skills.py
       - run: python -m unittest discover -s tests -p "test_*.py" -v
       - run: python -m compileall -q skills/cro/scripts
+  evals:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Planted fixtures, answer keys and generated cases are up to date
+        run: |
+          python evals/tools/plant.py --check
+          python evals/tools/make_cases.py --check
+          python evals/tools/make_winner.py --check
+          python evals/tools/check.py fixtures
+      - name: Committed eval results recompute and stay above the score floor
+        run: python evals/tools/check.py results
   install-smoke:
     runs-on: ubuntu-latest
     steps:

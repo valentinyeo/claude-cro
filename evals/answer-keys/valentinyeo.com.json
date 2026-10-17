@@ -1,0 +1,37 @@
+{
+  "fixture": "fixtures/valentinyeo.com.planted.html",
+  "clean": "fixtures/valentinyeo.com.clean.html",
+  "tier": "planted",
+  "defects": [
+    {
+      "id": "vague-cta",
+      "label": "Vague CTA \"Submit\" linking to \"#\"",
+      "found": "[\\\"'“‘]Submit[\\\"'”’]",
+      "snippet": "<p><a href=\"#\" class=\"planted-cta\" style=\"display:inline-block;padding:12px 24px;background:#111;color:#fff\">Submit</a></p>"
+    },
+    {
+      "id": "meaningless-headline",
+      "label": "Headline \"Welcome to our website\"",
+      "found": "Welcome to our website",
+      "snippet": "Welcome to our website"
+    },
+    {
+      "id": "long-form",
+      "label": "Form with 9 required fields",
+      "found": "\\b(9|nine)\\b[^\\n]{0,40}(fields?|inputs?|questions?)|(fields?|inputs?)[^\\n]{0,40}\\b(9|nine)\\b|date of birth",
+      "snippet": "<section class=\"planted-form\"><h2>Get started</h2><form action=\"#\" method=\"post\"><label>First name *<input name=\"f1\" required></label><label>Last name *<input name=\"f2\" required></label><label>Work email *<input name=\"f3\" required></label><label>Phone number *<input name=\"f4\" required></label><label>Company *<input name=\"f5\" required></label><label>Job title *<input name=\"f6\" required></label><label>Company size *<input name=\"f7\" required></label><label>Country *<input name=\"f8\" required></label><label>Date of birth *<input name=\"f9\" required></label><button type=\"submit\">Send</button></form></section>"
+    },
+    {
+      "id": "fake-urgency",
+      "label": "Fake urgency banner \"Only 3 spots left ... 00:14:59\"",
+      "found": "only 3 spots|spots left|00:14:59|offer ends in|fake urgency|false urgency|countdown",
+      "snippet": "<div class=\"planted-urgency\" style=\"background:#b91c1c;color:#fff;text-align:center;padding:8px\">Hurry! Only 3 spots left at this price. Offer ends in 00:14:59</div>"
+    },
+    {
+      "id": "conflicting-prices",
+      "label": "Pro plan priced $49 and $79 on the same page",
+      "found": "^(?=[\\s\\S]*\\$49)(?=[\\s\\S]*\\$79)",
+      "snippet": "<p class=\"planted-price\">Pro plan: $49 per month</p> / <p class=\"planted-price\">Pro plan: $79 per month, billed monthly</p>"
+    }
+  ]
+}
