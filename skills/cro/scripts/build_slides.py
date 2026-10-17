@@ -13,6 +13,8 @@ import re
 import shutil
 import sys
 from urllib.parse import quote, urlparse
+import os as _os, sys as _sys; _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))  # noqa: E401,E702
+from netenv import dns_unavailable_but_proxied, launch_chromium  # noqa: E402,F401
 
 
 TYPES = {"title", "bottom-line", "score", "test-readiness", "finding", "before-after",
@@ -319,7 +321,7 @@ def inspect_deck(output, render=None, check=False, width=1440, height=900):
 
     errors = []
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=True)
+        browser = launch_chromium(p)
         try:
             page = browser.new_page(viewport={"width": width, "height": height}, device_scale_factor=1)
             # A generated deck is offline. Do not let a manipulated asset fetch a remote URL.

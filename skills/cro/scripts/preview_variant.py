@@ -15,6 +15,8 @@ import sys
 from urllib.parse import urlparse
 
 from fetch_page import DEFAULT_USER_AGENT, looks_blocked, resolve_and_check, validate_url
+import os as _os, sys as _sys; _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))  # noqa: E401,E702
+from netenv import dns_unavailable_but_proxied, launch_chromium  # noqa: E402,F401
 
 
 def read_manifest(source):
@@ -72,7 +74,7 @@ def preview(url, variant, css=None, mobile=False, output=None, timeout=30, settl
             route.abort()
 
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=True)
+        browser = launch_chromium(p)
         try:
             options = {"viewport": {"width": 1440, "height": 900},
                        "user_agent": DEFAULT_USER_AGENT, "bypass_csp": True,

@@ -23,6 +23,8 @@ import socket
 import sys
 import time
 from urllib.parse import urljoin, urlparse
+import os as _os, sys as _sys; _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))  # noqa: E401,E702
+from netenv import dns_unavailable_but_proxied, launch_chromium  # noqa: E402,F401
 
 try:
     import requests
@@ -83,7 +85,9 @@ def resolve_and_check(hostname: str) -> str:
     try:
         results = socket.getaddrinfo(hostname, None, socket.AF_UNSPEC, socket.SOCK_STREAM)
     except socket.gaierror as exc:
-        raise ValueError(f"DNS resolution failed for '{hostname}': {exc}")
+        if hostname.lower() in ("localhost", "localhost.localdomain") or not dns_unavailable_but_proxied(exc):
+            raise ValueError(f"DNS resolution failed for '{hostname}': {exc}")
+        return hostname  # behind a proxy that resolves names itself (cloud sessions); literal private IPs are checked elsewhere
 
     if not results:
         raise ValueError(f"No DNS results for '{hostname}'")
@@ -176,7 +180,7 @@ def render_page(url: str, timeout: int = DEFAULT_TIMEOUT, user_agent: str = DEFA
     resolve_and_check(urlparse(url).hostname)
     start = time.time()
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=True)
+        browser = launch_chromium(p)
         try:
             ctx = browser.new_context(user_agent=user_agent, viewport={"width": 1440, "height": 900})
             guard_browser(ctx)

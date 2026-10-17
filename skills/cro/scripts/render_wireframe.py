@@ -17,6 +17,8 @@ import json
 from pathlib import Path
 import sys
 from urllib.parse import unquote, urlparse
+import os as _os, sys as _sys; _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))  # noqa: E401,E702
+from netenv import dns_unavailable_but_proxied, launch_chromium  # noqa: E402,F401
 
 VIEWPORTS = {"mobile": (390, 844), "desktop": (1440, 900)}
 
@@ -131,7 +133,7 @@ def render_wireframes(source, output, after=None, annotations_path=None):
                 "annotations": annotations, "renders": [], "comparisons": []}
 
     with sync_playwright() as playwright:
-        browser = playwright.chromium.launch(headless=True)
+        browser = launch_chromium(playwright)
         try:
             for label, path in inputs.items():
                 for device, (width, height) in VIEWPORTS.items():

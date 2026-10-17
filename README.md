@@ -19,6 +19,8 @@ Older Claude Code: `/plugin marketplace add valentinyeo/claude-cro`, then `/plug
 
 **2. Check the setup:** `/cro doctor`. The first run sets up its own Python env and a headless browser, which takes about a minute.
 
+Running in Claude Code on the web? Cloud sessions block most websites by default. In your environment settings, set network access to **Full**, or allow your own site plus `cdn.playwright.dev` and `www.googleapis.com`.
+
 **3. Audit your site:**
 
 ```

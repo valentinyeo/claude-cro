@@ -26,6 +26,8 @@ import re
 import sys
 from collections import Counter, defaultdict
 from urllib.parse import parse_qs, urlparse
+import os as _os, sys as _sys; _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))  # noqa: E401,E702
+from netenv import dns_unavailable_but_proxied, launch_chromium  # noqa: E402,F401
 
 # name, url pattern, how to pull the account id, how to pull the hit/event name, kind
 VENDORS = [
@@ -232,7 +234,7 @@ def capture(urls, wait_ms=6000):
     spec.loader.exec_module(fp)
     pages = []
     with sync_playwright() as p:
-        browser = p.chromium.launch(headless=True)
+        browser = launch_chromium(p)
         for url in urls:
             fp.validate_url(url)
             ctx = browser.new_context(viewport={"width": 1440, "height": 900}, user_agent=fp.DEFAULT_USER_AGENT)

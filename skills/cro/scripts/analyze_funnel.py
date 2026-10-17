@@ -23,6 +23,8 @@ import socket
 import sys
 import time
 from urllib.parse import urljoin, urlparse
+import os as _os, sys as _sys; _sys.path.insert(0, _os.path.dirname(_os.path.abspath(__file__)))  # noqa: E401,E702
+from netenv import dns_unavailable_but_proxied, launch_chromium  # noqa: E402,F401
 
 try:
     import requests
@@ -85,7 +87,9 @@ def check_ssrf(hostname: str):
     try:
         results = socket.getaddrinfo(hostname, None, socket.AF_UNSPEC, socket.SOCK_STREAM)
     except socket.gaierror as exc:
-        raise ValueError(f"DNS resolution failed for '{hostname}': {exc}")
+        if hostname.lower() in ("localhost", "localhost.localdomain") or not dns_unavailable_but_proxied(exc):
+            raise ValueError(f"DNS resolution failed for '{hostname}': {exc}")
+        return hostname  # behind a proxy that resolves names itself (cloud sessions); literal private IPs are checked elsewhere
 
     for _family, _type, _proto, _canonname, sockaddr in results:
         ip = sockaddr[0]
