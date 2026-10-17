@@ -98,6 +98,14 @@ ORDER = [
 ]
 
 
+CTA = ("Made with the free claude-cro pack: https://github.com/valentinyeo/claude-cro\n"
+       "Want an expert to run these experiments for you? Book a free 30-minute call: https://calendar.app.google/LZTWmL4jhseNKNc3A")
+
+
+def linkify(escaped):
+    return re.sub(r"(https://[^\s<]+)", r"<a href='\1'>\1</a>", escaped)
+
+
 def esc(s):
     return html.escape(str(s), quote=True)
 
@@ -429,6 +437,9 @@ def build(W, WF=None):
     out.append("<h2>How these results were made</h2><p>Each section is one skill run on the same site, shown the same way. "
                "Numbers come straight from the run files; the one-line results are the reviewer's reading of them. "
                "Simulated visitors and simulated opinion are early signals, not measured conversion results.</p>")
+    cta = N.get("cta", CTA)  # notes: "cta": false hides it, a string replaces it (agencies use their own)
+    if cta:
+        out.append("<div class='verdict' id='cta'>" + "".join(f"<p>{linkify(esc(x))}</p>" for x in str(cta).splitlines()) + "</div>")
     out.append("</main></body></html>")
     return "\n".join(out).replace("<main>", "<main id='top'>", 1)
 
