@@ -98,12 +98,14 @@ ORDER = [
 ]
 
 
-CTA = ("Made with the free claude-cro pack: https://github.com/valentinyeo/claude-cro\n"
-       "Want an expert to run these experiments for you? Book a free 30-minute call: https://calendar.app.google/LZTWmL4jhseNKNc3A")
+CTA = ("Made with the free [claude-cro pack](https://github.com/valentinyeo/claude-cro).\n"
+       "Want an expert to run these experiments for you? [Book a free 30-minute call](https://calendar.app.google/LZTWmL4jhseNKNc3A).")
 
 
 def linkify(escaped):
-    return re.sub(r"(https://[^\s<]+)", r"<a href='\1'>\1</a>", escaped)
+    """[label](https://...) becomes a link on the label; a bare https URL links itself and may wrap."""
+    escaped = re.sub(r"\[([^\]]+)\]\((https://[^\s)<]+)\)", r"<a href='\2'>\1</a>", escaped)
+    return re.sub(r"(?<!href=')(https://[^\s<]+)(?![^<]*</a>)", r"<a href='\1' style='overflow-wrap:anywhere'>\1</a>", escaped)
 
 
 def esc(s):
