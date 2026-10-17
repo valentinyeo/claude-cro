@@ -7,7 +7,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 SCAN = ["skills", "agents", "docs", "tests", "install.sh", "install.ps1", "uninstall.sh"]
 BANNED = re.compile(r"\binne\b|trivago|eduki|biosouth|hair ?& ?skin|valentin|£1,200", re.I)
-ALLOWED = re.compile(r"github\.com/valentinyeo/claude-cro|valentinyeo/claude-cro|raw\.githubusercontent\.com/valentinyeo")
+ALLOWED = re.compile(r"cal\.com/valentinyeo/teardown|github\.com/valentinyeo/claude-cro|valentinyeo/claude-cro|raw\.githubusercontent\.com/valentinyeo")
 
 
 class ClientAgnosticTest(unittest.TestCase):

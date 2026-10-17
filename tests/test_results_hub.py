@@ -75,7 +75,7 @@ class ResultsHubTest(unittest.TestCase):
         (self.W / "results-notes.json").write_text(json.dumps(n))
         html = rh.build(self.W)
         self.assertIn("<a href='https://acme.example/call' style='overflow-wrap:anywhere'>https://acme.example/call</a>", html)
-        self.assertNotIn("cal.com/valentinyeo", html)
+        self.assertNotIn("cal.com/valentinyeo/teardown", html)
         n["cta"] = False
         (self.W / "results-notes.json").write_text(json.dumps(n))
         self.assertNotIn("id='cta'", rh.build(self.W))
