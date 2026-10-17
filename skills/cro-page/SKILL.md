@@ -20,19 +20,30 @@ a scored report with prioritized recommendations.
 ## Process
 
 1. **Fetch the page HTML** using `${CLAUDE_SKILL_DIR}/../cro/scripts/cro-py fetch_page.py`. Store the raw HTML for
-   downstream analysis.
+   downstream analysis. Given a saved HTML file, or no Bash, Read the file instead
+   and do steps 2-3 by hand from the markup; never stop because a script cannot run.
 2. **Extract CRO elements** using `${CLAUDE_SKILL_DIR}/../cro/scripts/cro-py parse_cro.py`. This extracts
    headlines, CTAs, forms, trust signals, images, navigation, and structured
    data into a structured format.
 3. **Take a screenshot** if Playwright is available (desktop at 1440px and mobile
    at 375px). Use the screenshots to evaluate visual hierarchy, above-the-fold
    content, and CTA prominence.
-4. **Analyze against quality gates** by reading `${CLAUDE_SKILL_DIR}/../cro/references/quality-gates.md`.
+4. **Sweep the whole page, top to bottom, footer and small print included.**
+   Most missed findings sit below the hero. Write down, before scoring:
+   - every form: each field, whether it has a visible `<label>` (a placeholder is
+     not a label), which fields are required, and every checkbox's default state;
+   - every price, plan name, fee, guarantee and term, then check that each fact
+     the page repeats says the same thing everywhere it appears;
+   - every number or claim offered as proof, and whether a name, logo or source
+     backs it;
+   - text styled small, faint or hidden that changes the offer (fees, conditions,
+     opt-ins).
+5. **Analyze against quality gates** by reading `${CLAUDE_SKILL_DIR}/../cro/references/quality-gates.md`.
    Check every extracted element against the minimum conversion requirements for
    the detected business type.
-5. **Score each section** independently (0-100), then calculate the composite
+6. **Score each section** independently (0-100), then calculate the composite
    Page CRO Score.
-6. **Generate the report** with findings, scores, and prioritized
+7. **Generate the report** with findings, scores, and prioritized
    recommendations.
 
 ---
@@ -98,7 +109,9 @@ Evaluate social proof and credibility indicators. Cross-reference with the
 | Reviews | Third-party review widgets? Star ratings? Review count visible? |
 | Client/partner logos | Recognizable brands? Clean display? Enough logos (aim for 5-8)? |
 | Trust badges | Security, payment, guarantee badges? Positioned near conversion points? |
-| Guarantees | Money-back, satisfaction, or service guarantees visible? Duration stated? |
+| Guarantees | Money-back, satisfaction, or service guarantees visible? Duration stated? Does any term elsewhere on the page contradict them? |
+| Proof claims | Is each "trusted by N" or result number backed by names, logos or a source? An unbacked number reads as filler. |
+| Fine print | Do fees, conditions or opt-ins appear only in small or faint text? Anything that changes the price belongs next to the price. |
 | Contact info | Phone, email, or chat visible? Does it signal a real, reachable business? |
 
 **Score weighting:** 10% of Page CRO Score.
@@ -129,7 +142,8 @@ Evaluate all forms on the page. If no forms exist, note this and skip.
 | Criterion | What to Check |
 |-----------|---------------|
 | Field count | Compare against recommended maximums in `${CLAUDE_SKILL_DIR}/../cro/references/quality-gates.md`. Every extra field reduces completion. |
-| Labels | Top-aligned? Clear? No placeholder-only labels? |
+| Labels | Every field has a visible label? Placeholder-only fields lose their meaning on focus and fail accessibility. |
+| Consent boxes | Any marketing or partner opt-in pre-ticked? That is a dark pattern and, in the EU and UK, not valid consent. |
 | Validation | Inline real-time validation? Clear error messages? Fields retain values on error? |
 | Friction level | Required vs optional fields. Can any fields be removed, auto-filled, or deferred? |
 | Mobile input types | Correct HTML5 input types (email, tel, number, url) for mobile keyboards? |

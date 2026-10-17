@@ -1,0 +1,37 @@
+{
+  "fixture": "fixtures/endlesstesting.ai.subtle.html",
+  "clean": "fixtures/endlesstesting.ai.clean.html",
+  "tier": "subtle",
+  "defects": [
+    {
+      "id": "placeholder-labels",
+      "label": "Signup inputs have placeholders but no labels",
+      "found": "placeholder[^\\n]{0,120}label|label[^\\n]{0,120}placeholder|unlabell?ed|no visible label",
+      "snippet": "<input type=\"email\" name=\"email\" placeholder=\"Your work email\">"
+    },
+    {
+      "id": "unsupported-claim",
+      "label": "\"Trusted by 10,000+ teams\" with no names, logos or source",
+      "found": "10,000\\+? teams",
+      "snippet": "Trusted by 10,000+ teams worldwide."
+    },
+    {
+      "id": "prechecked-consent",
+      "label": "Partner-offers checkbox is pre-checked",
+      "found": "pre-?(checked|ticked|selected)|checked by default|ticked by default|partner offers|offers from our partners",
+      "snippet": "<input type=\"checkbox\" name=\"partners\" checked>"
+    },
+    {
+      "id": "hidden-fee",
+      "label": "$25 setup fee only in 10px grey small print",
+      "found": "\\$25|setup fee",
+      "snippet": "A $25 setup fee applies to every new account."
+    },
+    {
+      "id": "guarantee-conflict",
+      "label": "\"30-day money-back guarantee\" contradicted by \"All sales are final\"",
+      "found": "^(?=[\\s\\S]*(money-back|30-day))(?=[\\s\\S]*all sales are final)",
+      "snippet": "30-day money-back guarantee. / All sales are final."
+    }
+  ]
+}

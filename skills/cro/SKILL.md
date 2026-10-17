@@ -1,10 +1,13 @@
 ---
 name: cro
 description: >
-  Conversion rate optimization (CRO) router. Audits websites for conversions,
-  checks whether the site has enough traffic to A/B test, and routes to the
-  right CRO sub-skill. Use when the user says CRO, conversion rate, "why don't
-  visitors buy/sign up", landing page review, A/B test ideas, or types /cro.
+  Conversion rate optimization (CRO) router. Audits websites and saved pages
+  for conversions, checks whether the site has enough traffic to A/B test, and
+  routes to the right CRO sub-skill. Use when the user asks for a conversion
+  review or CRO audit, a landing, pricing or checkout page critique, why
+  visitors don't buy or sign up, problems with a page's headline, CTA, forms,
+  trust or prices, A/B test ideas, or which version of an A/B test will win,
+  or types /cro.
 argument-hint: "<subcommand> <url> [--conversions N --cvr X]"
 allowed-tools: Read, Grep, Glob, Bash, WebFetch, Agent
 ---
@@ -50,8 +53,16 @@ allowed-tools: Read, Grep, Glob, Bash, WebFetch, Agent
 2. Resolve the scripts folder once: `cd "${CLAUDE_SKILL_DIR}/scripts" && pwd`.
    Call that absolute path `CRO_SCRIPTS` and write it out literally in every
    later command (shell variables do not persist between commands).
-3. Read `${CLAUDE_SKILL_DIR}/../cro-<sub-skill>/SKILL.md` and follow it, passing
-   the URL(s), any baseline numbers, and `CRO_SCRIPTS`.
+3. Read `${CLAUDE_SKILL_DIR}/../cro-<sub-skill>/SKILL.md` **before you look at
+   the page**, and follow it, passing the URL(s), any baseline numbers, and
+   `CRO_SCRIPTS`. Never review from general knowledge instead: the sub-skill
+   holds the checks a quick read misses.
+4. No subcommand given: a review of one page (URL or saved HTML file) is `page`;
+   "which version wins" questions use **Predicting a test winner** below.
+5. **Saved page or no Bash:** when the input is a local HTML file, or Bash and
+   WebFetch are not available, still read the sub-skill, then skip only its fetch,
+   screenshot and script steps: Read the page file and run every check by hand.
+   Never stop because a script cannot run.
 
 ## The jobs this pack does
 
@@ -64,6 +75,18 @@ allowed-tools: Read, Grep, Glob, Bash, WebFetch, Agent
 2. **Run the client.** `/cro program init`, then monthly plan, build-test,
    launch, result and report, with `/cro wireframe` for design work.
 
+## Predicting a test winner
+
+When asked which version of an A/B test won or will win:
+
+1. Find the closest published tests in `evidence/CATALOG.md` (same element or
+   principle) and count how often that kind of change won, lost or was flat.
+2. Do not assume the changed version wins. Published case studies over-report
+   wins; in large testing programs most changes are flat or lose. For each
+   version ask what the visitor loses as well as gains.
+3. Pick the version that removes a real, specific obstacle for this visitor at
+   this step. If neither does, say the call is close and give your best guess.
+
 ## Rules every sub-skill follows
 
 - **Test Readiness Gate first** for audit, test, build-test, plan and funnel: read
@@ -72,6 +95,10 @@ allowed-tools: Read, Grep, Glob, Bash, WebFetch, Agent
   research. Never recommend a test backlog to a NOT_TESTABLE site.
 - **Run scripts with the wrapper:** `"<CRO_SCRIPTS>/cro-py" <script>.py ...`.
   It uses the skill's own Python env.
+- **Sweep the whole page,** footer and small print included: every form field
+  has a visible label (a placeholder is not one), no opt-in is pre-ticked, each
+  price, fee, guarantee and term agrees everywhere it appears, and every proof
+  number has a name or source behind it.
 - **Evidence or cut it:** every finding quotes the page, names the element, or
   cites a script number. See `references/scoring.md`.
 - **Industry numbers are estimates.** Benchmarks and proven-test lifts are

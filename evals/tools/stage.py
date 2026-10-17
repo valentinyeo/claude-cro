@@ -26,5 +26,12 @@ if "--holdout" in sys.argv:
         (out / "skills/cro/evidence/tests" / f"{i}.json").unlink(missing_ok=True)
     cat = out / "skills/cro/evidence/CATALOG.md"
     if cat.exists():
-        cat.write_text("\n".join(l for l in cat.read_text().splitlines() if not any(i in l for i in ids)) + "\n")
+        # Each record is a "### ... (`id`)" section; drop the whole section, not just its heading.
+        keep, skip = [], False
+        for line in cat.read_text().splitlines():
+            if line.startswith("#"):
+                skip = line.startswith("### ") and any(f"(`{i}`)" in line for i in ids)
+            if not skip and not (line.endswith("flat/inconclusive.") and "records:" in line):
+                keep.append(line)
+        cat.write_text("\n".join(keep) + "\n")
 print("STAGED", out)
