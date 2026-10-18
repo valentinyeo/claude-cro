@@ -91,14 +91,14 @@ finding needs an Evidence line naming the page folder and file."
 **Lens agents** (`standard`: one each covering all pages; `deep`: one per lens
 per page, with that page folder in the prompt):
 
-| Agent | Looks at | Returns |
-|-------|----------|---------|
-| `cro-ux` | heuristics, navigation, mobile, forms | UX score + Forms score |
-| `cro-copy` | headline, value prop, CTA wording, objections, microcopy | Copy score + rewrites |
-| `cro-trust` | reviews, guarantees, policies, security, social proof | Trust score |
-| `cro-visual` | hierarchy, CTA prominence, design, screenshots | Visual score |
-| `cro-performance` | `speed.json`, resources, third-party scripts | Performance score |
-| `cro-tracking` | analytics, events, consent | Tracking score |
+| Agent | Looks at | Returns | Findings file |
+|-------|----------|---------|---------------|
+| `cro-ux` | heuristics, navigation, mobile, forms | UX score + Forms score | `W/findings/ux.md` |
+| `cro-copy` | headline, value prop, CTA wording, objections, microcopy | Copy score + rewrites | `W/findings/copy.md` |
+| `cro-trust` | reviews, guarantees, policies, security, social proof | Trust score | `W/findings/trust.md` |
+| `cro-visual` | hierarchy, CTA prominence, design, screenshots | Visual score | `W/findings/visual.md` |
+| `cro-performance` | `speed.json`, resources, third-party scripts | Performance score | `W/findings/performance.md` |
+| `cro-tracking` | analytics, events, consent | Tracking score | `W/findings/tracking.md` |
 
 **Persona agents** (`cro-persona`, same wave), matched to the business.
 E-commerce defaults: (1) mobile visitor from an Instagram ad, lands on a
@@ -108,7 +108,9 @@ a specific item and (4) a gift buyer unsure of size. SaaS: an evaluator
 comparing plans, and a busy founder signing up on a phone. Give each persona an
 id, device, entry URL, goal and patience level.
 
-Agents write `W/findings/<name>.md` as they go (partial, then complete). If an
+Lens agents write the short filenames listed above (no `cro-` prefix).
+Persona agents write `W/findings/persona-<persona-id>.md`; the skeptic writes
+`W/findings/skeptic.md`. All write as they go (partial, then complete). If an
 agent fails or times out, use its partial file and mark that category partial;
 if nothing exists, drop the category per `scoring.md` and say so.
 

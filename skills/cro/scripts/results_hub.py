@@ -245,11 +245,14 @@ def facts_readiness(W, F):
     v = re.search(r"Verdict:\s*(\w+)", r)
     inp = re.search(r"Inputs:\s*([^\n]+)", r)
     need = re.search(r"needed[^:]*:\s*~?([\d,]+)", r)
-    rows = re.findall(r"^\s*(\d+)\s+\d+\s+\d+\s+([\d.]+)%", r, re.M)
-    status = ((F or {}).get("readiness") or {}).get("status", "")
+    rows = re.findall(r"^\s*(\d+)\s+[\d,]+\s+[\d,]+\s+([\d.]+)%", r, re.M)
+    readiness = (F or {}).get("readiness") or {}
+    status = readiness.get("status") or readiness.get("baseline", "")
     nums = [(v.group(1).replace("_", " ") if v else "?", "verdict"), (status or "?", "baseline")]
     if rows:
-        nums.append((f"{float(rows[-1][1]):.0f}%", f"smallest lift an {rows[-1][0]}-week test can see"))
+        weeks, lift = min(rows, key=lambda row: float(row[1]))
+        article = "an" if weeks == "8" else "a"
+        nums.append((f"{float(lift):g}%", f"smallest lift {article} {weeks}-week test can see"))
     if need:
         nums.append((need.group(1), "conversions a month needed"))
     return dict(nums=nums, found=[f"Inputs: {inp.group(1)}"] if inp else [], images=[], files=["readiness.txt"])
@@ -270,13 +273,16 @@ def facts_skeptic(W, F):
     s = read(W / "findings/skeptic.md")
     if not s:
         return None
-    def count(label):
-        m = re.search(rf"^- {label}[^:]*:\s*(\d+)", s, re.M)
-        return int(m.group(1)) if m else 0
-    k, rw, rj = count("KEEP"), count("REWORD"), count("REJECT")
-    dn = re.search(r"also DOWNGRADE:\s*(\d+)", s)
-    nums = [(str(k + rw + rj), "findings checked"), (str(k), "kept as written"), (str(rw), "reworded"), (str(rj), "rejected")]
-    found = [f"{dn.group(1)} reworded findings also lost a priority level"] if dn else []
+    counts = {label: int(n) for label, n in re.findall(
+        r"(?:^\s*-\s*|^Counts:\s*|,\s*)(CONFIRMED|KEEP|DOWNGRADE|REWORD|REJECT)\b[^:\d\n]*:?\s*(\d+)", s, re.M)}
+    k, rw, rj = counts.get("CONFIRMED", counts.get("KEEP", 0)), counts.get("REWORD", 0), counts.get("REJECT", 0)
+    dn = counts.get("DOWNGRADE", 0)
+    overlap = re.search(r"also DOWNGRADE:\s*(\d+)", s)
+    # Legacy summaries counted "also DOWNGRADE" inside REWORD, not as a separate verdict.
+    downgraded = dn + (int(overlap.group(1)) if overlap else 0)
+    nums = [(str(k + dn + rw + rj), "findings checked"), (str(k), "kept as written"),
+            (str(downgraded), "downgraded"), (str(rw), "reworded"), (str(rj), "rejected")]
+    found = [f"{overlap.group(1)} reworded findings also lost a priority level"] if overlap else []
     return dict(nums=nums, found=found, images=[], files=["findings/skeptic.md"])
 
 
@@ -385,7 +391,8 @@ def build(W, WF=None):
         if v is not None:
             out.append(f"<div class='scorebox'><span class='big'>{fmt_score(v)}</span><span class='meta' style='margin:0'>{esc(basis)}</span></div>")
             out.append("<div class='label'>To reach 10/10</div>" + ("<ul>" + "".join(f"<li>{esc(x)}</li>" for x in fix) + "</ul>"
-                       if fix else "<p style='margin:0'>Nothing left to fix on this test.</p>"))
+                       if fix else ("<p style='margin:0'>Nothing left to fix on this test.</p>" if v == 10 and st == "done"
+                                    else "<p style='margin:0'>Fixes have not been listed; review the findings before rerunning this test.</p>")))
         if fx.get("nums"):
             out.append("<div class='nums'>" + "".join(f"<div class='num'><b>{esc(v)}</b><span>{esc(l)}</span></div>" for v, l in fx["nums"]) + "</div>")
         found = n.get("found") or fx.get("found") or []
@@ -407,8 +414,11 @@ def build(W, WF=None):
         links = n.get("links", [])
         if links:
             meta.append("<b>Open:</b> " + ", ".join(f"<a href='{esc(u)}'>{esc(l)}</a>" for l, u in links))
-        if fx.get("files"):
-            meta.append(f"<b>Files in the run folder:</b> {esc(', '.join(fx['files']))}")
+        base = WF if k == "wireframe" else W
+        files = sorted({p for pattern in fx.get("files", []) for p in base.glob(pattern) if p.exists()})
+        if files:
+            meta.append("<b>Files in the run folder:</b> " + ", ".join(
+                f"<a href='{esc(os.path.relpath(p, W).replace(os.sep, '/'))}'>{esc(p.relative_to(base).as_posix())}</a>" for p in files))
         out.append("".join(f"<p class='meta'>{m}</p>" for m in meta))
         prev_ = f"<a href='#{runs[i - 2][0]}'>&larr; {esc(runs[i - 2][1])}</a>" if i > 1 else "<span></span>"
         next_ = f"<a href='#{runs[i][0]}'>{esc(runs[i][1])} &rarr;</a>" if i < len(runs) \
