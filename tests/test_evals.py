@@ -66,9 +66,9 @@ class BlindEvals(unittest.TestCase):
     def test_five_new_defects_per_site_with_exact_snippets(self):
         old_ids = {d["id"] for d in plant.DEFECTS + plant.SUBTLE}
         for site in plant.SITES:
-            key = json.loads((plant.KEYS / f"{site}.blind.json").read_text())
-            html = (check.EVALS / key["fixture"]).read_text()
-            clean = (check.EVALS / key["clean"]).read_text()
+            key = json.loads((plant.KEYS / f"{site}.blind.json").read_text(encoding="utf-8"))
+            html = (check.EVALS / key["fixture"]).read_text(encoding="utf-8")
+            clean = (check.EVALS / key["clean"]).read_text(encoding="utf-8")
             self.assertEqual(len(key["defects"]), 5)
             self.assertEqual({d["id"] for d in key["defects"]}, set(DESCRIPTIONS))
             for defect in key["defects"]:
@@ -89,7 +89,7 @@ class BlindEvals(unittest.TestCase):
     @unittest.skipUnless(shutil.which("node"), "Node required to exercise eval grader regexes")
     def test_javascript_graders_credit_paraphrases_not_clean_pages(self):
         data = [{"pattern": d["found"], "positive": DESCRIPTIONS[d["id"]],
-                 "negative": [(plant.FIX / f"{s}.clean.html").read_text() for s in plant.SITES]}
+                 "negative": [(plant.FIX / f"{s}.clean.html").read_text(encoding="utf-8") for s in plant.SITES]}
                 for d in plant.BLIND]
         script = """
 const fs = require('fs');
@@ -106,7 +106,7 @@ for (const test of JSON.parse(fs.readFileSync(0, 'utf8'))) {
             keys = Path(tmp)
             for path in plant.KEYS.glob("*.json"):
                 if path.name != "winner.json":
-                    key = json.loads(path.read_text())
+                    key = json.loads(path.read_text(encoding="utf-8"))
                     if key["tier"] == "blind":
                         key["defects"][0]["found"] = r"^(?=[\s\S]*html)"
                     (keys / path.name).write_text(json.dumps(key))
@@ -126,7 +126,7 @@ for (const test of JSON.parse(fs.readFileSync(0, 'utf8'))) {
 
     def test_blind_case_prompt_uses_site_not_tier(self):
         for site in plant.SITES:
-            case = (check.EVALS / f"defects-{site}.blind" / "case.yaml").read_text()
+            case = (check.EVALS / f"defects-{site}.blind" / "case.yaml").read_text(encoding="utf-8")
             self.assertIn(f"The landing page of {site} is saved", case)
             self.assertNotIn(f"The landing page of {site}.blind", case)
 

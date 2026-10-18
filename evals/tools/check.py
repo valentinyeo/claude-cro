@@ -12,7 +12,7 @@ from pathlib import Path
 
 EVALS = Path(__file__).resolve().parents[1]
 KEYS = EVALS / "answer-keys"
-FLOOR = json.loads((EVALS / "floor.json").read_text())
+FLOOR = json.loads((EVALS / "floor.json").read_text(encoding="utf-8"))
 
 
 def js_re(pattern):
@@ -43,7 +43,7 @@ def check_answer_keys():
     for key_file in sorted(KEYS.glob("*.json")):
         if key_file.name == "winner.json":
             continue
-        key = json.loads(key_file.read_text())
+        key = json.loads(key_file.read_text(encoding="utf-8"))
         planted = (EVALS / key["fixture"]).read_text(encoding="utf-8")
         clean = (EVALS / key["clean"]).read_text(encoding="utf-8")
         if len(key["defects"]) != 5:
@@ -67,15 +67,15 @@ def check_answer_keys():
 
 def check_fixtures():
     errors = check_answer_keys()
-    win = json.loads((KEYS / "winner.json").read_text())
-    held = [l.strip() for l in (EVALS / "holdout.txt").read_text().splitlines() if l.strip() and not l.startswith("#")]
+    win = json.loads((KEYS / "winner.json").read_text(encoding="utf-8"))
+    held = [l.strip() for l in (EVALS / "holdout.txt").read_text(encoding="utf-8").splitlines() if l.strip() and not l.startswith("#")]
     if sorted(t["evidence_id"] for t in win["tests"]) != sorted(held):
         errors.append("winner.json and holdout.txt list different tests")
     winners = [t["winner"] for t in win["tests"]]
     if abs(winners.count("A") - winners.count("B")) > 1:
         errors.append(f"winner key is unbalanced: {winners.count('A')} A, {winners.count('B')} B")
     for t in win["tests"]:
-        rec = json.loads((EVALS.parent / "skills/cro/evidence/tests" / f"{t['evidence_id']}.json").read_text())
+        rec = json.loads((EVALS.parent / "skills/cro/evidence/tests" / f"{t['evidence_id']}.json").read_text(encoding="utf-8"))
         expected = "variant" if rec["result"]["direction"] == "win" else "control"
         if rec["result"]["direction"] not in ("win", "loss") or t["winner_is"] != expected:
             errors.append(f"winner.json: {t['id']} does not match evidence record {t['evidence_id']}")
@@ -100,7 +100,7 @@ def quote_on_page(quote, visible, raw):
 
 
 def score_defects(case, answer):
-    key = json.loads((KEYS / f"{case}.json").read_text())
+    key = json.loads((KEYS / f"{case}.json").read_text(encoding="utf-8"))
     visible, raw = page_texts(EVALS / key["fixture"])
     found = [d["id"] for d in key["defects"] if js_re(d["found"]).search(answer)]
     quotes = [str(f.get("quote", "")) for f in extract_findings(answer) if str(f.get("quote", "")).strip()]
@@ -111,7 +111,7 @@ def score_defects(case, answer):
 
 
 def score_winner(answer):
-    key = json.loads((KEYS / "winner.json").read_text())
+    key = json.loads((KEYS / "winner.json").read_text(encoding="utf-8"))
     right = [t["id"] for t in key["tests"] if re.search(rf'"{t["id"]}"\s*:\s*"{t["winner"]}"', answer)]
     return {"right": right, "accuracy": len(right) / len(key["tests"])}
 
@@ -147,8 +147,8 @@ def summarize(runs):
 
 def check_results(scores_dir):
     errors = []
-    latest = json.loads((scores_dir / "latest.json").read_text())
-    runs = json.loads((scores_dir / latest["runs"]).read_text())
+    latest = json.loads((scores_dir / "latest.json").read_text(encoding="utf-8"))
+    runs = json.loads((scores_dir / latest["runs"]).read_text(encoding="utf-8"))
     got = summarize(runs)
     for arm in got:
         for metric, value in got[arm].items():
