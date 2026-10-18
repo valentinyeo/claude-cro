@@ -1,0 +1,49 @@
+{
+  "id": "airbnb-hard-monotonic-price-bookings-loss",
+  "title": "Hard monotonic price constraint reduced bookings",
+  "company": "Airbnb",
+  "industry": "Travel accommodation",
+  "business_type": "Marketplace",
+  "page_type": "global",
+  "element": "price-ranking-constraint",
+  "change": {
+    "control": "Unconstrained two-hidden-layer ranking DNN.",
+    "variant": "Use squared weights and tanh activations to enforce monotonic decrease with price plus an unconstrained non-price subnet."
+  },
+  "result": {
+    "metric": "bookings",
+    "relative_lift_pct": -1.6,
+    "direction": "loss",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": null,
+  "test_duration": null,
+  "date_published": null,
+  "source_url": "https://arxiv.org/html/2002.05515",
+  "source_type": "academic",
+  "quote": "resulting in a booking drop of − 1.6 %",
+  "verification": "verified",
+  "evidence_strength": "B",
+  "principles": [
+    "relevance",
+    "clarity"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Distinct generalized-monotonicity experiment, not the isolated-price architecture. No sample, duration or significance published.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:00:48+00:00",
+    "source_loaded": true,
+    "company_found": true,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://arxiv.org/html/2002.05515",
+    "content_sha256": "0e52d7c20c9a4f16d27d922ac891b01cd1213e0cb8027fd351290f59654e0a6a",
+    "reason": "company, lift and supporting quote confirmed; not a statistical replication"
+  }
+}

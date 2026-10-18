@@ -1,0 +1,49 @@
+{
+  "id": "hubspot-mobile-offer-sticky-bar-win",
+  "title": "Hubspot mobile offer sticky bar win",
+  "company": "HubSpot",
+  "industry": "Marketing and sales software",
+  "business_type": "SaaS",
+  "page_type": "landing",
+  "element": "mobile-hero-cta",
+  "change": {
+    "control": "Traditional mobile content-offer page with unchanged CTA placement.",
+    "variant": "Redesign the hero image and add a sticky CTA bar."
+  },
+  "result": {
+    "metric": "mobile content-offer conversion rate",
+    "relative_lift_pct": 9,
+    "direction": "win",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": null,
+  "test_duration": null,
+  "date_published": null,
+  "source_url": "https://blog.hubspot.com/marketing/a-b-testing-experiments-examples",
+  "source_type": "company blog",
+  "quote": "Variant C saw a 10% increase, variant B saw a 9% increase, and variant D saw an 8% increase.",
+  "verification": "verified",
+  "evidence_strength": "B",
+  "principles": [
+    "mobile-usability",
+    "visual-hierarchy"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Separate arm from a four-variant mobile test, not a separate independent study. Previously observed mobile/desktop gaps are not treatment effects. Monthly lead and form-submission figures are projections.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:01:42+00:00",
+    "source_loaded": true,
+    "company_found": true,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://blog.hubspot.com/marketing/a-b-testing-experiments-examples",
+    "content_sha256": "82fe00f829aa2efbbcb7d1af1dbb527b78a4430c5b7be9c3561436b69670b9db",
+    "reason": "company, lift and supporting quote confirmed; not a statistical replication"
+  }
+}

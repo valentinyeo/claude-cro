@@ -1,0 +1,49 @@
+{
+  "id": "visitnorway-online-booking-english-menu-win",
+  "title": "VisitNorway: Change the English booking navigation label to Online booking.",
+  "company": "VisitNorway",
+  "industry": "Tourism information",
+  "business_type": "Content / Media",
+  "page_type": "global",
+  "element": "navigation-label",
+  "change": {
+    "control": "English main menu labels the booking section Book Online.",
+    "variant": "Change the English booking navigation label to Online booking."
+  },
+  "result": {
+    "metric": "visits to booking section",
+    "relative_lift_pct": 14,
+    "direction": "win",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": null,
+  "test_duration": null,
+  "date_published": null,
+  "source_url": "https://wingify.com/success-stories/visitnorway/",
+  "source_type": "platform case study",
+  "quote": "had a 14% improvement to the original.",
+  "verification": "verified",
+  "evidence_strength": "B",
+  "principles": [
+    "clarity",
+    "navigation"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Alternative arm of the same English-label experiment. Booking had the larger reported lift.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:02:08+00:00",
+    "source_loaded": true,
+    "company_found": true,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://wingify.com/success-stories/visitnorway/",
+    "content_sha256": "eb65f5221eade9eac39dd9411a9064fa327342eeca4239fb4bb9276a04d18784",
+    "reason": "company, lift and supporting quote confirmed; not a statistical replication"
+  }
+}

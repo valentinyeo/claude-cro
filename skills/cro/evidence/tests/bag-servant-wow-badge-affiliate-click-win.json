@@ -1,0 +1,53 @@
+{
+  "id": "bag-servant-wow-badge-affiliate-click-win",
+  "title": "Bag Servant: Replace the Twitter follower count with the WOW business award badge.",
+  "company": "Bag Servant",
+  "industry": "Handbag affiliate shopping",
+  "business_type": "E-commerce",
+  "page_type": "home",
+  "element": "credibility-badge",
+  "change": {
+    "control": "Homepage displays the badge for more than 4,000 Twitter followers.",
+    "variant": "Replace the Twitter follower count with the WOW business award badge."
+  },
+  "result": {
+    "metric": "visits to affiliate partner websites",
+    "relative_lift_pct": 72.05,
+    "direction": "win",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": {
+    "confidence_pct": 98,
+    "p_value": null,
+    "reported": "98% confidence reported by publisher"
+  },
+  "test_duration": null,
+  "date_published": null,
+  "source_url": "https://wingify.com/success-stories/bag-servant/",
+  "source_type": "platform case study",
+  "quote": "72.05% of improvement with the results having 98% statistical confidence.",
+  "verification": "verified",
+  "evidence_strength": "B",
+  "principles": [
+    "trust",
+    "authority"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Site engagement rose 10.27%; product exploration rose 60.42% at only 93% confidence. This homepage award test is distinct from the two losing search-page badge tests.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:01:19+00:00",
+    "source_loaded": true,
+    "company_found": true,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://wingify.com/success-stories/bag-servant/",
+    "content_sha256": "5d465dec272beffe9af72ccf00ae9d45a492fa72335834c05e3fa936d68d3c13",
+    "reason": "company, lift and supporting quote confirmed; not a statistical replication"
+  }
+}

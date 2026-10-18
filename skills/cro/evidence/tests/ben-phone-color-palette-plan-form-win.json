@@ -1,0 +1,52 @@
+{
+  "id": "ben-phone-color-palette-plan-form-win",
+  "title": "Ben: Move the color palette beside the phone image and lengthen the service-offering form to support plan selection.",
+  "company": "Ben",
+  "industry": "Mobile telecommunications",
+  "business_type": "Subscription",
+  "page_type": "product",
+  "element": "color-selector",
+  "change": {
+    "control": "Phone color palette below the product image and the existing service-offering form.",
+    "variant": "Move the color palette beside the phone image and lengthen the service-offering form to support plan selection."
+  },
+  "result": {
+    "metric": "conversions",
+    "relative_lift_pct": 17.63,
+    "direction": "win",
+    "desired_direction": "increase"
+  },
+  "sample_size": {
+    "total": 40347,
+    "unit": "users (approximately, as published)"
+  },
+  "conversions": null,
+  "significance": null,
+  "test_duration": "about two weeks",
+  "date_published": null,
+  "source_url": "https://wingify.com/success-stories/ben-nl/",
+  "source_type": "platform case study",
+  "quote": "17.63% increase in Conversion",
+  "verification": "verified",
+  "evidence_strength": "B",
+  "principles": [
+    "clarity",
+    "discoverability"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Sample is published as about 40,347 users, not an exact count. Conversion rates displayed as 2.20% and 2.59%. Form length also changed; do not attribute lift solely to palette placement.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:01:20+00:00",
+    "source_loaded": true,
+    "company_found": true,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://wingify.com/success-stories/ben-nl/",
+    "content_sha256": "bf8503c4bdfdda026eae9693619066259484f6f162435ed85f52e4af69601a07",
+    "reason": "company, lift and supporting quote confirmed; not a statistical replication"
+  }
+}

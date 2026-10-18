@@ -1,0 +1,53 @@
+{
+  "id": "vuescan-alternative-headlines-flat",
+  "title": "VueScan alternative headlines flat",
+  "company": "Hamrick Software",
+  "industry": "Scanner software",
+  "business_type": "E-commerce",
+  "page_type": "home",
+  "element": "headline",
+  "change": {
+    "control": "Existing VueScan homepage headline and subhead.",
+    "variant": "Test alternative headline-subhead combinations, including negative and nonnegative framing, without the later button changes."
+  },
+  "result": {
+    "metric": "homepage conversion",
+    "relative_lift_pct": null,
+    "direction": "flat",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": {
+    "confidence_pct": null,
+    "p_value": null,
+    "reported": "Source reports a flat, non-significant result."
+  },
+  "test_duration": "36 days",
+  "date_published": "2014-09-03",
+  "source_url": "https://copyhackers.com/2014/09/buttons-vs-headlines/",
+  "source_type": "agency case study",
+  "quote": "Even after 36 days of running and tons of traffic through all variations, the result was flat and non-significant.",
+  "verification": "unverified",
+  "evidence_strength": "C",
+  "principles": [
+    "clarity",
+    "value-proposition"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Multi-arm headline experiment reported in aggregate; individual headline results are not duplicated. Source mentions a maximum trending 4–5% lift but not an exact single comparison, so lift is null. Separate subsequent button experiment is not included.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:41:58+00:00",
+    "source_loaded": true,
+    "company_found": false,
+    "lift_found": false,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://copyhackers.com/2014/09/buttons-vs-headlines/",
+    "content_sha256": "c9992c8df412ee60da67fdb9a36fdcfb43688876a7b3fce38650d1ac7222075a",
+    "reason": "not confirmed: company, lift"
+  }
+}

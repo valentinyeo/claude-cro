@@ -1,0 +1,53 @@
+{
+  "id": "anonymous-alzheimers-donation-one-step-flat",
+  "title": "Anonymous alzheimers donation one step flat",
+  "company": "Anonymous Alzheimer’s research foundation",
+  "industry": "Medical research fundraising",
+  "business_type": "Non-profit",
+  "page_type": "landing",
+  "element": "donation-form",
+  "change": {
+    "control": "Two-step donation process.",
+    "variant": "Use a one-step process; move the 94%-goes-to-research image next to donation amount, remove larger-amount radio buttons and change minimum-donation wording or font color."
+  },
+  "result": {
+    "metric": "visitor-to-donor conversion rate",
+    "relative_lift_pct": -3.33,
+    "direction": "flat",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": {
+    "confidence_pct": null,
+    "p_value": null,
+    "reported": "Source explicitly says conversion difference cannot establish a better design."
+  },
+  "test_duration": "26 days",
+  "date_published": "2007-08-23",
+  "source_url": "https://marketingexperiments.com/a-b-testing/landing-page-conversion-improvements",
+  "source_type": "agency case study",
+  "quote": "Control 12.03% Treatment 3.03% Difference -3.33%",
+  "verification": "unverified",
+  "evidence_strength": "B",
+  "principles": [
+    "clarity",
+    "friction"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Case Study 1 explicitly calls conversion inconclusive. Source table reports -3.33% but its displayed 12.03% versus 3.03% rates and narrative 0.14% difference conflict; retain published estimate without recomputing. Average donations rose but are a secondary metric; example calculations substituting dollars for donors are explicitly invalid, not sample counts.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:00:54+00:00",
+    "source_loaded": true,
+    "company_found": false,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://marketingexperiments.com/a-b-testing/landing-page-conversion-improvements",
+    "content_sha256": "018809116d594e10de91fdc053d92cd90184ec5f2ebf140c52a966fe77d37688",
+    "reason": "not confirmed: company"
+  }
+}

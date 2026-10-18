@@ -1,0 +1,47 @@
+{
+  "id": "amazon-hundred-ms-slowdown-sales-loss",
+  "title": "A 100ms slowdown reduced sales",
+  "company": "Amazon",
+  "industry": "Online retail",
+  "business_type": "E-commerce",
+  "page_type": "global",
+  "element": "page-load-speed",
+  "change": {
+    "control": "Normal website performance.",
+    "variant": "Add a 100 millisecond slowdown."
+  },
+  "result": {
+    "metric": "sales",
+    "relative_lift_pct": -1,
+    "direction": "loss",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": null,
+  "test_duration": null,
+  "date_published": null,
+  "source_url": "https://dl.acm.org/doi/fullHtml/10.1145/2623330.2623341",
+  "source_type": "academic",
+  "quote": "At Amazon, 100msec slowdown decreased sales by 1% as shared by Greg Linden [34 p. 10].",
+  "verification": "unverified",
+  "evidence_strength": "B",
+  "principles": [
+    "performance"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Paper cites Greg Linden's performance experiments; sample, period and significance unavailable. Full text is also available in the author-hosted PDF at https://exp-platform.com/Documents/2014%20experimentersRulesOfThumb.pdf. The supporting quote and result were checked against that PDF; the equivalent ACM publisher full-text page returned HTTP 403 in Chromium.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:00:52+00:00",
+    "source_loaded": false,
+    "company_found": false,
+    "lift_found": false,
+    "quote_found": false,
+    "fetched_with": "http",
+    "status_code": 403,
+    "final_url": "https://dl.acm.org/doi/fullHtml/10.1145/2623330.2623341",
+    "reason": "HTTP 403"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "id": "anonymous-danish-phone-marketplace-yellow-font-loss",
+  "title": "Anonymous Danish used-cell-phone portal: Change the text on the green CTA button from black to yellow.",
+  "company": "Anonymous Danish used-cell-phone portal",
+  "industry": "Used mobile phones",
+  "business_type": "Marketplace",
+  "page_type": "home",
+  "element": "button-font-color",
+  "change": {
+    "control": "Green CTA button with black text.",
+    "variant": "Change the text on the green CTA button from black to yellow."
+  },
+  "result": {
+    "metric": "CTA click-through rate",
+    "relative_lift_pct": -18.01,
+    "direction": "loss",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": null,
+  "test_duration": null,
+  "date_published": "2013-05-22",
+  "source_url": "https://unbounce.com/conversion-rate-optimization/design-call-to-action-buttons/",
+  "source_type": "platform case study",
+  "quote": "Changing the font color actually decreased click through by 18.01%.",
+  "verification": "unverified",
+  "evidence_strength": "B",
+  "principles": [
+    "contrast",
+    "readability"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:00:57+00:00",
+    "source_loaded": true,
+    "company_found": false,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://unbounce.com/conversion-rate-optimization/design-call-to-action-buttons/",
+    "content_sha256": "f5f881a4568eb0d1285e036f5d9e5582bed80c803737346b8fc70976130f79c1",
+    "reason": "not confirmed: company"
+  }
+}

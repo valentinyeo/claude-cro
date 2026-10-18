@@ -1,0 +1,49 @@
+{
+  "id": "anonymous-product-distinction-copy-revenue-win",
+  "title": "Anonymous product distinction copy revenue win",
+  "company": "Anonymous MECLABS three-product retailer",
+  "industry": "Online retail",
+  "business_type": "E-commerce",
+  "page_type": "product",
+  "element": "product-value-copy",
+  "change": {
+    "control": "Three options discernibly differ mainly by name and price.",
+    "variant": "Rewrite and present copy to distinguish products and help customers identify their ideal purchase path."
+  },
+  "result": {
+    "metric": "revenue per visit",
+    "relative_lift_pct": 63,
+    "direction": "win",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": null,
+  "test_duration": null,
+  "date_published": "2014-08-07",
+  "source_url": "https://marketingexperiments.com/copywriting/5-traits-ctas-share",
+  "source_type": "agency case study",
+  "quote": "The treatment resulted in a 63% increase in revenue per visit.",
+  "verification": "unverified",
+  "evidence_strength": "B",
+  "principles": [
+    "clarity",
+    "value-proposition"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Negation example. Products are not identified; no claim of isolated copy impact beyond the described presentation changes.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:01:04+00:00",
+    "source_loaded": true,
+    "company_found": false,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://marketingexperiments.com/copywriting/5-traits-ctas-share",
+    "content_sha256": "47e50732cb3256d64fe38d7efecfb8f5b91750cf101a2d3219d910460a4f6a9e",
+    "reason": "not confirmed: company"
+  }
+}

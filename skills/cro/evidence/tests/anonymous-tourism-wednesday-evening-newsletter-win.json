@@ -1,0 +1,53 @@
+{
+  "id": "anonymous-tourism-wednesday-evening-newsletter-win",
+  "title": "Anonymous tourism wednesday evening newsletter win",
+  "company": "Anonymous tourism organization",
+  "industry": "Tourism",
+  "business_type": "Lead Gen",
+  "page_type": "email",
+  "element": "send-time",
+  "change": {
+    "control": "Monthly newsletter sent Tuesday at 8:00 a.m.",
+    "variant": "Send Wednesday at 7:00 p.m."
+  },
+  "result": {
+    "metric": "newsletter response (reported alongside clickthrough and open rates)",
+    "relative_lift_pct": 16,
+    "direction": "win",
+    "desired_direction": "increase"
+  },
+  "sample_size": {
+    "total": 177916,
+    "control": 21746,
+    "unit": "emails sent across eight day/time combinations"
+  },
+  "conversions": null,
+  "significance": null,
+  "test_duration": null,
+  "date_published": "2015-07-02",
+  "source_url": "https://marketingexperiments.com/email-marketing/best-email-send-day-and-time",
+  "source_type": "agency case study",
+  "quote": "Wednesday evenings at 7 p.m. had the highest clickthrough and open rate — 16% relative difference compared to control.",
+  "verification": "unverified",
+  "evidence_strength": "B",
+  "principles": [
+    "timing",
+    "relevance"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Second, time-of-day experiment, separate from the seven-day test. Source gives one 16% figure after mentioning both metrics without identifying a separate lift for each; retain that ambiguity rather than assigning 16% to both. No achieved significance is published. The control sent 21,746 emails and had a 4.83% open rate.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:01:10+00:00",
+    "source_loaded": true,
+    "company_found": false,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://marketingexperiments.com/email-marketing/best-email-send-day-and-time",
+    "content_sha256": "b4d3d6c5966a5c019bad949a337913ca7a88f595b2b38bf75ab8f9471d0f8a30",
+    "reason": "not confirmed: company"
+  }
+}

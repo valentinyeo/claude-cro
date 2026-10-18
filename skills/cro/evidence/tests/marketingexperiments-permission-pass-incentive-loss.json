@@ -1,0 +1,49 @@
+{
+  "id": "marketingexperiments-permission-pass-incentive-loss",
+  "title": "MarketingExperiments permission pass incentive loss",
+  "company": "MarketingExperiments",
+  "industry": "Marketing education publishing",
+  "business_type": "Content / Media",
+  "page_type": "email",
+  "element": "email-incentive",
+  "change": {
+    "control": "Permission-pass email reminding inactive subscribers of continuing value.",
+    "variant": "Add an entry to win a MECLABS training course in email body and preheader; retain subject line."
+  },
+  "result": {
+    "metric": "subscribers opting back in per delivered email",
+    "relative_lift_pct": -10.89,
+    "direction": "loss",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": null,
+  "test_duration": null,
+  "date_published": "2015-04-02",
+  "source_url": "https://marketingexperiments.com/email-marketing/tips-on-cleaning-mailing-lists",
+  "source_type": "agency case study",
+  "quote": "we saw a -10.89% decrease in the number of subscribers opting back in",
+  "verification": "verified",
+  "evidence_strength": "B",
+  "principles": [
+    "incentives",
+    "motivation"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Publisher labels the delivered-to-click metric with an inverted ratio in parentheses. Open rate fell 7.01% at 99% confidence; clickthrough conditional on opening showed no significant difference. Achieved significance for the primary opt-back-in result is not supplied.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:01:46+00:00",
+    "source_loaded": true,
+    "company_found": true,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://marketingexperiments.com/email-marketing/tips-on-cleaning-mailing-lists",
+    "content_sha256": "f240b9596ac5af1e0c5fdc08e866e769f67b600e9bb7bca4ba03a9ed808fff25",
+    "reason": "company, lift and supporting quote confirmed; not a statistical replication"
+  }
+}

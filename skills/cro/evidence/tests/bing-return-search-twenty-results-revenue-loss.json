@@ -1,0 +1,55 @@
+{
+  "id": "bing-return-search-twenty-results-revenue-loss",
+  "title": "More results and no related searches on return visits lost revenue",
+  "company": "Bing",
+  "industry": "Web search and online services",
+  "business_type": "Content / Media",
+  "page_type": "global",
+  "element": "search-result-count",
+  "change": {
+    "control": "On returning to results, extend the page to fourteen results with related searches.",
+    "variant": "Extend to twenty results and remove related searches."
+  },
+  "result": {
+    "metric": "revenue",
+    "relative_lift_pct": -1.8,
+    "direction": "loss",
+    "desired_direction": "increase"
+  },
+  "sample_size": {
+    "total": 3000000,
+    "unit": "triggered users; published as over 3 million"
+  },
+  "conversions": null,
+  "significance": {
+    "confidence_pct": null,
+    "p_value": null,
+    "reported": "Paper describes the revenue reduction among significant metric changes."
+  },
+  "test_duration": null,
+  "date_published": null,
+  "source_url": "https://dl.acm.org/doi/fullHtml/10.1145/2623330.2623341",
+  "source_type": "academic",
+  "quote": "There were significant changes to metrics, including: 1.8% reduction in revenue, 30msec slowdown for page load time, 18% reduction in pagination, but abandonment rate did not change statistically significantly (p-value 0.93).",
+  "verification": "unverified",
+  "evidence_strength": "A",
+  "principles": [
+    "relevance",
+    "clarity"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Over 3M triggered users; change not released. Abandonment p=0.93 is not a revenue p-value. All bundled changes retained. Full text is also available in the author-hosted PDF at https://exp-platform.com/Documents/2014%20experimentersRulesOfThumb.pdf. The supporting quote and result were checked against that PDF; the equivalent ACM publisher full-text page returned HTTP 403 in Chromium.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:01:22+00:00",
+    "source_loaded": false,
+    "company_found": false,
+    "lift_found": false,
+    "quote_found": false,
+    "fetched_with": "http",
+    "status_code": 403,
+    "final_url": "https://dl.acm.org/doi/fullHtml/10.1145/2623330.2623341",
+    "reason": "HTTP 403"
+  }
+}

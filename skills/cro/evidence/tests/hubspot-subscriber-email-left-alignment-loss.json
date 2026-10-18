@@ -1,0 +1,48 @@
+{
+  "id": "hubspot-subscriber-email-left-alignment-loss",
+  "title": "Hubspot subscriber email left alignment loss",
+  "company": "HubSpot",
+  "industry": "Marketing and sales software",
+  "business_type": "SaaS",
+  "page_type": "email",
+  "element": "text-alignment",
+  "change": {
+    "control": "Weekly subscriber emails use centered text.",
+    "variant": "Left-justify the text in weekly subscriber emails."
+  },
+  "result": {
+    "metric": "email clicks",
+    "relative_lift_pct": null,
+    "direction": "loss",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": null,
+  "test_duration": null,
+  "date_published": null,
+  "source_url": "https://blog.hubspot.com/marketing/a-b-testing-experiments-examples",
+  "source_type": "company blog",
+  "quote": "HubSpot found that emails with left-aligned text got fewer clicks than the control.",
+  "verification": "unverified",
+  "evidence_strength": "C",
+  "principles": [
+    "readability"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Report summarizes alignment testing across weekly sends; no overall numeric lift or sample is published. Less than 25% of left-justified emails beating control is a share of sends, not a click lift.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:40:48+00:00",
+    "source_loaded": true,
+    "company_found": true,
+    "lift_found": false,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://blog.hubspot.com/marketing/a-b-testing-experiments-examples",
+    "content_sha256": "82fe00f829aa2efbbcb7d1af1dbb527b78a4430c5b7be9c3561436b69670b9db",
+    "reason": "not confirmed: lift"
+  }
+}

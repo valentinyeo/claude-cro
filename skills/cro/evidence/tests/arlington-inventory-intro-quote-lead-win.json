@@ -1,0 +1,53 @@
+{
+  "id": "arlington-inventory-intro-quote-lead-win",
+  "title": "Arlington Plastics Machinery: Add links to the five most popular machine subcategories, use machine-type names, and invite open-ended telephone questions.",
+  "company": "Arlington Plastics Machinery",
+  "industry": "Used industrial machinery",
+  "business_type": "Lead Gen",
+  "page_type": "category",
+  "element": "introductory-copy",
+  "change": {
+    "control": "Inventory introduction lists broad machinery functions and invites calls only when equipment cannot be found.",
+    "variant": "Add links to the five most popular machine subcategories, use machine-type names, and invite open-ended telephone questions."
+  },
+  "result": {
+    "metric": "quote-request leads",
+    "relative_lift_pct": 150,
+    "direction": "win",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": {
+    "confidence_pct": 99.9,
+    "p_value": null,
+    "reported": "99.9% confidence reported by publisher"
+  },
+  "test_duration": null,
+  "date_published": null,
+  "source_url": "https://wingify.com/success-stories/arlington/",
+  "source_type": "platform case study",
+  "quote": "The Challenger page generated 150% higher leads than the original page, with 99.9% statistical confidence.",
+  "verification": "verified",
+  "evidence_strength": "B",
+  "principles": [
+    "clarity",
+    "navigation"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Multiple copy/navigation changes tested together. Projected annual sales are not experimental revenue and are not stored as the outcome.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:01:13+00:00",
+    "source_loaded": true,
+    "company_found": true,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://wingify.com/success-stories/arlington/",
+    "content_sha256": "dbf7ae3c33c25ade5cd5fdc4f563bbbd9402d5baff4655fc8c61175d38edfd70",
+    "reason": "company, lift and supporting quote confirmed; not a statistical replication"
+  }
+}

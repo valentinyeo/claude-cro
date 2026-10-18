@@ -1,0 +1,53 @@
+{
+  "id": "mozilla-try-now-has-it-all-loss",
+  "title": "Mozilla try now has it all loss",
+  "company": "Mozilla",
+  "industry": "Web browsers",
+  "business_type": "Non-profit",
+  "page_type": "product",
+  "element": "headline-cta",
+  "change": {
+    "control": "Existing Firefox product page, the publisher’s control recipe A.",
+    "variant": "Use the pictured The Browser That Has It All headline treatment with a “Try Now!” download button; associated subhead: Washington Post testimonial: There may be no easier upgrade to your web experience than a switch to Firefox 3.."
+  },
+  "result": {
+    "metric": "Firefox download conversions",
+    "relative_lift_pct": null,
+    "direction": "loss",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": {
+    "confidence_pct": null,
+    "p_value": null,
+    "reported": "Publisher explicitly reports all four pictured Try Now recipes statistically significantly worse than control."
+  },
+  "test_duration": null,
+  "date_published": "2008-12-04",
+  "source_url": "https://blog.mozilla.org/metrics/2008/12/04/the-download-button-drives-downloads/",
+  "source_type": "company blog",
+  "quote": "The four recipes shown below all performed significantly worse than our existing page in a statistically significant way.",
+  "verification": "unverified",
+  "evidence_strength": "C",
+  "principles": [
+    "clarity",
+    "message-match"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "One of four distinct pictured losing recipes in a 16-arm multivariate test on Internet Explorer visitors. Headline and associated subhead treatment changed together with the button. The raw result table has recipe letters but screenshots do not map letters to headline treatments, so no per-recipe number or sample is assigned. The pictured variant is identified by its headline, not an invented recipe mapping. Business type reflects the nonprofit-owned browser organization; the conversion is a browser download, not a SaaS subscription.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:41:16+00:00",
+    "source_loaded": true,
+    "company_found": true,
+    "lift_found": false,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://blog.mozilla.org/metrics/2008/12/04/the-download-button-drives-downloads/",
+    "content_sha256": "0cb6905a22c6115a277fdd49553c7e448fc9ebe279dd790f6f0f510e0093c388",
+    "reason": "not confirmed: lift"
+  }
+}

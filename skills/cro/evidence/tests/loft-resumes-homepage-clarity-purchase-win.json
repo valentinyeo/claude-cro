@@ -1,0 +1,49 @@
+{
+  "id": "loft-resumes-homepage-clarity-purchase-win",
+  "title": "Loft Resumes: Add a value-proposition headline, categorize resumes with/without photos, target creative professionals in the second CTA, explain the six-second attention problem, rewrite copy with customer language, and add pictured testimonials below the fold.",
+  "company": "Loft Resumes",
+  "industry": "Resume design services",
+  "business_type": "E-commerce",
+  "page_type": "home",
+  "element": "page-redesign",
+  "change": {
+    "control": "Homepage lacks a headline and does not clearly distinguish resume design from resume writing.",
+    "variant": "Add a value-proposition headline, categorize resumes with/without photos, target creative professionals in the second CTA, explain the six-second attention problem, rewrite copy with customer language, and add pictured testimonials below the fold."
+  },
+  "result": {
+    "metric": "purchases",
+    "relative_lift_pct": 64.8,
+    "direction": "win",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": null,
+  "test_duration": null,
+  "date_published": null,
+  "source_url": "https://wingify.com/success-stories/loft-resumes/",
+  "source_type": "platform case study",
+  "quote": "The newly-designed page beat the original, increasing purchases by 64.8%.",
+  "verification": "verified",
+  "evidence_strength": "B",
+  "principles": [
+    "clarity",
+    "social-proof"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Bundled split-URL redesign; cannot attribute the lift to testimonials or any other single element. Service sold online as a purchase, hence E-commerce.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:01:44+00:00",
+    "source_loaded": true,
+    "company_found": true,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://wingify.com/success-stories/loft-resumes/",
+    "content_sha256": "8ebb451bf6550508e3e81d1fde349b44fc38a10022805980749a2a78434ede67",
+    "reason": "company, lift and supporting quote confirmed; not a statistical replication"
+  }
+}

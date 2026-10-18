@@ -1,0 +1,49 @@
+{
+  "id": "marketingsherpa-email-summit-incentive-subject-loss",
+  "title": "MarketingSherpa email summit incentive subject loss",
+  "company": "MarketingSherpa",
+  "industry": "Marketing conferences",
+  "business_type": "Lead Gen",
+  "page_type": "email",
+  "element": "email-subject",
+  "change": {
+    "control": "(Open BEFORE Christmas) Email Summit 2014: discount ends Jan 9th",
+    "variant": "Use subject line $300 Savings | Vegas | More ROI From Email In 2014."
+  },
+  "result": {
+    "metric": "unique email clickthrough per delivered email",
+    "relative_lift_pct": -67.25,
+    "direction": "loss",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": null,
+  "test_duration": null,
+  "date_published": "2014-01-07",
+  "source_url": "https://marketingexperiments.com/email-marketing/subject-line-email-contest-results",
+  "source_type": "agency case study",
+  "quote": "we would have ended up with a 67.25% lower clickthrough rate",
+  "verification": "verified",
+  "evidence_strength": "B",
+  "principles": [
+    "clarity",
+    "friction"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Comparison of two arms in a ten-subject-line split test; reference arm is the best-performing urgency subject, not an explicitly designated pre-existing control. The source says the winner beat all but two subjects at 99% confidence but does not enumerate those two in body text. Avoid assigning an unsupported pairwise significance.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:01:46+00:00",
+    "source_loaded": true,
+    "company_found": true,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://marketingexperiments.com/email-marketing/subject-line-email-contest-results",
+    "content_sha256": "6928887ec7e8482eb7f599902389c14c16fdcb3e32e514d668fe30081c79d2c9",
+    "reason": "company, lift and supporting quote confirmed; not a statistical replication"
+  }
+}

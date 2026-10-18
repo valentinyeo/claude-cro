@@ -39,7 +39,7 @@
   "research_type": "ab-test",
   "notes": "Homepage-to-signup-page clicks rose 35%, a different metric. Source warns that the apparent early winner reversed.",
   "verification_details": {
-    "checked_at": "2026-10-15T10:29:07+00:00",
+    "checked_at": "2026-10-18T11:01:26+00:00",
     "source_loaded": true,
     "company_found": true,
     "lift_found": true,

@@ -1,0 +1,49 @@
+{
+  "id": "charity-banner-bottom-overall-conversion-win",
+  "title": "Anonymous international product company (Conversion Fanatics donation study): charity banner (win)",
+  "company": "Anonymous international product company (Conversion Fanatics donation study)",
+  "industry": "International product business",
+  "business_type": "Subscription",
+  "page_type": "landing",
+  "element": "charity-banner",
+  "change": {
+    "control": "Signup/purchase page does not mention the charitable donation.",
+    "variant": "Add the same donation-information banner at the bottom of the page."
+  },
+  "result": {
+    "metric": "overall order conversion rate",
+    "relative_lift_pct": 12.5,
+    "direction": "win",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": null,
+  "test_duration": null,
+  "date_published": null,
+  "source_url": "https://conversionfanatics.com/can-donating-portion-sales-charity-increase-conversions/",
+  "source_type": "agency case study",
+  "quote": "When the banner was placed at the bottom of the page the overall order conversion increased by 12.5%",
+  "verification": "unverified",
+  "evidence_strength": "B",
+  "principles": [
+    "cause-marketing",
+    "placement"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Premium signups +21.9%, revenue per visitor +24.5%. Same three-arm experiment as top-banner comparison. Over 45,000 unique visitors and about 4,300 transactions; not exact counts. Subscription classification inferred from signup/premium tiers.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:01:24+00:00",
+    "source_loaded": true,
+    "company_found": false,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://conversionfanatics.com/can-donating-portion-sales-charity-increase-conversions/",
+    "content_sha256": "c7f346a673eed6acb7ca295aa52953b72a2e9a62f5188fffec04a1bda0916c5a",
+    "reason": "not confirmed: company"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "id": "free-trial-button-start-your-free-trial-inconclusive",
+  "title": "Anonymous free-trial product business (Conversion Fanatics button study): cta copy design (flat)",
+  "company": "Anonymous free-trial product business (Conversion Fanatics button study)",
+  "industry": "Digital free-trial product",
+  "business_type": "Subscription",
+  "page_type": "landing",
+  "element": "cta-copy-design",
+  "change": {
+    "control": "Orange glossy pill-shaped TRY IT FREE! button on the redesigned landing page.",
+    "variant": "Use a blue rounded gradient button: Start Your Free Trial."
+  },
+  "result": {
+    "metric": "free-trial signup conversion rate",
+    "relative_lift_pct": 28.8,
+    "direction": "flat",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": null,
+  "test_duration": null,
+  "date_published": null,
+  "source_url": "https://conversionfanatics.com/reviving-losing-split-tests-to-increase-sales-conversion-rate/",
+  "source_type": "agency case study",
+  "quote": "button 5 showed to increase sales conversion rate by 28.8%.",
+  "verification": "unverified",
+  "evidence_strength": "B",
+  "principles": [
+    "clarity",
+    "friction"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Interim multi-arm button test: publisher explicitly says conclusive statistically significant results have not yet been reached. Button copy/design read from source figures. Positive estimate is not a conclusive winner.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:01:33+00:00",
+    "source_loaded": true,
+    "company_found": false,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://conversionfanatics.com/reviving-losing-split-tests-to-increase-sales-conversion-rate/",
+    "content_sha256": "379ca634958edd13be9a2e9304cd34d16c9e5e2d6650f83902d081c39435683b",
+    "reason": "not confirmed: company"
+  }
+}

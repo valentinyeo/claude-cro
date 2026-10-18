@@ -1,0 +1,53 @@
+{
+  "id": "acuity-professional-trial-paid-signup-win",
+  "title": "Acuity Scheduling: Send visitors directly to a full-feature Professional-plan 14-day trial, with card entry needed to continue using the paid plan.",
+  "company": "Acuity Scheduling",
+  "industry": "Appointment scheduling software",
+  "business_type": "SaaS",
+  "page_type": "landing",
+  "element": "trial-offer",
+  "change": {
+    "control": "Primary CTA sends visitors to an unlimited-duration free account with limited features; upgrades require account settings.",
+    "variant": "Send visitors directly to a full-feature Professional-plan 14-day trial, with card entry needed to continue using the paid plan."
+  },
+  "result": {
+    "metric": "paid Professional account signups",
+    "relative_lift_pct": 268.14,
+    "direction": "win",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": {
+    "confidence_pct": 99.99,
+    "p_value": null,
+    "reported": "99.99% confidence reported by publisher"
+  },
+  "test_duration": null,
+  "date_published": null,
+  "source_url": "https://wingify.com/success-stories/acuity-scheduling/",
+  "source_type": "platform case study",
+  "quote": "The variation increased the sign-ups for paid Professional accounts by 268.14% with a 99.99% chance to beat the original.",
+  "verification": "verified",
+  "evidence_strength": "B",
+  "principles": [
+    "value-experience",
+    "friction"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Professional plan was $10/month. Premium-plan signups rose 77.78% but that secondary result was not statistically significant.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:00:47+00:00",
+    "source_loaded": true,
+    "company_found": true,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://wingify.com/success-stories/acuity-scheduling/",
+    "content_sha256": "c754fef21c06862d55dda4970799cf3a9b5120e6965c1684ffb98e98803766a7",
+    "reason": "company, lift and supporting quote confirmed; not a statistical replication"
+  }
+}

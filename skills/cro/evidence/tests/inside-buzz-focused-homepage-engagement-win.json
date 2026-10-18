@@ -1,0 +1,49 @@
+{
+  "id": "inside-buzz-focused-homepage-engagement-win",
+  "title": "Inside Buzz UK: Remove unnecessary links and elements, focus on an industry-selection dropdown with Where do you want to work?, add a contextual headline/subhead, and use a single central CTA.",
+  "company": "Inside Buzz UK",
+  "industry": "Graduate employer information",
+  "business_type": "Content / Media",
+  "page_type": "home",
+  "element": "page-redesign",
+  "change": {
+    "control": "Cluttered homepage with many navigation and CTA choices.",
+    "variant": "Remove unnecessary links and elements, focus on an industry-selection dropdown with Where do you want to work?, add a contextual headline/subhead, and use a single central CTA."
+  },
+  "result": {
+    "metric": "click-throughs to other website pages",
+    "relative_lift_pct": 17.8,
+    "direction": "win",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": null,
+  "test_duration": null,
+  "date_published": null,
+  "source_url": "https://wingify.com/success-stories/inside-buzz/",
+  "source_type": "platform case study",
+  "quote": "saw a 17.8% improvement for the overall site engagement.",
+  "verification": "verified",
+  "evidence_strength": "B",
+  "principles": [
+    "clarity",
+    "choice-overload"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Complete homepage-overhaul comparison, after two earlier tests not separately recorded. Engagement is explicitly defined as click-throughs, not hires or revenue.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:01:43+00:00",
+    "source_loaded": true,
+    "company_found": true,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://wingify.com/success-stories/inside-buzz/",
+    "content_sha256": "1b93f845ee897c30ee040b97a2fe172721ddddd2d84084df302bb5b777ee2f35",
+    "reason": "company, lift and supporting quote confirmed; not a statistical replication"
+  }
+}

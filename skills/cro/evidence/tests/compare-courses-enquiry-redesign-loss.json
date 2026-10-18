@@ -1,0 +1,49 @@
+{
+  "id": "compare-courses-enquiry-redesign-loss",
+  "title": "Compare Courses: Move the redesigned Send Enquiry form to the right above the fold, add an adjacent testimonial, and move Ask an Expert into the former enquiry position; leave Request Brochure unchanged.",
+  "company": "Compare Courses",
+  "industry": "Education course search",
+  "business_type": "Lead Gen",
+  "page_type": "landing",
+  "element": "enquiry-form-layout",
+  "change": {
+    "control": "Accounting-course landing page with original Send Enquiry and Ask an Expert positions.",
+    "variant": "Move the redesigned Send Enquiry form to the right above the fold, add an adjacent testimonial, and move Ask an Expert into the former enquiry position; leave Request Brochure unchanged."
+  },
+  "result": {
+    "metric": "Send Enquiry lead generation rate",
+    "relative_lift_pct": -53.87,
+    "direction": "loss",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": null,
+  "test_duration": null,
+  "date_published": null,
+  "source_url": "https://wingify.com/success-stories/compare-courses/",
+  "source_type": "platform case study",
+  "quote": "recording a 53.87% decrease in the lead generation rate.",
+  "verification": "verified",
+  "evidence_strength": "B",
+  "principles": [
+    "visual-hierarchy",
+    "social-proof"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Source is internally inconsistent: displayed rates 9.71% and 9.52% do not match the claimed 53.87% relative decrease. Preserve the published claim, do not recompute. Other routes improved: Ask an Expert +159.52%, Request Brochure +13.3%. This is one comparison with mixed outcomes, not three records.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:01:25+00:00",
+    "source_loaded": true,
+    "company_found": true,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://wingify.com/success-stories/compare-courses/",
+    "content_sha256": "e5c0cf5b092277e6c0dac44e7dc48efef041518ded4c953c0a24ed4f1636d152",
+    "reason": "company, lift and supporting quote confirmed; not a statistical replication"
+  }
+}

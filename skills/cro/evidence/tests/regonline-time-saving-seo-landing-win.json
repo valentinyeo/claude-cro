@@ -1,0 +1,49 @@
+{
+  "id": "regonline-time-saving-seo-landing-win",
+  "title": "REGOnline time saving SEO landing win",
+  "company": "Anonymous event registration software company",
+  "industry": "Event management software",
+  "business_type": "SaaS",
+  "page_type": "landing",
+  "element": "value-proposition",
+  "change": {
+    "control": "Existing SEO landing page, used to test a traffic subset similar to homepage visitors.",
+    "variant": "Focus the offer on saving time and creating registration forms faster instead of product features and benefits."
+  },
+  "result": {
+    "metric": "completed leads",
+    "relative_lift_pct": 548,
+    "direction": "win",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": null,
+  "test_duration": null,
+  "date_published": "2012-08-29",
+  "source_url": "https://marketingexperiments.com/lead-generation/conversion-decrease-lessons",
+  "source_type": "agency case study",
+  "quote": "completed leads captured by 548%.",
+  "verification": "unverified",
+  "evidence_strength": "B",
+  "principles": [
+    "clarity",
+    "value-proposition"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Experiment 2 on an SEO landing page, following the initial homepage loss. Step-level clickthrough rose 1,312%. REGOnline identity is supplied by the linked series of accounts, including the 2013 negative-lift write-up.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:01:58+00:00",
+    "source_loaded": true,
+    "company_found": false,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://marketingexperiments.com/lead-generation/conversion-decrease-lessons",
+    "content_sha256": "fd38742c61eb8660d6b566c163e04512ecabd139580a106a848634d1767ed3ee",
+    "reason": "not confirmed: company"
+  }
+}

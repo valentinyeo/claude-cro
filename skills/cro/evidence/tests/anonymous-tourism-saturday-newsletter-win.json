@@ -1,0 +1,53 @@
+{
+  "id": "anonymous-tourism-saturday-newsletter-win",
+  "title": "Anonymous tourism saturday newsletter win",
+  "company": "Anonymous tourism organization",
+  "industry": "Tourism",
+  "business_type": "Lead Gen",
+  "page_type": "email",
+  "element": "send-day",
+  "change": {
+    "control": "Send the monthly promotional newsletter on Monday.",
+    "variant": "Send the same monthly promotional newsletter on Saturday."
+  },
+  "result": {
+    "metric": "email open rate",
+    "relative_lift_pct": 5.5,
+    "direction": "win",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": {
+    "confidence_pct": 99,
+    "p_value": null,
+    "reported": "99% level of confidence for Saturday versus Monday open rate."
+  },
+  "test_duration": null,
+  "date_published": "2015-07-02",
+  "source_url": "https://marketingexperiments.com/email-marketing/best-email-send-day-and-time",
+  "source_type": "agency case study",
+  "quote": "Saturday had the highest performing day with 5.5% relative difference with a 99% Level of Confidence (LOC).",
+  "verification": "unverified",
+  "evidence_strength": "B",
+  "principles": [
+    "timing",
+    "relevance"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "One arm versus Monday in the seven-day newsletter experiment. Clickthrough, a secondary metric, was not significant; its Saturday comparison had 88% confidence. Do not present this as a purchase or clickthrough win.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:01:09+00:00",
+    "source_loaded": true,
+    "company_found": false,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://marketingexperiments.com/email-marketing/best-email-send-day-and-time",
+    "content_sha256": "b4d3d6c5966a5c019bad949a337913ca7a88f595b2b38bf75ab8f9471d0f8a30",
+    "reason": "not confirmed: company"
+  }
+}

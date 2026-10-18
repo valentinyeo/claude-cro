@@ -1,0 +1,49 @@
+{
+  "id": "anonymous-cosmetics-remove-basket-cta-loss",
+  "title": "Anonymous beauty/cosmetics retailer: Remove Add to Basket CTAs to encourage visits to individual pages.",
+  "company": "Anonymous beauty/cosmetics retailer",
+  "industry": "Beauty retail",
+  "business_type": "E-commerce",
+  "page_type": "product",
+  "element": "add-to-basket",
+  "change": {
+    "control": "Product pages include Add to Basket CTAs.",
+    "variant": "Remove Add to Basket CTAs to encourage visits to individual pages."
+  },
+  "result": {
+    "metric": "conversions",
+    "relative_lift_pct": -2,
+    "direction": "loss",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": null,
+  "test_duration": null,
+  "date_published": null,
+  "source_url": "https://wingify.com/blog/interpreting-failed-ab-test-results/",
+  "source_type": "platform case study",
+  "quote": "conversions were down by 2%.",
+  "verification": "unverified",
+  "evidence_strength": "B",
+  "principles": [
+    "friction",
+    "cta-visibility"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Anonymous platform client; exact tested page level is not fully explained. Add-to-basket clicks rose 0.4% despite the decrease in final conversions.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:00:56+00:00",
+    "source_loaded": true,
+    "company_found": false,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://wingify.com/blog/interpreting-failed-ab-test-results/",
+    "content_sha256": "32267cb006135068733432b27a9e5030b7482c24d812cc06999ec5cbb414165f",
+    "reason": "not confirmed: company"
+  }
+}

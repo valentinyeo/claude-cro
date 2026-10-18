@@ -1,0 +1,49 @@
+{
+  "id": "free-trial-animated-video-full-width-no-autoplay-win",
+  "title": "Anonymous trial-subscription company (Conversion Fanatics video study): sales video (win)",
+  "company": "Anonymous trial-subscription company (Conversion Fanatics video study)",
+  "industry": "Digital trial product",
+  "business_type": "Subscription",
+  "page_type": "landing",
+  "element": "sales-video",
+  "change": {
+    "control": "Existing free-trial landing page used as the control, without the new animated video.",
+    "variant": "Add the professionally animated video full width without autoplay."
+  },
+  "result": {
+    "metric": "free-trial signup conversion rate",
+    "relative_lift_pct": 6.2,
+    "direction": "win",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": null,
+  "test_duration": null,
+  "date_published": null,
+  "source_url": "https://conversionfanatics.com/how-video-can-help-boost-your-conversions-18-8/",
+  "source_type": "agency case study",
+  "quote": "Full width without autoplay showed a decent increase of 6.2%.",
+  "verification": "unverified",
+  "evidence_strength": "B",
+  "principles": [
+    "product-explanation",
+    "distraction"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Follow-up multi-arm video test, separate from the earlier presentation-style video. Same voiceover, professionally animated visuals. Interim estimates; no sample size or achieved significance published. ",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:01:31+00:00",
+    "source_loaded": true,
+    "company_found": false,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://conversionfanatics.com/how-video-can-help-boost-your-conversions-18-8/",
+    "content_sha256": "ffeaf05f09ad43760c9220912b9b33d466476ba42284df0feb141f9620987435",
+    "reason": "not confirmed: company"
+  }
+}

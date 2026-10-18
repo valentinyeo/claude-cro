@@ -1,0 +1,49 @@
+{
+  "id": "wistia-email-6-video-thumbnail-click-win",
+  "title": "Wistia email 6 video thumbnail click win",
+  "company": "Wistia",
+  "industry": "Video hosting and marketing software",
+  "business_type": "SaaS",
+  "page_type": "email",
+  "element": "video-thumbnail",
+  "change": {
+    "control": "Email 6 about shooting overhead video uses a plain static image.",
+    "variant": "Overlay a video play button and timestamp on the same image in email 6, keeping copy and subject identical."
+  },
+  "result": {
+    "metric": "email click engagement",
+    "relative_lift_pct": 15,
+    "direction": "win",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": null,
+  "test_duration": null,
+  "date_published": "2017-02-23",
+  "source_url": "https://wistia.com/blog/testing-video-thumbnails-in-emails",
+  "source_type": "company blog",
+  "quote": "For Test 6, we found a 15% improvement in clicks on the video thumbnail version over the image version.",
+  "verification": "verified",
+  "evidence_strength": "B",
+  "principles": [
+    "visual-cue",
+    "video"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Distinct randomized email send in a seven-test series; recipient lists sometimes overlap. Outcome includes clicks on all email links, not just thumbnail clicks. Preserve reported lift rather than recomputing rounded rates or reconciling click-count discrepancies. 50/50 list split reported but arm sample counts not separately published.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:02:10+00:00",
+    "source_loaded": true,
+    "company_found": true,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://wistia.com/blog/testing-video-thumbnails-in-emails",
+    "content_sha256": "2f33f47778f5dbeeb272327f45e04dab5a49a60346b8de0f41d88fd83929ac2c",
+    "reason": "company, lift and supporting quote confirmed; not a statistical replication"
+  }
+}

@@ -42,7 +42,7 @@
   "research_type": "ab-test",
   "notes": "Publisher reports over 12,100 visitors, so total is a published lower bound, not an exact sample. Add-to-basket result was inconclusive. First design also had inconclusive results.",
   "verification_details": {
-    "checked_at": "2026-10-15T10:29:11+00:00",
+    "checked_at": "2026-10-18T11:01:55+00:00",
     "source_loaded": true,
     "company_found": true,
     "lift_found": true,

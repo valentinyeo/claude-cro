@@ -1,0 +1,49 @@
+{
+  "id": "anonymous-delayed-popunder-cta-loss",
+  "title": "Anonymous delayed popunder CTA loss",
+  "company": "Anonymous MECLABS CTA-timing partner",
+  "industry": "Online lead capture",
+  "business_type": "Lead Gen",
+  "page_type": "landing",
+  "element": "cta-timing",
+  "change": {
+    "control": "CTA presented almost immediately on arrival.",
+    "variant": "Move the CTA to a time-delayed pop-under."
+  },
+  "result": {
+    "metric": "conversion rate",
+    "relative_lift_pct": -29,
+    "direction": "loss",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": null,
+  "test_duration": null,
+  "date_published": "2014-08-07",
+  "source_url": "https://marketingexperiments.com/copywriting/5-traits-ctas-share",
+  "source_type": "agency case study",
+  "quote": "the treatment decreased conversion 29%.",
+  "verification": "unverified",
+  "evidence_strength": "B",
+  "principles": [
+    "timing",
+    "relevance"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Timing example, distinct from the accordion checkout test which also lost 29%. Industry and company are undisclosed; classified by the stated CTA conversion goal.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:00:57+00:00",
+    "source_loaded": true,
+    "company_found": false,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://marketingexperiments.com/copywriting/5-traits-ctas-share",
+    "content_sha256": "47e50732cb3256d64fe38d7efecfb8f5b91750cf101a2d3219d910460a4f6a9e",
+    "reason": "not confirmed: company"
+  }
+}

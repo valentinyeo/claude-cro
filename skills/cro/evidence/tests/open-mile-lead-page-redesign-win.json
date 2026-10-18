@@ -1,0 +1,53 @@
+{
+  "id": "open-mile-lead-page-redesign-win",
+  "title": "Open Mile: Enlarge and clarify the masthead, state the quote is free and fast, remove the truck image and social distractions, move Talk to Us away, and use a red Get a Quote CTA on blue background.",
+  "company": "Open Mile",
+  "industry": "Freight brokerage",
+  "business_type": "Lead Gen",
+  "page_type": "landing",
+  "element": "masthead-redesign",
+  "change": {
+    "control": "Cluttered freight-rate page with truck image, weak headline, nearby social media and Talk to Us actions.",
+    "variant": "Enlarge and clarify the masthead, state the quote is free and fast, remove the truck image and social distractions, move Talk to Us away, and use a red Get a Quote CTA on blue background."
+  },
+  "result": {
+    "metric": "lead generation conversion rate",
+    "relative_lift_pct": 232,
+    "direction": "win",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": {
+    "confidence_pct": 99.99,
+    "p_value": null,
+    "reported": "99.99% confidence reported by publisher"
+  },
+  "test_duration": null,
+  "date_published": null,
+  "source_url": "https://wingify.com/success-stories/open-mile/",
+  "source_type": "platform case study",
+  "quote": "232% Increase in the Leads Generated",
+  "verification": "verified",
+  "evidence_strength": "B",
+  "principles": [
+    "clarity",
+    "distraction"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Bundled redesign, not evidence that red alone caused the lift. Preserve published 232% rather than deriving from rounded rates.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:01:54+00:00",
+    "source_loaded": true,
+    "company_found": true,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://wingify.com/success-stories/open-mile/",
+    "content_sha256": "81cade6e69ed065d3cb24240c9b61af8d0b550c62d2b7efc73fb4b832b0176ee",
+    "reason": "company, lift and supporting quote confirmed; not a statistical replication"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "id": "unbounce-first-person-trial-cta-click-win",
+  "title": "Unbounce: Use Start my free 30 day trial for the PPC landing-page CTA.",
+  "company": "Unbounce",
+  "industry": "Landing page software",
+  "business_type": "SaaS",
+  "page_type": "landing",
+  "element": "cta-pronoun",
+  "change": {
+    "control": "PPC landing-page trial CTA uses second-person wording.",
+    "variant": "Use Start my free 30 day trial for the PPC landing-page CTA."
+  },
+  "result": {
+    "metric": "CTA click-through rate",
+    "relative_lift_pct": 90,
+    "direction": "win",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": null,
+  "test_duration": "three weeks",
+  "date_published": "2013-05-22",
+  "source_url": "https://unbounce.com/conversion-rate-optimization/design-call-to-action-buttons/",
+  "source_type": "company blog",
+  "quote": "After running the test for three weeks, the treatment button copy, “Start my free 30 day trial” had increased CTR by 90%.",
+  "verification": "verified",
+  "evidence_strength": "B",
+  "principles": [
+    "ownership",
+    "cta-copy"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Publisher describes a one-word change from second-person to first-person but various retellings give different full control strings. Preserve the directly quoted treatment and leave the control at the supported wording level. Click-throughs, not paid subscriptions.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:02:05+00:00",
+    "source_loaded": true,
+    "company_found": true,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://unbounce.com/conversion-rate-optimization/design-call-to-action-buttons/",
+    "content_sha256": "f5f881a4568eb0d1285e036f5d9e5582bed80c803737346b8fc70976130f79c1",
+    "reason": "company, lift and supporting quote confirmed; not a statistical replication"
+  }
+}

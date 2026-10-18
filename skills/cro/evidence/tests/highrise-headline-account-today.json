@@ -1,0 +1,52 @@
+{
+  "id": "highrise-headline-account-today",
+  "title": "Highrise headline account today",
+  "company": "Highrise",
+  "industry": "Customer relationship management software",
+  "business_type": "SaaS",
+  "page_type": "pricing",
+  "element": "headline-subhead",
+  "change": {
+    "control": "Headline “Start a Highrise Account”; subhead emphasizes a 30-day free trial, pay-as-you-go service and no hidden fees.",
+    "variant": "Headline adds Today to “Start a Highrise Account”; subhead emphasizes pay as you go, no long-term contracts, no hidden fees and no surprises."
+  },
+  "result": {
+    "metric": "clicks on a paid-plan Sign Up button",
+    "relative_lift_pct": 15,
+    "direction": "win",
+    "desired_direction": "increase"
+  },
+  "sample_size": {
+    "total": 4000,
+    "unit": "page views across five headline/subhead combinations"
+  },
+  "conversions": null,
+  "significance": null,
+  "test_duration": null,
+  "date_published": "2009-01-13",
+  "source_url": "https://signalvnoise.com/posts/1525-writing-decisions-headline-tests-on-the-highrise-signup-page",
+  "source_type": "company blog",
+  "quote": "Third place: 15% better conversion than the original",
+  "verification": "verified",
+  "evidence_strength": "B",
+  "principles": [
+    "clarity",
+    "friction"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "One variant-versus-original comparison from a five-arm test, not an independent study. Clicks are not completed paid subscriptions. Publisher stopped at 4,000 page views after observing stable results; achieved significance not reported.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:01:37+00:00",
+    "source_loaded": true,
+    "company_found": true,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://signalvnoise.com/posts/1525-writing-decisions-headline-tests-on-the-highrise-signup-page",
+    "content_sha256": "db454ef1f7a1b566d6713377f1656f45ccb4e60a54828e08538d627d55d76e3a",
+    "reason": "company, lift and supporting quote confirmed; not a statistical replication"
+  }
+}

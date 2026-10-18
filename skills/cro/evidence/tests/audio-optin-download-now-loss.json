@@ -1,0 +1,49 @@
+{
+  "id": "audio-optin-download-now-loss",
+  "title": "Anonymous audio-download business (Conversion Fanatics CTA study): cta copy (loss)",
+  "company": "Anonymous audio-download business (Conversion Fanatics CTA study)",
+  "industry": "Audio lead magnet",
+  "business_type": "Lead Gen",
+  "page_type": "landing",
+  "element": "cta-copy",
+  "change": {
+    "control": "Give Me The Download button for a free audio download in exchange for name and email.",
+    "variant": "Change button wording to Download Now."
+  },
+  "result": {
+    "metric": "name-and-email opt-in conversion rate",
+    "relative_lift_pct": -34.9,
+    "direction": "loss",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": null,
+  "test_duration": null,
+  "date_published": null,
+  "source_url": "https://conversionfanatics.com/does-button-text-matter-more-proof-you-should-test-your-buttons/",
+  "source_type": "agency case study",
+  "quote": "variation 3 (Download Now) actually reducing the conversions by 34.9%",
+  "verification": "unverified",
+  "evidence_strength": "B",
+  "principles": [
+    "clarity",
+    "value-proposition"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Shared multi-arm experiment; no achieved significance or counts published. Control rate about 37.25%; variant 24.4%.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:01:16+00:00",
+    "source_loaded": true,
+    "company_found": false,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://conversionfanatics.com/does-button-text-matter-more-proof-you-should-test-your-buttons/",
+    "content_sha256": "27c1d2176eae4a9c1119b4e5dab60cba4ef52fd3b4272f0d8911192c247cce7a",
+    "reason": "not confirmed: company"
+  }
+}

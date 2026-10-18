@@ -1,0 +1,48 @@
+{
+  "id": "google-thirty-results-traffic-revenue-loss",
+  "title": "Thirty search results reduced traffic and revenue",
+  "company": "Google",
+  "industry": "Web search and online services",
+  "business_type": "Content / Media",
+  "page_type": "global",
+  "element": "search-result-count",
+  "change": {
+    "control": "Ten results per search-results page.",
+    "variant": "Thirty results per page, also increasing generation time by about half a second."
+  },
+  "result": {
+    "metric": "search traffic and revenue",
+    "relative_lift_pct": -20,
+    "direction": "loss",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": null,
+  "test_duration": null,
+  "date_published": null,
+  "source_url": "https://dl.acm.org/doi/fullHtml/10.1145/2623330.2623341",
+  "source_type": "academic",
+  "quote": "Traffic and revenue from Google searchers in the experimental group dropped by 20%.",
+  "verification": "unverified",
+  "evidence_strength": "B",
+  "principles": [
+    "performance",
+    "choice-overload"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Marissa Mayer example discussed in this paper. More results and speed changed together; authors dispute attributing the full loss to latency alone. Full text is also available in the author-hosted PDF at https://exp-platform.com/Documents/2014%20experimentersRulesOfThumb.pdf. The supporting quote and result were checked against that PDF; the equivalent ACM publisher full-text page returned HTTP 403 in Chromium.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:01:36+00:00",
+    "source_loaded": false,
+    "company_found": false,
+    "lift_found": false,
+    "quote_found": false,
+    "fetched_with": "http",
+    "status_code": 403,
+    "final_url": "https://dl.acm.org/doi/fullHtml/10.1145/2623330.2623341",
+    "reason": "HTTP 403"
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "id": "amerisleep-benefit-led-product-copy-win",
+  "title": "Amerisleep: product copy (win)",
+  "company": "Amerisleep",
+  "industry": "Mattresses",
+  "business_type": "E-commerce",
+  "page_type": "product",
+  "element": "product-copy",
+  "change": {
+    "control": "Existing mattress PDP copy.",
+    "variant": "Rewrite copy with specific beyond-sleep benefits, reasons not to maintain the status quo, and product features framed persuasively."
+  },
+  "result": {
+    "metric": "completed checkouts",
+    "relative_lift_pct": 13.9,
+    "direction": "win",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": {
+    "confidence_pct": 98,
+    "p_value": null,
+    "reported": "98% statistical significance reported by publisher"
+  },
+  "test_duration": null,
+  "date_published": null,
+  "source_url": "https://growthrock.co/ecommerce-copywriting/",
+  "source_type": "agency case study",
+  "quote": "A/B testing showed that checkouts increased by 13.9% with 98% confidence.",
+  "verification": "verified",
+  "evidence_strength": "B",
+  "principles": [
+    "value-proposition",
+    "loss-aversion",
+    "clarity"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:00:52+00:00",
+    "source_loaded": true,
+    "company_found": true,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://growthrock.co/ecommerce-copywriting/",
+    "content_sha256": "7a7cc9f0b0630e8010bcad325134494c16f3cf34405402d00fe5c99e61c7a953",
+    "reason": "company, lift and supporting quote confirmed; not a statistical replication"
+  }
+}

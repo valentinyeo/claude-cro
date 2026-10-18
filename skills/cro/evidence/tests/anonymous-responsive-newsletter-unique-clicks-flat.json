@@ -1,0 +1,53 @@
+{
+  "id": "anonymous-responsive-newsletter-unique-clicks-flat",
+  "title": "Anonymous responsive newsletter unique clicks flat",
+  "company": "Anonymous MECLABS newsletter design partner",
+  "industry": "Newsletter publishing",
+  "business_type": "Content / Media",
+  "page_type": "email",
+  "element": "responsive-design",
+  "change": {
+    "control": "Desktop-style nonresponsive newsletter requiring pinch and zoom.",
+    "variant": "Use responsive text and layout, easier navigation and approximately five to six additional swipes to the end."
+  },
+  "result": {
+    "metric": "unique email click rate",
+    "relative_lift_pct": null,
+    "direction": "flat",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": {
+    "confidence_pct": null,
+    "p_value": null,
+    "reported": "No statistically significant difference in unique clickers reported."
+  },
+  "test_duration": null,
+  "date_published": "2015-01-29",
+  "source_url": "https://marketingexperiments.com/email-marketing/responsive-vs-unresponsive-emails",
+  "source_type": "agency case study",
+  "quote": "There was no statistically significant difference in the number of people who clicked",
+  "verification": "unverified",
+  "evidence_strength": "C",
+  "principles": [
+    "clarity",
+    "friction"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Unique clicks were inconclusive, not proven equivalent. Total clicks fell while reading increased; the source discusses metric-dependent conclusions. Do not count these as separate experiments.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:39:31+00:00",
+    "source_loaded": true,
+    "company_found": false,
+    "lift_found": false,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://marketingexperiments.com/email-marketing/responsive-vs-unresponsive-emails",
+    "content_sha256": "dad7c6a51c48429dd92e8b9898d7f18dc9a5ea67672917d0e78c02590ab3d9c0",
+    "reason": "not confirmed: company, lift"
+  }
+}

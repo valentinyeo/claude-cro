@@ -1,0 +1,53 @@
+{
+  "id": "anonymous-news-syndication-extra-fields-flat",
+  "title": "Anonymous news syndication extra fields flat",
+  "company": "Anonymous large news syndication company",
+  "industry": "News syndication",
+  "business_type": "Lead Gen",
+  "page_type": "lead-form",
+  "element": "form-fields",
+  "change": {
+    "control": "Treatment B: 10 fields, all required; distracting navigation and CTAs removed.",
+    "variant": "Treatment A: 15 fields, nine required, with conversational questions explaining why information is requested; same distraction removal."
+  },
+  "result": {
+    "metric": "lead rate",
+    "relative_lift_pct": null,
+    "direction": "flat",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": {
+    "confidence_pct": null,
+    "p_value": null,
+    "reported": "No statistically significant difference between Treatment A and Treatment B reported."
+  },
+  "test_duration": null,
+  "date_published": null,
+  "source_url": "https://marketingexperiments.com/conversion-marketing/optimizing-web-forms-2",
+  "source_type": "agency case study",
+  "quote": "there was no statistically significant difference when we compared Treatment A to Treatment B.",
+  "verification": "unverified",
+  "evidence_strength": "C",
+  "principles": [
+    "clarity",
+    "friction"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Pairwise comparison of two variants in Test Protocol 1636; no pairwise relative lift published. Different from the two comparisons against the original 11-field control. Research first published July 2014. Exact original publication day in July 2014 is unknown; date_published is null, not the 2018 republication date.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:39:25+00:00",
+    "source_loaded": true,
+    "company_found": false,
+    "lift_found": false,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://marketingexperiments.com/conversion-marketing/optimizing-web-forms-2",
+    "content_sha256": "eddd692f42d9e561f6830e9f1be3bdf59427d45a005fb76b4bc682fedd73cb6f",
+    "reason": "not confirmed: company, lift"
+  }
+}

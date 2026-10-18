@@ -1,0 +1,49 @@
+{
+  "id": "anonymous-solution-focused-cta-win",
+  "title": "Anonymous solution focused CTA win",
+  "company": "Anonymous MECLABS CTA-alignment partner",
+  "industry": "Online lead capture",
+  "business_type": "Lead Gen",
+  "page_type": "landing",
+  "element": "cta-copy",
+  "change": {
+    "control": "CTA emphasizes understanding the customer’s problem.",
+    "variant": "Emphasize a proposed solution instead of understanding the problem."
+  },
+  "result": {
+    "metric": "conversion rate",
+    "relative_lift_pct": 125,
+    "direction": "win",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": null,
+  "test_duration": null,
+  "date_published": "2014-08-07",
+  "source_url": "https://marketingexperiments.com/copywriting/5-traits-ctas-share",
+  "source_type": "agency case study",
+  "quote": "the treatment increased clicks 7% and conversion 125%.",
+  "verification": "unverified",
+  "evidence_strength": "B",
+  "principles": [
+    "clarity",
+    "value-proposition"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Alignment example; clickthrough rose 7% as a secondary metric. Company and exact offer are undisclosed.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:01:08+00:00",
+    "source_loaded": true,
+    "company_found": false,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://marketingexperiments.com/copywriting/5-traits-ctas-share",
+    "content_sha256": "47e50732cb3256d64fe38d7efecfb8f5b91750cf101a2d3219d910460a4f6a9e",
+    "reason": "not confirmed: company"
+  }
+}

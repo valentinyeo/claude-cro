@@ -1,0 +1,53 @@
+{
+  "id": "airbnb-map-median-anchor-viewer-conversion-win",
+  "title": "Robust map-filter anchor improved listing-view conversion",
+  "company": "Airbnb",
+  "industry": "Travel accommodation",
+  "business_type": "Marketplace",
+  "page_type": "global",
+  "element": "map-filter-anchor",
+  "change": {
+    "control": "Bookability Filter alpha 1.0 uses the highest-bookability listing as its anchor.",
+    "variant": "Use the second-highest listing, equivalent to the median of the top three, as anchor."
+  },
+  "result": {
+    "metric": "searcher-to-listing-viewer conversion",
+    "relative_lift_pct": 0.15,
+    "direction": "win",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": {
+    "confidence_pct": null,
+    "p_value": null,
+    "reported": "p-value less than 10^-4 reported."
+  },
+  "test_duration": null,
+  "date_published": null,
+  "source_url": "https://arxiv.org/html/2407.00091",
+  "source_type": "academic",
+  "quote": "Searchers to listing viewers conversion improves by 0.15 %",
+  "verification": "verified",
+  "evidence_strength": "B",
+  "principles": [
+    "relevance",
+    "clarity"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Number of displayed pins rose 6%. This robustness experiment differs from first introducing the Bookability Filter; bound p<10^-4 retained qualitatively rather than stored as exact.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:00:50+00:00",
+    "source_loaded": true,
+    "company_found": true,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://arxiv.org/html/2407.00091",
+    "content_sha256": "7cfa04764fbce5fc2a64e6e46aa4b3be6dc1cf9961965f06b638d788fe0ab1c1",
+    "reason": "company, lift and supporting quote confirmed; not a statistical replication"
+  }
+}

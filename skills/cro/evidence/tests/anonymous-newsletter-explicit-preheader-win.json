@@ -1,0 +1,53 @@
+{
+  "id": "anonymous-newsletter-explicit-preheader-win",
+  "title": "Anonymous newsletter explicit preheader win",
+  "company": "Anonymous MECLABS newsletter publisher",
+  "industry": "Newsletter publishing",
+  "business_type": "Content / Media",
+  "page_type": "email",
+  "element": "email-preheader",
+  "change": {
+    "control": "Preheader pulls the URL of the first image in the email.",
+    "variant": "Provide specific preheader text instead of the image URL."
+  },
+  "result": {
+    "metric": "email clicks",
+    "relative_lift_pct": 104,
+    "direction": "win",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": {
+    "confidence_pct": null,
+    "p_value": null,
+    "reported": "Statistically significant increase in clicks reported."
+  },
+  "test_duration": null,
+  "date_published": "2015-01-08",
+  "source_url": "https://marketingexperiments.com/email-marketing/preheaders-tested",
+  "source_type": "agency case study",
+  "quote": "The treatment preheader achieves a statistically significant 104% relative increase in clicks",
+  "verification": "unverified",
+  "evidence_strength": "B",
+  "principles": [
+    "clarity",
+    "friction"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Example 1; distinct from the first-article-headline test. Opens showed no statistically significant difference.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:01:02+00:00",
+    "source_loaded": true,
+    "company_found": false,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://marketingexperiments.com/email-marketing/preheaders-tested",
+    "content_sha256": "c6a50585286677ec81fdec9186d6c628ecf180ebfb52942642965f36279ab8b8",
+    "reason": "not confirmed: company"
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "id": "imsider-one-evening-headline-lead-win",
+  "title": "Imsider.ru: Change the headline to Open your internet store in one evening.",
+  "company": "Imsider.ru",
+  "industry": "Online business education",
+  "business_type": "Lead Gen",
+  "page_type": "landing",
+  "element": "headline",
+  "change": {
+    "control": "Headline translates as A step-by-step plan for opening your internet store.",
+    "variant": "Change the headline to Open your internet store in one evening."
+  },
+  "result": {
+    "metric": "mailing-list form submissions for free e-book",
+    "relative_lift_pct": 9.52,
+    "direction": "win",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": {
+    "confidence_pct": 99.99,
+    "p_value": null,
+    "reported": "99.99% confidence reported by publisher"
+  },
+  "test_duration": null,
+  "date_published": null,
+  "source_url": "https://wingify.com/success-stories/imsider/",
+  "source_type": "platform case study",
+  "quote": "The variation won, generating 9.52% more leads than the original landing page.",
+  "verification": "verified",
+  "evidence_strength": "B",
+  "principles": [
+    "clarity",
+    "benefit-copy"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Headline and sidebar round to 10%; body publishes 9.52%. The e-book was delivered after signup.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:01:42+00:00",
+    "source_loaded": true,
+    "company_found": true,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://wingify.com/success-stories/imsider/",
+    "content_sha256": "a2c12ad8adf8315714118aca4ec7495679761df344f6b44b9fbdb3d3d46aaed2",
+    "reason": "company, lift and supporting quote confirmed; not a statistical replication"
+  }
+}

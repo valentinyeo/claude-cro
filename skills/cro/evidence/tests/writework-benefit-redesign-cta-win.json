@@ -1,0 +1,49 @@
+{
+  "id": "writework-benefit-redesign-cta-win",
+  "title": "WriteWork.com: Redesign from header to footer, communicate survey-derived benefits, introduce social proof and credibility indicators, and use customer language about getting started and finding inspiration.",
+  "company": "WriteWork.com",
+  "industry": "Student essay reference service",
+  "business_type": "Subscription",
+  "page_type": "landing",
+  "element": "page-redesign",
+  "change": {
+    "control": "Original primary entry page does not communicate service benefits directly.",
+    "variant": "Redesign from header to footer, communicate survey-derived benefits, introduce social proof and credibility indicators, and use customer language about getting started and finding inspiration."
+  },
+  "result": {
+    "metric": "primary CTA clicks",
+    "relative_lift_pct": 144,
+    "direction": "win",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": null,
+  "test_duration": null,
+  "date_published": null,
+  "source_url": "https://wingify.com/success-stories/writework/",
+  "source_type": "platform case study",
+  "quote": "The secondary objective was to get users to click the primary CTA; and here, results increased by 144%.",
+  "verification": "verified",
+  "evidence_strength": "B",
+  "principles": [
+    "clarity",
+    "social-proof"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Only visitors landing directly on this page were included. Agency ClickLab is the reporter, not the business tested. Engagement more than doubled; a separate follow-up reportedly raised purchases over 50%, not treated as this comparison’s measured purchase lift. Subscription classification reflects access to the essay service; the account only states a payment funnel.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:02:11+00:00",
+    "source_loaded": true,
+    "company_found": true,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://wingify.com/success-stories/writework/",
+    "content_sha256": "49ffd6fc09d7b3d1fb9737ffc82fa2ac66e87867e7dd963a194bba1edafb8401",
+    "reason": "company, lift and supporting quote confirmed; not a statistical replication"
+  }
+}

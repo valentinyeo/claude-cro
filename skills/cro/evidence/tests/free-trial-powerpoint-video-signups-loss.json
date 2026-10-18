@@ -1,0 +1,49 @@
+{
+  "id": "free-trial-powerpoint-video-signups-loss",
+  "title": "Anonymous trial-subscription company (Conversion Fanatics video study): sales video (loss)",
+  "company": "Anonymous trial-subscription company (Conversion Fanatics video study)",
+  "industry": "Digital trial product",
+  "business_type": "Subscription",
+  "page_type": "landing",
+  "element": "sales-video",
+  "change": {
+    "control": "Benefit-led redesigned free-trial landing page without the new sales video.",
+    "variant": "Add a simple text-and-images presentation-style sales video with a professionally recorded voiceover."
+  },
+  "result": {
+    "metric": "free-trial signup conversion rate",
+    "relative_lift_pct": -15.1,
+    "direction": "loss",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": null,
+  "test_duration": null,
+  "date_published": null,
+  "source_url": "https://conversionfanatics.com/how-video-can-help-boost-your-conversions-18-8/",
+  "source_type": "agency case study",
+  "quote": "The initial video test actually decreased the conversions by 15.1%.",
+  "verification": "unverified",
+  "evidence_strength": "B",
+  "principles": [
+    "product-explanation",
+    "distraction"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "First video experiment, before the professionally animated-video follow-up. No significance or sample size published.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:01:34+00:00",
+    "source_loaded": true,
+    "company_found": false,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://conversionfanatics.com/how-video-can-help-boost-your-conversions-18-8/",
+    "content_sha256": "ffeaf05f09ad43760c9220912b9b33d466476ba42284df0feb141f9620987435",
+    "reason": "not confirmed: company"
+  }
+}

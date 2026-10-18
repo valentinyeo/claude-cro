@@ -1,0 +1,55 @@
+{
+  "id": "furniture-free-shipping-below-cart-win",
+  "title": "Anonymous furniture retailer (GrowthRock shipping study): shipping returns copy (win)",
+  "company": "Anonymous furniture retailer (GrowthRock shipping study)",
+  "industry": "Furniture",
+  "business_type": "E-commerce",
+  "page_type": "product",
+  "element": "shipping-returns-copy",
+  "change": {
+    "control": "Free shipping and free returns appear only in the sitewide promotion bar.",
+    "variant": "Repeat free-shipping and free-returns messaging below the PDP add-to-cart button."
+  },
+  "result": {
+    "metric": "orders",
+    "relative_lift_pct": 19,
+    "direction": "win",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": {
+    "total": 1500,
+    "unit": "lower bound: over 1,500 orders across the test"
+  },
+  "significance": {
+    "confidence_pct": 99.9,
+    "p_value": null,
+    "reported": "99.9% statistical significance reported by publisher"
+  },
+  "test_duration": "2 weeks",
+  "date_published": null,
+  "source_url": "https://growthrock.co/ecommerce-free-shipping-case-study/",
+  "source_type": "agency case study",
+  "quote": "We saw a 19% increase in orders with 99.9% statistical significance",
+  "verification": "unverified",
+  "evidence_strength": "B",
+  "principles": [
+    "clarity",
+    "risk-reversal"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:01:34+00:00",
+    "source_loaded": true,
+    "company_found": false,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://growthrock.co/ecommerce-free-shipping-case-study/",
+    "content_sha256": "d4ea1e6eccd613145914e5b7b8583f4ca72440e130cae54e5eb53cdfc1ebfc7a",
+    "reason": "not confirmed: company"
+  }
+}

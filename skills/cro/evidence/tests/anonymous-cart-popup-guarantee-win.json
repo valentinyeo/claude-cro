@@ -1,0 +1,49 @@
+{
+  "id": "anonymous-cart-popup-guarantee-win",
+  "title": "Anonymous cart popup guarantee win",
+  "company": "Anonymous MECLABS cart-popup retailer",
+  "industry": "Online retail",
+  "business_type": "E-commerce",
+  "page_type": "cart",
+  "element": "money-back-guarantee",
+  "change": {
+    "control": "Add-to-cart popup summarizes the action and essential product information.",
+    "variant": "Re-emphasize a money-back guarantee already shown earlier in the purchase process."
+  },
+  "result": {
+    "metric": "conversion rate (event not further specified)",
+    "relative_lift_pct": 37,
+    "direction": "win",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": null,
+  "test_duration": null,
+  "date_published": "2014-08-07",
+  "source_url": "https://marketingexperiments.com/copywriting/5-traits-ctas-share",
+  "source_type": "agency case study",
+  "quote": "which led to a 37% increase in conversion",
+  "verification": "unverified",
+  "evidence_strength": "B",
+  "principles": [
+    "risk-reversal",
+    "anxiety"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Redundancy example; source calls the result conversion without a more precise event definition, so do not assume revenue lift.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:00:55+00:00",
+    "source_loaded": true,
+    "company_found": false,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://marketingexperiments.com/copywriting/5-traits-ctas-share",
+    "content_sha256": "47e50732cb3256d64fe38d7efecfb8f5b91750cf101a2d3219d910460a4f6a9e",
+    "reason": "not confirmed: company"
+  }
+}

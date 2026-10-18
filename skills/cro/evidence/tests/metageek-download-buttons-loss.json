@@ -1,0 +1,49 @@
+{
+  "id": "metageek-download-buttons-loss",
+  "title": "Metageek: Use the illustrated large orange DOWNLOAD NOW and blue GET IT NOW buttons with more urgent download messaging.",
+  "company": "Metageek",
+  "industry": "Wireless networking software",
+  "business_type": "SaaS",
+  "page_type": "landing",
+  "element": "download-buttons",
+  "change": {
+    "control": "Download page uses plain text download links.",
+    "variant": "Use the illustrated large orange DOWNLOAD NOW and blue GET IT NOW buttons with more urgent download messaging."
+  },
+  "result": {
+    "metric": "download conversions",
+    "relative_lift_pct": null,
+    "direction": "loss",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": null,
+  "test_duration": null,
+  "date_published": "2015-10-13",
+  "source_url": "https://unbounce.com/a-b-testing/surprising-a-b-test-results/",
+  "source_type": "platform case study",
+  "quote": "Every single test with a button reduced conversions, anywhere from 6% to a whopping 80%.",
+  "verification": "unverified",
+  "evidence_strength": "C",
+  "principles": [
+    "trust",
+    "visual-hierarchy"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "One illustrated button treatment from the reported series, not a record for each unspecified test. The source does not map a particular lift to this pictured treatment; the series-wide 6–80% range is not assigned as an arm-level lift. Button wording and colors confirmed in the source’s treatment screenshot.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:40:59+00:00",
+    "source_loaded": true,
+    "company_found": true,
+    "lift_found": false,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://unbounce.com/a-b-testing/surprising-a-b-test-results/",
+    "content_sha256": "efa0333e9fff17565b995e3588f9846956f6ac19bb6f016bd1bdab31797e355f",
+    "reason": "not confirmed: lift"
+  }
+}

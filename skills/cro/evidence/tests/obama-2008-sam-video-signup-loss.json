@@ -1,0 +1,56 @@
+{
+  "id": "obama-2008-sam-video-signup-loss",
+  "title": "Obama 2008 sam video signup loss",
+  "company": "Obama 2008 campaign",
+  "industry": "Political campaigning",
+  "business_type": "Non-profit",
+  "page_type": "landing",
+  "element": "hero-media",
+  "change": {
+    "control": "Original splash-page image, pooled across randomized button-text combinations.",
+    "variant": "Use Sam’s Video in the media section, pooled across randomized button-text combinations."
+  },
+  "result": {
+    "metric": "email signup rate",
+    "relative_lift_pct": -26.4,
+    "direction": "loss",
+    "desired_direction": "increase"
+  },
+  "sample_size": {
+    "control": 51794,
+    "variant": 51864,
+    "unit": "visitors pooled by media treatment across button combinations"
+  },
+  "conversions": {
+    "control": 4425,
+    "variant": 3261,
+    "unit": "email signups"
+  },
+  "significance": null,
+  "test_duration": null,
+  "date_published": "2010-11-29",
+  "source_url": "https://www.optimizely.com/insights/blog/how-obama-raised-60-million-by-running-a-simple-experiment/",
+  "source_type": "company blog",
+  "quote": "That would have been a huge mistake since it turns out that all of the videos did worse than all of the images.",
+  "verification": "unverified",
+  "evidence_strength": "B",
+  "principles": [
+    "authenticity",
+    "message-match"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Firsthand report by Dan Siroker, the campaign’s Director of Analytics. One media-factor comparison in a 24-combination multivariate test, not an independent study. Signed lift and counts transcribed from the inline Page Sections table https://images1.cmp.optimizely.com/Zz01ZWQ5NGZiMjY1NTkxMWYxODQ1NjYyNGZiYmI1MGY3Yw==. No confidence level is inferred from the probability-to-beat-original column.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:01:53+00:00",
+    "source_loaded": false,
+    "company_found": false,
+    "lift_found": false,
+    "quote_found": false,
+    "fetched_with": "http",
+    "status_code": 403,
+    "final_url": "https://www.optimizely.com/insights/blog/how-obama-raised-60-million-by-running-a-simple-experiment/",
+    "reason": "HTTP 403"
+  }
+}

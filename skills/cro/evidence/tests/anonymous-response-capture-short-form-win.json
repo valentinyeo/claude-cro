@@ -1,0 +1,49 @@
+{
+  "id": "anonymous-response-capture-short-form-win",
+  "title": "Anonymous response capture short form win",
+  "company": "Anonymous Response Capture B2B client",
+  "industry": "B2B information offers",
+  "business_type": "Lead Gen",
+  "page_type": "lead-form",
+  "element": "form-fields",
+  "change": {
+    "control": "White-paper landing page includes navigation, search, account creation and multiple form fields.",
+    "variant": "Remove distractions, show the white-paper image and reduce initial form to email only, prepopulating known addresses; move profiling to an incentivized second step."
+  },
+  "result": {
+    "metric": "white-paper download conversion rate",
+    "relative_lift_pct": 36.4,
+    "direction": "win",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": null,
+  "test_duration": null,
+  "date_published": "2010-01-29",
+  "source_url": "https://marketingexperiments.com/conversion-marketing/response-capture-case-study",
+  "source_type": "agency case study",
+  "quote": "36.4% conversion rate gain (of white paper downloads).",
+  "verification": "unverified",
+  "evidence_strength": "B",
+  "principles": [
+    "clarity",
+    "friction"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Test 1; checkbox email opt-in rose 25%, a separate metric. Client industry undisclosed. Later headline/benefit-copy testing is a separate round.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:01:07+00:00",
+    "source_loaded": true,
+    "company_found": false,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://marketingexperiments.com/conversion-marketing/response-capture-case-study",
+    "content_sha256": "8b22880201abe5ee9cce4ae872ee763a8d2ee55bc2bff418876364eb6f3dcac5",
+    "reason": "not confirmed: company"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "id": "anonymous-payment-your-cta-loss",
+  "title": "Anonymous payment-page client: Replace My with Your in the payment-page CTA.",
+  "company": "Anonymous payment-page client",
+  "industry": "Online commerce, product undisclosed",
+  "business_type": "E-commerce",
+  "page_type": "checkout",
+  "element": "cta-pronoun",
+  "change": {
+    "control": "Payment-page CTA uses My.",
+    "variant": "Replace My with Your in the payment-page CTA."
+  },
+  "result": {
+    "metric": "payment-page CTA clicks",
+    "relative_lift_pct": -24.95,
+    "direction": "loss",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": null,
+  "test_duration": null,
+  "date_published": "2013-10-16",
+  "source_url": "https://unbounce.com/a-b-testing/failed-ab-test-results/",
+  "source_type": "platform case study",
+  "quote": "the treatment with “Your” performed significantly worse than the control copy that made use of “My” – 24.95% worse to be more precise",
+  "verification": "unverified",
+  "evidence_strength": "B",
+  "principles": [
+    "ownership",
+    "cta-copy"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "The section heading says 26.55% but the body explicitly reports 24.95%; body figure retained. Author describes clicks on the last payment step, not separately audited purchases. Business type inferred from payment context.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:01:03+00:00",
+    "source_loaded": true,
+    "company_found": false,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://unbounce.com/a-b-testing/failed-ab-test-results/",
+    "content_sha256": "1adc0c04f4c64472383a42f8b7010678aef6e45c347db709d0cd78a10b808498",
+    "reason": "not confirmed: company"
+  }
+}

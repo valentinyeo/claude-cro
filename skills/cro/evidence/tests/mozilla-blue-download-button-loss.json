@@ -1,0 +1,56 @@
+{
+  "id": "mozilla-blue-download-button-loss",
+  "title": "Mozilla blue download button loss",
+  "company": "Mozilla",
+  "industry": "Web browsers",
+  "business_type": "Non-profit",
+  "page_type": "product",
+  "element": "button-color",
+  "change": {
+    "control": "Green Firefox download button.",
+    "variant": "Replace the green Firefox download button with a blue button."
+  },
+  "result": {
+    "metric": "Firefox downloads",
+    "relative_lift_pct": null,
+    "direction": "loss",
+    "desired_direction": "increase"
+  },
+  "sample_size": {
+    "control": 930752,
+    "variant": 256344,
+    "unit": "visits"
+  },
+  "conversions": {
+    "control": 719377,
+    "variant": 196559,
+    "unit": "Firefox downloads"
+  },
+  "significance": null,
+  "test_duration": "one week",
+  "date_published": "2009-06-19",
+  "source_url": "https://blog.mozilla.org/metrics/2009/06/19/firefox-is-green/",
+  "source_type": "company blog",
+  "quote": "We’re already running the winning button color",
+  "verification": "unverified",
+  "evidence_strength": "C",
+  "principles": [
+    "visual-salience"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Counts transcribed from the inline results image https://blog.mozilla.org/metrics/files/2009/06/color_results.png. Green control rate 77.3%; blue rate 76.7%. No relative lift or achieved significance for this comparison is published; no lift is calculated from rounded rates. Arms share one control in a four-color test. Business type reflects the nonprofit-owned browser organization; the conversion is a browser download, not a SaaS subscription.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:41:03+00:00",
+    "source_loaded": true,
+    "company_found": true,
+    "lift_found": false,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://blog.mozilla.org/metrics/2009/06/19/firefox-is-green/",
+    "content_sha256": "9fc7e85699a98b448b3a9bf1ea6fd746bcc157c2777c3c424ebfcbb981a88404",
+    "reason": "not confirmed: lift"
+  }
+}

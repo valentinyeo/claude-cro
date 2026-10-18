@@ -1,0 +1,49 @@
+{
+  "id": "wistia-interactive-product-demo-initial-flat",
+  "title": "Wistia interactive product demo initial flat",
+  "company": "Wistia",
+  "industry": "Video hosting and marketing software",
+  "business_type": "SaaS",
+  "page_type": "product",
+  "element": "interactive-demo",
+  "change": {
+    "control": "Product page describes the product before users create an account.",
+    "variant": "Replace the page with a lite interactive Wistia player allowing feature experimentation before account creation, removing the other page content."
+  },
+  "result": {
+    "metric": "activation rate of new accounts from the page",
+    "relative_lift_pct": null,
+    "direction": "flat",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": null,
+  "test_duration": "one week at the reported initial check",
+  "date_published": "2018-10-04",
+  "source_url": "https://wistia.com/blog/get-comfortable-with-iterative-a-b-testing",
+  "source_type": "company blog",
+  "quote": "A week into the experiment, our numbers hadn't changed.",
+  "verification": "unverified",
+  "evidence_strength": "C",
+  "principles": [
+    "product-experience",
+    "clarity"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Initial A/B version only. Later iterations improved results. One-week flat observation is not proof of equivalence or a fully powered null result.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:42:03+00:00",
+    "source_loaded": true,
+    "company_found": true,
+    "lift_found": false,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://wistia.com/blog/get-comfortable-with-iterative-a-b-testing",
+    "content_sha256": "e5554de3b16596ab34d26d79ca00d2204c98004280fe5652d4dd0198ece7fa68",
+    "reason": "not confirmed: lift"
+  }
+}

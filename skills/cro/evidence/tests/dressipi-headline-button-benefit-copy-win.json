@@ -1,0 +1,53 @@
+{
+  "id": "dressipi-headline-button-benefit-copy-win",
+  "title": "Dressipi headline button benefit copy win",
+  "company": "Dressipi",
+  "industry": "Fashion recommendations",
+  "business_type": "Lead Gen",
+  "page_type": "home",
+  "element": "headline-and-cta",
+  "change": {
+    "control": "Original standard headline and Sign up now button.",
+    "variant": "Use the colloquial headline together with CTA Show me outfits I’ll love."
+  },
+  "result": {
+    "metric": "signup button clicks",
+    "relative_lift_pct": 123.9,
+    "direction": "win",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": {
+    "confidence_pct": 100,
+    "p_value": null,
+    "reported": "100% confidence reported by Optimizely and confirmed with two other calculators; rounded, not certainty."
+  },
+  "test_duration": null,
+  "date_published": "2014-09-03",
+  "source_url": "https://copyhackers.com/2014/09/buttons-vs-headlines/",
+  "source_type": "agency case study",
+  "quote": "We got a 123.9% lift in clicks on that very button, with 100% confidence",
+  "verification": "verified",
+  "evidence_strength": "B",
+  "principles": [
+    "clarity",
+    "value-proposition"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Headline and button changed together versus original control, not versus the prior headline-only treatment. Published 100% confidence is rounded tool output, not certainty; author says Optimizely result was confirmed with two other calculators.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:01:27+00:00",
+    "source_loaded": true,
+    "company_found": true,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://copyhackers.com/2014/09/buttons-vs-headlines/",
+    "content_sha256": "c9992c8df412ee60da67fdb9a36fdcfb43688876a7b3fce38650d1ac7222075a",
+    "reason": "company, lift and supporting quote confirmed; not a statistical replication"
+  }
+}

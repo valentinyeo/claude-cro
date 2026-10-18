@@ -1,0 +1,53 @@
+{
+  "id": "mozilla-ie-faster-css-javascript-download-win",
+  "title": "Mozilla ie faster css javascript download win",
+  "company": "Mozilla",
+  "industry": "Web browsers",
+  "business_type": "Non-profit",
+  "page_type": "landing",
+  "element": "page-speed",
+  "change": {
+    "control": "Existing slow English IE landing page.",
+    "variant": "Combine or remove JavaScript files and inline CSS, reducing average page load time by 2.2 seconds."
+  },
+  "result": {
+    "metric": "Firefox download conversions",
+    "relative_lift_pct": 15.4,
+    "direction": "win",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": {
+    "confidence_pct": null,
+    "p_value": 5.1e-05,
+    "reported": "One-sided Student’s t-test; publisher reports P=0.000051 for a means difference of 14%."
+  },
+  "test_duration": null,
+  "date_published": "2010-04-05",
+  "source_url": "https://blog.mozilla.org/metrics/2010/04/05/firefox-page-load-speed-part-ii/",
+  "source_type": "company blog",
+  "quote": "In reality, our optimized experimental variation shaved 2.2 seconds off the average page load time and increased download conversions by 15.4%!",
+  "verification": "verified",
+  "evidence_strength": "B",
+  "principles": [
+    "performance",
+    "friction"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "275,000 daily visitors is traffic context, not the test sample. Source mixes a 15.4% observed lift with a t-test described using a 14% difference; do not reinterpret its statistics or projections as observed incremental downloads. Business type reflects the nonprofit-owned browser organization; the conversion is a browser download, not a SaaS subscription.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:01:51+00:00",
+    "source_loaded": true,
+    "company_found": true,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://blog.mozilla.org/metrics/2010/04/05/firefox-page-load-speed-part-ii/",
+    "content_sha256": "272dcf4367ace97de8f6d18297450fc68e966098911645936a6a56cd57991be6",
+    "reason": "company, lift and supporting quote confirmed; not a statistical replication"
+  }
+}

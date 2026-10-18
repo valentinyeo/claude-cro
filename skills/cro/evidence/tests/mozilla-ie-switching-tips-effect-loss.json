@@ -1,0 +1,49 @@
+{
+  "id": "mozilla-ie-switching-tips-effect-loss",
+  "title": "Mozilla ie switching tips effect loss",
+  "company": "Mozilla",
+  "industry": "Web browsers",
+  "business_type": "Non-profit",
+  "page_type": "landing",
+  "element": "switching-tips",
+  "change": {
+    "control": "Pages without the switching tips element.",
+    "variant": "Include the switching tips element."
+  },
+  "result": {
+    "metric": "Firefox download conversions",
+    "relative_lift_pct": null,
+    "direction": "loss",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": null,
+  "test_duration": null,
+  "date_published": "2010-03-22",
+  "source_url": "https://blog.mozilla.org/metrics/2010/03/22/addition-by-subtraction/",
+  "source_type": "company blog",
+  "quote": "The main features box, the deep footer, and the switching tips all drove conversions down.",
+  "verification": "unverified",
+  "evidence_strength": "C",
+  "principles": [
+    "clarity",
+    "friction"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Reported factor-level effect from one 16-recipe multivariate test, not a separate independently randomized study. Other three elements varied across recipes. No per-factor numeric lift, sample or significance is published. Population: Internet Explorer landing-page visitors. Business type reflects the nonprofit-owned browser organization; the conversion is a browser download, not a SaaS subscription.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:41:09+00:00",
+    "source_loaded": true,
+    "company_found": true,
+    "lift_found": false,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://blog.mozilla.org/metrics/2010/03/22/addition-by-subtraction/",
+    "content_sha256": "35a41bb674d09688095fc7a8f65560186f60f4c228f7741496802a473e7946c9",
+    "reason": "not confirmed: lift"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "id": "foliekniven-pricing-explanation-above-calculator-win",
+  "title": "Foliekniven.dk: Move the explanation above the calculator and above the fold; change nothing else.",
+  "company": "Foliekniven.dk",
+  "industry": "Custom stickers and vinyl banners",
+  "business_type": "E-commerce",
+  "page_type": "product",
+  "element": "pricing-explanation",
+  "change": {
+    "control": "Minimum-order and unit-price explanation below the calculator.",
+    "variant": "Move the explanation above the calculator and above the fold; change nothing else."
+  },
+  "result": {
+    "metric": "sales",
+    "relative_lift_pct": 79.34,
+    "direction": "win",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": null,
+  "test_duration": null,
+  "date_published": null,
+  "source_url": "https://wingify.com/success-stories/foliekniven/",
+  "source_type": "platform case study",
+  "quote": "leading to a 79.34% increase in sales.",
+  "verification": "verified",
+  "evidence_strength": "B",
+  "principles": [
+    "clarity",
+    "pricing"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Calculator accepts dimensions and sticker quantity. Text explains a one-piece minimum and lower unit price for larger orders. Source labels the headline metric revenue but describes the body outcome as sales; precise sales-count versus revenue basis is not disclosed.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:01:31+00:00",
+    "source_loaded": true,
+    "company_found": true,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://wingify.com/success-stories/foliekniven/",
+    "content_sha256": "eb4aad460359d180aa1e22d8e0aeaf05a0200cb35a576d7b69e3162e6bc5248e",
+    "reason": "company, lift and supporting quote confirmed; not a statistical replication"
+  }
+}

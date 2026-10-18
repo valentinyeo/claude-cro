@@ -1,0 +1,49 @@
+{
+  "id": "designboost-short-homepage-email-win",
+  "title": "Designboost: Trim the homepage to a shorter version.",
+  "company": "Designboost",
+  "industry": "Design education",
+  "business_type": "Lead Gen",
+  "page_type": "home",
+  "element": "page-length",
+  "change": {
+    "control": "Long homepage pitching the free email-signup offer.",
+    "variant": "Trim the homepage to a shorter version."
+  },
+  "result": {
+    "metric": "email signups",
+    "relative_lift_pct": 13,
+    "direction": "win",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": null,
+  "test_duration": null,
+  "date_published": null,
+  "source_url": "https://wingify.com/success-stories/designboost/",
+  "source_type": "platform case study",
+  "quote": "The shorter home page got 13% more email sign-ups and 25% more click-throughs to the courses page.",
+  "verification": "verified",
+  "evidence_strength": "B",
+  "principles": [
+    "friction",
+    "focus"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Course-page click-throughs also increased 25%. One comparison, not separate records for the two metrics.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:01:26+00:00",
+    "source_loaded": true,
+    "company_found": true,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://wingify.com/success-stories/designboost/",
+    "content_sha256": "7c3d6472a540ddee02f1f72226a93aa001082e5a647a6fea18db698ffb431c61",
+    "reason": "company, lift and supporting quote confirmed; not a statistical replication"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "id": "marketingsherpa-top-ten-email-copy-loss",
+  "title": "MarketingSherpa top ten email copy loss",
+  "company": "MarketingSherpa",
+  "industry": "Marketing research publishing",
+  "business_type": "Content / Media",
+  "page_type": "email",
+  "element": "email-copy",
+  "change": {
+    "control": "Promotional email with general mobile marketing copy and subject line [Just Released] New Mobile Marketing Benchmark Report.",
+    "variant": "Use a top-ten-insights email and subject line [Latest Research] 10 mobile marketing insights from brand-new research; compare aggregate copy groups across greeting segments."
+  },
+  "result": {
+    "metric": "email clickthrough rate",
+    "relative_lift_pct": null,
+    "direction": "loss",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": null,
+  "test_duration": null,
+  "date_published": "2013-02-13",
+  "source_url": "https://marketingexperiments.com/email-marketing/learn-from-decrease-clickthrough-rate",
+  "source_type": "agency case study",
+  "quote": "the “Top 10” copy underperformed the general copy in the aggregate",
+  "verification": "unverified",
+  "evidence_strength": "C",
+  "principles": [
+    "clarity",
+    "friction"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "The title reports an 80% decline, but the visible body does not identify a numeric aggregate comparison; lift is left null. Name-known and name-unknown segments differed; this is not an isolated copy-only effect.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:40:57+00:00",
+    "source_loaded": true,
+    "company_found": true,
+    "lift_found": false,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://marketingexperiments.com/email-marketing/learn-from-decrease-clickthrough-rate",
+    "content_sha256": "5554129ec990c2b31f45e56ec1f667f3c1af834d8646f713fb480ca0140223a4",
+    "reason": "not confirmed: lift"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "id": "bettingexpert-no-spam-privacy-loss",
+  "title": "Bettingexpert no spam privacy loss",
+  "company": "Bettingexpert.com",
+  "industry": "Sports betting community",
+  "business_type": "Subscription",
+  "page_type": "home",
+  "element": "privacy-assurance",
+  "change": {
+    "control": "Membership signup form without a privacy assurance.",
+    "variant": "Add privacy copy: 100% privacy – We will never spam you."
+  },
+  "result": {
+    "metric": "membership signup conversion rate",
+    "relative_lift_pct": -18.7,
+    "direction": "loss",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": null,
+  "test_duration": null,
+  "date_published": "2013-10-16",
+  "source_url": "https://unbounce.com/a-b-testing/failed-ab-test-results/",
+  "source_type": "agency case study",
+  "quote": "The treatment with the privacy policy reduced conversions by 18.70% .",
+  "verification": "verified",
+  "evidence_strength": "B",
+  "principles": [
+    "anxiety",
+    "trust"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "A first-hand account by Michael Aagaard. Membership model is reported; whether membership is paid is not disclosed.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:01:21+00:00",
+    "source_loaded": true,
+    "company_found": true,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://unbounce.com/a-b-testing/failed-ab-test-results/",
+    "content_sha256": "1adc0c04f4c64472383a42f8b7010678aef6e45c347db709d0cd78a10b808498",
+    "reason": "company, lift and supporting quote confirmed; not a statistical replication"
+  }
+}

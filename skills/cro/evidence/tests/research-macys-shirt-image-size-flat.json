@@ -1,0 +1,49 @@
+{
+  "id": "research-macys-shirt-image-size-flat",
+  "title": "Macy’s (modified research stimulus): product image size (flat)",
+  "company": "Macy’s (modified research stimulus)",
+  "industry": "Apparel",
+  "business_type": "E-commerce",
+  "page_type": "product",
+  "element": "product-image-size",
+  "change": {
+    "control": "Smaller shirt image in a modified, visually busy Macy’s PDP with prices removed.",
+    "variant": "Enlarge the same shirt image within that same Macy’s layout."
+  },
+  "result": {
+    "metric": "surveyed perceived product value",
+    "relative_lift_pct": null,
+    "direction": "flat",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": null,
+  "test_duration": null,
+  "date_published": null,
+  "source_url": "https://speero.com/post/how-product-image-size-impacts-value-perception-original-research",
+  "source_type": "agency case study",
+  "quote": "There were no significant results between image sizes for either question.",
+  "verification": "unverified",
+  "evidence_strength": "C",
+  "principles": [
+    "visual-complexity",
+    "value-perception"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "research",
+  "notes": "Shirt (b) research treatment. Original shirt price $52.50 before removal. Directional lower valuation with larger image was not significant. US general-population survey; 2,982 participants across all eight treatments, not a count for this comparison. No sales or conversion effect measured.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:41:43+00:00",
+    "source_loaded": true,
+    "company_found": false,
+    "lift_found": false,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://speero.com/post/how-product-image-size-impacts-value-perception-original-research",
+    "content_sha256": "0d8dc3817afd865f07277af3d780f270195ca28618c53160fed86fbd4f6759bf",
+    "reason": "not confirmed: company, lift"
+  }
+}

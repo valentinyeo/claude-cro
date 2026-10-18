@@ -1,0 +1,49 @@
+{
+  "id": "airbnb-position-debiased-ranking-bookings-win",
+  "title": "Position-aware training improved bookings",
+  "company": "Airbnb",
+  "industry": "Travel accommodation",
+  "business_type": "Marketplace",
+  "page_type": "global",
+  "element": "position-debiased-ranking",
+  "change": {
+    "control": "Two-tower ranking DNN with no positional-bias modeling.",
+    "variant": "Train the same DNN with position as a feature regularized by dropout rate 0.15."
+  },
+  "result": {
+    "metric": "bookings",
+    "relative_lift_pct": 0.7,
+    "direction": "win",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": null,
+  "test_duration": null,
+  "date_published": null,
+  "source_url": "https://arxiv.org/html/2002.05515",
+  "source_type": "academic",
+  "quote": "In the online test we observed a gain of + 0.7 %",
+  "verification": "verified",
+  "evidence_strength": "B",
+  "principles": [
+    "relevance",
+    "clarity"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Revenue +1.8%, boutique-hotel bookings +1.1%. No separate record for each metric.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:00:51+00:00",
+    "source_loaded": true,
+    "company_found": true,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://arxiv.org/html/2002.05515",
+    "content_sha256": "0e52d7c20c9a4f16d27d922ac891b01cd1213e0cb8027fd351290f59654e0a6a",
+    "reason": "company, lift and supporting quote confirmed; not a statistical replication"
+  }
+}

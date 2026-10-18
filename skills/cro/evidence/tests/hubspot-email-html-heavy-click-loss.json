@@ -1,0 +1,53 @@
+{
+  "id": "hubspot-email-html-heavy-click-loss",
+  "title": "Hubspot email html heavy click loss",
+  "company": "HubSpot",
+  "industry": "Marketing and sales software",
+  "business_type": "SaaS",
+  "page_type": "email",
+  "element": "email-design",
+  "change": {
+    "control": "Simple HTML email template.",
+    "variant": "Use an HTML-heavy email template."
+  },
+  "result": {
+    "metric": "email clicks",
+    "relative_lift_pct": null,
+    "direction": "loss",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": {
+    "confidence_pct": null,
+    "p_value": null,
+    "reported": "Publisher says the plainer variation won with statistical significance."
+  },
+  "test_duration": null,
+  "date_published": null,
+  "source_url": "https://blog.hubspot.com/marketing/plain-text-vs-html-emails-data",
+  "source_type": "company blog",
+  "quote": "For the simple HTML template vs. HTML-heavy template, the simpler email had a 5.3% higher clickthrough rate, and combined with the higher open rate, resulted in getting 30% more clicks.",
+  "verification": "unverified",
+  "evidence_strength": "C",
+  "principles": [
+    "simplicity",
+    "personalization"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Numeric effects are stated for simple relative to HTML-heavy, not the recorded richer challenger relative to simple; no reversed-baseline relative lift is invented. Third distinct comparison, not another metric from either of the plain-text tests.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:40:46+00:00",
+    "source_loaded": true,
+    "company_found": true,
+    "lift_found": false,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://blog.hubspot.com/marketing/plain-text-vs-html-emails-data",
+    "content_sha256": "e631ddfc51e3f38472be102fd5c58bb903dd27944a2a8422a69318769814023f",
+    "reason": "not confirmed: lift"
+  }
+}

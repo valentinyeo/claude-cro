@@ -42,7 +42,7 @@
   "research_type": "ab-test",
   "notes": "Very short runtime. Publisher-reported 100% significance is rounded, not certainty. Product views are not purchases. Projected annual program revenue is not this test result.",
   "verification_details": {
-    "checked_at": "2026-10-15T10:29:15+00:00",
+    "checked_at": "2026-10-18T11:02:12+00:00",
     "source_loaded": true,
     "company_found": true,
     "lift_found": true,

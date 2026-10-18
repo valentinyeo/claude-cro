@@ -1,0 +1,49 @@
+{
+  "id": "wistia-interactive-demo-ux-iteration-win",
+  "title": "Wistia interactive demo ux iteration win",
+  "company": "Wistia",
+  "industry": "Video hosting and marketing software",
+  "business_type": "SaaS",
+  "page_type": "product",
+  "element": "interactive-demo-instructions",
+  "change": {
+    "control": "Initial interactive demo page without clear cues that the player is interactive.",
+    "variant": "Highlight how to interact with the page, enlarge relevant text and add subtle visual highlights."
+  },
+  "result": {
+    "metric": "new-user activation rate",
+    "relative_lift_pct": null,
+    "direction": "win",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": null,
+  "test_duration": null,
+  "date_published": "2018-10-04",
+  "source_url": "https://wistia.com/blog/get-comfortable-with-iterative-a-b-testing",
+  "source_type": "company blog",
+  "quote": "Almost immediately, our activation rates started to increase.",
+  "verification": "unverified",
+  "evidence_strength": "C",
+  "principles": [
+    "affordance",
+    "clarity"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "research",
+  "notes": "Sequential revision within an ongoing A/B-testing project. Article does not establish a separate randomized comparison for this iteration; record is research rather than a standalone A/B test.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:42:02+00:00",
+    "source_loaded": true,
+    "company_found": true,
+    "lift_found": false,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://wistia.com/blog/get-comfortable-with-iterative-a-b-testing",
+    "content_sha256": "e5554de3b16596ab34d26d79ca00d2204c98004280fe5652d4dd0198ece7fa68",
+    "reason": "not confirmed: lift"
+  }
+}

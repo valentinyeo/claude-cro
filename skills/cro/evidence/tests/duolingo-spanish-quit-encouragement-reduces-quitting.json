@@ -1,0 +1,49 @@
+{
+  "id": "duolingo-spanish-quit-encouragement-reduces-quitting",
+  "title": "Encouraging Spanish quit-dialog copy reduced lesson exits",
+  "company": "Duolingo",
+  "industry": "Language education",
+  "business_type": "Subscription",
+  "page_type": "global",
+  "element": "lesson-exit-dialog-copy",
+  "change": {
+    "control": "Spanish quit dialog translates as Do you want to end this session?",
+    "variant": "Use Don’t give up! Do you really want to end this session?, directly addressing the learner."
+  },
+  "result": {
+    "metric": "lesson quitting",
+    "relative_lift_pct": null,
+    "direction": "win",
+    "desired_direction": "decrease"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": null,
+  "test_duration": null,
+  "date_published": "2022-01-14",
+  "source_url": "https://blog.duolingo.com/copy-testing-experiments/",
+  "source_type": "company blog",
+  "quote": "With this subtle change, we were able to reduce the number of people that quit sessions and increase the time spent learning—more learning for everyone!",
+  "verification": "unverified",
+  "evidence_strength": "C",
+  "principles": [
+    "relevance",
+    "clarity"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Translations of Spanish copy provided in the source. No numeric effect, sample or significance reported.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:40:33+00:00",
+    "source_loaded": true,
+    "company_found": true,
+    "lift_found": false,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://blog.duolingo.com/copy-testing-experiments/",
+    "content_sha256": "facd4d184f5231906ba50c32e7882c502f83380bc3e47367ffbebe7986406567",
+    "reason": "not confirmed: lift"
+  }
+}

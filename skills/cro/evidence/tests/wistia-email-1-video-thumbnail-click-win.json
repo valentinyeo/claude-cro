@@ -1,0 +1,56 @@
+{
+  "id": "wistia-email-1-video-thumbnail-click-win",
+  "title": "Wistia email 1 video thumbnail click win",
+  "company": "Wistia",
+  "industry": "Video hosting and marketing software",
+  "business_type": "SaaS",
+  "page_type": "email",
+  "element": "video-thumbnail",
+  "change": {
+    "control": "Email 1 about first segmented content email uses a plain static image.",
+    "variant": "Overlay a video play button and timestamp on the same image in email 1, keeping copy and subject identical."
+  },
+  "result": {
+    "metric": "email click engagement",
+    "relative_lift_pct": 40.83,
+    "direction": "win",
+    "desired_direction": "increase"
+  },
+  "sample_size": {
+    "total": 11290,
+    "unit": "email recipients"
+  },
+  "conversions": {
+    "control": 200,
+    "variant": 282,
+    "unit": "recipients clicking any link in the email"
+  },
+  "significance": null,
+  "test_duration": null,
+  "date_published": "2017-02-23",
+  "source_url": "https://wistia.com/blog/testing-video-thumbnails-in-emails",
+  "source_type": "company blog",
+  "quote": "This means that 40.83% more people engaged with the email that included a video thumbnail.",
+  "verification": "verified",
+  "evidence_strength": "B",
+  "principles": [
+    "visual-cue",
+    "video"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Distinct randomized email send in a seven-test series; recipient lists sometimes overlap. Outcome includes clicks on all email links, not just thumbnail clicks. Preserve reported lift rather than recomputing rounded rates or reconciling click-count discrepancies. 50/50 list split reported but arm sample counts not separately published.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:02:09+00:00",
+    "source_loaded": true,
+    "company_found": true,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://wistia.com/blog/testing-video-thumbnails-in-emails",
+    "content_sha256": "2f33f47778f5dbeeb272327f45e04dab5a49a60346b8de0f41d88fd83929ac2c",
+    "reason": "company, lift and supporting quote confirmed; not a statistical replication"
+  }
+}

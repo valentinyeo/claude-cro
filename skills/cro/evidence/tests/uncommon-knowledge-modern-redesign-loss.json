@@ -1,0 +1,53 @@
+{
+  "id": "uncommon-knowledge-modern-redesign-loss",
+  "title": "Uncommon Knowledge: Replace the magazine layout with a simpler modern page presenting the three-video pack and privacy/opt-out assurances.",
+  "company": "Uncommon Knowledge",
+  "industry": "Mental health training",
+  "business_type": "Lead Gen",
+  "page_type": "landing",
+  "element": "page-redesign",
+  "change": {
+    "control": "Magazine-style video signup page with descriptions of the three trauma-treatment videos and Mark Tyrrell’s photograph.",
+    "variant": "Replace the magazine layout with a simpler modern page presenting the three-video pack and privacy/opt-out assurances."
+  },
+  "result": {
+    "metric": "free video-pack signups",
+    "relative_lift_pct": null,
+    "direction": "loss",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": {
+    "confidence_pct": 99.99,
+    "p_value": null,
+    "reported": "99.99% confidence reported by publisher"
+  },
+  "test_duration": null,
+  "date_published": null,
+  "source_url": "https://wingify.com/success-stories/uncommon-knowledge/",
+  "source_type": "platform case study",
+  "quote": "the original, old landing page beat the fancy new one by 19.55% with 99.99% statistical significance.",
+  "verification": "unverified",
+  "evidence_strength": "C",
+  "principles": [
+    "relevance",
+    "clarity"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "The original beat the challenger by 19.55%; this is not the challenger’s signed relative loss. No reciprocal estimate calculated. Numeric significance is retained, but evidence strength is C because the challenger’s lift is not directly published.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:41:54+00:00",
+    "source_loaded": true,
+    "company_found": true,
+    "lift_found": false,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://wingify.com/success-stories/uncommon-knowledge/",
+    "content_sha256": "eef521923411a1fd921272fcb0a7281fe1996432c44712ba26a39fa30a1cab19",
+    "reason": "not confirmed: lift"
+  }
+}

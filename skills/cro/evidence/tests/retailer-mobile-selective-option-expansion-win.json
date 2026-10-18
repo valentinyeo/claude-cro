@@ -1,0 +1,49 @@
+{
+  "id": "retailer-mobile-selective-option-expansion-win",
+  "title": "Anonymous retailer (Conversion Fanatics mobile-option study): option expansion (win)",
+  "company": "Anonymous retailer (Conversion Fanatics mobile-option study)",
+  "industry": "Online retail",
+  "business_type": "E-commerce",
+  "page_type": "global",
+  "element": "option-expansion",
+  "change": {
+    "control": "Original mobile experience with collapsed options.",
+    "variant": "Rework the expanded-options treatment with revised styling and only key sections expanded."
+  },
+  "result": {
+    "metric": "mobile new orders",
+    "relative_lift_pct": 45,
+    "direction": "win",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": null,
+  "test_duration": null,
+  "date_published": null,
+  "source_url": "https://conversionfanatics.com/why-failed-split-tests-can-help-you-win/",
+  "source_type": "agency case study",
+  "quote": "increasing new orders by more than 45% and increased revenue per visitor by 12.7%.",
+  "verification": "unverified",
+  "evidence_strength": "B",
+  "principles": [
+    "friction",
+    "cognitive-load"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Published order lift is more than 45%, stored as lower bound, not exactly 45%. Revenue per visitor +12.7%. No significance or sample size stated.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:01:58+00:00",
+    "source_loaded": true,
+    "company_found": false,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://conversionfanatics.com/why-failed-split-tests-can-help-you-win/",
+    "content_sha256": "5110187c6c37c783e63199ea562e3e13fcacb1405925950ad7d0815ee1760a2f",
+    "reason": "not confirmed: company"
+  }
+}

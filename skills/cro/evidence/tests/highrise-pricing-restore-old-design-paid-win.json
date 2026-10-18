@@ -1,0 +1,49 @@
+{
+  "id": "highrise-pricing-restore-old-design-paid-win",
+  "title": "Highrise pricing restore old design paid win",
+  "company": "Highrise",
+  "industry": "Customer relationship management software",
+  "business_type": "SaaS",
+  "page_type": "pricing",
+  "element": "pricing-plans",
+  "change": {
+    "control": "Minimal redesigned pricing page with an additional larger plan and a more prominent free-plan link.",
+    "variant": "Restore a pricing design closer to the old layout, reducing free-link font size and removing the extra-choice emphasis."
+  },
+  "result": {
+    "metric": "paid signups",
+    "relative_lift_pct": 51.4,
+    "direction": "win",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": null,
+  "test_duration": null,
+  "date_published": "2016-10-24",
+  "source_url": "https://signalvnoise.com/svn3/behind-the-scenes-a-b-testing-at-highrise/",
+  "source_type": "company blog",
+  "quote": "Paid signups went back up 51.4%. And our new revenue improved 67.6%!!",
+  "verification": "verified",
+  "evidence_strength": "B",
+  "principles": [
+    "choice-overload",
+    "visual-hierarchy"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "A later pricing-page comparison, distinct from the original whole-site redesign. Revenue also increased 67.6%.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:01:38+00:00",
+    "source_loaded": true,
+    "company_found": true,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://signalvnoise.com/svn3/behind-the-scenes-a-b-testing-at-highrise/",
+    "content_sha256": "d25e20a61fc02d24daca040ff3669e8131775ee9d2ea7cf75224bd470b457b73",
+    "reason": "company, lift and supporting quote confirmed; not a statistical replication"
+  }
+}

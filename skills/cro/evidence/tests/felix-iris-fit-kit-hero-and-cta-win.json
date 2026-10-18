@@ -1,0 +1,53 @@
+{
+  "id": "felix-iris-fit-kit-hero-and-cta-win",
+  "title": "Felix iris fit kit hero and CTA win",
+  "company": "Felix + Iris",
+  "industry": "Prescription eyewear",
+  "business_type": "E-commerce",
+  "page_type": "home",
+  "element": "hero-and-cta",
+  "change": {
+    "control": "Original brand-aligned hero unit and Get Started CTA.",
+    "variant": "Show the actual home try-on Fit Kit, add three process steps and replace CTA with Start Fit Profile."
+  },
+  "result": {
+    "metric": "Fit Profile quiz starts",
+    "relative_lift_pct": 71.62,
+    "direction": "win",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": {
+    "confidence_pct": 95,
+    "p_value": null,
+    "reported": "95% level of confidence reported."
+  },
+  "test_duration": "three days",
+  "date_published": "2014-12-08",
+  "source_url": "https://marketingexperiments.com/a-b-testing/hero-unit-homepage-changes",
+  "source_type": "agency case study",
+  "quote": "increased conversion 71.62% with a 95% level of confidence.",
+  "verification": "verified",
+  "evidence_strength": "B",
+  "principles": [
+    "clarity",
+    "friction"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Treatment 2 versus original control; image, explanatory steps and CTA changed together. It is not the isolated effect of changing the button versus Treatment 1. The goal is a quiz start, not a purchased pair of glasses.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:01:29+00:00",
+    "source_loaded": true,
+    "company_found": true,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://marketingexperiments.com/a-b-testing/hero-unit-homepage-changes",
+    "content_sha256": "e01eccb8db1049a208bb25c838787484c26f09446a835914422d00285b70f6b8",
+    "reason": "company, lift and supporting quote confirmed; not a statistical replication"
+  }
+}

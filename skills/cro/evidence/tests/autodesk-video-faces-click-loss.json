@@ -1,0 +1,49 @@
+{
+  "id": "autodesk-video-faces-click-loss",
+  "title": "Autodesk: Use faces in the video preview image; no other page elements changed.",
+  "company": "Autodesk",
+  "industry": "Design software",
+  "business_type": "SaaS",
+  "page_type": "product",
+  "element": "video-thumbnail",
+  "change": {
+    "control": "Product-centric video preview image.",
+    "variant": "Use faces in the video preview image; no other page elements changed."
+  },
+  "result": {
+    "metric": "video clicks",
+    "relative_lift_pct": -50,
+    "direction": "loss",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": null,
+  "test_duration": null,
+  "date_published": null,
+  "source_url": "https://wingify.com/blog/ab-testing-results-that-surprised-experts/",
+  "source_type": "platform case study",
+  "quote": "The version of this Autodesk product page that used faces got 50% fewer video clicks.",
+  "verification": "verified",
+  "evidence_strength": "B",
+  "principles": [
+    "relevance",
+    "visual-hierarchy"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "AutoCAD product page. Video clicks, not purchases. No sample size or significance published.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:01:17+00:00",
+    "source_loaded": true,
+    "company_found": true,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://wingify.com/blog/ab-testing-results-that-surprised-experts/",
+    "content_sha256": "8c7b578bd38dc215f693877f34bad54aa4ba1d30106396d7f5bc520ea54070a2",
+    "reason": "company, lift and supporting quote confirmed; not a statistical replication"
+  }
+}

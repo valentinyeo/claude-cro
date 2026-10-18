@@ -1,0 +1,57 @@
+{
+  "id": "electronics-discover-more-product-photos-win",
+  "title": "Anonymous electronics retailer (GrowthRock visual-consistency study): cross category links (win)",
+  "company": "Anonymous electronics retailer (GrowthRock visual-consistency study)",
+  "industry": "Electronics",
+  "business_type": "E-commerce",
+  "page_type": "category",
+  "element": "cross-category-links",
+  "change": {
+    "control": "Category pages without a bottom-of-page Discover More cross-category section.",
+    "variant": "Add links to other product categories using product-only photos."
+  },
+  "result": {
+    "metric": "proceed-to-checkout rate",
+    "relative_lift_pct": 13.5,
+    "direction": "win",
+    "desired_direction": "increase"
+  },
+  "sample_size": {
+    "control": 20000,
+    "variant": 20000,
+    "unit": "lower bounds: over 20,000 sessions per arm"
+  },
+  "conversions": null,
+  "significance": {
+    "confidence_pct": 97,
+    "p_value": null,
+    "reported": "97% statistical significance reported by publisher"
+  },
+  "test_duration": "3 weeks",
+  "date_published": null,
+  "source_url": "https://growthrock.co/visual-consistency-in-ecommerce-ux-the-right-photos-turn-no-difference-into-a-13-increase-in-proceeding-to-checkout-case-study/",
+  "source_type": "agency case study",
+  "quote": "the product only photos increased proceed to checkouts by 13.5% with 97% statistical significance",
+  "verification": "unverified",
+  "evidence_strength": "A",
+  "principles": [
+    "visual-consistency",
+    "discovery"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Over 550 proceed-to-checkouts per arm; exact counts unavailable. Transactions +23% at only 89% significance. Camping mockups are illustrative, not the client industry.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:01:27+00:00",
+    "source_loaded": true,
+    "company_found": false,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://growthrock.co/visual-consistency-in-ecommerce-ux-the-right-photos-turn-no-difference-into-a-13-increase-in-proceeding-to-checkout-case-study/",
+    "content_sha256": "ce15a7dc006a5887e61aefa3c7c1f01a4b22c00267dbc948a84ca7df5282337f",
+    "reason": "not confirmed: company"
+  }
+}

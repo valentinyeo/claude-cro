@@ -1,0 +1,53 @@
+{
+  "id": "anonymous-tourism-sunday-newsletter-flat",
+  "title": "Anonymous tourism sunday newsletter flat",
+  "company": "Anonymous tourism organization",
+  "industry": "Tourism",
+  "business_type": "Lead Gen",
+  "page_type": "email",
+  "element": "send-day",
+  "change": {
+    "control": "Send monthly promotional newsletter on Monday.",
+    "variant": "Send the same monthly promotional newsletter on Sunday."
+  },
+  "result": {
+    "metric": "email open rate",
+    "relative_lift_pct": null,
+    "direction": "flat",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": {
+    "confidence_pct": null,
+    "p_value": null,
+    "reported": "Low-confidence underperformance; no statistically significant difference from Monday reported."
+  },
+  "test_duration": null,
+  "date_published": "2015-07-02",
+  "source_url": "https://marketingexperiments.com/email-marketing/best-email-send-day-and-time",
+  "source_type": "agency case study",
+  "quote": "The remaining days —Thursday, Friday and Sunday — underperformed, though they had low levels of confidence.",
+  "verification": "unverified",
+  "evidence_strength": "C",
+  "principles": [
+    "timing",
+    "relevance"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "One arm versus Monday in a seven-day split test, not a separate independent study. Numeric arm lift is not published in body text. Clickthrough was also inconclusive. Classified by tourism promotion rather than a paid newsletter subscription.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:39:38+00:00",
+    "source_loaded": true,
+    "company_found": false,
+    "lift_found": false,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://marketingexperiments.com/email-marketing/best-email-send-day-and-time",
+    "content_sha256": "b4d3d6c5966a5c019bad949a337913ca7a88f595b2b38bf75ab8f9471d0f8a30",
+    "reason": "not confirmed: company, lift"
+  }
+}

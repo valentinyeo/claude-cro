@@ -1,0 +1,53 @@
+{
+  "id": "anonymous-fortune500-static-chat-win",
+  "title": "Anonymous fortune500 static chat win",
+  "company": "Anonymous Fortune 500 B2B company",
+  "industry": "B2B free-trial offers",
+  "business_type": "Lead Gen",
+  "page_type": "landing",
+  "element": "chat-invitation",
+  "change": {
+    "control": "Paid-search free-trial landing page with timed chat popup, lead form and phone number.",
+    "variant": "Replace timed popup with a clickable static chat-box image, add contact-value copy and move lead form lower."
+  },
+  "result": {
+    "metric": "chat clicks",
+    "relative_lift_pct": 120.6,
+    "direction": "win",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": {
+    "confidence_pct": 99,
+    "p_value": null,
+    "reported": "99% level of confidence for chat-click increase."
+  },
+  "test_duration": null,
+  "date_published": "2013-10-07",
+  "source_url": "https://marketingexperiments.com/lead-generation/pop-up-chat-test",
+  "source_type": "agency case study",
+  "quote": "The treatment resulted in a dramatic lift of 120.60% in chat clicks over the control at a 99% level of confidence.",
+  "verification": "unverified",
+  "evidence_strength": "B",
+  "principles": [
+    "clarity",
+    "friction"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Primary test goal was chat clicks. Form submissions fell 60.54% at 99% confidence and phone calls fell 33.64% at 89% confidence. Projected annual revenue increase was modeled, not observed. Business category reflects the lead-capture objective; specific industry undisclosed.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:00:58+00:00",
+    "source_loaded": true,
+    "company_found": false,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://marketingexperiments.com/lead-generation/pop-up-chat-test",
+    "content_sha256": "6b019792dd4a9682ad68fa4addbd7478db2f3d8b1225f09ed8055afa0e9988aa",
+    "reason": "not confirmed: company"
+  }
+}
