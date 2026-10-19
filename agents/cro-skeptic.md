@@ -47,5 +47,14 @@ Status: complete
 |----|---------|--------------|------------------------|---------------|
 ```
 
-End with counts per verdict. Rejecting nothing is a red flag: re-check the five
-highest-priority findings once more before you finish.
+End with this exact machine-readable summary, replacing each N with its count:
+
+```text
+Counts: CONFIRMED N, DOWNGRADE N, REWORD N, REJECT N
+```
+
+Each finding gets exactly one verdict, so these counts sum to the number checked.
+If a finding needs both a lower priority and new wording, count it as DOWNGRADE
+and put the new wording in the table. CONFIRMED means kept as written.
+Rejecting nothing is a red flag: re-check the five highest-priority findings
+once more before you finish.

@@ -198,7 +198,7 @@ def analyze(pages):
                           "detail": "No working analytics tool fires on any audited page: there is no traffic, funnel "
                                     "or conversion data, so no baseline and no way to measure a change"})
     ids = {v: sorted(i for i in inv["ids"] if i) for v, inv in inventory.items()}
-    asks = []
+    asks, seen_accounts = [], set()
     for vendor, vids in sorted(ids.items(), key=lambda kv: not kv[1]):  # vendors with IDs first
         tmpl = ACCESS.get(vendor)
         if tmpl:
@@ -209,7 +209,9 @@ def analyze(pages):
                 ask = t.format(id=vid or "(ID not visible)")
                 if not vid and any(a.startswith(t.split("{id}")[0]) for a in asks):
                     continue  # the same account was already asked for by its ID
-                if ask not in asks:
+                account = (t, re.sub(r"^(?:AW|G|GTM|GT|DC|UA)-", "", vid, flags=re.I))
+                if account not in seen_accounts:
+                    seen_accounts.add(account)
                     asks.append(ask)
     if not analytics:
         asks += NO_ANALYTICS_ASK

@@ -57,6 +57,41 @@ class Analyze(unittest.TestCase):
         self.assertFalse(r["has_analytics"])
         self.assertIn("testing_tool", [i["issue"] for i in r["issues"]])
 
+    def test_normalized_google_ads_access_request_is_not_duplicated(self):
+        requests = [
+            "https://www.googletagmanager.com/gtag/js?id=AW-18511593224",
+            "https://www.googleadservices.com/pagead/conversion/18511593224/",
+        ]
+        for reqs in (requests, list(reversed(requests))):
+            with self.subTest(reqs=reqs):
+                pages = [page(reqs)]
+                pages[0]["request_count"] = len(reqs)
+                result = ta.analyze(pages)
+                ads_asks = [ask for ask in result["access_requests"] if ask.startswith("Google Ads account")]
+                self.assertEqual(len(ads_asks), 1)
+                self.assertIn("18511593224", ads_asks[0])
+                self.assertEqual(ta.to_markdown(result, pages).count("- Google Ads account"), 1)
+                ids = {item["vendor"]: item["ids"] for item in result["inventory"]}
+                self.assertEqual(ids["Google tag (gtag.js)"], ["AW-18511593224"])
+                self.assertEqual(ids["Google Ads"], ["18511593224"])
+
+    def test_normalized_ids_keep_distinct_accounts_and_vendors(self):
+        result = ta.analyze([page([
+            GTAG, GA_PV, GTM,
+            "https://region1.google-analytics.com/g/collect?tid=ABC1234&en=page_view",
+            "https://www.googletagmanager.com/gtm.js?id=K9X2",
+            "https://www.googletagmanager.com/gtag/js?id=AW-18511593224",
+            "https://www.googleadservices.com/pagead/conversion/18511593224/",
+            "https://www.googleadservices.com/pagead/conversion/18511593225/",
+            "https://www.facebook.com/tr/?id=18511593224&ev=PageView",
+        ])])
+        asks = result["access_requests"]
+        self.assertEqual(sum(ask.startswith("GA4 property") for ask in asks), 1)
+        self.assertEqual(sum(ask.startswith("GTM container") for ask in asks), 1)
+        self.assertEqual(sum(ask.startswith("Google Ads account") for ask in asks), 2)
+        self.assertEqual(sum(ask.startswith("Meta pixel") for ask in asks), 1)
+        self.assertTrue(any("18511593225" in ask for ask in asks))
+
     def test_cloudflare_web_analytics_counts_as_analytics(self):
         r = ta.analyze([page(["https://static.cloudflareinsights.com/beacon.min.js/v8b", "https://s.example/cdn-cgi/rum?"])])
         self.assertTrue(r["has_analytics"])
