@@ -1,0 +1,49 @@
+{
+  "id": "mens-advertorial-intimate-couple-win",
+  "title": "Anonymous product advertiser (Conversion Fanatics advertorial study): advertorial image (win)",
+  "company": "Anonymous product advertiser (Conversion Fanatics advertorial study)",
+  "industry": "Consumer product for men",
+  "business_type": "E-commerce",
+  "page_type": "landing",
+  "element": "advertorial-image",
+  "change": {
+    "control": "Scientific explanatory image near the top-right of a text-heavy advertorial targeting men aged 35–60.",
+    "variant": "Replace the scientific image with a couple in a more intimate setting."
+  },
+  "result": {
+    "metric": "advertorial conversion rate",
+    "relative_lift_pct": 183.3,
+    "direction": "win",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": null,
+  "test_duration": null,
+  "date_published": null,
+  "source_url": "https://conversionfanatics.com/how-images-affect-the-results-in-website-split-testing/",
+  "source_type": "agency case study",
+  "quote": "version B increased conversions a staggering 183.3%.",
+  "verification": "unverified",
+  "evidence_strength": "B",
+  "principles": [
+    "imagery",
+    "relevance"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Publisher does not disclose the product, downstream conversion event, counts or significance. E-commerce classification inferred from product-purchase context. ",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:01:48+00:00",
+    "source_loaded": true,
+    "company_found": false,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://conversionfanatics.com/how-images-affect-the-results-in-website-split-testing/",
+    "content_sha256": "579fd900dbd0dcdcb06d42958339babb37bc41cb13eeb47fd66f0c48172ba3a8",
+    "reason": "not confirmed: company"
+  }
+}

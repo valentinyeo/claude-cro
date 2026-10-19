@@ -1,0 +1,49 @@
+{
+  "id": "anonymous-insurance-supplier-ratings-loss",
+  "title": "Anonymous insurance comparison business: Add customer satisfaction ratings for suppliers beside Big Brand Price Check.",
+  "company": "Anonymous insurance comparison business",
+  "industry": "Insurance comparison",
+  "business_type": "Lead Gen",
+  "page_type": "landing",
+  "element": "supplier-ratings",
+  "change": {
+    "control": "Big Brand Price Check displays supplier price information without the added community ratings.",
+    "variant": "Add customer satisfaction ratings for suppliers beside Big Brand Price Check."
+  },
+  "result": {
+    "metric": "conversions",
+    "relative_lift_pct": null,
+    "direction": "loss",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": null,
+  "test_duration": null,
+  "date_published": "2012-09-19",
+  "source_url": "https://unbounce.com/a-b-testing/shocking-results/",
+  "source_type": "platform case study",
+  "quote": "consumers were backing away from the conversion because they were unable to make a straight comparison.",
+  "verification": "unverified",
+  "evidence_strength": "C",
+  "principles": [
+    "clarity",
+    "cognitive-load"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "The article explicitly describes the ratings treatment as harmful. Company and numerical effect undisclosed; the author’s confusion explanation is not independently established.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:39:21+00:00",
+    "source_loaded": true,
+    "company_found": false,
+    "lift_found": false,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://unbounce.com/a-b-testing/shocking-results/",
+    "content_sha256": "583735552d8a2ff440c8fb7fbdfa5ca950d63279949228a3745bf81818207c25",
+    "reason": "not confirmed: company, lift"
+  }
+}

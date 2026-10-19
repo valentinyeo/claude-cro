@@ -1,0 +1,50 @@
+{
+  "id": "skincare-benefit-headline-dropdown-redesign-loss",
+  "title": "Anonymous luxury skincare company (Conversion Fanatics kit study): product page redesign (loss)",
+  "company": "Anonymous luxury skincare company (Conversion Fanatics kit study)",
+  "industry": "Skincare",
+  "business_type": "E-commerce",
+  "page_type": "product",
+  "element": "product-page-redesign",
+  "change": {
+    "control": "Page explains product steps and separately lists three skin-type kits with buy buttons; prices not revealed.",
+    "variant": "Redesign with benefit-led headline, new imagery, two social-proof areas, explanatory videos, one product image, dropdown kit selector, visible price and selection-help popup."
+  },
+  "result": {
+    "metric": "purchase conversion rate",
+    "relative_lift_pct": null,
+    "direction": "loss",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": null,
+  "test_duration": null,
+  "date_published": null,
+  "source_url": "https://conversionfanatics.com/why-a-losing-test-isnt-a-loser-costing-you-35-percent-increases/",
+  "source_type": "agency case study",
+  "quote": "In fact, it reduced conversions by quite a large margin.",
+  "verification": "unverified",
+  "evidence_strength": "C",
+  "principles": [
+    "clarity",
+    "social-proof",
+    "price-transparency"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Qualitative loss for the first redesign; no numeric magnitude or achieved significance reported.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:41:47+00:00",
+    "source_loaded": true,
+    "company_found": false,
+    "lift_found": false,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://conversionfanatics.com/why-a-losing-test-isnt-a-loser-costing-you-35-percent-increases/",
+    "content_sha256": "fe48619bc69e61a4f012d87f95a8cc6ad29b4ea8e2c74ee94c5ce542ea78c4d7",
+    "reason": "not confirmed: company, lift"
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "id": "electronics-weekly-optimized-preheader-win",
+  "title": "Electronics weekly optimized preheader win",
+  "company": "Electronics Weekly",
+  "industry": "Electronics trade publishing",
+  "business_type": "Content / Media",
+  "page_type": "email",
+  "element": "email-preheader",
+  "change": {
+    "control": "Daily newsletter with no deliberately specified preheader snippet.",
+    "variant": "Use a prefix and ASCII symbol to call attention to the second-most-popular story in the preheader; keep sender and subject structure consistent."
+  },
+  "result": {
+    "metric": "newsletter open rate",
+    "relative_lift_pct": 30,
+    "direction": "win",
+    "desired_direction": "increase"
+  },
+  "sample_size": {
+    "total": 5000,
+    "unit": "subscribers in the list used for the repeated test series; not cumulative email sends"
+  },
+  "conversions": null,
+  "significance": null,
+  "test_duration": "three weeks",
+  "date_published": "2016-02-18",
+  "source_url": "https://marketingexperiments.com/email-marketing/preheader-testing-higher-newsletter-opens",
+  "source_type": "agency case study",
+  "quote": "achieved a 4.9% higher open rate — a relative increase of 30% — over a newsletter with no snippet.",
+  "verification": "verified",
+  "evidence_strength": "B",
+  "principles": [
+    "clarity",
+    "friction"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Repeated A/B series using a 5,000-subscriber list. This is the final optimized-snippet versus no-snippet comparison; no per-arm counts or cumulative unique exposure counts are given. Also 17% higher clickthrough. Source separately describes a 4.9% higher open rate and explicitly labels 30% as the relative increase; do not substitute 4.9 for the relative lift.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:01:28+00:00",
+    "source_loaded": true,
+    "company_found": true,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://marketingexperiments.com/email-marketing/preheader-testing-higher-newsletter-opens",
+    "content_sha256": "a71b20dd96bbb80f3cf3b9247cf10b33aec67d6754b21089d0ccd8dc74ab2e9c",
+    "reason": "company, lift and supporting quote confirmed; not a statistical replication"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "id": "basecamp-restore-homepage-signup-form-win",
+  "title": "Basecamp restore homepage signup form win",
+  "company": "Basecamp",
+  "industry": "Project management software",
+  "business_type": "SaaS",
+  "page_type": "home",
+  "element": "signup-form",
+  "change": {
+    "control": "Homepage without a signup form after the company rebrand.",
+    "variant": "Restore the signup form directly on the homepage."
+  },
+  "result": {
+    "metric": "trial signups",
+    "relative_lift_pct": 16,
+    "direction": "win",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": null,
+  "test_duration": null,
+  "date_published": "2015-09-22",
+  "source_url": "https://signalvnoise.com/svn3/how-we-lost-and-found-millions-by-not-a-b-testing/",
+  "source_type": "company blog",
+  "quote": "signups increased by 16% in the with-signup-form group compared to the group without.",
+  "verification": "verified",
+  "evidence_strength": "B",
+  "principles": [
+    "friction",
+    "accessibility"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "The July 2015 A/B test is recorded here. The earlier removal/redesign was not A/B tested and is not counted as another experiment.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:01:19+00:00",
+    "source_loaded": true,
+    "company_found": true,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://signalvnoise.com/svn3/how-we-lost-and-found-millions-by-not-a-b-testing/",
+    "content_sha256": "0695e2542b6b71aff985bdedc037c58bde5fc2ee2d3e889e5eece21d89e9d652",
+    "reason": "company, lift and supporting quote confirmed; not a statistical replication"
+  }
+}

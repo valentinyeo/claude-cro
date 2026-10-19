@@ -1,0 +1,53 @@
+{
+  "id": "research-hostgator-high-social-following-flat",
+  "title": "HostGator (modified research stimulus): social follower count (flat)",
+  "company": "HostGator (modified research stimulus)",
+  "industry": "Web hosting",
+  "business_type": "Subscription",
+  "page_type": "home",
+  "element": "social-follower-count",
+  "change": {
+    "control": "Show low social-following counts in the proof area of a modified HostGator homepage.",
+    "variant": "Show high social-following counts in the same location."
+  },
+  "result": {
+    "metric": "unprompted short-term recall of social proof",
+    "relative_lift_pct": null,
+    "direction": "flat",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": {
+    "confidence_pct": null,
+    "p_value": 0.1177,
+    "reported": "Publisher reports p=0.1177"
+  },
+  "test_duration": null,
+  "date_published": null,
+  "source_url": "https://speero.com/post/which-types-of-social-proof-work-best-original-research",
+  "source_type": "agency case study",
+  "quote": "High social following didn't result in significantly more recall compared to low social following (p-value = 0.1177)",
+  "verification": "unverified",
+  "evidence_strength": "C",
+  "principles": [
+    "social-proof",
+    "recall"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "research",
+  "notes": "15-second exposure followed by survey. Publisher describes weak evidence, not equivalence. No live subscription or purchase conversion tested.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:41:41+00:00",
+    "source_loaded": true,
+    "company_found": false,
+    "lift_found": false,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://speero.com/post/which-types-of-social-proof-work-best-original-research",
+    "content_sha256": "8f61715715edcc1cf56d20b4e37cbadfe2e9b95a9f3936e578a6a8c7eefbc025",
+    "reason": "not confirmed: company, lift"
+  }
+}

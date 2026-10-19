@@ -1,0 +1,49 @@
+{
+  "id": "visitnorway-norwegian-order-label-win",
+  "title": "VisitNorway: Use the Norwegian wording for Order in the booking navigation.",
+  "company": "VisitNorway",
+  "industry": "Tourism information",
+  "business_type": "Content / Media",
+  "page_type": "global",
+  "element": "navigation-label",
+  "change": {
+    "control": "Norwegian menu uses the Norwegian wording for Book travel.",
+    "variant": "Use the Norwegian wording for Order in the booking navigation."
+  },
+  "result": {
+    "metric": "visits to booking section",
+    "relative_lift_pct": 114,
+    "direction": "win",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": null,
+  "test_duration": null,
+  "date_published": null,
+  "source_url": "https://wingify.com/success-stories/visitnorway/",
+  "source_type": "platform case study",
+  "quote": "with an improvement of 114% (!) won against the original Book travel",
+  "verification": "verified",
+  "evidence_strength": "B",
+  "principles": [
+    "localization",
+    "clarity"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Source translates the Norwegian phrases into English; record does not invent an untranslated spelling.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:02:08+00:00",
+    "source_loaded": true,
+    "company_found": true,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://wingify.com/success-stories/visitnorway/",
+    "content_sha256": "eb65f5221eade9eac39dd9411a9064fa327342eeca4239fb4bb9276a04d18784",
+    "reason": "company, lift and supporting quote confirmed; not a statistical replication"
+  }
+}

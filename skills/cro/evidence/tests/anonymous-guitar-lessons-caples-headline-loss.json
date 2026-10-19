@@ -1,0 +1,49 @@
+{
+  "id": "anonymous-guitar-lessons-caples-headline-loss",
+  "title": "Anonymous guitar-lesson business: Use a cliffhanger headline modeled on John Caples’s They Laughed When I Sat Down at the Piano formula.",
+  "company": "Anonymous guitar-lesson business",
+  "industry": "Music lessons",
+  "business_type": "Lead Gen",
+  "page_type": "landing",
+  "element": "headline-formula",
+  "change": {
+    "control": "Existing guitar-lesson landing-page headline.",
+    "variant": "Use a cliffhanger headline modeled on John Caples’s They Laughed When I Sat Down at the Piano formula."
+  },
+  "result": {
+    "metric": "conversions",
+    "relative_lift_pct": -30,
+    "direction": "loss",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": null,
+  "test_duration": null,
+  "date_published": "2014-09-18",
+  "source_url": "https://unbounce.com/a-b-testing/10-testing-ideas-call-to-action-conference-2014/",
+  "source_type": "platform case study",
+  "quote": "the variation copying the John Caples headline formula saw a dramatic 30% drop in conversions",
+  "verification": "unverified",
+  "evidence_strength": "B",
+  "principles": [
+    "relevance",
+    "curiosity"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Reported by Joanna Wiebe during the conference. Company and exact conversion event undisclosed; guitar lessons may also be delivered locally.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:00:59+00:00",
+    "source_loaded": true,
+    "company_found": false,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://unbounce.com/a-b-testing/10-testing-ideas-call-to-action-conference-2014/",
+    "content_sha256": "1d0575aa1e9c8247797bd347058951ee6125498125548b1a0c7d90f3b860433a",
+    "reason": "not confirmed: company"
+  }
+}

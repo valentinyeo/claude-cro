@@ -1,0 +1,57 @@
+{
+  "id": "research-ipod-free-song-bundle-flat",
+  "title": "Apple iPod Touch (hypothetical offer stimulus): bundle freebie (flat)",
+  "company": "Apple iPod Touch (hypothetical offer stimulus)",
+  "industry": "Consumer electronics",
+  "business_type": "E-commerce",
+  "page_type": "product",
+  "element": "bundle-freebie",
+  "change": {
+    "control": "Show an iPod Touch alone as a hypothetical gift purchase.",
+    "variant": "Show the same iPod Touch with one free song download."
+  },
+  "result": {
+    "metric": "surveyed willingness to pay",
+    "relative_lift_pct": null,
+    "direction": "flat",
+    "desired_direction": "increase"
+  },
+  "sample_size": {
+    "control": 297,
+    "variant": 299,
+    "unit": "survey participants"
+  },
+  "conversions": null,
+  "significance": {
+    "confidence_pct": null,
+    "p_value": 0.17,
+    "reported": "Publisher reports p=0.17"
+  },
+  "test_duration": null,
+  "date_published": null,
+  "source_url": "https://speero.com/post/does-the-presenters-paradox-actually-work-in-digital-marketing-original-research",
+  "source_type": "agency case study",
+  "quote": "There was a $11.07 difference (though not significant)",
+  "verification": "unverified",
+  "evidence_strength": "C",
+  "principles": [
+    "bundling",
+    "value-perception"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "research",
+  "notes": "Mean willingness to pay $183.42 without free song versus $172.35 with song; no relative lift recomputed. A replication by CXL Institute, not an Apple-run live purchase experiment.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:41:42+00:00",
+    "source_loaded": true,
+    "company_found": false,
+    "lift_found": false,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://speero.com/post/does-the-presenters-paradox-actually-work-in-digital-marketing-original-research",
+    "content_sha256": "8269f9e90ee5f8fc4efcab272881a2c5462113a4918e6d6e17baa814d1e3dbd1",
+    "reason": "not confirmed: company, lift"
+  }
+}

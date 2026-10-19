@@ -35,7 +35,7 @@
   "research_type": "ab-test",
   "notes": "Publisher headline labels CTR, but the body explicitly describes created free accounts. Paid accounts reportedly stayed at the same level, with no numeric estimate or equivalence test.",
   "verification_details": {
-    "checked_at": "2026-10-15T10:29:08+00:00",
+    "checked_at": "2026-10-18T11:01:35+00:00",
     "source_loaded": true,
     "company_found": true,
     "lift_found": true,

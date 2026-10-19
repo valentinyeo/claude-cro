@@ -1,0 +1,49 @@
+{
+  "id": "retailer-mobile-all-options-expanded-loss",
+  "title": "Anonymous retailer (Conversion Fanatics mobile-option study): option expansion (loss)",
+  "company": "Anonymous retailer (Conversion Fanatics mobile-option study)",
+  "industry": "Online retail",
+  "business_type": "E-commerce",
+  "page_type": "global",
+  "element": "option-expansion",
+  "change": {
+    "control": "Mobile shoppers click to expand options such as size and color.",
+    "variant": "Expand options by default to eliminate the extra opening click, creating a longer page."
+  },
+  "result": {
+    "metric": "mobile order conversion rate",
+    "relative_lift_pct": null,
+    "direction": "loss",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": null,
+  "test_duration": null,
+  "date_published": null,
+  "source_url": "https://conversionfanatics.com/why-failed-split-tests-can-help-you-win/",
+  "source_type": "agency case study",
+  "quote": "the expanded option started to slip and ended up losing by a small margin.",
+  "verification": "unverified",
+  "evidence_strength": "C",
+  "principles": [
+    "friction",
+    "cognitive-load"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Publisher refers to mobile shopping/checkout flow; precise page boundary not disclosed. No numeric loss or achieved significance.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:41:46+00:00",
+    "source_loaded": true,
+    "company_found": false,
+    "lift_found": false,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://conversionfanatics.com/why-failed-split-tests-can-help-you-win/",
+    "content_sha256": "5110187c6c37c783e63199ea562e3e13fcacb1405925950ad7d0815ee1760a2f",
+    "reason": "not confirmed: company, lift"
+  }
+}

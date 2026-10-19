@@ -1,0 +1,49 @@
+{
+  "id": "kutts-category-price-callouts-conversion-win",
+  "title": "Kutts: Add pricing-information call-outs and change image style and type across categories.",
+  "company": "Kutts",
+  "industry": "Men’s grooming retail",
+  "business_type": "E-commerce",
+  "page_type": "category",
+  "element": "category-callouts",
+  "change": {
+    "control": "Listing-page categories with the existing imagery and no new pricing call-out.",
+    "variant": "Add pricing-information call-outs and change image style and type across categories."
+  },
+  "result": {
+    "metric": "eCommerce conversion rate",
+    "relative_lift_pct": 6,
+    "direction": "win",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": null,
+  "test_duration": null,
+  "date_published": null,
+  "source_url": "https://wingify.com/success-stories/kutts/",
+  "source_type": "platform case study",
+  "quote": "improve the eCommerce conversion rate by nearly 6% and revenue by 9%",
+  "verification": "verified",
+  "evidence_strength": "B",
+  "principles": [
+    "clarity",
+    "pricing"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Approximate nearly 6% published lift, all devices. Transactions reportedly increased 9% and average order size 0.5%. Nine months refers to the wider optimization program, not this test duration.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:01:43+00:00",
+    "source_loaded": true,
+    "company_found": true,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://wingify.com/success-stories/kutts/",
+    "content_sha256": "e4564b6735e09c07b1c6a36036e9d8f3d3222dc76e60d852c8216e7723241852",
+    "reason": "company, lift and supporting quote confirmed; not a statistical replication"
+  }
+}

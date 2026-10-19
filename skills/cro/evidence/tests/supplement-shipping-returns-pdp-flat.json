@@ -1,0 +1,52 @@
+{
+  "id": "supplement-shipping-returns-pdp-flat",
+  "title": "Anonymous niche supplement retailer (GrowthRock shipping study): shipping returns copy (flat)",
+  "company": "Anonymous niche supplement retailer (GrowthRock shipping study)",
+  "industry": "Nutritional supplements",
+  "business_type": "E-commerce",
+  "page_type": "product",
+  "element": "shipping-returns-copy",
+  "change": {
+    "control": "Free shipping mentioned only in fine print.",
+    "variant": "Add Free US Shipping & Returns below add-to-cart, with an initially collapsed disclosure for the 30-day return policy."
+  },
+  "result": {
+    "metric": "purchase conversion rate",
+    "relative_lift_pct": null,
+    "direction": "flat",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": {
+    "total": 5000,
+    "unit": "lower bound: over 5,000 conversions across the test"
+  },
+  "significance": null,
+  "test_duration": "2 weeks",
+  "date_published": null,
+  "source_url": "https://growthrock.co/ecommerce-free-shipping-case-study/",
+  "source_type": "agency case study",
+  "quote": "After 2 weeks and over 5,000 conversions, we saw no difference in conversion rate between the original and variation.",
+  "verification": "unverified",
+  "evidence_strength": "C",
+  "principles": [
+    "clarity",
+    "risk-reversal"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "No published relative point estimate; almost identical conversion rates are not evidence of equivalence.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:41:52+00:00",
+    "source_loaded": true,
+    "company_found": false,
+    "lift_found": false,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://growthrock.co/ecommerce-free-shipping-case-study/",
+    "content_sha256": "d4ea1e6eccd613145914e5b7b8583f4ca72440e130cae54e5eb53cdfc1ebfc7a",
+    "reason": "not confirmed: company, lift"
+  }
+}

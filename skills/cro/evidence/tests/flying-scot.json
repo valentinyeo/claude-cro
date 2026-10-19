@@ -39,7 +39,7 @@
   "research_type": "ab-test",
   "notes": "Do not confuse next-step progression (45.45%) with form submissions (35%). Exact removed fields are shown in source images, not enumerated in the article text.",
   "verification_details": {
-    "checked_at": "2026-10-15T10:29:08+00:00",
+    "checked_at": "2026-10-18T11:01:30+00:00",
     "source_loaded": true,
     "company_found": true,
     "lift_found": true,

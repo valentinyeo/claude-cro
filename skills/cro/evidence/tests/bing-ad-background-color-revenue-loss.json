@@ -1,0 +1,51 @@
+{
+  "id": "bing-ad-background-color-revenue-loss",
+  "title": "Changing the ad background color reduced revenue",
+  "company": "Bing",
+  "industry": "Web search and online services",
+  "business_type": "Content / Media",
+  "page_type": "global",
+  "element": "ad-background-color",
+  "change": {
+    "control": "Existing search-ad background color.",
+    "variant": "Treatment background color; exact color not specified in the text."
+  },
+  "result": {
+    "metric": "revenue",
+    "relative_lift_pct": -12,
+    "direction": "loss",
+    "desired_direction": "increase"
+  },
+  "sample_size": {
+    "total": 10000000,
+    "unit": "users; published as over 10M"
+  },
+  "conversions": null,
+  "significance": null,
+  "test_duration": null,
+  "date_published": null,
+  "source_url": "https://dl.acm.org/doi/fullHtml/10.1145/2623330.2623341",
+  "source_type": "academic",
+  "quote": "the Treatment color caused a 12% decline in revenue (an annual loss of over $150M if this change were made).",
+  "verification": "unverified",
+  "evidence_strength": "B",
+  "principles": [
+    "relevance",
+    "clarity"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Over 10M users. Clicks shifted away from ads; abandonment not significantly changed (p=0.83). That p-value does not describe revenue. Full text is also available in the author-hosted PDF at https://exp-platform.com/Documents/2014%20experimentersRulesOfThumb.pdf. The supporting quote and result were checked against that PDF; the equivalent ACM publisher full-text page returned HTTP 403 in Chromium.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:01:22+00:00",
+    "source_loaded": false,
+    "company_found": false,
+    "lift_found": false,
+    "quote_found": false,
+    "fetched_with": "http",
+    "status_code": 403,
+    "final_url": "https://dl.acm.org/doi/fullHtml/10.1145/2623330.2623341",
+    "reason": "HTTP 403"
+  }
+}

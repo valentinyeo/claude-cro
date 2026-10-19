@@ -1,0 +1,49 @@
+{
+  "id": "highrise-2014-marketing-redesign-paid-loss",
+  "title": "Highrise 2014 marketing redesign paid loss",
+  "company": "Highrise",
+  "industry": "Customer relationship management software",
+  "business_type": "SaaS",
+  "page_type": "global",
+  "element": "site-redesign",
+  "change": {
+    "control": "Pre-2014 Highrise marketing site.",
+    "variant": "Launch the new, more minimal 2014 marketing site, including redesigned plans."
+  },
+  "result": {
+    "metric": "paid conversions",
+    "relative_lift_pct": null,
+    "direction": "loss",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": null,
+  "test_duration": null,
+  "date_published": "2016-10-24",
+  "source_url": "https://signalvnoise.com/svn3/behind-the-scenes-a-b-testing-at-highrise/",
+  "source_type": "company blog",
+  "quote": "When we dove in, we saw our new marketing site had actually hurt our paid conversions but improved our free conversions masking the overall impact.",
+  "verification": "unverified",
+  "evidence_strength": "C",
+  "principles": [
+    "choice-overload",
+    "clarity"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Original A/B test measured total signups, which improved significantly; paid conversions fell and customers shifted toward the cheaper plan. No paid-conversion lift or significance published. This is the broad redesign, not the later pricing-page recovery test.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:40:43+00:00",
+    "source_loaded": true,
+    "company_found": true,
+    "lift_found": false,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://signalvnoise.com/svn3/behind-the-scenes-a-b-testing-at-highrise/",
+    "content_sha256": "d25e20a61fc02d24daca040ff3669e8131775ee9d2ea7cf75224bd470b457b73",
+    "reason": "not confirmed: lift"
+  }
+}

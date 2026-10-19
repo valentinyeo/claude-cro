@@ -1,0 +1,53 @@
+{
+  "id": "health-food-mobile-link-bar-orders-win",
+  "title": "Anonymous health-food brand (GrowthRock link-bar study): mobile link bar (win)",
+  "company": "Anonymous health-food brand (GrowthRock link-bar study)",
+  "industry": "Health food",
+  "business_type": "E-commerce",
+  "page_type": "home",
+  "element": "mobile-link-bar",
+  "change": {
+    "control": "Mobile homepage leaves product/flavor links inside the hamburger menu.",
+    "variant": "Expose links to the brand product/flavor PDPs in a homepage link bar."
+  },
+  "result": {
+    "metric": "mobile orders",
+    "relative_lift_pct": 29,
+    "direction": "win",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": {
+    "confidence_pct": 98,
+    "p_value": null,
+    "reported": "98% statistical significance reported by publisher"
+  },
+  "test_duration": "14 days",
+  "date_published": null,
+  "source_url": "https://growthrock.co/ecommerce-mobile-home-page-navigation/",
+  "source_type": "agency case study",
+  "quote": "After 14 days, we saw a 29% increase in orders with 98% significance.",
+  "verification": "unverified",
+  "evidence_strength": "B",
+  "principles": [
+    "discovery",
+    "friction"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Flavor names and brand mockups are anonymized examples. More than 600 conversions per arm reported; not exact counts.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:01:36+00:00",
+    "source_loaded": true,
+    "company_found": false,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://growthrock.co/ecommerce-mobile-home-page-navigation/",
+    "content_sha256": "44cf819eaabdd3940b729cc3de4d5ac76542de6d16fe933e0c3c582834a29d3d",
+    "reason": "not confirmed: company"
+  }
+}

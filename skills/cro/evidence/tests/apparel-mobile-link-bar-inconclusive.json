@@ -1,0 +1,53 @@
+{
+  "id": "apparel-mobile-link-bar-inconclusive",
+  "title": "Anonymous 1,000-product apparel retailer (GrowthRock link-bar study): mobile link bar (flat)",
+  "company": "Anonymous 1,000-product apparel retailer (GrowthRock link-bar study)",
+  "industry": "Apparel",
+  "business_type": "E-commerce",
+  "page_type": "home",
+  "element": "mobile-link-bar",
+  "change": {
+    "control": "Mobile homepage relies on hamburger navigation.",
+    "variant": "Expose horizontally scrollable category links in a link bar while retaining the hamburger menu."
+  },
+  "result": {
+    "metric": "mobile completed orders",
+    "relative_lift_pct": 5,
+    "direction": "flat",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": {
+    "confidence_pct": 93,
+    "p_value": null,
+    "reported": "93% under a traditional calculation; Optimizely two-tailed engine did not declare significance"
+  },
+  "test_duration": "28 days",
+  "date_published": null,
+  "source_url": "https://growthrock.co/ecommerce-mobile-home-page-navigation/",
+  "source_type": "agency case study",
+  "quote": "After 28 days, we saw a 5% increase with 93% statistical significance",
+  "verification": "unverified",
+  "evidence_strength": "B",
+  "principles": [
+    "discovery",
+    "friction"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Publisher calls it likely a winner but explicitly below the 95% convention and not significant in Optimizely. Over 80,000 visitors and 2,300 conversions per arm reported without exact counts. Category pageviews +10–12% at >99% significance; no separate record for secondary metrics.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:01:11+00:00",
+    "source_loaded": true,
+    "company_found": false,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://growthrock.co/ecommerce-mobile-home-page-navigation/",
+    "content_sha256": "44cf819eaabdd3940b729cc3de4d5ac76542de6d16fe933e0c3c582834a29d3d",
+    "reason": "not confirmed: company"
+  }
+}

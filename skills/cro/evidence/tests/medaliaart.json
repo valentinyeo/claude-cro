@@ -48,7 +48,7 @@
   "research_type": "ab-test",
   "notes": "Small sample. Bounce is defined as no homepage link click, not modern engagement-based bounce. Rates were 76% vs 60%; reported relative decrease is rounded. This is not a sales result.",
   "verification_details": {
-    "checked_at": "2026-10-15T10:29:09+00:00",
+    "checked_at": "2026-10-18T11:01:48+00:00",
     "source_loaded": true,
     "company_found": true,
     "lift_found": true,

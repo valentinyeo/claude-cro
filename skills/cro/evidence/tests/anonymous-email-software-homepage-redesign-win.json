@@ -1,0 +1,49 @@
+{
+  "id": "anonymous-email-software-homepage-redesign-win",
+  "title": "Anonymous email software homepage redesign win",
+  "company": "Anonymous B2B email marketing company",
+  "industry": "Email marketing software",
+  "business_type": "SaaS",
+  "page_type": "home",
+  "element": "page-layout",
+  "change": {
+    "control": "Version B homepage with more competing objectives and a less simplified eye path.",
+    "variant": "Use Version A homepage with fewer competing objectives, simplified eye path and stronger communication of value."
+  },
+  "result": {
+    "metric": "free trial signups",
+    "relative_lift_pct": 59,
+    "direction": "win",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": null,
+  "test_duration": null,
+  "date_published": "2010-09-01",
+  "source_url": "https://marketingexperiments.com/conversion-marketing/homepages-tested",
+  "source_type": "agency case study",
+  "quote": "VERSION A produced 59% more free trials sign-ups than VERSION B.",
+  "verification": "unverified",
+  "evidence_strength": "B",
+  "principles": [
+    "clarity",
+    "friction"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "A/B multifactor radical redesign. Source identifies versions A and B rather than an explicit pre-existing control; reference orientation follows published Version A versus Version B result.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:00:58+00:00",
+    "source_loaded": true,
+    "company_found": false,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://marketingexperiments.com/conversion-marketing/homepages-tested",
+    "content_sha256": "3d0126659684d73e106eb7b4675ac92867cffd0e268d488e4efc9b33cdf9b52d",
+    "reason": "not confirmed: company"
+  }
+}

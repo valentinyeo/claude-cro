@@ -1,0 +1,48 @@
+{
+  "id": "google-search-server-delay-usage-loss",
+  "title": "Google: 400 ms search delay reduces usage in weeks four through six",
+  "company": "Google",
+  "industry": "Web search and online services",
+  "business_type": "Content / Media",
+  "page_type": "global",
+  "element": "server-response-time",
+  "change": {
+    "control": "Normal search-result delivery.",
+    "variant": "Inject a 400 ms server-side delay for six weeks; compare search usage during the second three weeks."
+  },
+  "result": {
+    "metric": "searches per user during the second three weeks of a six-week experiment",
+    "relative_lift_pct": -0.76,
+    "direction": "loss",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": null,
+  "test_duration": "six weeks",
+  "date_published": "2009-06-23",
+  "source_url": "https://research.google/blog/speed-matters/",
+  "source_type": "company blog",
+  "quote": "users exposed to a 400 ms delay since the beginning of the experiment did 0.44% fewer searches during the first three weeks, but 0.76% fewer searches during the second three weeks.",
+  "verification": "verified",
+  "evidence_strength": "B",
+  "principles": [
+    "performance"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "The source reports a range across delays and observation windows, not one overall lift. This record isolates the published 400 ms comparison in weeks four through six; the first three weeks showed 0.44% fewer searches. No pooled lift is inferred.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:01:35+00:00",
+    "source_loaded": true,
+    "company_found": true,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://research.google/blog/speed-matters/",
+    "content_sha256": "d6f8c9922caf00700d72bf296251c43dddf520485f2cf72abf680df9ec1f75cb",
+    "reason": "company, lift and supporting quote confirmed; not a statistical replication"
+  }
+}

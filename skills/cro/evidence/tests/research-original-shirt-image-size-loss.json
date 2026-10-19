@@ -1,0 +1,53 @@
+{
+  "id": "research-original-shirt-image-size-loss",
+  "title": "Anonymous shirt retailer stimulus (CXL image-size research): product image size (loss)",
+  "company": "Anonymous shirt retailer stimulus (CXL image-size research)",
+  "industry": "Apparel",
+  "business_type": "E-commerce",
+  "page_type": "product",
+  "element": "product-image-size",
+  "change": {
+    "control": "Smaller shirt product image in the original minimal PDP layout, with prices removed.",
+    "variant": "Enlarge the same shirt image within the same layout, holding logo and content constant."
+  },
+  "result": {
+    "metric": "surveyed perceived product value",
+    "relative_lift_pct": null,
+    "direction": "loss",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": {
+    "confidence_pct": null,
+    "p_value": 0.012,
+    "reported": "Publisher reports p=0.012"
+  },
+  "test_duration": null,
+  "date_published": null,
+  "source_url": "https://speero.com/post/how-product-image-size-impacts-value-perception-original-research",
+  "source_type": "agency case study",
+  "quote": "The smaller image actually produced a higher perceived value",
+  "verification": "unverified",
+  "evidence_strength": "C",
+  "principles": [
+    "visual-complexity",
+    "value-perception"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "research",
+  "notes": "Original shirt source priced $145 before price removal. Bargain-question two-sided p=0.012; too-expensive p=0.117. Three shirt-layout tests are different research comparisons, not live retail experiments. US general-population survey; 2,982 participants across all eight treatments, not a count for this comparison. No sales or conversion effect measured.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:41:44+00:00",
+    "source_loaded": true,
+    "company_found": false,
+    "lift_found": false,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://speero.com/post/how-product-image-size-impacts-value-perception-original-research",
+    "content_sha256": "0d8dc3817afd865f07277af3d780f270195ca28618c53160fed86fbd4f6759bf",
+    "reason": "not confirmed: company, lift"
+  }
+}

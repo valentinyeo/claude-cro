@@ -35,7 +35,7 @@
   "research_type": "ab-test",
   "notes": "Copy and layout changed together. Homepage click-through rose 42%, a separate metric. No sample size or significance is published.",
   "verification_details": {
-    "checked_at": "2026-10-15T10:29:05+00:00",
+    "checked_at": "2026-10-18T11:01:18+00:00",
     "source_loaded": true,
     "company_found": true,
     "lift_found": true,

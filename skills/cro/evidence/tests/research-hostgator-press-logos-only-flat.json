@@ -1,0 +1,53 @@
+{
+  "id": "research-hostgator-press-logos-only-flat",
+  "title": "HostGator (modified research stimulus): press mention format (flat)",
+  "company": "HostGator (modified research stimulus)",
+  "industry": "Web hosting",
+  "business_type": "Subscription",
+  "page_type": "home",
+  "element": "press-mention-format",
+  "change": {
+    "control": "Press-mention logos accompanied by short quotes on a modified HostGator homepage.",
+    "variant": "Present press mentions with logos only in the same proof area."
+  },
+  "result": {
+    "metric": "unprompted short-term recall of social proof",
+    "relative_lift_pct": null,
+    "direction": "flat",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": {
+    "confidence_pct": null,
+    "p_value": 0.0953,
+    "reported": "Publisher reports p=0.0953"
+  },
+  "test_duration": null,
+  "date_published": null,
+  "source_url": "https://speero.com/post/which-types-of-social-proof-work-best-original-research",
+  "source_type": "agency case study",
+  "quote": "Press mentions with featured logos resulted in moderately higher recall rates than press mentions including logos and short quotes (close to significance at alpha of 0.05; p-value = 0.0953).",
+  "verification": "unverified",
+  "evidence_strength": "C",
+  "principles": [
+    "social-proof",
+    "recall"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "research",
+  "notes": "15-second exposure followed by survey. p=0.0953 is not significant at alpha 0.05; no conversion outcome measured.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:41:41+00:00",
+    "source_loaded": true,
+    "company_found": false,
+    "lift_found": false,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://speero.com/post/which-types-of-social-proof-work-best-original-research",
+    "content_sha256": "8f61715715edcc1cf56d20b4e37cbadfe2e9b95a9f3936e578a6a8c7eefbc025",
+    "reason": "not confirmed: company, lift"
+  }
+}

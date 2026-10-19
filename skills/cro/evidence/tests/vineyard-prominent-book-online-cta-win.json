@@ -1,0 +1,53 @@
+{
+  "id": "vineyard-prominent-book-online-cta-win",
+  "title": "The Vineyard: Add a prominent maroon Book Online CTA above the fold after Stay with Us, retaining the CTA wording.",
+  "company": "The Vineyard",
+  "industry": "Luxury hotel",
+  "business_type": "Local Service",
+  "page_type": "home",
+  "element": "booking-cta",
+  "change": {
+    "control": "Book Online link is near the bottom of the homepage and difficult to notice.",
+    "variant": "Add a prominent maroon Book Online CTA above the fold after Stay with Us, retaining the CTA wording."
+  },
+  "result": {
+    "metric": "click-through rate to room booking page",
+    "relative_lift_pct": 32.12,
+    "direction": "win",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": {
+    "confidence_pct": 99.99,
+    "p_value": null,
+    "reported": "99.99% confidence reported by publisher"
+  },
+  "test_duration": null,
+  "date_published": null,
+  "source_url": "https://wingify.com/success-stories/the-vineyard/",
+  "source_type": "platform case study",
+  "quote": "the click-through rate (CTR) to the room booking page increased by 32.12%,",
+  "verification": "verified",
+  "evidence_strength": "B",
+  "principles": [
+    "visual-hierarchy",
+    "cta-visibility"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Room-booking page visits, not completed hotel bookings.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:02:06+00:00",
+    "source_loaded": true,
+    "company_found": true,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://wingify.com/success-stories/the-vineyard/",
+    "content_sha256": "cc682ca7cd46568f9ddeed6225464d5a317d4a56c11000700d048bf5036a6d8c",
+    "reason": "company, lift and supporting quote confirmed; not a statistical replication"
+  }
+}

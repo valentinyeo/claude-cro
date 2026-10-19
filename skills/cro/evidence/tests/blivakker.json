@@ -38,7 +38,7 @@
   "research_type": "ab-test",
   "notes": "Publisher says about half the visitors saw each version. Exact per-arm sample sizes and statistical confidence are not published.",
   "verification_details": {
-    "checked_at": "2026-10-15T10:29:06+00:00",
+    "checked_at": "2026-10-18T11:01:22+00:00",
     "source_loaded": true,
     "company_found": true,
     "lift_found": true,

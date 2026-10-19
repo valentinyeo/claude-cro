@@ -1,0 +1,53 @@
+{
+  "id": "anonymous-industrial-shorter-download-path-win",
+  "title": "Anonymous industrial shorter download path win",
+  "company": "Anonymous industrial intelligence provider",
+  "industry": "Industrial intelligence products and services",
+  "business_type": "Lead Gen",
+  "page_type": "lead-form",
+  "element": "registration-flow",
+  "change": {
+    "control": "Three-step download path moves from product introduction to returning-user login and then new-user registration.",
+    "variant": "Move registration and email capture to the first step, provide returning-user link instead of mandatory login step, remove general-information heading and align headline with button copy."
+  },
+  "result": {
+    "metric": "download-path conversion rate",
+    "relative_lift_pct": 364,
+    "direction": "win",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": {
+    "confidence_pct": null,
+    "p_value": null,
+    "reported": "Source reports significantly higher conversions; numeric confidence not supplied."
+  },
+  "test_duration": null,
+  "date_published": "2009-04-15",
+  "source_url": "https://marketingexperiments.com/value-proposition/working-now-optimization-364-percent-gain",
+  "source_type": "agency case study",
+  "quote": "The treatment outperformed the control by 364%.",
+  "verification": "unverified",
+  "evidence_strength": "B",
+  "principles": [
+    "clarity",
+    "friction"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "research",
+  "notes": "Case Study 2, a follow-up to the registration-form experiment. Published rates were 2.13% versus 9.89%; preserve reported 364% rather than recomputing. The article calls the increase significant but does not quantify confidence. This is not the separate sequential shutter-retailer example. Allocation method is not explicitly restated for Case Study 2, so this is conservatively classified as research rather than a confirmed randomized A/B test.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:00:59+00:00",
+    "source_loaded": true,
+    "company_found": false,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://marketingexperiments.com/value-proposition/working-now-optimization-364-percent-gain",
+    "content_sha256": "1a451ec9ba7d77a879c847e3e6970de2eac27c947fd3b0b73805e5bca33d2eea",
+    "reason": "not confirmed: company"
+  }
+}

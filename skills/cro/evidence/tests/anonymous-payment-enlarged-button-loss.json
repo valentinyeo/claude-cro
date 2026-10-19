@@ -1,0 +1,49 @@
+{
+  "id": "anonymous-payment-enlarged-button-loss",
+  "title": "Anonymous payment-page client (button-size test): Make the payment-page CTA button substantially larger.",
+  "company": "Anonymous payment-page client (button-size test)",
+  "industry": "Online commerce, product undisclosed",
+  "business_type": "E-commerce",
+  "page_type": "checkout",
+  "element": "button-size",
+  "change": {
+    "control": "Payment-page CTA at its original smaller size.",
+    "variant": "Make the payment-page CTA button substantially larger."
+  },
+  "result": {
+    "metric": "payment-page conversions",
+    "relative_lift_pct": null,
+    "direction": "loss",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": null,
+  "test_duration": null,
+  "date_published": "2013-05-22",
+  "source_url": "https://unbounce.com/conversion-rate-optimization/design-call-to-action-buttons/",
+  "source_type": "platform case study",
+  "quote": "making a button a lot bigger actually had a negative effect on conversion on a payment page.",
+  "verification": "unverified",
+  "evidence_strength": "C",
+  "principles": [
+    "visual-hierarchy",
+    "anxiety"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Distinct size test, not the payment-page pronoun-copy experiment. No numeric lift is given in the prose. Business type inferred from payment context.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:39:28+00:00",
+    "source_loaded": true,
+    "company_found": false,
+    "lift_found": false,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://unbounce.com/conversion-rate-optimization/design-call-to-action-buttons/",
+    "content_sha256": "f5f881a4568eb0d1285e036f5d9e5582bed80c803737346b8fc70976130f79c1",
+    "reason": "not confirmed: company, lift"
+  }
+}

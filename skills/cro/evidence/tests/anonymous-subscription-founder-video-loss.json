@@ -1,0 +1,49 @@
+{
+  "id": "anonymous-subscription-founder-video-loss",
+  "title": "Anonymous subscription founder video loss",
+  "company": "Anonymous subscription product company",
+  "industry": "Online subscription products",
+  "business_type": "Subscription",
+  "page_type": "landing",
+  "element": "founder-video",
+  "change": {
+    "control": "Offer page without a founder video.",
+    "variant": "Add a founder video explaining the product to the same offer page."
+  },
+  "result": {
+    "metric": "subscription offer conversion",
+    "relative_lift_pct": null,
+    "direction": "loss",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": null,
+  "test_duration": null,
+  "date_published": "2006-12-18",
+  "source_url": "https://marketingexperiments.com/conversion-marketing/does-a-video-offer-increase-or-decrease-conversion",
+  "source_type": "agency case study",
+  "quote": "converted much lower than the same page without the video:",
+  "verification": "unverified",
+  "evidence_strength": "C",
+  "principles": [
+    "clarity",
+    "friction"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Qualitative published loss; no numeric lift in visible text. Some users could not watch or hear the video. No company identity or randomization detail is disclosed.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:39:33+00:00",
+    "source_loaded": true,
+    "company_found": false,
+    "lift_found": false,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://marketingexperiments.com/conversion-marketing/does-a-video-offer-increase-or-decrease-conversion",
+    "content_sha256": "ccabb88b981f0163c1937166aae304a70bf55b61c69b7bf316697f9d2452c1f4",
+    "reason": "not confirmed: company, lift"
+  }
+}

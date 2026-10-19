@@ -1,0 +1,49 @@
+{
+  "id": "duolingo-german-notification-benefit-copy-optin-win",
+  "title": "Learning-success copy improved German notification opt-ins",
+  "company": "Duolingo",
+  "industry": "Language education",
+  "business_type": "Subscription",
+  "page_type": "global",
+  "element": "notification-permission-copy",
+  "change": {
+    "control": "German notification prompt says Duolingo needs to send you notifications.",
+    "variant": "Explain that notifications are proven to foster learning success."
+  },
+  "result": {
+    "metric": "notification opt-in",
+    "relative_lift_pct": 8,
+    "direction": "win",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": null,
+  "test_duration": null,
+  "date_published": "2022-01-14",
+  "source_url": "https://blog.duolingo.com/copy-testing-experiments/",
+  "source_type": "company blog",
+  "quote": "This change yielded an 8% increase in opt-in to notifications for German learners!",
+  "verification": "verified",
+  "evidence_strength": "B",
+  "principles": [
+    "relevance",
+    "clarity"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "German-language app audience, not all users. Separate Spanish replication was nonsignificant.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:01:27+00:00",
+    "source_loaded": true,
+    "company_found": true,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://blog.duolingo.com/copy-testing-experiments/",
+    "content_sha256": "facd4d184f5231906ba50c32e7882c502f83380bc3e47367ffbebe7986406567",
+    "reason": "company, lift and supporting quote confirmed; not a statistical replication"
+  }
+}

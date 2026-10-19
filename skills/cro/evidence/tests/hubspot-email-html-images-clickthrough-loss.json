@@ -1,0 +1,53 @@
+{
+  "id": "hubspot-email-html-images-clickthrough-loss",
+  "title": "Hubspot email html images clickthrough loss",
+  "company": "HubSpot",
+  "industry": "Marketing and sales software",
+  "business_type": "SaaS",
+  "page_type": "email",
+  "element": "email-design",
+  "change": {
+    "control": "Near-plain-text marketing email with minimal HTML for tracking and links.",
+    "variant": "Use an HTML email template containing images."
+  },
+  "result": {
+    "metric": "clickthrough rate (clicks per opened email)",
+    "relative_lift_pct": -21,
+    "direction": "loss",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": {
+    "confidence_pct": null,
+    "p_value": null,
+    "reported": "Publisher says the plainer variation won with statistical significance."
+  },
+  "test_duration": null,
+  "date_published": null,
+  "source_url": "https://blog.hubspot.com/marketing/plain-text-vs-html-emails-data",
+  "source_type": "company blog",
+  "quote": "For the plain-text vs. HTML template with images test, the HTML email version had a 21% lower clickthrough rate",
+  "verification": "verified",
+  "evidence_strength": "B",
+  "principles": [
+    "simplicity",
+    "personalization"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Combined with lower opens, the HTML version had 51% fewer total clicks. Over half a billion emails refers to a separate observational customer-email analysis, not this A/B sample.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:01:40+00:00",
+    "source_loaded": true,
+    "company_found": true,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://blog.hubspot.com/marketing/plain-text-vs-html-emails-data",
+    "content_sha256": "e631ddfc51e3f38472be102fd5c58bb903dd27944a2a8422a69318769814023f",
+    "reason": "company, lift and supporting quote confirmed; not a statistical replication"
+  }
+}

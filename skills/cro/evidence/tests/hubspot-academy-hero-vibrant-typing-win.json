@@ -1,0 +1,49 @@
+{
+  "id": "hubspot-academy-hero-vibrant-typing-win",
+  "title": "Hubspot academy hero vibrant typing win",
+  "company": "HubSpot",
+  "industry": "Marketing and sales software",
+  "business_type": "SaaS",
+  "page_type": "home",
+  "element": "hero-design",
+  "change": {
+    "control": "Existing HubSpot Academy homepage hero, variant A.",
+    "variant": "Use vibrant images, colorful text and shapes, and an animated typing headline."
+  },
+  "result": {
+    "metric": "HubSpot Academy conversion rate",
+    "relative_lift_pct": 6,
+    "direction": "win",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": null,
+  "test_duration": null,
+  "date_published": null,
+  "source_url": "https://blog.hubspot.com/marketing/a-b-testing-experiments-examples",
+  "source_type": "company blog",
+  "quote": "As a result, HubSpot found that variant B outperformed the control by 6%. In contrast, variant C underperformed the control by 1%.",
+  "verification": "verified",
+  "evidence_strength": "B",
+  "principles": [
+    "visual-hierarchy",
+    "clarity"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "One arm-versus-control comparison from a three-arm test. 55,000+ page views and 0.9% video watching describe prior diagnostic data, not the experiment sample. Current article was originally published in October 2014 and later updated; original exact publication day unknown.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:01:39+00:00",
+    "source_loaded": true,
+    "company_found": true,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://blog.hubspot.com/marketing/a-b-testing-experiments-examples",
+    "content_sha256": "82fe00f829aa2efbbcb7d1af1dbb527b78a4430c5b7be9c3561436b69670b9db",
+    "reason": "company, lift and supporting quote confirmed; not a statistical replication"
+  }
+}

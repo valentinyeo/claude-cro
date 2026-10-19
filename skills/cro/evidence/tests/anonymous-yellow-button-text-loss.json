@@ -1,0 +1,49 @@
+{
+  "id": "anonymous-yellow-button-text-loss",
+  "title": "Anonymous yellow button text loss",
+  "company": "Anonymous ContentVerve CTA design client",
+  "industry": "Online lead capture",
+  "business_type": "Lead Gen",
+  "page_type": "landing",
+  "element": "cta-color",
+  "change": {
+    "control": "Black text on a green CTA button.",
+    "variant": "Change only the CTA text color to yellow, retaining the green button."
+  },
+  "result": {
+    "metric": "CTA clickthrough rate",
+    "relative_lift_pct": -18,
+    "direction": "loss",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": null,
+  "test_duration": null,
+  "date_published": "2013-03-15",
+  "source_url": "https://marketingexperiments.com/email-marketing/email-optimization-a-single-word-change-results-in-a-90-lift-in-sign-ups",
+  "source_type": "agency case study",
+  "quote": "the treatment producing an 18% decrease in clickthrough rate.",
+  "verification": "unverified",
+  "evidence_strength": "B",
+  "principles": [
+    "contrast",
+    "visual-hierarchy"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Reported by Michael Aagaard at Email Summit 2013. Company and offer are not disclosed; classified as lead capture from the CTA-testing context.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:01:10+00:00",
+    "source_loaded": true,
+    "company_found": false,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://marketingexperiments.com/email-marketing/email-optimization-a-single-word-change-results-in-a-90-lift-in-sign-ups",
+    "content_sha256": "8e29b773a9c870c33aea13d83ccb261face621763b354933a251e2d6772d9025",
+    "reason": "not confirmed: company"
+  }
+}

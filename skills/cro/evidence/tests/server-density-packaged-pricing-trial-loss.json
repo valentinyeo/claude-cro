@@ -44,7 +44,7 @@
   "research_type": "ab-test",
   "notes": "Loss on free-trial signups, not on overall business value: reported revenue rose 114%. No significance is stated for the free-trial metric; a result-table image reports 93% chance to beat original without identifying the metric. Publisher percentage is retained, not recalculated from rounded rates or raw signup counts.",
   "verification_details": {
-    "checked_at": "2026-10-15T10:29:12+00:00",
+    "checked_at": "2026-10-18T11:02:01+00:00",
     "source_loaded": true,
     "company_found": true,
     "lift_found": true,

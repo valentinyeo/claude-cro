@@ -1,0 +1,53 @@
+{
+  "id": "research-hard-drive-image-size-win",
+  "title": "Anonymous hard-drive retailer stimulus (CXL image-size research): product image size (win)",
+  "company": "Anonymous hard-drive retailer stimulus (CXL image-size research)",
+  "industry": "Electronics",
+  "business_type": "E-commerce",
+  "page_type": "product",
+  "element": "product-image-size",
+  "change": {
+    "control": "Smaller hard-drive product image, with prices removed.",
+    "variant": "Enlarge the same hard-drive product image on the otherwise equivalent PDP."
+  },
+  "result": {
+    "metric": "surveyed perceived product value",
+    "relative_lift_pct": null,
+    "direction": "win",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": {
+    "confidence_pct": null,
+    "p_value": 0.039,
+    "reported": "Publisher reports p=0.039"
+  },
+  "test_duration": null,
+  "date_published": null,
+  "source_url": "https://speero.com/post/how-product-image-size-impacts-value-perception-original-research",
+  "source_type": "agency case study",
+  "quote": "respondents perceived the product page containing the larger image to be 11$ more valuable",
+  "verification": "unverified",
+  "evidence_strength": "C",
+  "principles": [
+    "visual-complexity",
+    "value-perception"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "research",
+  "notes": "Bargain-question difference $11; too-expensive threshold $15 higher, p=0.053. Intro summarizes $13.50 across the questions; no relative percent lift published. US general-population survey; 2,982 participants across all eight treatments, not a count for this comparison. No sales or conversion effect measured.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:41:40+00:00",
+    "source_loaded": true,
+    "company_found": false,
+    "lift_found": false,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://speero.com/post/how-product-image-size-impacts-value-perception-original-research",
+    "content_sha256": "0d8dc3817afd865f07277af3d780f270195ca28618c53160fed86fbd4f6759bf",
+    "reason": "not confirmed: company, lift"
+  }
+}

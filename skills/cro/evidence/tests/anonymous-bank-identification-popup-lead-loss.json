@@ -1,0 +1,49 @@
+{
+  "id": "anonymous-bank-identification-popup-lead-loss",
+  "title": "Anonymous banking client: Add a pop-up explaining the mandatory business identification number field.",
+  "company": "Anonymous banking client",
+  "industry": "Banking",
+  "business_type": "Lead Gen",
+  "page_type": "lead-form",
+  "element": "field-explanation",
+  "change": {
+    "control": "Standard request form with mandatory business identification number field.",
+    "variant": "Add a pop-up explaining the mandatory business identification number field."
+  },
+  "result": {
+    "metric": "leads",
+    "relative_lift_pct": -22,
+    "direction": "loss",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": null,
+  "test_duration": null,
+  "date_published": null,
+  "source_url": "https://wingify.com/blog/interpreting-failed-ab-test-results/",
+  "source_type": "platform case study",
+  "quote": "They saw a 22% decrease in leads as well as a 16% decrease in the number of visitors continuing to step 2 of the form.",
+  "verification": "unverified",
+  "evidence_strength": "B",
+  "principles": [
+    "friction",
+    "clarity"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Progression to form step 2 also decreased 16%.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:00:54+00:00",
+    "source_loaded": true,
+    "company_found": false,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://wingify.com/blog/interpreting-failed-ab-test-results/",
+    "content_sha256": "32267cb006135068733432b27a9e5030b7482c24d812cc06999ec5cbb414165f",
+    "reason": "not confirmed: company"
+  }
+}

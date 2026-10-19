@@ -1,0 +1,49 @@
+{
+  "id": "airbnb-new-listing-engagement-estimator-bookings-win",
+  "title": "Estimating missing new-listing engagement improved overall bookings",
+  "company": "Airbnb",
+  "industry": "Travel accommodation",
+  "business_type": "Marketplace",
+  "page_type": "global",
+  "element": "cold-start-ranking",
+  "change": {
+    "control": "Default engagement values for new listings entering the ranking model.",
+    "variant": "Predict new-listing engagement from attributes and comparable nearby listings before feeding the ranking DNN."
+  },
+  "result": {
+    "metric": "overall bookings",
+    "relative_lift_pct": 0.38,
+    "direction": "win",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": null,
+  "test_duration": null,
+  "date_published": null,
+  "source_url": "https://arxiv.org/html/2002.05515",
+  "source_type": "academic",
+  "quote": "overall bookings increased by + 0.38 %",
+  "verification": "verified",
+  "evidence_strength": "B",
+  "principles": [
+    "relevance",
+    "clarity"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Bookings on new listings +14% and their first-page impression share +14%; overall lift is not the new-listing subgroup lift.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:00:50+00:00",
+    "source_loaded": true,
+    "company_found": true,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://arxiv.org/html/2002.05515",
+    "content_sha256": "0e52d7c20c9a4f16d27d922ac891b01cd1213e0cb8027fd351290f59654e0a6a",
+    "reason": "company, lift and supporting quote confirmed; not a statistical replication"
+  }
+}

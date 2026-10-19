@@ -1,0 +1,49 @@
+{
+  "id": "anonymous-registration-two-step-form-loss",
+  "title": "Anonymous Conversioner client: Split the form into two steps, requesting email and name first and remaining details second.",
+  "company": "Anonymous Conversioner client",
+  "industry": "Registration service, undisclosed",
+  "business_type": "Lead Gen",
+  "page_type": "lead-form",
+  "element": "form-steps",
+  "change": {
+    "control": "Long detailed registration form on one step.",
+    "variant": "Split the form into two steps, requesting email and name first and remaining details second."
+  },
+  "result": {
+    "metric": "registration form completions",
+    "relative_lift_pct": null,
+    "direction": "loss",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": null,
+  "test_duration": null,
+  "date_published": "2015-02-26",
+  "source_url": "https://unbounce.com/conversion-rate-optimization/lessons-learned-by-9-conversion-experts/",
+  "source_type": "platform case study",
+  "quote": "That version actually lost. It turned out that people were put off by the shorter version and were more likely to fill in the long detailed registration form",
+  "verification": "unverified",
+  "evidence_strength": "C",
+  "principles": [
+    "friction",
+    "commitment"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Talia Wolf’s first-hand experiment recollection. No numeric effect or significance reported. Business model undisclosed; Lead Gen describes the tested registration action.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:39:30+00:00",
+    "source_loaded": true,
+    "company_found": false,
+    "lift_found": false,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://unbounce.com/conversion-rate-optimization/lessons-learned-by-9-conversion-experts/",
+    "content_sha256": "141e1aa0fbba64021ebfba9196a7318fdbdc09a616e357caa79d4d4dd107f967",
+    "reason": "not confirmed: company, lift"
+  }
+}

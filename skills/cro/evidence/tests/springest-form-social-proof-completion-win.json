@@ -1,0 +1,56 @@
+{
+  "id": "springest-form-social-proof-completion-win",
+  "title": "Springest: Remove intro text and logo, add user quotes and well-known Dutch-brand logos in the sidebar, and mark optional fields instead of using required-field asterisks.",
+  "company": "Springest",
+  "industry": "Training course comparison",
+  "business_type": "Lead Gen",
+  "page_type": "lead-form",
+  "element": "form-reassurance",
+  "change": {
+    "control": "Brochure request form with introductory text, logo, and asterisks marking required fields.",
+    "variant": "Remove intro text and logo, add user quotes and well-known Dutch-brand logos in the sidebar, and mark optional fields instead of using required-field asterisks."
+  },
+  "result": {
+    "metric": "brochure form completion rate",
+    "relative_lift_pct": 5.21,
+    "direction": "win",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": {
+    "total": 2500,
+    "unit": "form completions (lower bound; source says over 2,500)"
+  },
+  "significance": {
+    "confidence_pct": 97,
+    "p_value": null,
+    "reported": "97% confidence reported by publisher"
+  },
+  "test_duration": null,
+  "date_published": null,
+  "source_url": "https://wingify.com/success-stories/springest/",
+  "source_type": "platform case study",
+  "quote": "5.21% improvement in form completion",
+  "verification": "verified",
+  "evidence_strength": "B",
+  "principles": [
+    "social-proof",
+    "friction"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Published conversion count is a lower bound, not an exact count or visitor sample size. The estimated annual €50,000 benefit is a projection, not observed experimental revenue. Bundled changes cannot isolate social proof.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:02:02+00:00",
+    "source_loaded": true,
+    "company_found": true,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://wingify.com/success-stories/springest/",
+    "content_sha256": "d6d00197200c007c398fd87cb4fd68220cdf6ef2323c30547ebcf77f17255723",
+    "reason": "company, lift and supporting quote confirmed; not a statistical replication"
+  }
+}

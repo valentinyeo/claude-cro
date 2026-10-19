@@ -1,0 +1,49 @@
+{
+  "id": "marketingsherpa-research-ppc-message-loss",
+  "title": "MarketingSherpa research PPC message loss",
+  "company": "MarketingSherpa",
+  "industry": "Marketing research publishing",
+  "business_type": "Content / Media",
+  "page_type": "ad",
+  "element": "ad-copy",
+  "change": {
+    "control": "PPC ad focused on marketing strategy.",
+    "variant": "Focus the PPC ad on research instead of strategy."
+  },
+  "result": {
+    "metric": "PPC clickthrough rate",
+    "relative_lift_pct": -62,
+    "direction": "loss",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": null,
+  "test_duration": null,
+  "date_published": "2014-05-19",
+  "source_url": "https://marketingexperiments.com/value-proposition/value-claims-ppc-ad-strategy",
+  "source_type": "agency case study",
+  "quote": "The research-focused ad decreased clickthrough 62% compared to the strategy-focused ad.",
+  "verification": "verified",
+  "evidence_strength": "B",
+  "principles": [
+    "clarity",
+    "friction"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Pre-Summit Test 1, not the subsequent public-library value-claim tests.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:01:47+00:00",
+    "source_loaded": true,
+    "company_found": true,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://marketingexperiments.com/value-proposition/value-claims-ppc-ad-strategy",
+    "content_sha256": "f85348dabdc2ff6607f4419ea19c9a49e12d3e28ff0d50bd413584ecd9f42a99",
+    "reason": "company, lift and supporting quote confirmed; not a statistical replication"
+  }
+}

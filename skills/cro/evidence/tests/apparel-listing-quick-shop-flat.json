@@ -1,0 +1,49 @@
+{
+  "id": "apparel-listing-quick-shop-flat",
+  "title": "Anonymous apparel retailer (GrowthRock quick-shop study): quick shop (flat)",
+  "company": "Anonymous apparel retailer (GrowthRock quick-shop study)",
+  "industry": "Apparel",
+  "business_type": "E-commerce",
+  "page_type": "category",
+  "element": "quick-shop",
+  "change": {
+    "control": "Listing pages require opening a PDP to select options and add an item.",
+    "variant": "Offer Quick Shop on listing pages to add items without loading their PDP."
+  },
+  "result": {
+    "metric": "purchase conversion rate",
+    "relative_lift_pct": null,
+    "direction": "flat",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": null,
+  "test_duration": null,
+  "date_published": null,
+  "source_url": "https://growthrock.co/a-b-test-hypotheses/",
+  "source_type": "agency case study",
+  "quote": "across hundred of thousands of visitors, there was absolutely no change in conversion rate by having quick shop.",
+  "verification": "unverified",
+  "evidence_strength": "C",
+  "principles": [
+    "friction",
+    "discovery"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "No precise visitor count or relative estimate published. Add-to-carts increased but not completed orders; cart visits were lower without significance.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:39:41+00:00",
+    "source_loaded": true,
+    "company_found": false,
+    "lift_found": false,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://growthrock.co/a-b-test-hypotheses/",
+    "content_sha256": "49ab0cb74880c7da2f57b736a115c3683023c5bb698cb6d72d2338a337b42e27",
+    "reason": "not confirmed: company, lift"
+  }
+}

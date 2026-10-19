@@ -1,0 +1,53 @@
+{
+  "id": "apparel-size-guide-near-size-selector-win",
+  "title": "Anonymous apparel retailer (GrowthRock size-guide study): size guide placement (win)",
+  "company": "Anonymous apparel retailer (GrowthRock size-guide study)",
+  "industry": "Apparel",
+  "business_type": "E-commerce",
+  "page_type": "product",
+  "element": "size-guide-placement",
+  "change": {
+    "control": "Size-guide link low in the product-description section.",
+    "variant": "Move size-guide link above and near the size-selection dropdown."
+  },
+  "result": {
+    "metric": "purchase conversion rate",
+    "relative_lift_pct": 21,
+    "direction": "win",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": {
+    "confidence_pct": 96,
+    "p_value": null,
+    "reported": "96% statistical significance reported by publisher"
+  },
+  "test_duration": "10 days",
+  "date_published": null,
+  "source_url": "https://growthrock.co/size-guide-ab-test-apparel-ecommerce/",
+  "source_type": "agency case study",
+  "quote": "variation B increased conversion rate by 21%",
+  "verification": "unverified",
+  "evidence_strength": "B",
+  "principles": [
+    "clarity",
+    "friction"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Body reports 21% conversion lift and 22% AOV, despite 22% headline. More than 20,000 sessions but fewer than 200 conversions per arm; author warns about low conversion count. Heatmap counts are pretest research, not experiment sample.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:01:12+00:00",
+    "source_loaded": true,
+    "company_found": false,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://growthrock.co/size-guide-ab-test-apparel-ecommerce/",
+    "content_sha256": "b09b0c905c461268065f259a6cd61e9fa7afd89709bafc05783a9f3d2498784e",
+    "reason": "not confirmed: company"
+  }
+}

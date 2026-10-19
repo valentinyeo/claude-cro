@@ -1,0 +1,49 @@
+{
+  "id": "metageek-download-page-treatment-e-loss",
+  "title": "MetaGeek download page treatment e loss",
+  "company": "MetaGeek",
+  "industry": "Wi-Fi analysis software",
+  "business_type": "E-commerce",
+  "page_type": "product",
+  "element": "download-cta",
+  "change": {
+    "control": "Text-link-dominant inSSIDer download page, with a free Home download and separate Office flow.",
+    "variant": "Use buttons, explanatory headers and enlarged transaction areas with forms; also position Home as a paid product with a trial and lead capture."
+  },
+  "result": {
+    "metric": "download-page clicks or engagement",
+    "relative_lift_pct": -80,
+    "direction": "loss",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": null,
+  "test_duration": null,
+  "date_published": "2013-10-29",
+  "source_url": "https://copyhackers.com/2013/10/text-link-button/",
+  "source_type": "agency case study",
+  "quote": "Treatment E: -80% lift",
+  "verification": "verified",
+  "evidence_strength": "B",
+  "principles": [
+    "clarity",
+    "friction"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "One treatment-to-control comparison in a four-variant Google Experiments multi-armed-bandit test. A rerun also lost and is not counted separately. Primary metric is clicks/engagement; Home and Office downloads were secondary goals and also lost. No arm sample sizes or achieved significance are supplied. Software downloads are not described as recurring subscriptions.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:01:50+00:00",
+    "source_loaded": true,
+    "company_found": true,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://copyhackers.com/2013/10/text-link-button/",
+    "content_sha256": "bfb75a56a74aa8e4a7b5e8b964bec92cc8aaf9d1de637b4dba5828557f88980b",
+    "reason": "company, lift and supporting quote confirmed; not a statistical replication"
+  }
+}

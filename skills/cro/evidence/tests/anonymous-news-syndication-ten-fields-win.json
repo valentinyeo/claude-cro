@@ -1,0 +1,53 @@
+{
+  "id": "anonymous-news-syndication-ten-fields-win",
+  "title": "Anonymous news syndication ten fields win",
+  "company": "Anonymous large news syndication company",
+  "industry": "News syndication",
+  "business_type": "Lead Gen",
+  "page_type": "lead-form",
+  "element": "form-fields",
+  "change": {
+    "control": "Request More Information form with 11 fields, 10 required, sidebar navigation and three equally weighted bottom calls-to-action.",
+    "variant": "Remove sidebar navigation and bottom calls-to-action and use 10 form fields, all required."
+  },
+  "result": {
+    "metric": "leads",
+    "relative_lift_pct": 87,
+    "direction": "win",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": {
+    "confidence_pct": null,
+    "p_value": null,
+    "reported": "Both treatments reported significantly better than control; confidence not quantified."
+  },
+  "test_duration": null,
+  "date_published": null,
+  "source_url": "https://marketingexperiments.com/conversion-marketing/optimizing-web-forms-2",
+  "source_type": "agency case study",
+  "quote": "Treatment A produced a 109% lift, while Treatment B generated 87% more leads.",
+  "verification": "unverified",
+  "evidence_strength": "B",
+  "principles": [
+    "clarity",
+    "friction"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Test Protocol 1636; research first published July 2014, exact original day unknown. Date here is the dated article publication. Both treatments improved on the original. Exact original publication day in July 2014 is unknown; date_published is null, not the 2018 republication date.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:01:01+00:00",
+    "source_loaded": true,
+    "company_found": false,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://marketingexperiments.com/conversion-marketing/optimizing-web-forms-2",
+    "content_sha256": "eddd692f42d9e561f6830e9f1be3bdf59427d45a005fb76b4bc682fedd73cb6f",
+    "reason": "not confirmed: company"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "id": "bag-servant-search-twitter-follow-loss",
+  "title": "Bag Servant: Add a Twitter Follow badge to the search page.",
+  "company": "Bag Servant",
+  "industry": "Handbag affiliate shopping",
+  "business_type": "E-commerce",
+  "page_type": "landing",
+  "element": "trust-badge",
+  "change": {
+    "control": "Original search page before the tested additional badge.",
+    "variant": "Add a Twitter Follow badge to the search page."
+  },
+  "result": {
+    "metric": "click-throughs to affiliate partner websites",
+    "relative_lift_pct": null,
+    "direction": "loss",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": null,
+  "test_duration": null,
+  "date_published": null,
+  "source_url": "https://wingify.com/success-stories/bag-servant/",
+  "source_type": "platform case study",
+  "quote": "But both variation pages got them negative results for all the 3 goals mentioned above.",
+  "verification": "unverified",
+  "evidence_strength": "C",
+  "principles": [
+    "trust",
+    "social-proof"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Separate search-page badge arm; not the winning homepage WOW badge experiment. Site engagement and product exploration also declined. No numerical lift reported. Primary affiliate-shopping funnel classified E-commerce rather than a transactional marketplace.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:39:51+00:00",
+    "source_loaded": true,
+    "company_found": true,
+    "lift_found": false,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://wingify.com/success-stories/bag-servant/",
+    "content_sha256": "5d465dec272beffe9af72ccf00ae9d45a492fa72335834c05e3fa936d68d3c13",
+    "reason": "not confirmed: lift"
+  }
+}

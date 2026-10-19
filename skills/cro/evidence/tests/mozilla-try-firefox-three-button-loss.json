@@ -1,0 +1,53 @@
+{
+  "id": "mozilla-try-firefox-three-button-loss",
+  "title": "Mozilla try firefox three button loss",
+  "company": "Mozilla",
+  "industry": "Web browsers",
+  "business_type": "Non-profit",
+  "page_type": "product",
+  "element": "cta-copy",
+  "change": {
+    "control": "Download button says “Download Now – Free”.",
+    "variant": "Change button text to “Try Firefox 3”."
+  },
+  "result": {
+    "metric": "Firefox download clicks",
+    "relative_lift_pct": -3.44,
+    "direction": "loss",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": {
+    "confidence_pct": 99.85,
+    "p_value": null,
+    "reported": "Publisher reports 99.85% confidence."
+  },
+  "test_duration": "two weeks",
+  "date_published": "2008-11-21",
+  "source_url": "https://blog.mozilla.org/metrics/2008/11/21/changing-the-firefox-download-button/",
+  "source_type": "company blog",
+  "quote": "which translates to a 3.44% decrease in optimization when using “Try Firefox 3”, with 99.85% confidence in these results",
+  "verification": "verified",
+  "evidence_strength": "B",
+  "principles": [
+    "clarity",
+    "free"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Approximately 300,000 visitors and nearly 30,000 download clicks; exact counts unknown. Published rates: original 10.07%, Try Firefox 3 9.73%. Preserve the published -3.44% lift rather than recalculating from rounded rates. Business type reflects the nonprofit-owned browser organization; the conversion is a browser download, not a SaaS subscription.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:01:51+00:00",
+    "source_loaded": true,
+    "company_found": true,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://blog.mozilla.org/metrics/2008/11/21/changing-the-firefox-download-button/",
+    "content_sha256": "6361a35e2ff448b9802096dc4284de8575000396e4816f479e159e557f412598",
+    "reason": "company, lift and supporting quote confirmed; not a statistical replication"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "id": "safesoft-visible-price-lead-win",
+  "title": "SafeSoft Solutions: Display a large green price image next to the lead form.",
+  "company": "SafeSoft Solutions",
+  "industry": "Contact-center marketing software",
+  "business_type": "SaaS",
+  "page_type": "landing",
+  "element": "price-display",
+  "change": {
+    "control": "Market Dialer PPC landing page contact form without the prominent price image.",
+    "variant": "Display a large green price image next to the lead form."
+  },
+  "result": {
+    "metric": "leads generated",
+    "relative_lift_pct": 100,
+    "direction": "win",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": null,
+  "test_duration": null,
+  "date_published": null,
+  "source_url": "https://wingify.com/success-stories/safesoft/",
+  "source_type": "platform case study",
+  "quote": "The result: a 100% jump in leads generated",
+  "verification": "verified",
+  "evidence_strength": "B",
+  "principles": [
+    "pricing",
+    "transparency"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Experiment took place in September 2011; publication date is not given. Outcome is lead submissions, not software purchases.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:02:00+00:00",
+    "source_loaded": true,
+    "company_found": true,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://wingify.com/success-stories/safesoft/",
+    "content_sha256": "721cca95fd07274401253c2c16079eadc0e2779b14b311e51b313f04ff65b9f7",
+    "reason": "company, lift and supporting quote confirmed; not a statistical replication"
+  }
+}

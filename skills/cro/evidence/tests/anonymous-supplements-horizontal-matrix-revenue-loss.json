@@ -1,0 +1,49 @@
+{
+  "id": "anonymous-supplements-horizontal-matrix-revenue-loss",
+  "title": "Anonymous supplements horizontal matrix revenue loss",
+  "company": "Anonymous vitamin supplement manufacturer and distributor",
+  "industry": "Vitamin supplements",
+  "business_type": "E-commerce",
+  "page_type": "product",
+  "element": "product-option-layout",
+  "change": {
+    "control": "Vertical radio-button list with the most expensive Best Value option preselected.",
+    "variant": "Horizontal matrix emphasizes middle Most Popular option, adds cost-per-serving comparisons and an auto-populated form requiring payment information."
+  },
+  "result": {
+    "metric": "revenue",
+    "relative_lift_pct": null,
+    "direction": "loss",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": null,
+  "test_duration": null,
+  "date_published": null,
+  "source_url": "https://marketingexperiments.com/conversion-marketing/marketing-multiple-products-2",
+  "source_type": "agency case study",
+  "quote": "the control page outperformed the treatment by 70% in terms of revenue, while conversion changes were insignificant.",
+  "verification": "unverified",
+  "evidence_strength": "C",
+  "principles": [
+    "choice-architecture",
+    "friction"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Test Protocol 1903; research first published July 2014. The 70% is a control-over-treatment comparison, not the treatment relative loss, so signed lift is null rather than reversing its sign. Conversion was inconclusive; primary revenue loss retained. Exact original publication day in July 2014 is unknown; date_published is null, not the 2018 republication date.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:39:34+00:00",
+    "source_loaded": true,
+    "company_found": false,
+    "lift_found": false,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://marketingexperiments.com/conversion-marketing/marketing-multiple-products-2",
+    "content_sha256": "7a4fde7bbf3cc643b0976ac54d359ce51e1b3d4daa2c1712884f46a9988301fb",
+    "reason": "not confirmed: company, lift"
+  }
+}

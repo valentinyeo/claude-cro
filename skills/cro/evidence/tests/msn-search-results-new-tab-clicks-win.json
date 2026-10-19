@@ -1,0 +1,51 @@
+{
+  "id": "msn-search-results-new-tab-clicks-win",
+  "title": "Opening search results in a new tab increased homepage clicks",
+  "company": "MSN",
+  "industry": "Web search and online services",
+  "business_type": "Content / Media",
+  "page_type": "home",
+  "element": "search-results-link-target",
+  "change": {
+    "control": "Search results open in the current tab/window.",
+    "variant": "Open search results in a new tab/window."
+  },
+  "result": {
+    "metric": "homepage clicks per user",
+    "relative_lift_pct": 5,
+    "direction": "win",
+    "desired_direction": "increase"
+  },
+  "sample_size": {
+    "total": 12000000,
+    "unit": "users; published as over 12M"
+  },
+  "conversions": null,
+  "significance": null,
+  "test_duration": null,
+  "date_published": null,
+  "source_url": "https://dl.acm.org/doi/fullHtml/10.1145/2623330.2623341",
+  "source_type": "academic",
+  "quote": "In April 2011, MSN in the US ran a very large experiment, with over 12M users, which opened the search results in a new tab/window, and engagement as measured by clicks per user increased by a whopping 5%.",
+  "verification": "unverified",
+  "evidence_strength": "B",
+  "principles": [
+    "relevance",
+    "clarity"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Over 12M users is a lower bound. New-tab changes can also improve click-beacon reliability; do not assume all measured clicks represent incremental behavior. Full text is also available in the author-hosted PDF at https://exp-platform.com/Documents/2014%20experimentersRulesOfThumb.pdf. The supporting quote and result were checked against that PDF; the equivalent ACM publisher full-text page returned HTTP 403 in Chromium.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:01:52+00:00",
+    "source_loaded": false,
+    "company_found": false,
+    "lift_found": false,
+    "quote_found": false,
+    "fetched_with": "http",
+    "status_code": 403,
+    "final_url": "https://dl.acm.org/doi/fullHtml/10.1145/2623330.2623341",
+    "reason": "HTTP 403"
+  }
+}

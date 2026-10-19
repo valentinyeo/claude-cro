@@ -1,0 +1,53 @@
+{
+  "id": "retailer-navbar-support-icon-orders-win",
+  "title": "Anonymous retailer (GrowthRock support-icon study): support icon placement (win)",
+  "company": "Anonymous retailer (GrowthRock support-icon study)",
+  "industry": "Online retail",
+  "business_type": "E-commerce",
+  "page_type": "global",
+  "element": "support-icon-placement",
+  "change": {
+    "control": "Floating support-chat icon in the lower-right corner.",
+    "variant": "Move the support-chat entry icon to the navigation bar; open the same chat widget."
+  },
+  "result": {
+    "metric": "sitewide purchase conversion rate",
+    "relative_lift_pct": 7,
+    "direction": "win",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": {
+    "confidence_pct": 96,
+    "p_value": null,
+    "reported": "96% statistical significance reported by publisher"
+  },
+  "test_duration": null,
+  "date_published": null,
+  "source_url": "https://growthrock.co/ecommerce-support-icon-conversion-rate-ab-test/",
+  "source_type": "agency case study",
+  "quote": "it increased the overall site conversion rate by 7% with 96% statistical significance",
+  "verification": "unverified",
+  "evidence_strength": "B",
+  "principles": [
+    "support",
+    "friction"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "1% of all visitors clicked the navbar icon. Casper and Road Runner Sports illustrate placement, not the client identity.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:01:59+00:00",
+    "source_loaded": true,
+    "company_found": false,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://growthrock.co/ecommerce-support-icon-conversion-rate-ab-test/",
+    "content_sha256": "dd5f1d660e40a4545f50e8b6206086910663b349a4a3728c7498b778b35c22c2",
+    "reason": "not confirmed: company"
+  }
+}

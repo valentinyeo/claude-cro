@@ -1,0 +1,53 @@
+{
+  "id": "mozilla-ie-simplified-landing-page-win",
+  "title": "Mozilla ie simplified landing page win",
+  "company": "Mozilla",
+  "industry": "Web browsers",
+  "business_type": "Non-profit",
+  "page_type": "landing",
+  "element": "page-simplification",
+  "change": {
+    "control": "IE landing page with main features, switching tips, deep footer and download stats.",
+    "variant": "Keep download stats, remove the main features and switching tips, and simplify the footer while retaining legal/privacy/trademark links."
+  },
+  "result": {
+    "metric": "Firefox download conversions",
+    "relative_lift_pct": 2.3,
+    "direction": "win",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": {
+    "confidence_pct": 99,
+    "p_value": null,
+    "reported": "Publisher reports 99% confidence interval for the best combined variation."
+  },
+  "test_duration": null,
+  "date_published": "2010-03-22",
+  "source_url": "https://blog.mozilla.org/metrics/2010/03/22/addition-by-subtraction/",
+  "source_type": "company blog",
+  "quote": "The simplest variation (far right image) performed the best, increasing the download conversion rate by 2.3%, at the 99% confidence interval.",
+  "verification": "verified",
+  "evidence_strength": "B",
+  "principles": [
+    "friction",
+    "clarity"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Combined-recipe versus original comparison from the same multivariate test as the factor-level records; not an independent study. Outcome includes subsequent downloads after seeing the landing page, not only immediate clicks. Business type reflects the nonprofit-owned browser organization; the conversion is a browser download, not a SaaS subscription.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:01:51+00:00",
+    "source_loaded": true,
+    "company_found": true,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://blog.mozilla.org/metrics/2010/03/22/addition-by-subtraction/",
+    "content_sha256": "35a41bb674d09688095fc7a8f65560186f60f4c228f7741496802a473e7946c9",
+    "reason": "company, lift and supporting quote confirmed; not a statistical replication"
+  }
+}

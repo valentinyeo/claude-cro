@@ -1,0 +1,52 @@
+{
+  "id": "highrise-long-sales-letter-signups",
+  "title": "Highrise long sales letter signups",
+  "company": "Highrise",
+  "industry": "Customer relationship management software",
+  "business_type": "SaaS",
+  "page_type": "home",
+  "element": "page-design",
+  "change": {
+    "control": "Original Highrise homepage with weaker sales copy.",
+    "variant": "Replace the homepage with a longer sales-letter design and stronger copy."
+  },
+  "result": {
+    "metric": "net paid signups",
+    "relative_lift_pct": 37.5,
+    "direction": "win",
+    "desired_direction": "increase"
+  },
+  "sample_size": {
+    "total": 42000,
+    "unit": "visitors; published as over 42,000, a lower bound"
+  },
+  "conversions": null,
+  "significance": null,
+  "test_duration": null,
+  "date_published": "2011-07-21",
+  "source_url": "https://signalvnoise.com/posts/2977-behind-the-scenes-highrise-marketing-site-ab-testing-part-1",
+  "source_type": "company blog",
+  "quote": "The long form page had a 37.5% increase in net signups compared to the original.",
+  "verification": "verified",
+  "evidence_strength": "B",
+  "principles": [
+    "clarity",
+    "persuasion"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Source introduction identifies the outcome as paid signups. More than 42,000 visitors across both arms; exact sample unknown.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:01:38+00:00",
+    "source_loaded": true,
+    "company_found": true,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://signalvnoise.com/posts/2977-behind-the-scenes-highrise-marketing-site-ab-testing-part-1",
+    "content_sha256": "9b549d331bb961aaf3c0d89be3e21d64ab442ed91f9c339aa5d3368653ab9e32",
+    "reason": "company, lift and supporting quote confirmed; not a statistical replication"
+  }
+}

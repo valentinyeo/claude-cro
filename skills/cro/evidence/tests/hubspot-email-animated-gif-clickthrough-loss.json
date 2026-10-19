@@ -1,0 +1,53 @@
+{
+  "id": "hubspot-email-animated-gif-clickthrough-loss",
+  "title": "Hubspot email animated gif clickthrough loss",
+  "company": "HubSpot",
+  "industry": "Marketing and sales software",
+  "business_type": "SaaS",
+  "page_type": "email",
+  "element": "email-design",
+  "change": {
+    "control": "Near-plain-text marketing email with minimal HTML for tracking and links.",
+    "variant": "Add an animated GIF image to the marketing email."
+  },
+  "result": {
+    "metric": "clickthrough rate (clicks per opened email)",
+    "relative_lift_pct": -2.3,
+    "direction": "loss",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": {
+    "confidence_pct": null,
+    "p_value": null,
+    "reported": "Publisher says the plainer variation won with statistical significance."
+  },
+  "test_duration": null,
+  "date_published": null,
+  "source_url": "https://blog.hubspot.com/marketing/plain-text-vs-html-emails-data",
+  "source_type": "company blog",
+  "quote": "For the plain-text vs. .GIF image test, the .GIF version had a 2.3% lower clickthrough rate.",
+  "verification": "verified",
+  "evidence_strength": "B",
+  "principles": [
+    "simplicity",
+    "personalization"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Lower opens plus lower clickthrough rate meant the plain-text version got 42% more total clicks. No reversed-baseline total-click lift is calculated. Source original exact publication date unknown; displayed date is an update.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:01:39+00:00",
+    "source_loaded": true,
+    "company_found": true,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://blog.hubspot.com/marketing/plain-text-vs-html-emails-data",
+    "content_sha256": "e631ddfc51e3f38472be102fd5c58bb903dd27944a2a8422a69318769814023f",
+    "reason": "company, lift and supporting quote confirmed; not a statistical replication"
+  }
+}

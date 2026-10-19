@@ -1,0 +1,49 @@
+{
+  "id": "supplement-mobile-scroll-to-cart-flat",
+  "title": "Anonymous supplement retailer (GrowthRock sticky-cart study): sticky scroll to cart (flat)",
+  "company": "Anonymous supplement retailer (GrowthRock sticky-cart study)",
+  "industry": "Nutritional supplements",
+  "business_type": "E-commerce",
+  "page_type": "product",
+  "element": "sticky-scroll-to-cart",
+  "change": {
+    "control": "Mobile PDP without a sticky add-to-cart button (A).",
+    "variant": "Sticky add-to-cart bar scrolls to the existing controls instead of opening a drawer (B)."
+  },
+  "result": {
+    "metric": "mobile purchase conversion rate",
+    "relative_lift_pct": null,
+    "direction": "flat",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": null,
+  "test_duration": "14 days",
+  "date_published": null,
+  "source_url": "https://growthrock.co/sticky-add-to-cart-button-example/",
+  "source_type": "agency case study",
+  "quote": "showed no statistically significant difference in conversion rate from the original.",
+  "verification": "unverified",
+  "evidence_strength": "C",
+  "principles": [
+    "friction",
+    "usability"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Same three-arm mobile experiment as the drawer comparison, not a second independent study. Add-to-cart clicks rose 6%, but purchase conversion was inconclusive.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:41:48+00:00",
+    "source_loaded": true,
+    "company_found": false,
+    "lift_found": false,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://growthrock.co/sticky-add-to-cart-button-example/",
+    "content_sha256": "51b0cfb7f32b26b19bb50f62838f8f499f77df2bbfd3430cc8e0ba9b8ccf473f",
+    "reason": "not confirmed: company, lift"
+  }
+}

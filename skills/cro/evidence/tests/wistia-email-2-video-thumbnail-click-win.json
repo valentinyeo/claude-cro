@@ -1,0 +1,60 @@
+{
+  "id": "wistia-email-2-video-thumbnail-click-win",
+  "title": "Wistia email 2 video thumbnail click win",
+  "company": "Wistia",
+  "industry": "Video hosting and marketing software",
+  "business_type": "SaaS",
+  "page_type": "email",
+  "element": "video-thumbnail",
+  "change": {
+    "control": "Email 2 about camera sliders uses a plain static image.",
+    "variant": "Overlay a video play button and timestamp on the same image in email 2, keeping copy and subject identical."
+  },
+  "result": {
+    "metric": "email click engagement",
+    "relative_lift_pct": 24.38,
+    "direction": "win",
+    "desired_direction": "increase"
+  },
+  "sample_size": {
+    "total": 5270,
+    "unit": "email recipients"
+  },
+  "conversions": {
+    "control": 570,
+    "variant": 709,
+    "unit": "recipients clicking any link in the email"
+  },
+  "significance": {
+    "confidence_pct": null,
+    "p_value": null,
+    "reported": "Publisher explicitly calls this result statistically significant."
+  },
+  "test_duration": null,
+  "date_published": "2017-02-23",
+  "source_url": "https://wistia.com/blog/testing-video-thumbnails-in-emails",
+  "source_type": "company blog",
+  "quote": "This came out to 24.38% higher engagement with the video thumbnail email than the image email.",
+  "verification": "verified",
+  "evidence_strength": "A",
+  "principles": [
+    "visual-cue",
+    "video"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Distinct randomized email send in a seven-test series; recipient lists sometimes overlap. Outcome includes clicks on all email links, not just thumbnail clicks. Preserve reported lift rather than recomputing rounded rates or reconciling click-count discrepancies. 50/50 list split reported but arm sample counts not separately published.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:02:10+00:00",
+    "source_loaded": true,
+    "company_found": true,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://wistia.com/blog/testing-video-thumbnails-in-emails",
+    "content_sha256": "2f33f47778f5dbeeb272327f45e04dab5a49a60346b8de0f41d88fd83929ac2c",
+    "reason": "company, lift and supporting quote confirmed; not a statistical replication"
+  }
+}

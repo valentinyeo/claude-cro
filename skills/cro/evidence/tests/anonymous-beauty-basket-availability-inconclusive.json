@@ -1,0 +1,49 @@
+{
+  "id": "anonymous-beauty-basket-availability-inconclusive",
+  "title": "Anonymous beauty company: Display a product availability message on the basket page.",
+  "company": "Anonymous beauty company",
+  "industry": "Beauty retail",
+  "business_type": "E-commerce",
+  "page_type": "cart",
+  "element": "availability-message",
+  "change": {
+    "control": "Basket page without the tested product availability message.",
+    "variant": "Display a product availability message on the basket page."
+  },
+  "result": {
+    "metric": "conversion rate",
+    "relative_lift_pct": 1,
+    "direction": "flat",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": null,
+  "test_duration": null,
+  "date_published": null,
+  "source_url": "https://wingify.com/blog/interpreting-failed-ab-test-results/",
+  "source_type": "platform case study",
+  "quote": "Instead, the results proved inconclusive. The conversion rate increased by 1%, but access to checkout and the average order value decreased by 2% and 0.7% respectively.",
+  "verification": "unverified",
+  "evidence_strength": "B",
+  "principles": [
+    "urgency",
+    "availability"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Publisher explicitly calls the test inconclusive. Retain the +1% point estimate; checkout access fell 2% and AOV fell 0.7%.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:00:55+00:00",
+    "source_loaded": true,
+    "company_found": false,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://wingify.com/blog/interpreting-failed-ab-test-results/",
+    "content_sha256": "32267cb006135068733432b27a9e5030b7482c24d812cc06999ec5cbb414165f",
+    "reason": "not confirmed: company"
+  }
+}

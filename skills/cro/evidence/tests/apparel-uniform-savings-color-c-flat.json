@@ -1,0 +1,57 @@
+{
+  "id": "apparel-uniform-savings-color-c-flat",
+  "title": "Anonymous apparel retailer (GrowthRock savings study): percentage savings copy (flat)",
+  "company": "Anonymous apparel retailer (GrowthRock savings study)",
+  "industry": "Apparel",
+  "business_type": "E-commerce",
+  "page_type": "global",
+  "element": "percentage-savings-copy",
+  "change": {
+    "control": "Was/now prices on PLPs and PDPs, with the same 30% discount on nearly every product.",
+    "variant": "Add You Save #% beside was/now prices on PLPs and PDPs using color treatment C."
+  },
+  "result": {
+    "metric": "completed-order conversion rate",
+    "relative_lift_pct": null,
+    "direction": "flat",
+    "desired_direction": "increase"
+  },
+  "sample_size": {
+    "control": 280314,
+    "variant": 280057,
+    "unit": "visitors (counts in published results figure)"
+  },
+  "conversions": {
+    "control": 8791,
+    "variant": 8764,
+    "unit": "completed orders (published figure)"
+  },
+  "significance": null,
+  "test_duration": "2 weeks",
+  "date_published": null,
+  "source_url": "https://growthrock.co/ecommerce-pricing-ab-test-adding-savings-percent-can-increase-conversion-rate/",
+  "source_type": "agency case study",
+  "quote": "The conversion rates to completed order for all three variations were within 0.3% of each other",
+  "verification": "unverified",
+  "evidence_strength": "C",
+  "principles": [
+    "price-framing",
+    "clarity"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "One of two color arms versus the shared original, not an independent test. The source does not specify the actual text colors in prose. The 0.3% proximity statement is not a relative lift. Figure rates: control 3.14%, each variant 3.13%; no lift recomputed.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:39:47+00:00",
+    "source_loaded": true,
+    "company_found": false,
+    "lift_found": false,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://growthrock.co/ecommerce-pricing-ab-test-adding-savings-percent-can-increase-conversion-rate/",
+    "content_sha256": "2ce5a99397b9c432bd6d9df95555a59d29d2d42b79e214a77831165d687ec89a",
+    "reason": "not confirmed: company, lift"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "id": "supplement-shipping-promo-bar-flat",
+  "title": "Anonymous niche supplement retailer (GrowthRock shipping study): shipping promo bar (flat)",
+  "company": "Anonymous niche supplement retailer (GrowthRock shipping study)",
+  "industry": "Nutritional supplements",
+  "business_type": "E-commerce",
+  "page_type": "global",
+  "element": "shipping-promo-bar",
+  "change": {
+    "control": "Free shipping not prominently promoted in a sitewide bar.",
+    "variant": "Place free-shipping copy in a promotion bar, one of the subsequent placements tested."
+  },
+  "result": {
+    "metric": "purchase conversion rate",
+    "relative_lift_pct": null,
+    "direction": "flat",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": null,
+  "test_duration": null,
+  "date_published": null,
+  "source_url": "https://growthrock.co/ecommerce-free-shipping-case-study/",
+  "source_type": "agency case study",
+  "quote": "For this brand we actually tried a few different placements of free shipping copy including in a promo bar and still found it made no difference on conversion rate.",
+  "verification": "unverified",
+  "evidence_strength": "C",
+  "principles": [
+    "clarity",
+    "risk-reversal"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Follow-up placement comparison mentioned qualitatively; no per-test counts, dates or point estimate. Do not treat all unspecified placements as separate experiments.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:41:50+00:00",
+    "source_loaded": true,
+    "company_found": false,
+    "lift_found": false,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://growthrock.co/ecommerce-free-shipping-case-study/",
+    "content_sha256": "d4ea1e6eccd613145914e5b7b8583f4ca72440e130cae54e5eb53cdfc1ebfc7a",
+    "reason": "not confirmed: company, lift"
+  }
+}

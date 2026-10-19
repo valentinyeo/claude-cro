@@ -1,0 +1,49 @@
+{
+  "id": "contentverve-spam-privacy-download-loss",
+  "title": "ContentVerve (Michael Aagaard): Replace the statement with 100% privacy – I will never spam you!",
+  "company": "Michael Aagaard",
+  "industry": "Conversion optimization education",
+  "business_type": "Lead Gen",
+  "page_type": "landing",
+  "element": "privacy-copy",
+  "change": {
+    "control": "E-book landing page says I guarantee 100% privacy.",
+    "variant": "Replace the statement with 100% privacy – I will never spam you!"
+  },
+  "result": {
+    "metric": "CRO e-book downloads",
+    "relative_lift_pct": -24,
+    "direction": "loss",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": null,
+  "test_duration": null,
+  "date_published": "2013-10-16",
+  "source_url": "https://unbounce.com/a-b-testing/failed-ab-test-results/",
+  "source_type": "platform case study",
+  "quote": "I saw a 24% drop in downloads when ran the original “I guarantee 100% privacy.” Against “100% privacy – I will never spam you!”",
+  "verification": "verified",
+  "evidence_strength": "B",
+  "principles": [
+    "trust",
+    "anxiety"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Author’s own free e-book, 7 Universal Conversion Optimization Principles. Company identification follows the author’s Content Verve affiliation in the platform account.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:01:25+00:00",
+    "source_loaded": true,
+    "company_found": true,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://unbounce.com/a-b-testing/failed-ab-test-results/",
+    "content_sha256": "1adc0c04f4c64472383a42f8b7010678aef6e45c347db709d0cd78a10b808498",
+    "reason": "company, lift and supporting quote confirmed; not a statistical replication"
+  }
+}

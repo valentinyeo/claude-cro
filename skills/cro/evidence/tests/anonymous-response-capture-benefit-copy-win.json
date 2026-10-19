@@ -1,0 +1,49 @@
+{
+  "id": "anonymous-response-capture-benefit-copy-win",
+  "title": "Anonymous response capture benefit copy win",
+  "company": "Anonymous Response Capture B2B client",
+  "industry": "B2B information offers",
+  "business_type": "Lead Gen",
+  "page_type": "landing",
+  "element": "headline-and-cta",
+  "change": {
+    "control": "Previously optimized page uses a generic wealth-of-knowledge headline.",
+    "variant": "Promote the white-paper offer in the headline, list its benefits in bullets and use CTA Get the Free Report Now."
+  },
+  "result": {
+    "metric": "white-paper download conversion rate",
+    "relative_lift_pct": 162.5,
+    "direction": "win",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": null,
+  "test_duration": null,
+  "date_published": "2010-01-29",
+  "source_url": "https://marketingexperiments.com/conversion-marketing/response-capture-case-study",
+  "source_type": "agency case study",
+  "quote": "The new landing page delivered a 162.5% conversion rate increase over the previously optimized page",
+  "verification": "unverified",
+  "evidence_strength": "B",
+  "principles": [
+    "clarity",
+    "value-proposition"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Test 2 versus Test 1 winner, not versus original page. The article also reports 258% versus original; that is not another independent experiment. Continuation opt-in improved 141% versus the previous optimized page.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:01:05+00:00",
+    "source_loaded": true,
+    "company_found": false,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://marketingexperiments.com/conversion-marketing/response-capture-case-study",
+    "content_sha256": "8b22880201abe5ee9cce4ae872ee763a8d2ee55bc2bff418876364eb6f3dcac5",
+    "reason": "not confirmed: company"
+  }
+}

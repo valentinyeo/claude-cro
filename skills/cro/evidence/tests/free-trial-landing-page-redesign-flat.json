@@ -1,0 +1,48 @@
+{
+  "id": "free-trial-landing-page-redesign-flat",
+  "title": "Anonymous free-trial product business (Conversion Fanatics button study): landing page redesign (flat)",
+  "company": "Anonymous free-trial product business (Conversion Fanatics button study)",
+  "industry": "Digital free-trial product",
+  "business_type": "Subscription",
+  "page_type": "landing",
+  "element": "landing-page-redesign",
+  "change": {
+    "control": "Previously optimized free-trial landing page.",
+    "variant": "Redesign the landing page; the source does not enumerate the redesign components."
+  },
+  "result": {
+    "metric": "free-trial conversion rate",
+    "relative_lift_pct": null,
+    "direction": "flat",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": null,
+  "test_duration": null,
+  "date_published": null,
+  "source_url": "https://conversionfanatics.com/reviving-losing-split-tests-to-increase-sales-conversion-rate/",
+  "source_type": "agency case study",
+  "quote": "the results showed only slight improvement. Not enough to declare it a true winner.",
+  "verification": "unverified",
+  "evidence_strength": "C",
+  "principles": [
+    "clarity"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Earlier redesign round, distinct from the follow-up button experiment. Only the fact of the redesign and inconclusive result are documented; no causal component attribution possible.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:40:42+00:00",
+    "source_loaded": true,
+    "company_found": false,
+    "lift_found": false,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://conversionfanatics.com/reviving-losing-split-tests-to-increase-sales-conversion-rate/",
+    "content_sha256": "379ca634958edd13be9a2e9304cd34d16c9e5e2d6650f83902d081c39435683b",
+    "reason": "not confirmed: company, lift"
+  }
+}

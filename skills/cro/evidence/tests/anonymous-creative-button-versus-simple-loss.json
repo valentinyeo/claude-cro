@@ -1,0 +1,49 @@
+{
+  "id": "anonymous-creative-button-versus-simple-loss",
+  "title": "Anonymous CTA design client: Use the illustrated more creative CTA design and its copy instead of the simple green button.",
+  "company": "Anonymous CTA design client",
+  "industry": "Online offer, undisclosed",
+  "business_type": "Lead Gen",
+  "page_type": "landing",
+  "element": "button-design",
+  "change": {
+    "control": "Simple green CTA button with relevant copy.",
+    "variant": "Use the illustrated more creative CTA design and its copy instead of the simple green button."
+  },
+  "result": {
+    "metric": "CTA conversions",
+    "relative_lift_pct": null,
+    "direction": "loss",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": null,
+  "test_duration": null,
+  "date_published": "2013-05-22",
+  "source_url": "https://unbounce.com/conversion-rate-optimization/design-call-to-action-buttons/",
+  "source_type": "platform case study",
+  "quote": "a simple green button with relevant copy outperformed a creative variant by 10.94%.",
+  "verification": "unverified",
+  "evidence_strength": "C",
+  "principles": [
+    "clarity",
+    "affordance"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "The published +10.94% is for the simple button relative to the creative variant. No reciprocal negative lift calculated. Copy and design changed together; company, precise conversion event, and business model undisclosed; Lead Gen is a provisional action-based classification.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:39:17+00:00",
+    "source_loaded": true,
+    "company_found": false,
+    "lift_found": false,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://unbounce.com/conversion-rate-optimization/design-call-to-action-buttons/",
+    "content_sha256": "f5f881a4568eb0d1285e036f5d9e5582bed80c803737346b8fc70976130f79c1",
+    "reason": "not confirmed: company, lift"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "id": "bulk-order-price-per-unit-win",
+  "title": "Anonymous bulk-product retailer (Conversion Fanatics price-detail study): price detail copy (win)",
+  "company": "Anonymous bulk-product retailer (Conversion Fanatics price-detail study)",
+  "industry": "Bulk physical products",
+  "business_type": "E-commerce",
+  "page_type": "checkout",
+  "element": "price-detail-copy",
+  "change": {
+    "control": "Ordering interface highlights savings as purchase quantity increases.",
+    "variant": "Replace quantity-discount savings language with per-unit pricing."
+  },
+  "result": {
+    "metric": "order conversion rate",
+    "relative_lift_pct": 12.9,
+    "direction": "win",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": null,
+  "test_duration": null,
+  "date_published": null,
+  "source_url": "https://conversionfanatics.com/is-it-a-good-idea-to-display-per-unit-or-savings-details/",
+  "source_type": "agency case study",
+  "quote": "The highlight of the price per unit converted 12.9% better than the control",
+  "verification": "unverified",
+  "evidence_strength": "B",
+  "principles": [
+    "price-framing",
+    "cognitive-load"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Two separate variant-versus-shared-control comparisons. No counts, duration or achieved significance published.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:01:23+00:00",
+    "source_loaded": true,
+    "company_found": false,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://conversionfanatics.com/is-it-a-good-idea-to-display-per-unit-or-savings-details/",
+    "content_sha256": "d75de29ecc8be1b85fe375f5d38a2a2d596d5b5cbc88688168ccefa659112ad5",
+    "reason": "not confirmed: company"
+  }
+}

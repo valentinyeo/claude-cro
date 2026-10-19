@@ -1,0 +1,49 @@
+{
+  "id": "anonymous-premium-software-try-now-loss",
+  "title": "Anonymous premium software try now loss",
+  "company": "Anonymous global media software company",
+  "industry": "Business software",
+  "business_type": "SaaS",
+  "page_type": "global",
+  "element": "cta-copy",
+  "change": {
+    "control": "Banner CTA says Start Free Trial.",
+    "variant": "Change banner CTA text to Try Now."
+  },
+  "result": {
+    "metric": "banner clickthrough rate",
+    "relative_lift_pct": -26,
+    "direction": "loss",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": null,
+  "test_duration": null,
+  "date_published": "2014-03-31",
+  "source_url": "https://marketingexperiments.com/copywriting/cta-button-copy-reduce-clickthrough",
+  "source_type": "agency case study",
+  "quote": "“Try Now” reduced clickthrough rate by 26% versus “Start Free Trial”",
+  "verification": "unverified",
+  "evidence_strength": "B",
+  "principles": [
+    "clarity",
+    "value-proposition"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "One comparison from an A/B/C/D/E button-copy test for premium business software.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:01:03+00:00",
+    "source_loaded": true,
+    "company_found": false,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://marketingexperiments.com/copywriting/cta-button-copy-reduce-clickthrough",
+    "content_sha256": "a36ae7b57d751bf9354f283bc92f4a655b9d884af576ce91e0a23861bf0586a4",
+    "reason": "not confirmed: company"
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "id": "sermo-multiple-content-email-optin-win",
+  "title": "Sermo multiple content email optin win",
+  "company": "Sermo",
+  "industry": "Physician social network and pharmaceutical marketing",
+  "business_type": "Lead Gen",
+  "page_type": "email",
+  "element": "email-content-choice",
+  "change": {
+    "control": "Single-article email offer to a rented Fierce Pharma audience with an email capture popup after the download click.",
+    "variant": "Offer several content choices within one email."
+  },
+  "result": {
+    "metric": "email capture rate among prospects who clicked twice",
+    "relative_lift_pct": 197,
+    "direction": "win",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": {
+    "confidence_pct": null,
+    "p_value": null,
+    "reported": "Source reports a significant opt-in increase among people who clicked twice."
+  },
+  "test_duration": null,
+  "date_published": "2017-01-31",
+  "source_url": "https://marketingexperiments.com/a-b-testing/sermo-increased-opt-in-rate",
+  "source_type": "agency case study",
+  "quote": "increase email capture rate by 197% on their most qualified prospects.",
+  "verification": "verified",
+  "evidence_strength": "B",
+  "principles": [
+    "clarity",
+    "friction"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "The reported increase applies only to twice-clicking prospects, not all recipients. Post-treatment selection may affect comparability. No sample counts or confidence supplied. Earlier inconclusive single-article tests are not separately recorded because individual changes are unspecified. Classified by pharmaceutical lead opt-in, not the physician community’s paid-access revenue.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:02:00+00:00",
+    "source_loaded": true,
+    "company_found": true,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://marketingexperiments.com/a-b-testing/sermo-increased-opt-in-rate",
+    "content_sha256": "84c8ee3b55629a8b903386b2593cb574591029ab377914b1a449f4cd51643ae4",
+    "reason": "company, lift and supporting quote confirmed; not a statistical replication"
+  }
+}

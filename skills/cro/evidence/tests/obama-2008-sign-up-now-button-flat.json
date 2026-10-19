@@ -1,0 +1,56 @@
+{
+  "id": "obama-2008-sign-up-now-button-flat",
+  "title": "Obama 2008 sign up now button flat",
+  "company": "Obama 2008 campaign",
+  "industry": "Political campaigning",
+  "business_type": "Non-profit",
+  "page_type": "landing",
+  "element": "cta-copy",
+  "change": {
+    "control": "Original splash-page signup button, pooled over randomized media treatments.",
+    "variant": "Use button text “Sign Up Now”, pooled over randomized media treatments."
+  },
+  "result": {
+    "metric": "email signup rate",
+    "relative_lift_pct": -2.38,
+    "direction": "flat",
+    "desired_direction": "increase"
+  },
+  "sample_size": {
+    "control": 77858,
+    "variant": 77151,
+    "unit": "visitors pooled by button treatment across media combinations"
+  },
+  "conversions": {
+    "control": 5851,
+    "variant": 5660,
+    "unit": "email signups"
+  },
+  "significance": null,
+  "test_duration": null,
+  "date_published": "2010-11-29",
+  "source_url": "https://www.optimizely.com/insights/blog/how-obama-raised-60-million-by-running-a-simple-experiment/",
+  "source_type": "company blog",
+  "quote": "Sign Up Now 7.34% ± 0.2% 13.7% -2.38% 5660 / 77151",
+  "verification": "unverified",
+  "evidence_strength": "B",
+  "principles": [
+    "clarity",
+    "commitment"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Firsthand report by the campaign’s Director of Analytics. Main-effect comparison in the same 24-combination multivariate test. Quote transcribes one visible row of the inline Page Sections figure, reading columns left to right. Lift and counts transcribed from the inline Page Sections table. Learn More has a green interval; Join Us Now and Sign Up Now have yellow intervals, corresponding to the figure’s Winner/Inconclusive/Loser key. Yellow variants are recorded flat with their point estimates, not as proven equivalent. No confidence percentage is derived from chance to beat original.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:01:53+00:00",
+    "source_loaded": false,
+    "company_found": false,
+    "lift_found": false,
+    "quote_found": false,
+    "fetched_with": "http",
+    "status_code": 403,
+    "final_url": "https://www.optimizely.com/insights/blog/how-obama-raised-60-million-by-running-a-simple-experiment/",
+    "reason": "HTTP 403"
+  }
+}

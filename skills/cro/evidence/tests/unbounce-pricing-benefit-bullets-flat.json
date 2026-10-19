@@ -1,0 +1,49 @@
+{
+  "id": "unbounce-pricing-benefit-bullets-flat",
+  "title": "Unbounce: Add a bullet-point benefit list, also pushing the Open a free account link down about 300 pixels.",
+  "company": "Unbounce",
+  "industry": "Landing page software",
+  "business_type": "SaaS",
+  "page_type": "pricing",
+  "element": "benefit-list",
+  "change": {
+    "control": "Pricing page before the additional benefit bullets.",
+    "variant": "Add a bullet-point benefit list, also pushing the Open a free account link down about 300 pixels."
+  },
+  "result": {
+    "metric": "new trial starts",
+    "relative_lift_pct": null,
+    "direction": "flat",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": null,
+  "test_duration": null,
+  "date_published": "2015-02-26",
+  "source_url": "https://unbounce.com/conversion-rate-optimization/lessons-learned-by-9-conversion-experts/",
+  "source_type": "company blog",
+  "quote": "The impact on new trial starts was negligible (in the slightly positive but close to nothing range), so I pushed it live.",
+  "verification": "unverified",
+  "evidence_strength": "C",
+  "principles": [
+    "clarity",
+    "visual-hierarchy"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Trial-start estimate was slightly positive but negligible; not proven equivalence. After rollout, free accounts and upgrades dropped; those downstream observations were not quantified or separately randomized.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:41:53+00:00",
+    "source_loaded": true,
+    "company_found": true,
+    "lift_found": false,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://unbounce.com/conversion-rate-optimization/lessons-learned-by-9-conversion-experts/",
+    "content_sha256": "141e1aa0fbba64021ebfba9196a7318fdbdc09a616e357caa79d4d4dd107f967",
+    "reason": "not confirmed: lift"
+  }
+}

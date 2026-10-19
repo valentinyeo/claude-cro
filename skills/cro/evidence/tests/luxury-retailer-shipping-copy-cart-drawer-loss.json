@@ -1,0 +1,49 @@
+{
+  "id": "luxury-retailer-shipping-copy-cart-drawer-loss",
+  "title": "Anonymous luxury retailer (GrowthRock purpose-framework study): shipping returns copy (loss)",
+  "company": "Anonymous luxury retailer (GrowthRock purpose-framework study)",
+  "industry": "Luxury retail",
+  "business_type": "E-commerce",
+  "page_type": "cart",
+  "element": "shipping-returns-copy",
+  "change": {
+    "control": "No added free-shipping/free-returns message in the cart drawer.",
+    "variant": "Add free-shipping/free-returns copy inside the cart drawer."
+  },
+  "result": {
+    "metric": "purchase conversion rate",
+    "relative_lift_pct": null,
+    "direction": "loss",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": null,
+  "test_duration": null,
+  "date_published": null,
+  "source_url": "https://growthrock.co/ecommerce-conversion-rate-optimization-purposes-framework/",
+  "source_type": "agency case study",
+  "quote": "by putting free shipping and free returns” copy in the cart drawer, or near the add to cart button on the product page, conversion rate decreased",
+  "verification": "unverified",
+  "evidence_strength": "C",
+  "principles": [
+    "clarity",
+    "risk-reversal"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Qualitative report of two placement tests in a luxury retailer program. No lift, sample size, duration or achieved significance published. Not the furniture/supplement shipping tests.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:40:54+00:00",
+    "source_loaded": true,
+    "company_found": false,
+    "lift_found": false,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://growthrock.co/ecommerce-conversion-rate-optimization-purposes-framework/",
+    "content_sha256": "7f304045de71f18abe6af36b605aaa1e7551bb2f980eeb31fb86a9fb07a56319",
+    "reason": "not confirmed: company, lift"
+  }
+}

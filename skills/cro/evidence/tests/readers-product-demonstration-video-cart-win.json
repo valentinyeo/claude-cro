@@ -1,0 +1,49 @@
+{
+  "id": "readers-product-demonstration-video-cart-win",
+  "title": "Readers.com (One Click): Add product videos demonstrating product angles and face-shape fit, with in-house experts explaining features and benefits.",
+  "company": "Readers.com",
+  "industry": "Reading glasses retail",
+  "business_type": "E-commerce",
+  "page_type": "product",
+  "element": "product-video",
+  "change": {
+    "control": "Product pages without the tested videos.",
+    "variant": "Add product videos demonstrating product angles and face-shape fit, with in-house experts explaining features and benefits."
+  },
+  "result": {
+    "metric": "add-to-cart actions",
+    "relative_lift_pct": 10,
+    "direction": "win",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": null,
+  "test_duration": null,
+  "date_published": null,
+  "source_url": "https://wingify.com/success-stories/one-click/",
+  "source_type": "platform case study",
+  "quote": "This experiment helped them achieve a 10% increase in add to carts.",
+  "verification": "verified",
+  "evidence_strength": "B",
+  "principles": [
+    "product-demonstration",
+    "uncertainty"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Experiment 2 in the account. The prose says purchase conversion was higher but only the add-to-cart increase is quantified.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:01:56+00:00",
+    "source_loaded": true,
+    "company_found": true,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://wingify.com/success-stories/one-click/",
+    "content_sha256": "bb783c92ebfb4d487831ef018d32d504f1f2f230b11c814ce51885ca949215dc",
+    "reason": "company, lift and supporting quote confirmed; not a statistical replication"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "id": "pearlsonly-focused-checkout-revenue-win",
+  "title": "PearlsOnly: Remove irrelevant details and emphasize the main actions, shipping costs, and specific offers.",
+  "company": "PearlsOnly",
+  "industry": "Pearl jewelry retail",
+  "business_type": "E-commerce",
+  "page_type": "checkout",
+  "element": "checkout-focus",
+  "change": {
+    "control": "Cluttered checkout page with distracting details and elements leading visitors away.",
+    "variant": "Remove irrelevant details and emphasize the main actions, shipping costs, and specific offers."
+  },
+  "result": {
+    "metric": "revenue",
+    "relative_lift_pct": 10,
+    "direction": "win",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": null,
+  "test_duration": "close to a month",
+  "date_published": null,
+  "source_url": "https://wingify.com/success-stories/pearlsonly/",
+  "source_type": "platform case study",
+  "quote": "10% increase in Revenue",
+  "verification": "verified",
+  "evidence_strength": "B",
+  "principles": [
+    "focus",
+    "clarity"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Initial US-visitor checkout-page experiment. The account also mentions subsequent country replications and a homepage test without independent effect sizes; those are not added as separate records.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:01:56+00:00",
+    "source_loaded": true,
+    "company_found": true,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://wingify.com/success-stories/pearlsonly/",
+    "content_sha256": "3de4b51ec8feb7224ebede854aa9696cdf962d88929053d929514542f0804b3f",
+    "reason": "company, lift and supporting quote confirmed; not a statistical replication"
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "id": "research-blender-hedonic-description-win",
+  "title": "Anonymous appliance retailer stimulus (CXL description research): hedonic product copy (win)",
+  "company": "Anonymous appliance retailer stimulus (CXL description research)",
+  "industry": "Household appliances",
+  "business_type": "E-commerce",
+  "page_type": "product",
+  "element": "hedonic-product-copy",
+  "change": {
+    "control": "Utilitarian description of the blender, emphasizing technical utility.",
+    "variant": "Reword the same features of the blender as pleasure/benefit-oriented hedonic copy; remove prices, logos and irrelevant information."
+  },
+  "result": {
+    "metric": "surveyed perceived product value",
+    "relative_lift_pct": null,
+    "direction": "win",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": {
+    "confidence_pct": null,
+    "p_value": 0.0129,
+    "reported": "Publisher reports p=0.0129"
+  },
+  "test_duration": null,
+  "date_published": null,
+  "source_url": "https://speero.com/post/price-perceptions-of-products-with-utility-vs-hedonism-copy-original-research",
+  "source_type": "agency case study",
+  "quote": "Participants perceived the blender to be significantly more valuable when paired with the hedonic product description",
+  "verification": "unverified",
+  "evidence_strength": "C",
+  "principles": [
+    "value-proposition",
+    "value-perception"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "research",
+  "notes": "Bargain-question p=0.0129; too-expensive p<0.001. 304 survey participants across the study, not a published per-arm count. No purchases measured; household appliances only.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:41:38+00:00",
+    "source_loaded": true,
+    "company_found": false,
+    "lift_found": false,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://speero.com/post/price-perceptions-of-products-with-utility-vs-hedonism-copy-original-research",
+    "content_sha256": "bfba9a496c7856d24999a8df52ac80eee6f99c08ea80a2a9ead475a088a64c18",
+    "reason": "not confirmed: company, lift"
+  }
+}

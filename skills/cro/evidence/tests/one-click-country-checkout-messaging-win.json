@@ -1,0 +1,49 @@
+{
+  "id": "one-click-country-checkout-messaging-win",
+  "title": "One Click: Dynamically localize checkout details by visitor country, including shipping rates, delivery estimates, and currency.",
+  "company": "One Click",
+  "industry": "Eyewear retail",
+  "business_type": "E-commerce",
+  "page_type": "checkout",
+  "element": "localized-checkout",
+  "change": {
+    "control": "Checkout content without the tested country-specific personalization.",
+    "variant": "Dynamically localize checkout details by visitor country, including shipping rates, delivery estimates, and currency."
+  },
+  "result": {
+    "metric": "conversion rate",
+    "relative_lift_pct": 30,
+    "direction": "win",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": null,
+  "test_duration": null,
+  "date_published": null,
+  "source_url": "https://wingify.com/success-stories/one-click/",
+  "source_type": "platform case study",
+  "quote": "They saw a 30% increase in their conversion rate and achieved higher engagement with this experiment.",
+  "verification": "verified",
+  "evidence_strength": "B",
+  "principles": [
+    "localization",
+    "relevance"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Publisher illustrates Canada as an example. Experiment 1 in the account; not the separate product-video test.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:01:54+00:00",
+    "source_loaded": true,
+    "company_found": true,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://wingify.com/success-stories/one-click/",
+    "content_sha256": "bb783c92ebfb4d487831ef018d32d504f1f2f230b11c814ce51885ca949215dc",
+    "reason": "company, lift and supporting quote confirmed; not a statistical replication"
+  }
+}

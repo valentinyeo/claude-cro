@@ -1,0 +1,53 @@
+{
+  "id": "anonymous-medical-equipment-popular-product-flat",
+  "title": "Anonymous medical equipment popular product flat",
+  "company": "Anonymous wheelchair and medical equipment retailer",
+  "industry": "Medical equipment",
+  "business_type": "E-commerce",
+  "page_type": "category",
+  "element": "product-discovery",
+  "change": {
+    "control": "Traditional directory-style offer page.",
+    "variant": "Focus the offer page on the most popular product."
+  },
+  "result": {
+    "metric": "conversion-to-sale rate",
+    "relative_lift_pct": 12.65,
+    "direction": "flat",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": {
+    "confidence_pct": null,
+    "p_value": null,
+    "reported": "Source reports the test inconclusive."
+  },
+  "test_duration": "25 days",
+  "date_published": "2007-08-23",
+  "source_url": "https://marketingexperiments.com/a-b-testing/landing-page-conversion-improvements",
+  "source_type": "agency case study",
+  "quote": "Control 2.71% Treatment 2 3.06% Treatment 3 2.85% Diff. Between Treatment 2 and Control 12.65%",
+  "verification": "unverified",
+  "evidence_strength": "B",
+  "principles": [
+    "choice-architecture",
+    "friction"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Case Study 2, one treatment compared with the same directory control. Published rates: control 2.71%, popular-product 3.06%, configurator 2.85%. Popular-product relative lift reported as 12.65%; source also incorrectly calls 0.35% relative. Do not infer significance or recompute from rounded rates. Revenue per order fell for both treatments.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:01:00+00:00",
+    "source_loaded": true,
+    "company_found": false,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://marketingexperiments.com/a-b-testing/landing-page-conversion-improvements",
+    "content_sha256": "018809116d594e10de91fdc053d92cd90184ec5f2ebf140c52a966fe77d37688",
+    "reason": "not confirmed: company"
+  }
+}

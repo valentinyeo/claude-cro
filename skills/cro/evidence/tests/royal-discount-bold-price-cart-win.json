@@ -1,0 +1,49 @@
+{
+  "id": "royal-discount-bold-price-cart-win",
+  "title": "Royal Discount: Increase the discounted price to 20px bold while retaining the crossed-out MSRP.",
+  "company": "Royal Discount",
+  "industry": "Software retail",
+  "business_type": "E-commerce",
+  "page_type": "product",
+  "element": "price-emphasis",
+  "change": {
+    "control": "Discounted sale price at 15px with crossed-out MSRP.",
+    "variant": "Increase the discounted price to 20px bold while retaining the crossed-out MSRP."
+  },
+  "result": {
+    "metric": "Add to Cart clicks",
+    "relative_lift_pct": 36.54,
+    "direction": "win",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": null,
+  "test_duration": "more than 1 month",
+  "date_published": null,
+  "source_url": "https://wingify.com/success-stories/royal-discount/",
+  "source_type": "platform case study",
+  "quote": "The variation resulted in 36.54% more visitors clicking the Add to Cart CTA",
+  "verification": "verified",
+  "evidence_strength": "B",
+  "principles": [
+    "visual-hierarchy",
+    "pricing"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Microsoft Office 2013 product page. Revenue also rose 10.21%, but the source says revenue significance was not initially met. Use the directly reported add-to-cart outcome rather than claiming a significant revenue win.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:01:59+00:00",
+    "source_loaded": true,
+    "company_found": true,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://wingify.com/success-stories/royal-discount/",
+    "content_sha256": "f184358d25d70684ae3b62b1b3178b7e6c1af0c9707b7a29b9ef36992262fac4",
+    "reason": "company, lift and supporting quote confirmed; not a statistical replication"
+  }
+}

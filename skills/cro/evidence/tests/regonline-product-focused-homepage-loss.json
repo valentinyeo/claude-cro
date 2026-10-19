@@ -1,0 +1,49 @@
+{
+  "id": "regonline-product-focused-homepage-loss",
+  "title": "REGOnline product focused homepage loss",
+  "company": "REGOnline",
+  "industry": "Event management software",
+  "business_type": "SaaS",
+  "page_type": "home",
+  "element": "value-proposition",
+  "change": {
+    "control": "Original homepage and lead capture flow.",
+    "variant": "Rewrite headline and supporting copy around product features and benefits, emphasize free access, reduce form fields and carry product-centric value into subsequent steps."
+  },
+  "result": {
+    "metric": "completed homepage leads",
+    "relative_lift_pct": -24.5,
+    "direction": "loss",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": null,
+  "test_duration": null,
+  "date_published": "2013-02-20",
+  "source_url": "https://marketingexperiments.com/email-marketing/negative-lifts-valuable-insight",
+  "source_type": "agency case study",
+  "quote": "The treatment lost to the control by -24.5%.",
+  "verification": "verified",
+  "evidence_strength": "B",
+  "principles": [
+    "clarity",
+    "value-proposition"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Multifactor A/B test; the same loss is also described in earlier MECLABS articles, not additional experiments.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:01:57+00:00",
+    "source_loaded": true,
+    "company_found": true,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://marketingexperiments.com/email-marketing/negative-lifts-valuable-insight",
+    "content_sha256": "bf245acd333c0d31e867d18e3daff4e72fd57e7bd16c2ce9883c19f52350fde5",
+    "reason": "company, lift and supporting quote confirmed; not a statistical replication"
+  }
+}

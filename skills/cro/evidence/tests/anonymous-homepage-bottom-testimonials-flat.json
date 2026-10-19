@@ -1,0 +1,49 @@
+{
+  "id": "anonymous-homepage-bottom-testimonials-flat",
+  "title": "Anonymous homepage-test business: Add testimonials at the very bottom of the homepage in a follow-up test.",
+  "company": "Anonymous homepage-test business",
+  "industry": "Online business, undisclosed",
+  "business_type": "E-commerce",
+  "page_type": "home",
+  "element": "testimonial-placement",
+  "change": {
+    "control": "Homepage without the tested bottom-of-page testimonials.",
+    "variant": "Add testimonials at the very bottom of the homepage in a follow-up test."
+  },
+  "result": {
+    "metric": "sales",
+    "relative_lift_pct": null,
+    "direction": "flat",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": null,
+  "test_duration": null,
+  "date_published": "2012-09-19",
+  "source_url": "https://unbounce.com/a-b-testing/shocking-results/",
+  "source_type": "platform case study",
+  "quote": "this test was run again, this time with the testimonials at the very bottom of the page. The result was that there was no real impact on sales.",
+  "verification": "unverified",
+  "evidence_strength": "C",
+  "principles": [
+    "social-proof",
+    "visual-hierarchy"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Separate follow-up experiment after a 34% lift from testimonials higher on the page. Qualitative no-impact claim, not equivalence. Company undisclosed; E-commerce inferred from sales outcome.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:39:20+00:00",
+    "source_loaded": true,
+    "company_found": false,
+    "lift_found": false,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://unbounce.com/a-b-testing/shocking-results/",
+    "content_sha256": "583735552d8a2ff440c8fb7fbdfa5ca950d63279949228a3745bf81818207c25",
+    "reason": "not confirmed: company, lift"
+  }
+}

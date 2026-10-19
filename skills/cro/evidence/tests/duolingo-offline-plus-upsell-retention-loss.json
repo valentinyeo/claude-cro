@@ -1,0 +1,49 @@
+{
+  "id": "duolingo-offline-plus-upsell-retention-loss",
+  "title": "Offline lesson upsell reduced retention",
+  "company": "Duolingo",
+  "industry": "Language education",
+  "business_type": "Subscription",
+  "page_type": "global",
+  "element": "offline-subscription-upsell",
+  "change": {
+    "control": "Do not allow free users to tap offline skills to encounter a Plus ad before lessons.",
+    "variant": "Allow tapping skills while offline, then show a Plus purchase ad when starting a lesson."
+  },
+  "result": {
+    "metric": "user retention",
+    "relative_lift_pct": null,
+    "direction": "loss",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": null,
+  "test_duration": null,
+  "date_published": "2020-01-10",
+  "source_url": "https://blog.duolingo.com/improving-duolingo-one-experiment-at-a-time/",
+  "source_type": "company blog",
+  "quote": "while there was a slight increase in revenue, we unfortunately also saw a decrease in user retention.",
+  "verification": "unverified",
+  "evidence_strength": "C",
+  "principles": [
+    "relevance",
+    "clarity"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "App experiment, not browser checkout. Plus signups and revenue increased, but daily active users and retention fell; experiment stopped.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:40:30+00:00",
+    "source_loaded": true,
+    "company_found": true,
+    "lift_found": false,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://blog.duolingo.com/improving-duolingo-one-experiment-at-a-time/",
+    "content_sha256": "7258583070cf3674e37327efd871704c0f7838445a59864ae8123290e1d84441",
+    "reason": "not confirmed: lift"
+  }
+}

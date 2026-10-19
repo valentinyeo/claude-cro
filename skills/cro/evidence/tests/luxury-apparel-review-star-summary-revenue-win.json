@@ -1,0 +1,53 @@
+{
+  "id": "luxury-apparel-review-star-summary-revenue-win",
+  "title": "Anonymous luxury apparel brand (GrowthRock review-star study): review star summary (win)",
+  "company": "Anonymous luxury apparel brand (GrowthRock review-star study)",
+  "industry": "Luxury apparel",
+  "business_type": "E-commerce",
+  "page_type": "product",
+  "element": "review-star-summary",
+  "change": {
+    "control": "Product reviews exist at the bottom but no star-rating summary near the top of the PDP.",
+    "variant": "Add a review-star summary near the top of each PDP."
+  },
+  "result": {
+    "metric": "revenue per session",
+    "relative_lift_pct": 17,
+    "direction": "win",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": {
+    "confidence_pct": 97,
+    "p_value": null,
+    "reported": "97% statistical significance reported by publisher"
+  },
+  "test_duration": null,
+  "date_published": null,
+  "source_url": "https://growthrock.co/ecommerce-review-ab-test-case-study/",
+  "source_type": "agency case study",
+  "quote": "increased revenue per session by 17% with 97% statistical significance.",
+  "verification": "unverified",
+  "evidence_strength": "B",
+  "principles": [
+    "social-proof",
+    "trust"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Same comparison also reported purchase conversion +15% at only 94% significance, AOV +2.4%, and unchanged add-to-cart rate. Louis Vuitton, Buck Mason and Amazon are examples, not the anonymous client.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:01:45+00:00",
+    "source_loaded": true,
+    "company_found": false,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://growthrock.co/ecommerce-review-ab-test-case-study/",
+    "content_sha256": "d7bc86cfbb6301988a971c06efb0bc937696de021fddf6e1cd26fcdda6f3a0c9",
+    "reason": "not confirmed: company"
+  }
+}

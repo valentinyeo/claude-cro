@@ -1,0 +1,57 @@
+{
+  "id": "airbnb-map-bookability-filter-bookings-win",
+  "title": "Filtering low-bookability map pins increased uncanceled bookings",
+  "company": "Airbnb",
+  "industry": "Travel accommodation",
+  "business_type": "Marketplace",
+  "page_type": "global",
+  "element": "map-pin-filter",
+  "change": {
+    "control": "Map results without filtering, capped at eighteen pins.",
+    "variant": "Apply the Bookability Filter with alpha 1.0 to retain the most bookable pins."
+  },
+  "result": {
+    "metric": "uncanceled bookings as share of overall global bookings",
+    "relative_lift_pct": 1.9,
+    "direction": "win",
+    "desired_direction": "increase"
+  },
+  "sample_size": {
+    "control": 34000000,
+    "variant": 34000000,
+    "unit": "searchers worldwide"
+  },
+  "conversions": null,
+  "significance": {
+    "confidence_pct": null,
+    "p_value": null,
+    "reported": "Key-metric p-values below 10^-5; exact values not published."
+  },
+  "test_duration": null,
+  "date_published": null,
+  "source_url": "https://arxiv.org/html/2407.00091",
+  "source_type": "academic",
+  "quote": "Uncanceled bookings increase by 1.9 %",
+  "verification": "verified",
+  "evidence_strength": "A",
+  "principles": [
+    "choice-overload",
+    "relevance"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Final large-scale confirmation, not another record for each earlier alpha trial. Five-star trips +2%; search-result impressions before discovery -16%, clicks -6.8%. Reported relative lift uses overall global bookings, not only triggered-map traffic.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:00:49+00:00",
+    "source_loaded": true,
+    "company_found": true,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://arxiv.org/html/2407.00091",
+    "content_sha256": "7cfa04764fbce5fc2a64e6e46aa4b3be6dc1cf9961965f06b638d788fe0ab1c1",
+    "reason": "company, lift and supporting quote confirmed; not a statistical replication"
+  }
+}

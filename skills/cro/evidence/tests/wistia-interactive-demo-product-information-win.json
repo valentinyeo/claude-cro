@@ -1,0 +1,49 @@
+{
+  "id": "wistia-interactive-demo-product-information-win",
+  "title": "Wistia interactive demo product information win",
+  "company": "Wistia",
+  "industry": "Video hosting and marketing software",
+  "business_type": "SaaS",
+  "page_type": "product",
+  "element": "product-information",
+  "change": {
+    "control": "Interactive demo with most other product information removed.",
+    "variant": "Restore product information below the interactive player."
+  },
+  "result": {
+    "metric": "new-user activation rate",
+    "relative_lift_pct": null,
+    "direction": "win",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": null,
+  "test_duration": null,
+  "date_published": "2018-10-04",
+  "source_url": "https://wistia.com/blog/get-comfortable-with-iterative-a-b-testing",
+  "source_type": "company blog",
+  "quote": "So, we added our product information below the interactive player and watched our activation rates soar.",
+  "verification": "unverified",
+  "evidence_strength": "C",
+  "principles": [
+    "information-sufficiency",
+    "clarity"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "research",
+  "notes": "Another sequential revision in the same project. No separate randomized contrast, sample, or numeric lift reported. Not conflated with the later pricing-link addition, which has no individually reported result.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:42:01+00:00",
+    "source_loaded": true,
+    "company_found": true,
+    "lift_found": false,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://wistia.com/blog/get-comfortable-with-iterative-a-b-testing",
+    "content_sha256": "e5554de3b16596ab34d26d79ca00d2204c98004280fe5652d4dd0198ece7fa68",
+    "reason": "not confirmed: lift"
+  }
+}

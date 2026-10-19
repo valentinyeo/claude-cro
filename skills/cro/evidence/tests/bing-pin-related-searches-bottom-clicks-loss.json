@@ -1,0 +1,51 @@
+{
+  "id": "bing-pin-related-searches-bottom-clicks-loss",
+  "title": "Pinning related searches below bottom ads reduced their clicks",
+  "company": "Bing",
+  "industry": "Web search and online services",
+  "business_type": "Content / Media",
+  "page_type": "global",
+  "element": "related-search-position",
+  "change": {
+    "control": "Inline related searches may float above lower-performing algorithmic results.",
+    "variant": "Pin related searches to the bottom, below bottom ads."
+  },
+  "result": {
+    "metric": "related-search clickthrough rate",
+    "relative_lift_pct": -17,
+    "direction": "loss",
+    "desired_direction": "increase"
+  },
+  "sample_size": {
+    "total": 5000000,
+    "unit": "users; published as over 5 million"
+  },
+  "conversions": null,
+  "significance": null,
+  "test_duration": null,
+  "date_published": null,
+  "source_url": "https://dl.acm.org/doi/fullHtml/10.1145/2623330.2623341",
+  "source_type": "academic",
+  "quote": "on these related searches declined 17%, but the abandonment rate did not change statistically significantly (p-value 0.71)",
+  "verification": "unverified",
+  "evidence_strength": "B",
+  "principles": [
+    "relevance",
+    "clarity"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Over 5 million users. Abandonment p=0.71 applies to abandonment only. Local click loss did not establish a sitewide engagement loss. Full text is also available in the author-hosted PDF at https://exp-platform.com/Documents/2014%20experimentersRulesOfThumb.pdf. The supporting quote and result were checked against that PDF; the equivalent ACM publisher full-text page returned HTTP 403 in Chromium.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:01:22+00:00",
+    "source_loaded": false,
+    "company_found": false,
+    "lift_found": false,
+    "quote_found": false,
+    "fetched_with": "http",
+    "status_code": 403,
+    "final_url": "https://dl.acm.org/doi/fullHtml/10.1145/2623330.2623341",
+    "reason": "HTTP 403"
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "id": "airbnb-optimize-map-center-new-guest-bookings-win",
+  "title": "Optimizing map placement increased new-guest bookings",
+  "company": "Airbnb",
+  "industry": "Travel accommodation",
+  "business_type": "Marketplace",
+  "page_type": "global",
+  "element": "map-center-optimization",
+  "change": {
+    "control": "For search-box queries use Algorithm 1 Bookability Filter map output.",
+    "variant": "Apply Algorithm 2 greedy heuristic to optimize map center for attention to high-bookability listings."
+  },
+  "result": {
+    "metric": "uncanceled bookings for new guests",
+    "relative_lift_pct": 0.39,
+    "direction": "win",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": {
+    "confidence_pct": null,
+    "p_value": 0.006,
+    "reported": "Reported p-value for new-guest uncanceled bookings."
+  },
+  "test_duration": null,
+  "date_published": null,
+  "source_url": "https://arxiv.org/html/2407.00091",
+  "source_type": "academic",
+  "quote": "We observe an increase of 0.39 %",
+  "verification": "verified",
+  "evidence_strength": "B",
+  "principles": [
+    "relevance",
+    "clarity"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Search-box queries only. New-guest map moves decreased 1.5%, chances of sparse map areas decreased 0.8%; not all-guest booking lift.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:00:50+00:00",
+    "source_loaded": true,
+    "company_found": true,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://arxiv.org/html/2407.00091",
+    "content_sha256": "7cfa04764fbce5fc2a64e6e46aa4b3be6dc1cf9961965f06b638d788fe0ab1c1",
+    "reason": "company, lift and supporting quote confirmed; not a statistical replication"
+  }
+}

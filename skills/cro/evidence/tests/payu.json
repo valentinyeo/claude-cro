@@ -39,7 +39,7 @@
   "research_type": "ab-test",
   "notes": "Body gives 5.8%; headline rounds to 6%. The test concerns merchant payment users, not PayU merchant signup. Legal receipt requirements are context specific.",
   "verification_details": {
-    "checked_at": "2026-10-15T10:29:12+00:00",
+    "checked_at": "2026-10-18T11:01:55+00:00",
     "source_loaded": true,
     "company_found": true,
     "lift_found": true,

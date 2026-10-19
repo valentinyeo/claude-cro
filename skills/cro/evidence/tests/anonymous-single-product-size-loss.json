@@ -1,0 +1,49 @@
+{
+  "id": "anonymous-single-product-size-loss",
+  "title": "Anonymous single product size loss",
+  "company": "Anonymous MECLABS product-size retailer",
+  "industry": "Online retail",
+  "business_type": "E-commerce",
+  "page_type": "product",
+  "element": "product-options",
+  "change": {
+    "control": "Product page offers three size choices.",
+    "variant": "Remove the other sizes and focus solely on the most popular size."
+  },
+  "result": {
+    "metric": "conversion rate",
+    "relative_lift_pct": -35,
+    "direction": "loss",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": null,
+  "test_duration": null,
+  "date_published": null,
+  "source_url": "https://marketingexperiments.com/conversion-marketing/marketing-multiple-products-2",
+  "source_type": "agency case study",
+  "quote": "the new page delivered a 35% decrease in conversion",
+  "verification": "unverified",
+  "evidence_strength": "B",
+  "principles": [
+    "choice-architecture",
+    "friction"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Separate elimination example under Objective 1, not the vitamin supplement matrix comparison. Product identity and sample size are undisclosed. Research first published July 2014. Exact original publication day in July 2014 is unknown; date_published is null, not the 2018 republication date.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:01:07+00:00",
+    "source_loaded": true,
+    "company_found": false,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://marketingexperiments.com/conversion-marketing/marketing-multiple-products-2",
+    "content_sha256": "7a4fde7bbf3cc643b0976ac54d359ce51e1b3d4daa2c1712884f46a9988301fb",
+    "reason": "not confirmed: company"
+  }
+}

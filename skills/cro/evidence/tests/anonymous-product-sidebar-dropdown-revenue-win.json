@@ -1,0 +1,49 @@
+{
+  "id": "anonymous-product-sidebar-dropdown-revenue-win",
+  "title": "Anonymous product sidebar dropdown revenue win",
+  "company": "Anonymous MECLABS multi-option retailer",
+  "industry": "Online retail",
+  "business_type": "E-commerce",
+  "page_type": "product",
+  "element": "product-option-layout",
+  "change": {
+    "control": "Three equally weighted options in the sidebar.",
+    "variant": "Move the options into a dropdown selector."
+  },
+  "result": {
+    "metric": "revenue",
+    "relative_lift_pct": 24,
+    "direction": "win",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": null,
+  "test_duration": null,
+  "date_published": null,
+  "source_url": "https://marketingexperiments.com/conversion-marketing/marketing-multiple-products-2",
+  "source_type": "agency case study",
+  "quote": "Yes, to the tune of a 24% increase in revenue.",
+  "verification": "unverified",
+  "evidence_strength": "B",
+  "principles": [
+    "choice-architecture",
+    "friction"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Separate example under Objective 1. Research originally published July 2014; exact original day unknown. Article dated September 7, 2018 is a republication. Exact original publication day in July 2014 is unknown; date_published is null, not the 2018 republication date.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:01:05+00:00",
+    "source_loaded": true,
+    "company_found": false,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://marketingexperiments.com/conversion-marketing/marketing-multiple-products-2",
+    "content_sha256": "7a4fde7bbf3cc643b0976ac54d359ce51e1b3d4daa2c1712884f46a9988301fb",
+    "reason": "not confirmed: company"
+  }
+}

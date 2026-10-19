@@ -1,0 +1,49 @@
+{
+  "id": "anonymous-commercial-real-estate-remove-arrow-loss",
+  "title": "Anonymous commercial real-estate site: Remove the green arrow from the orange CTA button.",
+  "company": "Anonymous commercial real-estate site",
+  "industry": "Commercial real estate",
+  "business_type": "Lead Gen",
+  "page_type": "landing",
+  "element": "button-arrow",
+  "change": {
+    "control": "Orange CTA button with a green arrow.",
+    "variant": "Remove the green arrow from the orange CTA button."
+  },
+  "result": {
+    "metric": "CTA click-through rate",
+    "relative_lift_pct": -12.29,
+    "direction": "loss",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": null,
+  "test_duration": null,
+  "date_published": "2013-05-22",
+  "source_url": "https://unbounce.com/conversion-rate-optimization/design-call-to-action-buttons/",
+  "source_type": "platform case study",
+  "quote": "It turned out the treatment without the green arrow performed 12.29% worse than the control with the green arrow.",
+  "verification": "unverified",
+  "evidence_strength": "B",
+  "principles": [
+    "visual-hierarchy",
+    "affordance"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Separate follow-up test after a successful redesign of the original brownish button.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:00:56+00:00",
+    "source_loaded": true,
+    "company_found": false,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://unbounce.com/conversion-rate-optimization/design-call-to-action-buttons/",
+    "content_sha256": "f5f881a4568eb0d1285e036f5d9e5582bed80c803737346b8fc70976130f79c1",
+    "reason": "not confirmed: company"
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "id": "skincare-product-name-radio-button-iteration-win",
+  "title": "Anonymous luxury skincare company (Conversion Fanatics kit study): product page redesign (win)",
+  "company": "Anonymous luxury skincare company (Conversion Fanatics kit study)",
+  "industry": "Skincare",
+  "business_type": "E-commerce",
+  "page_type": "product",
+  "element": "product-page-redesign",
+  "change": {
+    "control": "Original three-kit page used as the control for the unsuccessful redesign.",
+    "variant": "Iterate the redesign: use product name plus supporting benefits as headline, radio-button kit selection, and Buy Now instead of Add to Bag."
+  },
+  "result": {
+    "metric": "sales conversion rate",
+    "relative_lift_pct": 35.4,
+    "direction": "win",
+    "desired_direction": "increase"
+  },
+  "sample_size": null,
+  "conversions": null,
+  "significance": null,
+  "test_duration": null,
+  "date_published": null,
+  "source_url": "https://conversionfanatics.com/why-a-losing-test-isnt-a-loser-costing-you-35-percent-increases/",
+  "source_type": "agency case study",
+  "quote": "35.4% increase in sales and over 41% increase in revenue per visitor.",
+  "verification": "unverified",
+  "evidence_strength": "B",
+  "principles": [
+    "clarity",
+    "friction"
+  ],
+  "added_date": "2026-10-17",
+  "added_by": "codex-research-2026-10-17",
+  "research_type": "ab-test",
+  "notes": "Interim result: the publisher says test time remains and the estimate has stayed steady; no achieved significance or counts published. Revenue per visitor increased by more than 41%.",
+  "verification_details": {
+    "checked_at": "2026-10-18T11:02:02+00:00",
+    "source_loaded": true,
+    "company_found": false,
+    "lift_found": true,
+    "quote_found": true,
+    "fetched_with": "http",
+    "status_code": 200,
+    "final_url": "https://conversionfanatics.com/why-a-losing-test-isnt-a-loser-costing-you-35-percent-increases/",
+    "content_sha256": "fe48619bc69e61a4f012d87f95a8cc6ad29b4ea8e2c74ee94c5ce542ea78c4d7",
+    "reason": "not confirmed: company"
+  }
+}
