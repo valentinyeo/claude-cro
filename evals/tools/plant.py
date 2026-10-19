@@ -1,11 +1,13 @@
 """Plant five known conversion defects in a copy of each clean fixture and write its answer key.
-Two tiers: the five obvious defects (<site>.planted.html) and five subtle ones (<site>.subtle.html).
+Three independent tiers: obvious (<site>.planted.html), subtle (<site>.subtle.html), and blind (<site>.blind.html).
 The planting is deterministic, so CI can rebuild every planted page and compare it byte for byte.
 Usage: plant.py [--check]   (--check: fail if a committed planted page or answer key is out of date)"""
+import html as htmllib
 import json
 import re
 import sys
 from pathlib import Path
+from urllib.parse import quote
 
 EVALS = Path(__file__).resolve().parents[1]
 FIX = EVALS / "fixtures"
@@ -64,7 +66,48 @@ SUBTLE = [
      "found": r"^(?=[\s\S]*(money-back|30-day))(?=[\s\S]*all sales are final)"},
 ]
 
-TIERS = {"planted": DEFECTS, "subtle": SUBTLE}
+BLIND_CTA = ('<p><a class="blind-primary" href="/contact-sales" '
+             'style="display:inline-block;padding:16px 28px;background:#2563eb;color:#fff;font-weight:700">'
+             'Download the free setup guide</a></p>')
+BLIND_TESTIMONIAL = ('<figure class="blind-testimonial"><blockquote>Getting started was easier than we expected.</blockquote>'
+                     '<figcaption>A happy customer</figcaption></figure>')
+BLIND_FORM = ('<section class="blind-guide"><h2>Send me the setup guide</h2>'
+              '<form action="/send-guide" method="post"><label for="guide-email">Email address</label>'
+              '<input id="guide-email" name="email" type="email" value="alex@" '
+              'aria-invalid="true" aria-describedby="guide-error" required>'
+              '<p id="guide-error" role="alert">You failed to enter a valid email address. Try again.</p>'
+              '<button type="submit">Email me the guide</button></form></section>')
+BLIND_TERMS = ('<p class="blind-terms">Service terms: Minimum commitment of 12 months; '
+               'cancellation takes effect at the end of the term.</p>')
+
+BLIND = [
+    {"id": "cta-destination-mismatch", "label": "Download CTA leads to contact-sales instead of a guide",
+     "snippet": BLIND_CTA,
+     "found": r"(download|guide)[^\n]{0,160}(sales|contact|mismatch|instead|does not|doesn't)|"
+              r"(sales|contact|mismatch)[^\n]{0,160}(download|guide)"},
+    {"id": "blaming-error", "label": "Email validation error blames the visitor instead of helping them recover",
+     "snippet": 'You failed to enter a valid email address. Try again.',
+     "found": r"(error|validation|email)[^\n]{0,120}(blam|accus|scold|sham|hostile|punitive)|"
+              r"(blam|accus|scold|sham|hostile|punitive)[^\n]{0,120}(error|validation|email|user|visitor)"},
+    {"id": "anonymous-testimonial", "label": "Testimonial beside the primary CTA has no named person or company",
+     "snippet": BLIND_TESTIMONIAL,
+     "found": r"(testimonial|quote|endorsement)[^\n]{0,120}(anonym|unattribut|unnamed|no (name|author|company|attribution)|"
+              r"without[^\n]{0,30}(name|attribution)|generic attribution)|"
+              r"(anonym|unattribut|unnamed)[^\n]{0,120}(testimonial|quote|endorsement)"},
+    {"id": "late-contract-term", "label": "12-month minimum commitment disclosed only in the footer after the CTAs",
+     "snippet": BLIND_TERMS,
+     "found": r"(12[- ]month|twelve[- ]month|annual|minimum (commitment|term)|contract)[^\n]{0,160}"
+              r"(footer|after[^\n]{0,35}(cta|call.to.action|button)|buried|late|upfront|up.front|disclos)|"
+              r"(footer|buried|late|upfront|up.front|disclos)[^\n]{0,160}"
+              r"(12[- ]month|twelve[- ]month|annual|minimum (commitment|term)|contract)"},
+    {"id": "image-only-headline", "label": "Hero headline is an image with empty alt and no accessible text",
+     "snippet": '<img class="blind-headline" alt=""',
+     "found": r"(headline|heading|h1)[^\n]{0,140}(image[- ]only|empty alt|missing alt|no alt|blank alt|"
+              r"no alternative text|without[^\n]{0,30}(alt|text alternative)|screen.reader|inaccessible)|"
+              r"(image[- ]only|empty alt|missing alt|no alt|blank alt|screen.reader)[^\n]{0,140}(headline|heading|h1)"},
+]
+
+TIERS = {"planted": DEFECTS, "subtle": SUBTLE, "blind": BLIND}
 
 
 def plant(html):
@@ -86,11 +129,29 @@ def plant_subtle(html):
     return html
 
 
+def plant_blind(html):
+    def headline(m):
+        text = htmllib.unescape(re.sub(r"<[^>]+>", "", m.group(2)))
+        svg = ('<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="100" viewBox="0 0 1200 100">'
+               '<text x="0" y="65" font-family="sans-serif" font-size="40" fill="currentColor">'
+               + htmllib.escape(text) + '</text></svg>')
+        return (m.group(1) + '<img class="blind-headline" alt="" src="data:image/svg+xml,'
+                + quote(svg, safe="") + '" style="width:100%;height:auto;background:#fff">' + m.group(3)
+                + BLIND_CTA + BLIND_TESTIMONIAL)
+
+    html, n = re.subn(r"(<h1\b[^>]*>)([\s\S]*?)(</h1>)", headline, html, count=1)
+    assert n == 1, "no <h1>"
+    html, n = re.subn(r"(<footer\b[^>]*>)", lambda m: BLIND_FORM + m.group(1) + BLIND_TERMS, html, count=1)
+    assert n == 1, "no <footer>"
+    return html
+
+
 def build():
     out = {}
     for s in SITES:
         clean = (FIX / f"{s}.clean.html").read_text(encoding="utf-8")
-        for tier, fn, suffix in (("planted", plant, ""), ("subtle", plant_subtle, ".subtle")):
+        for tier, fn, suffix in (("planted", plant, ""), ("subtle", plant_subtle, ".subtle"),
+                                 ("blind", plant_blind, ".blind")):
             out[FIX / f"{s}.{tier}.html"] = fn(clean)
             key = {"fixture": f"fixtures/{s}.{tier}.html", "clean": f"fixtures/{s}.clean.html", "tier": tier,
                    "defects": [{k: d[k] for k in ("id", "label", "found")} | {"snippet": d["snippet"]} for d in TIERS[tier]]}
