@@ -1,0 +1,111 @@
+{
+  "label": "after-winner121",
+  "claude_version": "2.1.309",
+  "started_at": "2026-10-23T09:50:11.273Z",
+  "cost_usd": 6.963211,
+  "runs": "after-winner121.runs.json",
+  "summary": {
+    "with": {
+      "defect_recall": 1.0,
+      "subtle_recall": 1.0,
+      "blind_recall": null,
+      "quote_accuracy": 1.0,
+      "winner_accuracy": 0.6639118457300276,
+      "runs": 21
+    },
+    "without": {
+      "defect_recall": 1.0,
+      "subtle_recall": 0.8222222222222223,
+      "blind_recall": null,
+      "quote_accuracy": 1.0,
+      "winner_accuracy": 0.652892561983471,
+      "runs": 21
+    }
+  },
+  "per_case": {
+    "defects-endlesstesting.ai": {
+      "with": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "without": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "defects-endlesstesting.ai.subtle": {
+      "with": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "without": [
+        0.8,
+        0.8,
+        1.0
+      ]
+    },
+    "defects-hypertask.ai": {
+      "with": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "without": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "defects-hypertask.ai.subtle": {
+      "with": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "without": [
+        0.8,
+        0.8,
+        0.8
+      ]
+    },
+    "defects-valentinyeo.com": {
+      "with": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "without": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    "defects-valentinyeo.com.subtle": {
+      "with": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "without": [
+        0.8,
+        0.8,
+        0.8
+      ]
+    },
+    "winner": {
+      "with": [
+        0.6363636363636364,
+        0.6859504132231405,
+        0.6694214876033058
+      ],
+      "without": [
+        0.6611570247933884,
+        0.6528925619834711,
+        0.6446280991735537
+      ]
+    }
+  }
+}

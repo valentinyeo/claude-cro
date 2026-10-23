@@ -9,7 +9,7 @@ Scored with `claude plugin eval`, once with the pack and once without (`--ablati
 | `defects-<site>` | A snapshot of the site with 5 obvious defects planted: a "Submit" CTA linking to `#`, the headline "Welcome to our website", a 9-field required form, a fake urgency banner, and the Pro plan priced $49 and $79 | Share of planted defects named in the answer |
 | `defects-<site>.subtle` | The same snapshot with 5 subtle defects: placeholder-only inputs, an unbacked "Trusted by 10,000+ teams", a pre-ticked partner opt-in, a $25 setup fee in 10px grey text, and a money-back guarantee contradicted by "All sales are final" | Same |
 | `defects-<site>.blind` | An independent snapshot with 5 blind defects: a guide-download CTA leading to sales, a blaming email error, an anonymous testimonial beside the primary CTA, a 12-month commitment disclosed only in the footer, and an image-only hero headline with empty alt | Same |
-| `winner` | 19 published A/B tests with a clear result (every loss, and every win with 95%+ published confidence), shown as A and B in a seeded random order, without company or lift. The records are removed from the pack copy (`stage.py --holdout`) | Share of winners called right. A coin flip scores 50% |
+| `winner` | 121 published A/B tests with a clear result (every loss, and every win with 95%+ published confidence), shown as A and B in a seeded random order, without company or lift. The records are removed from the pack copy (`stage.py --holdout`) | Share of winners called right. A coin flip scores 50% |
 
 The blind tier was authored without opening the pack's skills, agents or docs; it does not reuse the ten existing defects. Each tier is generated independently from the clean snapshot, not layered on another tier. All blind evidence is in the HTML (including inline image markup); no live destination or image fetch is needed.
 
@@ -55,3 +55,14 @@ CI (`evals` job) rebuilds every generated file and fails if one differs, checks 
 Plain Claude is the without arm of each run (before: 82% subtle, 74% winners; after: 82%, 75%). Before the fixes the pack never fired, so its arm was plain Claude too. Plain Claude's only consistent miss was placeholder-only inputs.
 
 Caveats: the subtle tier and the cro-page sweep were written in the same session, so that gain partly reflects teaching to the test. The obvious tier is too easy to separate the arms. On the winner set, always picking the changed version scores 84% (16 of 19 are wins), so beating 50% is not the bar: neither arm beats that simple rule, and the pack never fires on that prompt.
+
+## Winner rerun (2026-10-23, 3 runs per arm)
+
+The evidence database grew to 253 tests, so the winner set grew from 19 to 121 tests (83 losses, 38 wins). Only the winner case was rerun; `scores/after-winner121` keeps the 2026-10-17 page review runs and adds the new winner runs, and `scores/latest.json` points at it.
+
+| Score | Plain Claude | Pack |
+|-------|-------------:|-----:|
+| Test winners called right (coin flip 50%) | 65% | 66% |
+| Runs where the pack fired | n/a | 3 of 3 |
+
+Always picking the original page scores 69% on this set (83 of 121 changes lost), so neither arm beats that simple rule yet.
