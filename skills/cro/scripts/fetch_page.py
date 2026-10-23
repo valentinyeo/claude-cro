@@ -95,18 +95,15 @@ def resolve_and_check(hostname: str) -> str:
         raise ValueError(f"No DNS results for '{hostname}'")
 
     # Check all resolved addresses — block if any resolve to private IPs
-    resolved_ips = set()
     for family, _type, _proto, _canonname, sockaddr in results:
         ip = sockaddr[0]
-        resolved_ips.add(ip)
         if is_private_ip(ip):
             raise ValueError(
                 f"SSRF protection: '{hostname}' resolves to private IP {ip}. "
                 f"Requests to internal/private networks are blocked."
             )
 
-    # Return the first resolved IP for informational purposes
-    return list(resolved_ips)[0]
+    return results[0][4][0]
 
 
 def validate_url(url: str) -> str:

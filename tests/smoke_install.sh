@@ -11,7 +11,7 @@ C="$T/.claude/skills/cro/scripts/cro-py"
 W="$T/w"; mkdir -p "$W"
 "$C" doctor.py --quick | grep -q "DOCTOR OK"
 "$C" test_readiness.py --conversions 300 --cvr 2 | grep -q "Verdict: LIMITED"
-"$C" fetch_page.py https://example.com --output "$W/p.html" --json > "$W/f.json"
+"$C" fetch_page.py https://example.com --output "$W/p.html" --json > "$W/f.json" || { cat "$W/f.json"; exit 1; }
 "$C" fetch_page.py https://example.com --render --output "$W/r.html" --json | grep -q '"fetched_with": "browser"'
 "$C" parse_cro.py "$W/r.html" --json > "$W/e.json"
 "$C" capture_screenshot.py https://example.com -o "$W/s.png" --mobile >/dev/null
