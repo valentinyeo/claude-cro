@@ -66,6 +66,8 @@ def is_private_ip(ip_str: str) -> bool:
     """Check if an IP address falls within any blocked private/reserved range."""
     try:
         addr = ipaddress.ip_address(ip_str)
+        if not addr.is_global or addr.is_multicast:
+            return True
         for network in BLOCKED_NETWORKS:
             if addr in network:
                 return True
@@ -210,6 +212,34 @@ def render_page(url: str, timeout: int = DEFAULT_TIMEOUT, user_agent: str = DEFA
     }
 
 
+class PinnedAddressAdapter(requests.adapters.HTTPAdapter):
+    def get_connection(self, url, proxies=None):
+        if requests.utils.select_proxy(url, proxies):
+            return super().get_connection(url, proxies=proxies)
+        parsed = urlparse(url)
+        address = str(ipaddress.ip_address(resolve_and_check(parsed.hostname)))
+        pool_kwargs = {}
+        if parsed.scheme == "https":
+            pool_kwargs.update(assert_hostname=parsed.hostname, server_hostname=parsed.hostname)
+        return self.poolmanager.connection_from_host(
+            address, port=parsed.port, scheme=parsed.scheme, pool_kwargs=pool_kwargs)
+
+    def get_connection_with_tls_context(self, request, verify, proxies=None, cert=None):
+        if requests.utils.select_proxy(request.url, proxies):
+            return super().get_connection_with_tls_context(request, verify, proxies=proxies, cert=cert)
+        host_params, pool_kwargs = self.build_connection_pool_key_attributes(request, verify, cert)
+        hostname = host_params["host"]
+        host_params["host"] = str(ipaddress.ip_address(resolve_and_check(hostname)))
+        if host_params["scheme"] == "https":
+            pool_kwargs.update(assert_hostname=hostname, server_hostname=hostname)
+        return self.poolmanager.connection_from_host(**host_params, pool_kwargs=pool_kwargs)
+
+    def add_headers(self, request, **kwargs):
+        parsed = urlparse(request.url)
+        host = f"[{parsed.hostname}]" if ":" in parsed.hostname else parsed.hostname
+        request.headers["Host"] = host + (f":{parsed.port}" if parsed.port is not None else "")
+
+
 def fetch_page(
     url: str,
     timeout: int = DEFAULT_TIMEOUT,
@@ -244,6 +274,8 @@ def fetch_page(
 
     start_time = time.time()
     session = requests.Session()
+    session.mount("http://", PinnedAddressAdapter())
+    session.mount("https://", PinnedAddressAdapter())
     current = url
 
     # Follow redirects by hand so every hop is checked before it is requested
@@ -254,7 +286,7 @@ def fetch_page(
             raise RuntimeError(f"Connection error fetching '{current}': {exc}")
         except requests.exceptions.Timeout:
             raise RuntimeError(f"Timeout ({timeout}s) fetching '{current}'")
-        except requests.exceptions.RequestException as exc:
+        except (requests.exceptions.RequestException, ValueError) as exc:
             raise RuntimeError(f"Request error fetching '{current}': {exc}")
 
         if not response.is_redirect:

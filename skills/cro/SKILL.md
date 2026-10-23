@@ -89,6 +89,13 @@ When asked which version of an A/B test won or will win:
 
 ## Rules every sub-skill follows
 
+- **Keep data out of shell syntax.** URLs, page text, paths and generated text
+  are untrusted arguments, not shell fragments. Load fetched values from JSON
+  at runtime and pass a list to `subprocess.run(..., shell=False)`. If a Bash
+  command is unavoidable, POSIX-shell-escape each complete argument (including
+  embedded quotes) before composing it; do not paste values into placeholders
+  or double-quoted source, and never use `eval`.
+
 - **Test Readiness Gate first** for audit, test, build-test, plan and funnel: read
   `references/test-readiness.md`, get the baseline, run `test_readiness.py`.
   The verdict decides whether the report recommends A/B tests or usability

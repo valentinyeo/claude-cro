@@ -45,10 +45,22 @@ Pick the pages from `crawl.json` along the path a buyer walks, by business type
 (`${CLAUDE_SKILL_DIR}/../cro/references/business-types.md`). E-commerce: home,
 collection, product, cart. SaaS: home, pricing, signup, demo. Lead gen and
 services: home, service page, contact, reviews or case study. Capture each page
-into its own folder, one after another:
+into its own folder, one after another. Set the `page_type` literal below to the
+selected page type from `crawl.json` for each capture:
 
 ```bash
-"<CRO_SCRIPTS>/cro-py" capture.py <page-url> "$W/pages/<type>"
+python3 - "$W/crawl.json" "<CRO_SCRIPTS>" "$W" <<'PY'
+import json
+from pathlib import Path
+import subprocess
+import sys
+
+crawl, scripts, workspace = map(Path, sys.argv[1:])
+page_type = "<type>"
+url = json.loads(crawl.read_text())["pages"][page_type][0]
+subprocess.run([str(scripts / "cro-py"), "capture.py", url,
+                str(workspace / "pages" / page_type)], check=True)
+PY
 ```
 
 Each folder gets `raw.html`, `page.html` (browser-rendered), `fetch.json`,
@@ -59,7 +71,19 @@ Then inventory every tracker and pixel the captured pages really fire (network
 requests, not just page code), with duplicates and the access to ask for:
 
 ```bash
-"<CRO_SCRIPTS>/cro-py" tracking_audit.py <page-url> <page-url> ... --out "$W/tracking.json" --md "$W/TRACKING.md"
+python3 - "<CRO_SCRIPTS>" "$W" <<'PY'
+import json
+from pathlib import Path
+import subprocess
+import sys
+
+scripts, workspace = map(Path, sys.argv[1:])
+urls = [json.loads(p.read_text())["url"]
+        for p in sorted((workspace / "pages").glob("*/fetch.json"))]
+subprocess.run([str(scripts / "cro-py"), "tracking_audit.py", *urls,
+                "--out", str(workspace / "tracking.json"),
+                "--md", str(workspace / "TRACKING.md")], check=True)
+PY
 ```
 
 - Exit 3 = the page looks blocked or empty. Open its `desktop.png`: real site
