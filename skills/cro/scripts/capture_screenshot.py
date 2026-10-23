@@ -58,6 +58,8 @@ def is_private_ip(ip_str: str) -> bool:
     """Check if an IP address is in a blocked private range."""
     try:
         addr = ipaddress.ip_address(ip_str)
+        if not addr.is_global or addr.is_multicast:
+            return True
         for network in BLOCKED_NETWORKS:
             if addr in network:
                 return True
