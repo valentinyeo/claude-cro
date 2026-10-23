@@ -2,117 +2,729 @@
   "tests": [
     {
       "id": "t01",
-      "evidence_id": "smith-optics-mobile-cart",
-      "winner": "B",
-      "winner_is": "variant"
+      "evidence_id": "charity-banner-top-overall-conversion-loss",
+      "winner": "A",
+      "winner_is": "control"
     },
     {
       "id": "t02",
-      "evidence_id": "xtrema-direct-product-navigation",
-      "winner": "B",
-      "winner_is": "variant"
-    },
-    {
-      "id": "t03",
-      "evidence_id": "betfair",
-      "winner": "B",
-      "winner_is": "variant"
-    },
-    {
-      "id": "t04",
-      "evidence_id": "lyyti",
-      "winner": "B",
-      "winner_is": "variant"
-    },
-    {
-      "id": "t05",
-      "evidence_id": "citycliq",
+      "evidence_id": "luxury-apparel-review-star-summary-revenue-win",
       "winner": "A",
       "winner_is": "variant"
     },
     {
+      "id": "t03",
+      "evidence_id": "marketingsherpa-email-summit-incentive-subject-loss",
+      "winner": "A",
+      "winner_is": "control"
+    },
+    {
+      "id": "t04",
+      "evidence_id": "taloon",
+      "winner": "A",
+      "winner_is": "variant"
+    },
+    {
+      "id": "t05",
+      "evidence_id": "anonymous-danish-phone-marketplace-yellow-font-loss",
+      "winner": "A",
+      "winner_is": "control"
+    },
+    {
       "id": "t06",
-      "evidence_id": "staatsloterij-mobile-xl-loss",
+      "evidence_id": "anonymous-guitar-lessons-caples-headline-loss",
       "winner": "B",
       "winner_is": "control"
     },
     {
       "id": "t07",
-      "evidence_id": "express-watches",
-      "winner": "A",
-      "winner_is": "variant"
-    },
-    {
-      "id": "t08",
-      "evidence_id": "veeam-software",
-      "winner": "A",
-      "winner_is": "variant"
-    },
-    {
-      "id": "t09",
-      "evidence_id": "nuface",
-      "winner": "A",
-      "winner_is": "variant"
-    },
-    {
-      "id": "t10",
-      "evidence_id": "workzone",
-      "winner": "A",
-      "winner_is": "variant"
-    },
-    {
-      "id": "t11",
-      "evidence_id": "server-density-packaged-pricing-trial-loss",
-      "winner": "A",
-      "winner_is": "control"
-    },
-    {
-      "id": "t12",
       "evidence_id": "xtrema-home-shop-by-category",
       "winner": "B",
       "winner_is": "variant"
     },
     {
+      "id": "t08",
+      "evidence_id": "server-density-packaged-pricing-trial-loss",
+      "winner": "B",
+      "winner_is": "control"
+    },
+    {
+      "id": "t09",
+      "evidence_id": "supplement-desktop-sticky-buy-box-win",
+      "winner": "B",
+      "winner_is": "variant"
+    },
+    {
+      "id": "t10",
+      "evidence_id": "xtrema-direct-product-navigation",
+      "winner": "B",
+      "winner_is": "variant"
+    },
+    {
+      "id": "t11",
+      "evidence_id": "mozilla-try-now-safest-loss",
+      "winner": "B",
+      "winner_is": "control"
+    },
+    {
+      "id": "t12",
+      "evidence_id": "mozilla-try-now-does-more-loss",
+      "winner": "A",
+      "winner_is": "control"
+    },
+    {
       "id": "t13",
+      "evidence_id": "bag-servant-wow-badge-affiliate-click-win",
+      "winner": "B",
+      "winner_is": "variant"
+    },
+    {
+      "id": "t14",
+      "evidence_id": "anonymous-subscription-founder-video-loss",
+      "winner": "A",
+      "winner_is": "control"
+    },
+    {
+      "id": "t15",
+      "evidence_id": "audio-optin-download-now-loss",
+      "winner": "A",
+      "winner_is": "control"
+    },
+    {
+      "id": "t16",
+      "evidence_id": "anonymous-delayed-popunder-cta-loss",
+      "winner": "B",
+      "winner_is": "control"
+    },
+    {
+      "id": "t17",
+      "evidence_id": "marketingexperiments-permission-pass-incentive-loss",
+      "winner": "A",
+      "winner_is": "control"
+    },
+    {
+      "id": "t18",
+      "evidence_id": "autodesk-video-faces-click-loss",
+      "winner": "B",
+      "winner_is": "control"
+    },
+    {
+      "id": "t19",
+      "evidence_id": "hubspot-email-animated-gif-clickthrough-loss",
+      "winner": "B",
+      "winner_is": "control"
+    },
+    {
+      "id": "t20",
+      "evidence_id": "free-trial-animated-video-small-autoplay-loss",
+      "winner": "A",
+      "winner_is": "control"
+    },
+    {
+      "id": "t21",
+      "evidence_id": "anonymous-creative-button-versus-simple-loss",
+      "winner": "A",
+      "winner_is": "control"
+    },
+    {
+      "id": "t22",
+      "evidence_id": "compare-courses-enquiry-redesign-loss",
+      "winner": "A",
+      "winner_is": "control"
+    },
+    {
+      "id": "t23",
+      "evidence_id": "anonymous-yellow-button-text-loss",
+      "winner": "A",
+      "winner_is": "control"
+    },
+    {
+      "id": "t24",
+      "evidence_id": "health-food-mobile-link-bar-orders-win",
+      "winner": "A",
+      "winner_is": "variant"
+    },
+    {
+      "id": "t25",
+      "evidence_id": "dressipi-headline-button-benefit-copy-win",
+      "winner": "A",
+      "winner_is": "variant"
+    },
+    {
+      "id": "t26",
+      "evidence_id": "amazon-hundred-ms-slowdown-sales-loss",
+      "winner": "B",
+      "winner_is": "control"
+    },
+    {
+      "id": "t27",
+      "evidence_id": "mozilla-ie-deep-footer-effect-loss",
+      "winner": "B",
+      "winner_is": "control"
+    },
+    {
+      "id": "t28",
+      "evidence_id": "airbnb-random-map-pin-removal-bookings-loss",
+      "winner": "A",
+      "winner_is": "control"
+    },
+    {
+      "id": "t29",
+      "evidence_id": "marketingsherpa-top-ten-email-copy-loss",
+      "winner": "A",
+      "winner_is": "control"
+    },
+    {
+      "id": "t30",
+      "evidence_id": "veeam-software",
+      "winner": "B",
+      "winner_is": "variant"
+    },
+    {
+      "id": "t31",
+      "evidence_id": "mozilla-try-now-has-it-all-loss",
+      "winner": "B",
+      "winner_is": "control"
+    },
+    {
+      "id": "t32",
+      "evidence_id": "regonline-product-focused-homepage-loss",
+      "winner": "B",
+      "winner_is": "control"
+    },
+    {
+      "id": "t33",
+      "evidence_id": "retailer-navbar-support-icon-orders-win",
+      "winner": "B",
+      "winner_is": "variant"
+    },
+    {
+      "id": "t34",
+      "evidence_id": "obama-2008-barack-video-signup-loss",
+      "winner": "B",
+      "winner_is": "control"
+    },
+    {
+      "id": "t35",
+      "evidence_id": "workzone",
+      "winner": "A",
+      "winner_is": "variant"
+    },
+    {
+      "id": "t36",
+      "evidence_id": "amerisleep-benefit-led-product-copy-win",
+      "winner": "B",
+      "winner_is": "variant"
+    },
+    {
+      "id": "t37",
+      "evidence_id": "vineyard-prominent-book-online-cta-win",
+      "winner": "A",
+      "winner_is": "variant"
+    },
+    {
+      "id": "t38",
+      "evidence_id": "anonymous-accordion-checkout-loss",
+      "winner": "A",
+      "winner_is": "control"
+    },
+    {
+      "id": "t39",
+      "evidence_id": "google-search-server-delay-usage-loss",
+      "winner": "B",
+      "winner_is": "control"
+    },
+    {
+      "id": "t40",
+      "evidence_id": "uncommon-knowledge-modern-redesign-loss",
+      "winner": "B",
+      "winner_is": "control"
+    },
+    {
+      "id": "t41",
+      "evidence_id": "arlington-inventory-intro-quote-lead-win",
+      "winner": "A",
+      "winner_is": "variant"
+    },
+    {
+      "id": "t42",
+      "evidence_id": "express-watches",
+      "winner": "A",
+      "winner_is": "variant"
+    },
+    {
+      "id": "t43",
+      "evidence_id": "mozilla-ie-switching-tips-effect-loss",
+      "winner": "B",
+      "winner_is": "control"
+    },
+    {
+      "id": "t44",
+      "evidence_id": "google-thirty-results-traffic-revenue-loss",
+      "winner": "A",
+      "winner_is": "control"
+    },
+    {
+      "id": "t45",
+      "evidence_id": "metageek-download-page-treatment-b-loss",
+      "winner": "A",
+      "winner_is": "control"
+    },
+    {
+      "id": "t46",
+      "evidence_id": "airbnb-soft-price-loss-bookings-loss",
+      "winner": "A",
+      "winner_is": "control"
+    },
+    {
+      "id": "t47",
+      "evidence_id": "apparel-size-guide-near-size-selector-win",
+      "winner": "B",
+      "winner_is": "variant"
+    },
+    {
+      "id": "t48",
+      "evidence_id": "metageek-download-buttons-loss",
+      "winner": "A",
+      "winner_is": "control"
+    },
+    {
+      "id": "t49",
+      "evidence_id": "anonymous-tourism-saturday-newsletter-win",
+      "winner": "B",
+      "winner_is": "variant"
+    },
+    {
+      "id": "t50",
+      "evidence_id": "obama-2008-springfield-video-signup-loss",
+      "winner": "B",
+      "winner_is": "control"
+    },
+    {
+      "id": "t51",
       "evidence_id": "movexa",
       "winner": "A",
       "winner_is": "variant"
     },
     {
-      "id": "t14",
-      "evidence_id": "assessmentday-remove-faq-and-screenshots-loss",
+      "id": "t52",
+      "evidence_id": "anonymous-newsletter-repetitive-preheader-loss",
+      "winner": "A",
+      "winner_is": "control"
+    },
+    {
+      "id": "t53",
+      "evidence_id": "imsider-one-evening-headline-lead-win",
+      "winner": "B",
+      "winner_is": "variant"
+    },
+    {
+      "id": "t54",
+      "evidence_id": "mozilla-try-now-better-browser-loss",
       "winner": "B",
       "winner_is": "control"
     },
     {
-      "id": "t15",
-      "evidence_id": "paperstone-price-comparison-round-two",
+      "id": "t55",
+      "evidence_id": "anonymous-newsletter-headline-preheader-loss",
+      "winner": "B",
+      "winner_is": "control"
+    },
+    {
+      "id": "t56",
+      "evidence_id": "airbnb-hard-monotonic-price-bookings-loss",
       "winner": "A",
+      "winner_is": "control"
+    },
+    {
+      "id": "t57",
+      "evidence_id": "anonymous-single-product-size-loss",
+      "winner": "B",
+      "winner_is": "control"
+    },
+    {
+      "id": "t58",
+      "evidence_id": "anonymous-supplements-horizontal-matrix-revenue-loss",
+      "winner": "A",
+      "winner_is": "control"
+    },
+    {
+      "id": "t59",
+      "evidence_id": "mens-advertorial-smiling-couple-loss",
+      "winner": "A",
+      "winner_is": "control"
+    },
+    {
+      "id": "t60",
+      "evidence_id": "mozilla-try-firefox-three-button-loss",
+      "winner": "A",
+      "winner_is": "control"
+    },
+    {
+      "id": "t61",
+      "evidence_id": "staatsloterij-mobile-xl-loss",
+      "winner": "B",
+      "winner_is": "control"
+    },
+    {
+      "id": "t62",
+      "evidence_id": "bag-servant-search-verisign-loss",
+      "winner": "A",
+      "winner_is": "control"
+    },
+    {
+      "id": "t63",
+      "evidence_id": "felix-iris-fit-kit-hero-and-cta-win",
+      "winner": "B",
       "winner_is": "variant"
     },
     {
-      "id": "t16",
+      "id": "t64",
+      "evidence_id": "mozilla-ie-main-features-effect-loss",
+      "winner": "A",
+      "winner_is": "control"
+    },
+    {
+      "id": "t65",
+      "evidence_id": "mozilla-orange-download-button-loss",
+      "winner": "A",
+      "winner_is": "control"
+    },
+    {
+      "id": "t66",
+      "evidence_id": "anonymous-bank-identification-popup-lead-loss",
+      "winner": "A",
+      "winner_is": "control"
+    },
+    {
+      "id": "t67",
+      "evidence_id": "metageek-download-page-treatment-e-loss",
+      "winner": "A",
+      "winner_is": "control"
+    },
+    {
+      "id": "t68",
+      "evidence_id": "betfair",
+      "winner": "B",
+      "winner_is": "variant"
+    },
+    {
+      "id": "t69",
       "evidence_id": "flying-scot",
       "winner": "A",
       "winner_is": "variant"
     },
     {
-      "id": "t17",
-      "evidence_id": "taloon",
+      "id": "t70",
+      "evidence_id": "springest-form-social-proof-completion-win",
       "winner": "B",
       "winner_is": "variant"
     },
     {
-      "id": "t18",
+      "id": "t71",
+      "evidence_id": "electronics-discover-more-product-photos-win",
+      "winner": "B",
+      "winner_is": "variant"
+    },
+    {
+      "id": "t72",
+      "evidence_id": "citycliq",
+      "winner": "B",
+      "winner_is": "variant"
+    },
+    {
+      "id": "t73",
+      "evidence_id": "metageek-download-page-treatment-d-loss",
+      "winner": "B",
+      "winner_is": "control"
+    },
+    {
+      "id": "t74",
+      "evidence_id": "bettingexpert-no-spam-privacy-loss",
+      "winner": "B",
+      "winner_is": "control"
+    },
+    {
+      "id": "t75",
+      "evidence_id": "apparel-variable-savings-percentage-win",
+      "winner": "B",
+      "winner_is": "variant"
+    },
+    {
+      "id": "t76",
+      "evidence_id": "anonymous-payment-your-cta-loss",
+      "winner": "B",
+      "winner_is": "control"
+    },
+    {
+      "id": "t77",
+      "evidence_id": "metageek-download-page-treatment-c-loss",
+      "winner": "A",
+      "winner_is": "control"
+    },
+    {
+      "id": "t78",
+      "evidence_id": "hubspot-academy-hero-animated-right-loss",
+      "winner": "A",
+      "winner_is": "control"
+    },
+    {
+      "id": "t79",
+      "evidence_id": "build-category-icons-purchase-loss",
+      "winner": "B",
+      "winner_is": "control"
+    },
+    {
+      "id": "t80",
+      "evidence_id": "paperstone-price-comparison-round-two",
+      "winner": "B",
+      "winner_is": "variant"
+    },
+    {
+      "id": "t81",
+      "evidence_id": "contentverve-spam-privacy-download-loss",
+      "winner": "A",
+      "winner_is": "control"
+    },
+    {
+      "id": "t82",
+      "evidence_id": "mozilla-ie-simplified-landing-page-win",
+      "winner": "B",
+      "winner_is": "variant"
+    },
+    {
+      "id": "t83",
+      "evidence_id": "client-logo-expansion-conversions-loss",
+      "winner": "B",
+      "winner_is": "control"
+    },
+    {
+      "id": "t84",
+      "evidence_id": "anonymous-commercial-real-estate-remove-arrow-loss",
+      "winner": "A",
+      "winner_is": "control"
+    },
+    {
+      "id": "t85",
+      "evidence_id": "smith-optics-mobile-cart",
+      "winner": "B",
+      "winner_is": "variant"
+    },
+    {
+      "id": "t86",
+      "evidence_id": "acuity-professional-trial-paid-signup-win",
+      "winner": "B",
+      "winner_is": "variant"
+    },
+    {
+      "id": "t87",
+      "evidence_id": "nuface",
+      "winner": "B",
+      "winner_is": "variant"
+    },
+    {
+      "id": "t88",
+      "evidence_id": "bing-pin-related-searches-bottom-clicks-loss",
+      "winner": "B",
+      "winner_is": "control"
+    },
+    {
+      "id": "t89",
       "evidence_id": "160-driving-academy",
       "winner": "A",
       "winner_is": "variant"
     },
     {
-      "id": "t19",
+      "id": "t90",
+      "evidence_id": "anonymous-insurance-supplier-ratings-loss",
+      "winner": "A",
+      "winner_is": "control"
+    },
+    {
+      "id": "t91",
+      "evidence_id": "obama-2008-sam-video-signup-loss",
+      "winner": "A",
+      "winner_is": "control"
+    },
+    {
+      "id": "t92",
+      "evidence_id": "furniture-free-shipping-below-cart-win",
+      "winner": "A",
+      "winner_is": "variant"
+    },
+    {
+      "id": "t93",
+      "evidence_id": "bing-ad-background-color-revenue-loss",
+      "winner": "B",
+      "winner_is": "control"
+    },
+    {
+      "id": "t94",
+      "evidence_id": "assessmentday-remove-faq-and-screenshots-loss",
+      "winner": "B",
+      "winner_is": "control"
+    },
+    {
+      "id": "t95",
+      "evidence_id": "anonymous-payment-enlarged-button-loss",
+      "winner": "B",
+      "winner_is": "control"
+    },
+    {
+      "id": "t96",
+      "evidence_id": "visitnorway-spanish-booking-label-loss",
+      "winner": "B",
+      "winner_is": "control"
+    },
+    {
+      "id": "t97",
+      "evidence_id": "mozilla-purple-download-button-loss",
+      "winner": "A",
+      "winner_is": "control"
+    },
+    {
+      "id": "t98",
+      "evidence_id": "retailer-mobile-all-options-expanded-loss",
+      "winner": "A",
+      "winner_is": "control"
+    },
+    {
+      "id": "t99",
+      "evidence_id": "anonymous-cosmetics-remove-basket-cta-loss",
+      "winner": "A",
+      "winner_is": "control"
+    },
+    {
+      "id": "t100",
+      "evidence_id": "lyyti",
+      "winner": "B",
+      "winner_is": "variant"
+    },
+    {
+      "id": "t101",
+      "evidence_id": "skincare-benefit-headline-dropdown-redesign-loss",
+      "winner": "A",
+      "winner_is": "control"
+    },
+    {
+      "id": "t102",
+      "evidence_id": "duolingo-offline-plus-upsell-retention-loss",
+      "winner": "B",
+      "winner_is": "control"
+    },
+    {
+      "id": "t103",
+      "evidence_id": "hubspot-email-html-heavy-click-loss",
+      "winner": "A",
+      "winner_is": "control"
+    },
+    {
+      "id": "t104",
+      "evidence_id": "highrise-2014-marketing-redesign-paid-loss",
+      "winner": "A",
+      "winner_is": "control"
+    },
+    {
+      "id": "t105",
+      "evidence_id": "anonymous-premium-software-try-now-loss",
+      "winner": "B",
+      "winner_is": "control"
+    },
+    {
+      "id": "t106",
+      "evidence_id": "marketingsherpa-research-ppc-message-loss",
+      "winner": "A",
+      "winner_is": "control"
+    },
+    {
+      "id": "t107",
+      "evidence_id": "bing-return-search-twenty-results-revenue-loss",
+      "winner": "A",
+      "winner_is": "control"
+    },
+    {
+      "id": "t108",
+      "evidence_id": "luxury-retailer-shipping-copy-cart-drawer-loss",
+      "winner": "B",
+      "winner_is": "control"
+    },
+    {
+      "id": "t109",
+      "evidence_id": "luxury-retailer-shipping-copy-pdp-add-to-cart-loss",
+      "winner": "A",
+      "winner_is": "control"
+    },
+    {
+      "id": "t110",
       "evidence_id": "nameon",
       "winner": "B",
       "winner_is": "variant"
+    },
+    {
+      "id": "t111",
+      "evidence_id": "hubspot-email-html-images-clickthrough-loss",
+      "winner": "A",
+      "winner_is": "control"
+    },
+    {
+      "id": "t112",
+      "evidence_id": "supplement-mobile-sticky-drawer-orders-win",
+      "winner": "B",
+      "winner_is": "variant"
+    },
+    {
+      "id": "t113",
+      "evidence_id": "hubspot-subscriber-email-left-alignment-loss",
+      "winner": "B",
+      "winner_is": "control"
+    },
+    {
+      "id": "t114",
+      "evidence_id": "open-mile-lead-page-redesign-win",
+      "winner": "B",
+      "winner_is": "variant"
+    },
+    {
+      "id": "t115",
+      "evidence_id": "highrise-person-page-extra-information-loss",
+      "winner": "A",
+      "winner_is": "control"
+    },
+    {
+      "id": "t116",
+      "evidence_id": "anonymous-fortune500-static-chat-win",
+      "winner": "A",
+      "winner_is": "variant"
+    },
+    {
+      "id": "t117",
+      "evidence_id": "mozilla-blue-download-button-loss",
+      "winner": "A",
+      "winner_is": "control"
+    },
+    {
+      "id": "t118",
+      "evidence_id": "anonymous-registration-two-step-form-loss",
+      "winner": "A",
+      "winner_is": "control"
+    },
+    {
+      "id": "t119",
+      "evidence_id": "free-trial-powerpoint-video-signups-loss",
+      "winner": "B",
+      "winner_is": "control"
+    },
+    {
+      "id": "t120",
+      "evidence_id": "airbnb-isolate-price-bookings-loss",
+      "winner": "A",
+      "winner_is": "control"
+    },
+    {
+      "id": "t121",
+      "evidence_id": "bag-servant-search-twitter-follow-loss",
+      "winner": "B",
+      "winner_is": "control"
     }
   ]
 }

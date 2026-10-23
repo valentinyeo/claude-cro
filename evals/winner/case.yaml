@@ -8,20 +8,20 @@ execution:
   max_turns: 40
   timeout_seconds: 900
   allowed_tools: [Read, Glob, Grep, Skill]
-  prompt: "Below are real A/B tests that companies ran and published. For each one, predict which version, A or B, got the higher result on the stated metric (higher is better for every metric listed). One of the two is the original page, but the order is random. Use whatever CRO knowledge and method you have. Do not search the web.\n\nt01. Eyewear and sportswear (E-commerce), cart page, metric: visits to checkout.\n    A: Mobile cart has hard-to-find login, difficult item editing and an unclear next step.\n    B: Redesign the mobile cart with login at the top, larger editing targets and a primary checkout CTA.\n\nt02. Cookware (E-commerce), global page, metric: product views.\n    A: Top navigation uses a generic Shop dropdown.\n    B: Expose product categories with direct product links in top navigation.\n\nt03. Betting exchange (Marketplace), landing page, metric: click-throughs to start registration.\n    A: Landing page promotes the mobile offering.\n    B: Replace the mobile promotion with social-proof content.\n\nt04. Event management (SaaS), pricing page, metric: visits to lead generation page.\n    A: Pricing page has short feature descriptions and competing trial and quote CTAs.\n    B: Tabulate plan features and repeat free-trial CTAs while demoting Request a Quote.\n\nt05. Website builder (SaaS), home page, metric: click-throughs to pricing.\n    A: Replace the positioning with Create a webpage for your business.\n    B: Homepage positioning: Businesses grow faster online!\n\nt06. Lottery (E-commerce), checkout page, metric: mobile transactions.\n    A: Add explanatory text and an arrow directing attention to the mobile XL toggle.\n    B: Mobile checkout XL toggle has limited explanation.\n\nt07. Watches (E-commerce), product page, metric: purchases.\n    A: Add a larger Trust Pilot review widget and tagline beneath Add to Basket.\n    B: Product pages have an authorized-dealer badge and small Trust Pilot badge.\n\nt08. Data protection software (SaaS), product page, metric: click-through rate to sales inquiry.\n    A: Change the link text to Request pricing.\n    B: Product page link says Request a quote.\n\nt09. Skincare (E-commerce), home page, metric: purchases.\n    A: Show Free shipping over $75! above the Shop NuFace button.\n    B: Homepage does not prominently show the free-shipping threshold.\n\nt10. Project management (SaaS), lead-form page, metric: demo form submissions.\n    A: Change customer logos to black and white.\n    B: Demo request page displays colored testimonial logos.\n\nt11. Infrastructure monitoring (SaaS), pricing page, metric: free-trial signups.\n    A: Configurable per-server and per-website pricing.\n    B: Replace per-unit pricing with packages starting at $99 per month.\n\nt12. Cookware (E-commerce), home page, metric: collection views.\n    A: Sub-hero has a Shop Best Sellers button.\n    B: Add mobile-friendly icon-led Shop by Category navigation below the hero.\n\nt13. Supplements (E-commerce), landing page, metric: purchases.\n    A: Add the word supplement to the landing-page headline.\n    B: Headline does not identify Movexa as a supplement.\n\nt14. Career preparation (E-commerce), landing page, metric: sales conversion rate.\n    A: Remove both the FAQs and screenshot sections.\n    B: Affiliate landing page includes both FAQs and screenshots.\n\nt15. Office supplies (E-commerce), product page, metric: purchase conversion rate.\n    A: Place competitor comparisons below Add to Basket, pair prices with highlighted savings and use a corporate design.\n    B: Original product pages without competitor price comparison.\n\nt16. Airport parking (Local Service), checkout page, metric: form submissions.\n    A: Remove unnecessary booking form fields.\n    B: Booking details form asks unnecessary questions.\n\nt17. Hardware (E-commerce), product page, metric: add-to-cart click-throughs.\n    A: Product pages show Google+, Pinterest and Facebook sharing buttons.\n    B: Remove social sharing buttons from product pages.\n\nt18. Driver training (Lead Gen), home page, metric: thank-you-page visits after form completion.\n    A: Replace the stock photograph with a real student standing beside a branded truck.\n    B: Homepage uses a stock photograph of a man driving a truck.\n\nt19. Personalized gifts (E-commerce), cart page, metric: revenue.\n    A: Nine competing calls to action on the cart page.\n    B: Keep the welcome bonus and checkout CTAs and change the checkout button from yellow to blue.\n\nGive a one-line reason for each, then end with one JSON code block mapping every id to \"A\" or \"B\", for example {\"t01\": \"A\", \"t02\": \"B\"}.\n"
+  prompt: "Below are real A/B tests that companies ran and published. For each one, predict which version, A or B, got the higher result on the stated metric (higher is better for every metric listed). One of the two is the original page, but the order is random. Use whatever CRO knowledge and method you have. Do not search the web.\n\nt01. International product business (Subscription), landing page, metric: overall order conversion rate.\n    A: Signup/purchase page does not mention the charitable donation.\n    B: Add donation-information banner at the top before the signup breakdown.\n\nt02. Luxury apparel (E-commerce), product page, metric: revenue per session.\n    A: Add a review-star summary near the top of each PDP.\n    B: Product reviews exist at the bottom but no star-rating summary near the top of the PDP.\n\nt03. Marketing conferences (Lead Gen), email page, metric: unique email clickthrough per delivered email.\n    A: (Open BEFORE Christmas) Email Summit 2014: discount ends Jan 9th\n    B: Use subject line $300 Savings | Vegas | More ROI From Email In 2014.\n\nt04. Hardware (E-commerce), product page, metric: add-to-cart click-throughs.\n    A: Remove social sharing buttons from product pages.\n    B: Product pages show Google+, Pinterest and Facebook sharing buttons.\n\nt05. Used mobile phones (Marketplace), home page, metric: CTA click-through rate.\n    A: Green CTA button with black text.\n    B: Change the text on the green CTA button from black to yellow.\n\nt06. Music lessons (Lead Gen), landing page, metric: conversions.\n    A: Use a cliffhanger headline modeled on John Caples\u2019s They Laughed When I Sat Down at the Piano formula.\n    B: Existing guitar-lesson landing-page headline.\n\nt07. Cookware (E-commerce), home page, metric: collection views.\n    A: Sub-hero has a Shop Best Sellers button.\n    B: Add mobile-friendly icon-led Shop by Category navigation below the hero.\n\nt08. Infrastructure monitoring (SaaS), pricing page, metric: free-trial signups.\n    A: Replace per-unit pricing with packages starting at $99 per month.\n    B: Configurable per-server and per-website pricing.\n\nt09. Nutritional supplements (E-commerce), product page, metric: completed orders.\n    A: Version A: non-sticky desktop buy box.\n    B: Version B: keep the entire desktop buy box fixed on the right while scrolling; other content unchanged.\n\nt10. Cookware (E-commerce), global page, metric: product views.\n    A: Top navigation uses a generic Shop dropdown.\n    B: Expose product categories with direct product links in top navigation.\n\nt11. Web browsers (Non-profit), product page, metric: Firefox download conversions.\n    A: Use the pictured The Safest Web Browser headline treatment with a \u201cTry Now!\u201d download button; associated subhead: Wall Street Journal testimonial: My verdict is that Firefox 3.0 is the best web browser out there right now....\n    B: Existing Firefox product page, the publisher\u2019s control recipe A.\n\nt12. Web browsers (Non-profit), product page, metric: Firefox download conversions.\n    A: Existing Firefox product page, the publisher\u2019s control recipe A.\n    B: Use the pictured Get A Browser That Does More headline treatment with a \u201cTry Now!\u201d download button; associated subhead: Firefox has security, speed and new features that will change the way you use the Web. Don\u2019t settle for anything less..\n\nt13. Handbag affiliate shopping (E-commerce), home page, metric: visits to affiliate partner websites.\n    A: Homepage displays the badge for more than 4,000 Twitter followers.\n    B: Replace the Twitter follower count with the WOW business award badge.\n\nt14. Online subscription products (Subscription), landing page, metric: subscription offer conversion.\n    A: Offer page without a founder video.\n    B: Add a founder video explaining the product to the same offer page.\n\nt15. Audio lead magnet (Lead Gen), landing page, metric: name-and-email opt-in conversion rate.\n    A: Give Me The Download button for a free audio download in exchange for name and email.\n    B: Change button wording to Download Now.\n\nt16. Online lead capture (Lead Gen), landing page, metric: conversion rate.\n    A: Move the CTA to a time-delayed pop-under.\n    B: CTA presented almost immediately on arrival.\n\nt17. Marketing education publishing (Content / Media), email page, metric: subscribers opting back in per delivered email.\n    A: Permission-pass email reminding inactive subscribers of continuing value.\n    B: Add an entry to win a MECLABS training course in email body and preheader; retain subject line.\n\nt18. Design software (SaaS), product page, metric: video clicks.\n    A: Use faces in the video preview image; no other page elements changed.\n    B: Product-centric video preview image.\n\nt19. Marketing and sales software (SaaS), email page, metric: clickthrough rate (clicks per opened email).\n    A: Add an animated GIF image to the marketing email.\n    B: Near-plain-text marketing email with minimal HTML for tracking and links.\n\nt20. Digital trial product (Subscription), landing page, metric: free-trial signup conversion rate.\n    A: Existing free-trial landing page used as the control, without the new animated video.\n    B: Add the professionally animated video in a small player with autoplay.\n\nt21. Online offer, undisclosed (Lead Gen), landing page, metric: CTA conversions.\n    A: Simple green CTA button with relevant copy.\n    B: Use the illustrated more creative CTA design and its copy instead of the simple green button.\n\nt22. Education course search (Lead Gen), landing page, metric: Send Enquiry lead generation rate.\n    A: Accounting-course landing page with original Send Enquiry and Ask an Expert positions.\n    B: Move the redesigned Send Enquiry form to the right above the fold, add an adjacent testimonial, and move Ask an Expert into the former enquiry position; leave Request Brochure unchanged.\n\nt23. Online lead capture (Lead Gen), landing page, metric: CTA clickthrough rate.\n    A: Black text on a green CTA button.\n    B: Change only the CTA text color to yellow, retaining the green button.\n\nt24. Health food (E-commerce), home page, metric: mobile orders.\n    A: Expose links to the brand product/flavor PDPs in a homepage link bar.\n    B: Mobile homepage leaves product/flavor links inside the hamburger menu.\n\nt25. Fashion recommendations (Lead Gen), home page, metric: signup button clicks.\n    A: Use the colloquial headline together with CTA Show me outfits I\u2019ll love.\n    B: Original standard headline and Sign up now button.\n\nt26. Online retail (E-commerce), global page, metric: sales.\n    A: Add a 100 millisecond slowdown.\n    B: Normal website performance.\n\nt27. Web browsers (Non-profit), landing page, metric: Firefox download conversions.\n    A: Include the deep footer instead of the simplified footer.\n    B: Pages with a simplified footer retaining Privacy Policy, Legal Notices and Report Trademark Abuse links.\n\nt28. Travel accommodation (Marketplace), global page, metric: bookings.\n    A: Show the baseline top map pins, eighteen in the explanatory example.\n    B: Match the filtered treatment pin count but choose remaining pins randomly from baseline, fourteen in the example.\n\nt29. Marketing research publishing (Content / Media), email page, metric: email clickthrough rate.\n    A: Promotional email with general mobile marketing copy and subject line [Just Released] New Mobile Marketing Benchmark Report.\n    B: Use a top-ten-insights email and subject line [Latest Research] 10 mobile marketing insights from brand-new research; compare aggregate copy groups across greeting segments.\n\nt30. Data protection software (SaaS), product page, metric: click-through rate to sales inquiry.\n    A: Product page link says Request a quote.\n    B: Change the link text to Request pricing.\n\nt31. Web browsers (Non-profit), product page, metric: Firefox download conversions.\n    A: Use the pictured The Browser That Has It All headline treatment with a \u201cTry Now!\u201d download button; associated subhead: Washington Post testimonial: There may be no easier upgrade to your web experience than a switch to Firefox 3..\n    B: Existing Firefox product page, the publisher\u2019s control recipe A.\n\nt32. Event management software (SaaS), home page, metric: completed homepage leads.\n    A: Rewrite headline and supporting copy around product features and benefits, emphasize free access, reduce form fields and carry product-centric value into subsequent steps.\n    B: Original homepage and lead capture flow.\n\nt33. Online retail (E-commerce), global page, metric: sitewide purchase conversion rate.\n    A: Floating support-chat icon in the lower-right corner.\n    B: Move the support-chat entry icon to the navigation bar; open the same chat widget.\n\nt34. Political campaigning (Non-profit), landing page, metric: email signup rate.\n    A: Use Barack\u2019s Video in the media section, pooled across randomized button-text combinations.\n    B: Original splash-page image, pooled across randomized button-text combinations.\n\nt35. Project management (SaaS), lead-form page, metric: demo form submissions.\n    A: Change customer logos to black and white.\n    B: Demo request page displays colored testimonial logos.\n\nt36. Mattresses (E-commerce), product page, metric: completed checkouts.\n    A: Existing mattress PDP copy.\n    B: Rewrite copy with specific beyond-sleep benefits, reasons not to maintain the status quo, and product features framed persuasively.\n\nt37. Luxury hotel (Local Service), home page, metric: click-through rate to room booking page.\n    A: Add a prominent maroon Book Online CTA above the fold after Stay with Us, retaining the CTA wording.\n    B: Book Online link is near the bottom of the homepage and difficult to notice.\n\nt38. Online retail (E-commerce), checkout page, metric: checkout conversion rate.\n    A: Three-step cart checkout.\n    B: Replace three steps with a one-page accordion checkout.\n\nt39. Web search and online services (Content / Media), global page, metric: searches per user during the second three weeks of a six-week experiment.\n    A: Inject a 400 ms server-side delay for six weeks; compare search usage during the second three weeks.\n    B: Normal search-result delivery.\n\nt40. Mental health training (Lead Gen), landing page, metric: free video-pack signups.\n    A: Replace the magazine layout with a simpler modern page presenting the three-video pack and privacy/opt-out assurances.\n    B: Magazine-style video signup page with descriptions of the three trauma-treatment videos and Mark Tyrrell\u2019s photograph.\n\nt41. Used industrial machinery (Lead Gen), category page, metric: quote-request leads.\n    A: Add links to the five most popular machine subcategories, use machine-type names, and invite open-ended telephone questions.\n    B: Inventory introduction lists broad machinery functions and invites calls only when equipment cannot be found.\n\nt42. Watches (E-commerce), product page, metric: purchases.\n    A: Add a larger Trust Pilot review widget and tagline beneath Add to Basket.\n    B: Product pages have an authorized-dealer badge and small Trust Pilot badge.\n\nt43. Web browsers (Non-profit), landing page, metric: Firefox download conversions.\n    A: Include the switching tips element.\n    B: Pages without the switching tips element.\n\nt44. Web search and online services (Content / Media), global page, metric: search traffic and revenue.\n    A: Ten results per search-results page.\n    B: Thirty results per page, also increasing generation time by about half a second.\n\nt45. Wi-Fi analysis software (E-commerce), product page, metric: download-page clicks or engagement.\n    A: Text-link-dominant inSSIDer download page, with a free Home download and separate Office flow.\n    B: Replace text links with visually engaging buttons, value and immediacy messaging, a download icon and introducing headers.\n\nt46. Travel accommodation (Marketplace), global page, metric: bookings.\n    A: Booking-only pairwise loss for the ranking DNN.\n    B: Add a weighted secondary loss preferring lower-priced listings, tuned to preserve offline NDCG.\n\nt47. Apparel (E-commerce), product page, metric: purchase conversion rate.\n    A: Size-guide link low in the product-description section.\n    B: Move size-guide link above and near the size-selection dropdown.\n\nt48. Wireless networking software (SaaS), landing page, metric: download conversions.\n    A: Download page uses plain text download links.\n    B: Use the illustrated large orange DOWNLOAD NOW and blue GET IT NOW buttons with more urgent download messaging.\n\nt49. Tourism (Lead Gen), email page, metric: email open rate.\n    A: Send the monthly promotional newsletter on Monday.\n    B: Send the same monthly promotional newsletter on Saturday.\n\nt50. Political campaigning (Non-profit), landing page, metric: email signup rate.\n    A: Use Springfield Video in the media section, pooled across randomized button-text combinations.\n    B: Original splash-page image, pooled across randomized button-text combinations.\n\nt51. Supplements (E-commerce), landing page, metric: purchases.\n    A: Add the word supplement to the landing-page headline.\n    B: Headline does not identify Movexa as a supplement.\n\nt52. Newsletter publishing (Content / Media), email page, metric: email response.\n    A: Existing email without the additional preview text.\n    B: Add preheader text similar to Example 1, perceived by customers as repetitive and distracting.\n\nt53. Online business education (Lead Gen), landing page, metric: mailing-list form submissions for free e-book.\n    A: Headline translates as A step-by-step plan for opening your internet store.\n    B: Change the headline to Open your internet store in one evening.\n\nt54. Web browsers (Non-profit), product page, metric: Firefox download conversions.\n    A: Use the pictured It\u2019s Time You Tried A Better Browser headline treatment with a \u201cTry Now!\u201d download button; associated subhead: Your online security is our top priority. Firefox includes easy ways to tell the good guys from the bad..\n    B: Existing Firefox product page, the publisher\u2019s control recipe A.\n\nt55. Newsletter publishing (Content / Media), email page, metric: email clicks.\n    A: Use the first article headline as a newsletter preheader teaser.\n    B: General link text pulled from the email template into the preheader.\n\nt56. Travel accommodation (Marketplace), global page, metric: bookings.\n    A: Unconstrained two-hidden-layer ranking DNN.\n    B: Use squared weights and tanh activations to enforce monotonic decrease with price plus an unconstrained non-price subnet.\n\nt57. Online retail (E-commerce), product page, metric: conversion rate.\n    A: Remove the other sizes and focus solely on the most popular size.\n    B: Product page offers three size choices.\n\nt58. Vitamin supplements (E-commerce), product page, metric: revenue.\n    A: Vertical radio-button list with the most expensive Best Value option preselected.\n    B: Horizontal matrix emphasizes middle Most Popular option, adds cost-per-serving comparisons and an auto-populated form requiring payment information.\n\nt59. Consumer product for men (E-commerce), landing page, metric: advertorial conversion rate.\n    A: Scientific explanatory image near the top-right of a text-heavy advertorial targeting men aged 35\u201360.\n    B: Replace the scientific image with a smiling loving couple, including a male in the target age range.\n\nt60. Web browsers (Non-profit), product page, metric: Firefox download clicks.\n    A: Download button says \u201cDownload Now \u2013 Free\u201d.\n    B: Change button text to \u201cTry Firefox 3\u201d.\n\nt61. Lottery (E-commerce), checkout page, metric: mobile transactions.\n    A: Add explanatory text and an arrow directing attention to the mobile XL toggle.\n    B: Mobile checkout XL toggle has limited explanation.\n\nt62. Handbag affiliate shopping (E-commerce), landing page, metric: click-throughs to affiliate partner websites.\n    A: Original search page before the tested additional badge.\n    B: Add the Versign Seal (the source\u2019s spelling for the security seal) to the search page.\n\nt63. Prescription eyewear (E-commerce), home page, metric: Fit Profile quiz starts.\n    A: Original brand-aligned hero unit and Get Started CTA.\n    B: Show the actual home try-on Fit Kit, add three process steps and replace CTA with Start Fit Profile.\n\nt64. Web browsers (Non-profit), landing page, metric: Firefox download conversions.\n    A: Pages without the main features box.\n    B: Include the main features box.\n\nt65. Web browsers (Non-profit), product page, metric: Firefox downloads.\n    A: Green Firefox download button.\n    B: Replace the green Firefox download button with a orange button.\n\nt66. Banking (Lead Gen), lead-form page, metric: leads.\n    A: Standard request form with mandatory business identification number field.\n    B: Add a pop-up explaining the mandatory business identification number field.\n\nt67. Wi-Fi analysis software (E-commerce), product page, metric: download-page clicks or engagement.\n    A: Text-link-dominant inSSIDer download page, with a free Home download and separate Office flow.\n    B: Use buttons, explanatory headers and enlarged transaction areas with forms; also position Home as a paid product with a trial and lead capture.\n\nt68. Betting exchange (Marketplace), landing page, metric: click-throughs to start registration.\n    A: Landing page promotes the mobile offering.\n    B: Replace the mobile promotion with social-proof content.\n\nt69. Airport parking (Local Service), checkout page, metric: form submissions.\n    A: Remove unnecessary booking form fields.\n    B: Booking details form asks unnecessary questions.\n\nt70. Training course comparison (Lead Gen), lead-form page, metric: brochure form completion rate.\n    A: Brochure request form with introductory text, logo, and asterisks marking required fields.\n    B: Remove intro text and logo, add user quotes and well-known Dutch-brand logos in the sidebar, and mark optional fields instead of using required-field asterisks.\n\nt71. Electronics (E-commerce), category page, metric: proceed-to-checkout rate.\n    A: Category pages without a bottom-of-page Discover More cross-category section.\n    B: Add links to other product categories using product-only photos.\n\nt72. Website builder (SaaS), home page, metric: click-throughs to pricing.\n    A: Homepage positioning: Businesses grow faster online!\n    B: Replace the positioning with Create a webpage for your business.\n\nt73. Wi-Fi analysis software (E-commerce), product page, metric: download-page clicks or engagement.\n    A: Replace text links with buttons and explanatory headers, reorganize the calls-to-action into larger transaction areas and introduce forms, particularly for the Office trial.\n    B: Text-link-dominant inSSIDer download page, with a free Home download and separate Office flow.\n\nt74. Sports betting community (Subscription), home page, metric: membership signup conversion rate.\n    A: Add privacy copy: 100% privacy \u2013 We will never spam you.\n    B: Membership signup form without a privacy assurance.\n\nt75. Apparel (E-commerce), global page, metric: purchase conversion rate.\n    A: Was/now prices without percentage savings during a period with discounts varying by product.\n    B: Add percentage-off savings to both PLPs and PDPs, one tested text color.\n\nt76. Online commerce, product undisclosed (E-commerce), checkout page, metric: payment-page CTA clicks.\n    A: Replace My with Your in the payment-page CTA.\n    B: Payment-page CTA uses My.\n\nt77. Wi-Fi analysis software (E-commerce), product page, metric: download-page clicks or engagement.\n    A: Text-link-dominant inSSIDer download page, with a free Home download and separate Office flow.\n    B: Replace text links with buttons, value/immediacy messaging and headers, and arrange the calls-to-action in a comparable horizontal row.\n\nt78. Marketing and sales software (SaaS), home page, metric: HubSpot Academy conversion rate.\n    A: Existing HubSpot Academy homepage hero, variant A.\n    B: Add color and movement, with animated images on the right side of the hero.\n\nt79. Home improvement retail (E-commerce), global page, metric: product purchases.\n    A: Add icons representing the most-visited product categories to the header navigation.\n    B: Header navigation without category icons.\n\nt80. Office supplies (E-commerce), product page, metric: purchase conversion rate.\n    A: Original product pages without competitor price comparison.\n    B: Place competitor comparisons below Add to Basket, pair prices with highlighted savings and use a corporate design.\n\nt81. Conversion optimization education (Lead Gen), landing page, metric: CRO e-book downloads.\n    A: E-book landing page says I guarantee 100% privacy.\n    B: Replace the statement with 100% privacy \u2013 I will never spam you!\n\nt82. Web browsers (Non-profit), landing page, metric: Firefox download conversions.\n    A: IE landing page with main features, switching tips, deep footer and download stats.\n    B: Keep download stats, remove the main features and switching tips, and simplify the footer while retaining legal/privacy/trademark links.\n\nt83. Business with corporate and institutional customers (Lead Gen), landing page, metric: landing-page conversion rate.\n    A: Add a handful more customer/institution logos to the existing proof block.\n    B: Landing page shows the existing selection of customer logos.\n\nt84. Commercial real estate (Lead Gen), landing page, metric: CTA click-through rate.\n    A: Orange CTA button with a green arrow.\n    B: Remove the green arrow from the orange CTA button.\n\nt85. Eyewear and sportswear (E-commerce), cart page, metric: visits to checkout.\n    A: Mobile cart has hard-to-find login, difficult item editing and an unclear next step.\n    B: Redesign the mobile cart with login at the top, larger editing targets and a primary checkout CTA.\n\nt86. Appointment scheduling software (SaaS), landing page, metric: paid Professional account signups.\n    A: Primary CTA sends visitors to an unlimited-duration free account with limited features; upgrades require account settings.\n    B: Send visitors directly to a full-feature Professional-plan 14-day trial, with card entry needed to continue using the paid plan.\n\nt87. Skincare (E-commerce), home page, metric: purchases.\n    A: Homepage does not prominently show the free-shipping threshold.\n    B: Show Free shipping over $75! above the Shop NuFace button.\n\nt88. Web search and online services (Content / Media), global page, metric: related-search clickthrough rate.\n    A: Pin related searches to the bottom, below bottom ads.\n    B: Inline related searches may float above lower-performing algorithmic results.\n\nt89. Driver training (Lead Gen), home page, metric: thank-you-page visits after form completion.\n    A: Replace the stock photograph with a real student standing beside a branded truck.\n    B: Homepage uses a stock photograph of a man driving a truck.\n\nt90. Insurance comparison (Lead Gen), landing page, metric: conversions.\n    A: Big Brand Price Check displays supplier price information without the added community ratings.\n    B: Add customer satisfaction ratings for suppliers beside Big Brand Price Check.\n\nt91. Political campaigning (Non-profit), landing page, metric: email signup rate.\n    A: Original splash-page image, pooled across randomized button-text combinations.\n    B: Use Sam\u2019s Video in the media section, pooled across randomized button-text combinations.\n\nt92. Furniture (E-commerce), product page, metric: orders.\n    A: Repeat free-shipping and free-returns messaging below the PDP add-to-cart button.\n    B: Free shipping and free returns appear only in the sitewide promotion bar.\n\nt93. Web search and online services (Content / Media), global page, metric: revenue.\n    A: Treatment background color; exact color not specified in the text.\n    B: Existing search-ad background color.\n\nt94. Career preparation (E-commerce), landing page, metric: sales conversion rate.\n    A: Remove both the FAQs and screenshot sections.\n    B: Affiliate landing page includes both FAQs and screenshots.\n\nt95. Online commerce, product undisclosed (E-commerce), checkout page, metric: payment-page conversions.\n    A: Make the payment-page CTA button substantially larger.\n    B: Payment-page CTA at its original smaller size.\n\nt96. Tourism information (Content / Media), global page, metric: visits to booking section.\n    A: Use the English word Booking in the Spanish navigation.\n    B: Spanish menu uses Reservas for the booking link.\n\nt97. Web browsers (Non-profit), product page, metric: Firefox downloads.\n    A: Green Firefox download button.\n    B: Replace the green Firefox download button with a purple button.\n\nt98. Online retail (E-commerce), global page, metric: mobile order conversion rate.\n    A: Mobile shoppers click to expand options such as size and color.\n    B: Expand options by default to eliminate the extra opening click, creating a longer page.\n\nt99. Beauty retail (E-commerce), product page, metric: conversions.\n    A: Product pages include Add to Basket CTAs.\n    B: Remove Add to Basket CTAs to encourage visits to individual pages.\n\nt100. Event management (SaaS), pricing page, metric: visits to lead generation page.\n    A: Pricing page has short feature descriptions and competing trial and quote CTAs.\n    B: Tabulate plan features and repeat free-trial CTAs while demoting Request a Quote.\n\nt101. Skincare (E-commerce), product page, metric: purchase conversion rate.\n    A: Page explains product steps and separately lists three skin-type kits with buy buttons; prices not revealed.\n    B: Redesign with benefit-led headline, new imagery, two social-proof areas, explanatory videos, one product image, dropdown kit selector, visible price and selection-help popup.\n\nt102. Language education (Subscription), global page, metric: user retention.\n    A: Allow tapping skills while offline, then show a Plus purchase ad when starting a lesson.\n    B: Do not allow free users to tap offline skills to encounter a Plus ad before lessons.\n\nt103. Marketing and sales software (SaaS), email page, metric: email clicks.\n    A: Simple HTML email template.\n    B: Use an HTML-heavy email template.\n\nt104. Customer relationship management software (SaaS), global page, metric: paid conversions.\n    A: Pre-2014 Highrise marketing site.\n    B: Launch the new, more minimal 2014 marketing site, including redesigned plans.\n\nt105. Business software (SaaS), global page, metric: banner clickthrough rate.\n    A: Change banner CTA text to Try Now.\n    B: Banner CTA says Start Free Trial.\n\nt106. Marketing research publishing (Content / Media), ad page, metric: PPC clickthrough rate.\n    A: PPC ad focused on marketing strategy.\n    B: Focus the PPC ad on research instead of strategy.\n\nt107. Web search and online services (Content / Media), global page, metric: revenue.\n    A: On returning to results, extend the page to fourteen results with related searches.\n    B: Extend to twenty results and remove related searches.\n\nt108. Luxury retail (E-commerce), cart page, metric: purchase conversion rate.\n    A: Add free-shipping/free-returns copy inside the cart drawer.\n    B: No added free-shipping/free-returns message in the cart drawer.\n\nt109. Luxury retail (E-commerce), product page, metric: purchase conversion rate.\n    A: No added free-shipping/free-returns message in the pdp add to cart.\n    B: Add free-shipping/free-returns copy near the PDP add-to-cart button.\n\nt110. Personalized gifts (E-commerce), cart page, metric: revenue.\n    A: Nine competing calls to action on the cart page.\n    B: Keep the welcome bonus and checkout CTAs and change the checkout button from yellow to blue.\n\nt111. Marketing and sales software (SaaS), email page, metric: clickthrough rate (clicks per opened email).\n    A: Near-plain-text marketing email with minimal HTML for tracking and links.\n    B: Use an HTML email template containing images.\n\nt112. Nutritional supplements (E-commerce), product page, metric: mobile orders.\n    A: Mobile PDP without a sticky add-to-cart button (A).\n    B: Sticky button opens a slide-up drawer containing add-to-cart controls (C).\n\nt113. Marketing and sales software (SaaS), email page, metric: email clicks.\n    A: Left-justify the text in weekly subscriber emails.\n    B: Weekly subscriber emails use centered text.\n\nt114. Freight brokerage (Lead Gen), landing page, metric: lead generation conversion rate.\n    A: Cluttered freight-rate page with truck image, weak headline, nearby social media and Talk to Us actions.\n    B: Enlarge and clarify the masthead, state the quote is free and fast, remove the truck image and social distractions, move Talk to Us away, and use a red Get a Quote CTA on blue background.\n\nt115. Customer relationship management software (SaaS), home page, metric: paid signups.\n    A: Short customer Person Page.\n    B: Add more information below the short customer Person Page.\n\nt116. B2B free-trial offers (Lead Gen), landing page, metric: chat clicks.\n    A: Replace timed popup with a clickable static chat-box image, add contact-value copy and move lead form lower.\n    B: Paid-search free-trial landing page with timed chat popup, lead form and phone number.\n\nt117. Web browsers (Non-profit), product page, metric: Firefox downloads.\n    A: Green Firefox download button.\n    B: Replace the green Firefox download button with a blue button.\n\nt118. Registration service, undisclosed (Lead Gen), lead-form page, metric: registration form completions.\n    A: Long detailed registration form on one step.\n    B: Split the form into two steps, requesting email and name first and remaining details second.\n\nt119. Digital trial product (Subscription), landing page, metric: free-trial signup conversion rate.\n    A: Add a simple text-and-images presentation-style sales video with a professionally recorded voiceover.\n    B: Benefit-led redesigned free-trial landing page without the new sales video.\n\nt120. Travel accommodation (Marketplace), global page, metric: bookings.\n    A: Two-hidden-layer fully connected DNN with price among input features.\n    B: Remove price from DNN inputs and subtract a monotonic tanh price term from its score.\n\nt121. Handbag affiliate shopping (E-commerce), landing page, metric: click-throughs to affiliate partner websites.\n    A: Add a Twitter Follow badge to the search page.\n    B: Original search page before the tested additional badge.\n\nGive a one-line reason for each, then end with one JSON code block mapping every id to \"A\" or \"B\", for example {\"t01\": \"A\", \"t02\": \"B\"}.\n"
 graders:
   - name: t01
     type: regex
-    pattern: "\"t01\"\\s*:\\s*\"B\""
+    pattern: "\"t01\"\\s*:\\s*\"A\""
   - name: t02
     type: regex
-    pattern: "\"t02\"\\s*:\\s*\"B\""
+    pattern: "\"t02\"\\s*:\\s*\"A\""
   - name: t03
     type: regex
-    pattern: "\"t03\"\\s*:\\s*\"B\""
+    pattern: "\"t03\"\\s*:\\s*\"A\""
   - name: t04
     type: regex
-    pattern: "\"t04\"\\s*:\\s*\"B\""
+    pattern: "\"t04\"\\s*:\\s*\"A\""
   - name: t05
     type: regex
     pattern: "\"t05\"\\s*:\\s*\"A\""
@@ -30,43 +30,349 @@ graders:
     pattern: "\"t06\"\\s*:\\s*\"B\""
   - name: t07
     type: regex
-    pattern: "\"t07\"\\s*:\\s*\"A\""
+    pattern: "\"t07\"\\s*:\\s*\"B\""
   - name: t08
     type: regex
-    pattern: "\"t08\"\\s*:\\s*\"A\""
+    pattern: "\"t08\"\\s*:\\s*\"B\""
   - name: t09
     type: regex
-    pattern: "\"t09\"\\s*:\\s*\"A\""
+    pattern: "\"t09\"\\s*:\\s*\"B\""
   - name: t10
     type: regex
-    pattern: "\"t10\"\\s*:\\s*\"A\""
+    pattern: "\"t10\"\\s*:\\s*\"B\""
   - name: t11
     type: regex
-    pattern: "\"t11\"\\s*:\\s*\"A\""
+    pattern: "\"t11\"\\s*:\\s*\"B\""
   - name: t12
     type: regex
-    pattern: "\"t12\"\\s*:\\s*\"B\""
+    pattern: "\"t12\"\\s*:\\s*\"A\""
   - name: t13
     type: regex
-    pattern: "\"t13\"\\s*:\\s*\"A\""
+    pattern: "\"t13\"\\s*:\\s*\"B\""
   - name: t14
     type: regex
-    pattern: "\"t14\"\\s*:\\s*\"B\""
+    pattern: "\"t14\"\\s*:\\s*\"A\""
   - name: t15
     type: regex
     pattern: "\"t15\"\\s*:\\s*\"A\""
   - name: t16
     type: regex
-    pattern: "\"t16\"\\s*:\\s*\"A\""
+    pattern: "\"t16\"\\s*:\\s*\"B\""
   - name: t17
     type: regex
-    pattern: "\"t17\"\\s*:\\s*\"B\""
+    pattern: "\"t17\"\\s*:\\s*\"A\""
   - name: t18
     type: regex
-    pattern: "\"t18\"\\s*:\\s*\"A\""
+    pattern: "\"t18\"\\s*:\\s*\"B\""
   - name: t19
     type: regex
     pattern: "\"t19\"\\s*:\\s*\"B\""
+  - name: t20
+    type: regex
+    pattern: "\"t20\"\\s*:\\s*\"A\""
+  - name: t21
+    type: regex
+    pattern: "\"t21\"\\s*:\\s*\"A\""
+  - name: t22
+    type: regex
+    pattern: "\"t22\"\\s*:\\s*\"A\""
+  - name: t23
+    type: regex
+    pattern: "\"t23\"\\s*:\\s*\"A\""
+  - name: t24
+    type: regex
+    pattern: "\"t24\"\\s*:\\s*\"A\""
+  - name: t25
+    type: regex
+    pattern: "\"t25\"\\s*:\\s*\"A\""
+  - name: t26
+    type: regex
+    pattern: "\"t26\"\\s*:\\s*\"B\""
+  - name: t27
+    type: regex
+    pattern: "\"t27\"\\s*:\\s*\"B\""
+  - name: t28
+    type: regex
+    pattern: "\"t28\"\\s*:\\s*\"A\""
+  - name: t29
+    type: regex
+    pattern: "\"t29\"\\s*:\\s*\"A\""
+  - name: t30
+    type: regex
+    pattern: "\"t30\"\\s*:\\s*\"B\""
+  - name: t31
+    type: regex
+    pattern: "\"t31\"\\s*:\\s*\"B\""
+  - name: t32
+    type: regex
+    pattern: "\"t32\"\\s*:\\s*\"B\""
+  - name: t33
+    type: regex
+    pattern: "\"t33\"\\s*:\\s*\"B\""
+  - name: t34
+    type: regex
+    pattern: "\"t34\"\\s*:\\s*\"B\""
+  - name: t35
+    type: regex
+    pattern: "\"t35\"\\s*:\\s*\"A\""
+  - name: t36
+    type: regex
+    pattern: "\"t36\"\\s*:\\s*\"B\""
+  - name: t37
+    type: regex
+    pattern: "\"t37\"\\s*:\\s*\"A\""
+  - name: t38
+    type: regex
+    pattern: "\"t38\"\\s*:\\s*\"A\""
+  - name: t39
+    type: regex
+    pattern: "\"t39\"\\s*:\\s*\"B\""
+  - name: t40
+    type: regex
+    pattern: "\"t40\"\\s*:\\s*\"B\""
+  - name: t41
+    type: regex
+    pattern: "\"t41\"\\s*:\\s*\"A\""
+  - name: t42
+    type: regex
+    pattern: "\"t42\"\\s*:\\s*\"A\""
+  - name: t43
+    type: regex
+    pattern: "\"t43\"\\s*:\\s*\"B\""
+  - name: t44
+    type: regex
+    pattern: "\"t44\"\\s*:\\s*\"A\""
+  - name: t45
+    type: regex
+    pattern: "\"t45\"\\s*:\\s*\"A\""
+  - name: t46
+    type: regex
+    pattern: "\"t46\"\\s*:\\s*\"A\""
+  - name: t47
+    type: regex
+    pattern: "\"t47\"\\s*:\\s*\"B\""
+  - name: t48
+    type: regex
+    pattern: "\"t48\"\\s*:\\s*\"A\""
+  - name: t49
+    type: regex
+    pattern: "\"t49\"\\s*:\\s*\"B\""
+  - name: t50
+    type: regex
+    pattern: "\"t50\"\\s*:\\s*\"B\""
+  - name: t51
+    type: regex
+    pattern: "\"t51\"\\s*:\\s*\"A\""
+  - name: t52
+    type: regex
+    pattern: "\"t52\"\\s*:\\s*\"A\""
+  - name: t53
+    type: regex
+    pattern: "\"t53\"\\s*:\\s*\"B\""
+  - name: t54
+    type: regex
+    pattern: "\"t54\"\\s*:\\s*\"B\""
+  - name: t55
+    type: regex
+    pattern: "\"t55\"\\s*:\\s*\"B\""
+  - name: t56
+    type: regex
+    pattern: "\"t56\"\\s*:\\s*\"A\""
+  - name: t57
+    type: regex
+    pattern: "\"t57\"\\s*:\\s*\"B\""
+  - name: t58
+    type: regex
+    pattern: "\"t58\"\\s*:\\s*\"A\""
+  - name: t59
+    type: regex
+    pattern: "\"t59\"\\s*:\\s*\"A\""
+  - name: t60
+    type: regex
+    pattern: "\"t60\"\\s*:\\s*\"A\""
+  - name: t61
+    type: regex
+    pattern: "\"t61\"\\s*:\\s*\"B\""
+  - name: t62
+    type: regex
+    pattern: "\"t62\"\\s*:\\s*\"A\""
+  - name: t63
+    type: regex
+    pattern: "\"t63\"\\s*:\\s*\"B\""
+  - name: t64
+    type: regex
+    pattern: "\"t64\"\\s*:\\s*\"A\""
+  - name: t65
+    type: regex
+    pattern: "\"t65\"\\s*:\\s*\"A\""
+  - name: t66
+    type: regex
+    pattern: "\"t66\"\\s*:\\s*\"A\""
+  - name: t67
+    type: regex
+    pattern: "\"t67\"\\s*:\\s*\"A\""
+  - name: t68
+    type: regex
+    pattern: "\"t68\"\\s*:\\s*\"B\""
+  - name: t69
+    type: regex
+    pattern: "\"t69\"\\s*:\\s*\"A\""
+  - name: t70
+    type: regex
+    pattern: "\"t70\"\\s*:\\s*\"B\""
+  - name: t71
+    type: regex
+    pattern: "\"t71\"\\s*:\\s*\"B\""
+  - name: t72
+    type: regex
+    pattern: "\"t72\"\\s*:\\s*\"B\""
+  - name: t73
+    type: regex
+    pattern: "\"t73\"\\s*:\\s*\"B\""
+  - name: t74
+    type: regex
+    pattern: "\"t74\"\\s*:\\s*\"B\""
+  - name: t75
+    type: regex
+    pattern: "\"t75\"\\s*:\\s*\"B\""
+  - name: t76
+    type: regex
+    pattern: "\"t76\"\\s*:\\s*\"B\""
+  - name: t77
+    type: regex
+    pattern: "\"t77\"\\s*:\\s*\"A\""
+  - name: t78
+    type: regex
+    pattern: "\"t78\"\\s*:\\s*\"A\""
+  - name: t79
+    type: regex
+    pattern: "\"t79\"\\s*:\\s*\"B\""
+  - name: t80
+    type: regex
+    pattern: "\"t80\"\\s*:\\s*\"B\""
+  - name: t81
+    type: regex
+    pattern: "\"t81\"\\s*:\\s*\"A\""
+  - name: t82
+    type: regex
+    pattern: "\"t82\"\\s*:\\s*\"B\""
+  - name: t83
+    type: regex
+    pattern: "\"t83\"\\s*:\\s*\"B\""
+  - name: t84
+    type: regex
+    pattern: "\"t84\"\\s*:\\s*\"A\""
+  - name: t85
+    type: regex
+    pattern: "\"t85\"\\s*:\\s*\"B\""
+  - name: t86
+    type: regex
+    pattern: "\"t86\"\\s*:\\s*\"B\""
+  - name: t87
+    type: regex
+    pattern: "\"t87\"\\s*:\\s*\"B\""
+  - name: t88
+    type: regex
+    pattern: "\"t88\"\\s*:\\s*\"B\""
+  - name: t89
+    type: regex
+    pattern: "\"t89\"\\s*:\\s*\"A\""
+  - name: t90
+    type: regex
+    pattern: "\"t90\"\\s*:\\s*\"A\""
+  - name: t91
+    type: regex
+    pattern: "\"t91\"\\s*:\\s*\"A\""
+  - name: t92
+    type: regex
+    pattern: "\"t92\"\\s*:\\s*\"A\""
+  - name: t93
+    type: regex
+    pattern: "\"t93\"\\s*:\\s*\"B\""
+  - name: t94
+    type: regex
+    pattern: "\"t94\"\\s*:\\s*\"B\""
+  - name: t95
+    type: regex
+    pattern: "\"t95\"\\s*:\\s*\"B\""
+  - name: t96
+    type: regex
+    pattern: "\"t96\"\\s*:\\s*\"B\""
+  - name: t97
+    type: regex
+    pattern: "\"t97\"\\s*:\\s*\"A\""
+  - name: t98
+    type: regex
+    pattern: "\"t98\"\\s*:\\s*\"A\""
+  - name: t99
+    type: regex
+    pattern: "\"t99\"\\s*:\\s*\"A\""
+  - name: t100
+    type: regex
+    pattern: "\"t100\"\\s*:\\s*\"B\""
+  - name: t101
+    type: regex
+    pattern: "\"t101\"\\s*:\\s*\"A\""
+  - name: t102
+    type: regex
+    pattern: "\"t102\"\\s*:\\s*\"B\""
+  - name: t103
+    type: regex
+    pattern: "\"t103\"\\s*:\\s*\"A\""
+  - name: t104
+    type: regex
+    pattern: "\"t104\"\\s*:\\s*\"A\""
+  - name: t105
+    type: regex
+    pattern: "\"t105\"\\s*:\\s*\"B\""
+  - name: t106
+    type: regex
+    pattern: "\"t106\"\\s*:\\s*\"A\""
+  - name: t107
+    type: regex
+    pattern: "\"t107\"\\s*:\\s*\"A\""
+  - name: t108
+    type: regex
+    pattern: "\"t108\"\\s*:\\s*\"B\""
+  - name: t109
+    type: regex
+    pattern: "\"t109\"\\s*:\\s*\"A\""
+  - name: t110
+    type: regex
+    pattern: "\"t110\"\\s*:\\s*\"B\""
+  - name: t111
+    type: regex
+    pattern: "\"t111\"\\s*:\\s*\"A\""
+  - name: t112
+    type: regex
+    pattern: "\"t112\"\\s*:\\s*\"B\""
+  - name: t113
+    type: regex
+    pattern: "\"t113\"\\s*:\\s*\"B\""
+  - name: t114
+    type: regex
+    pattern: "\"t114\"\\s*:\\s*\"B\""
+  - name: t115
+    type: regex
+    pattern: "\"t115\"\\s*:\\s*\"A\""
+  - name: t116
+    type: regex
+    pattern: "\"t116\"\\s*:\\s*\"A\""
+  - name: t117
+    type: regex
+    pattern: "\"t117\"\\s*:\\s*\"A\""
+  - name: t118
+    type: regex
+    pattern: "\"t118\"\\s*:\\s*\"A\""
+  - name: t119
+    type: regex
+    pattern: "\"t119\"\\s*:\\s*\"B\""
+  - name: t120
+    type: regex
+    pattern: "\"t120\"\\s*:\\s*\"A\""
+  - name: t121
+    type: regex
+    pattern: "\"t121\"\\s*:\\s*\"B\""
   - name: pack-used
     type: tool_used
     tool: Skill
