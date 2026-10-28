@@ -79,13 +79,18 @@ allowed-tools: Read, Grep, Glob, Bash, WebFetch, Agent
 
 When asked which version of an A/B test won or will win:
 
-1. Find the closest published tests in `evidence/CATALOG.md` (same element or
-   principle) and count how often that kind of change won, lost or was flat.
-2. Do not assume the changed version wins. Published case studies over-report
-   wins; in large testing programs most changes are flat or lose. For each
-   version ask what the visitor loses as well as gains.
-3. Pick the version that removes a real, specific obstacle for this visitor at
-   this step. If neither does, say the call is close and give your best guess.
+1. Start from the base rate: the original wins. In large testing programs only
+   about 1 test in 3 beats the original, and fewer at mature sites.
+2. Read `evidence/CATALOG.md` before answering. Write one line per test: the
+   closest catalog tests and how often that kind of change won, lost or was
+   flat. Do not skip this step.
+3. Switch to the changed version only when it removes a real, specific obstacle
+   for this visitor at this step and that kind of change mostly won in the
+   catalog. For each version ask what the visitor loses as well as gains.
+4. When you are not told which version is the original, name the one you think
+   it is and why (usually the one the other version adds to or changes).
+5. Check the split before you finish: if you picked the changed version for
+   more than about half the tests, review those picks against step 3.
 
 ## Rules every sub-skill follows
 

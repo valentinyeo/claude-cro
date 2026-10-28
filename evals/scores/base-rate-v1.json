@@ -1,0 +1,37 @@
+{
+  "label": "base-rate-v1",
+  "claude_version": "2.1.311",
+  "started_at": "2026-10-26T22:22:01.815Z",
+  "cost_usd": 1.4872136,
+  "runs": "base-rate-v1.runs.json",
+  "summary": {
+    "with": {
+      "defect_recall": null,
+      "subtle_recall": null,
+      "blind_recall": null,
+      "quote_accuracy": null,
+      "winner_accuracy": 0.7024793388429752,
+      "runs": 2
+    },
+    "without": {
+      "defect_recall": null,
+      "subtle_recall": null,
+      "blind_recall": null,
+      "quote_accuracy": null,
+      "winner_accuracy": 0.6487603305785123,
+      "runs": 2
+    }
+  },
+  "per_case": {
+    "winner": {
+      "with": [
+        0.6776859504132231,
+        0.7272727272727273
+      ],
+      "without": [
+        0.6446280991735537,
+        0.6528925619834711
+      ]
+    }
+  }
+}
