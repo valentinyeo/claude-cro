@@ -1,0 +1,10 @@
+[Unit]
+# Runs from this repo: systemctl --user link ops/claude-cro-daily.service ops/claude-cro-daily.timer
+Description=Run claude-cro-daily at 09:00
+
+[Timer]
+OnCalendar=*-*-* 09:00:00
+Persistent=true
+
+[Install]
+WantedBy=timers.target

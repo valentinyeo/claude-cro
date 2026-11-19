@@ -1,0 +1,7 @@
+[Unit]
+Description=claude-cro daily stars line on ACQU-2
+
+[Service]
+Type=oneshot
+Environment=PATH=%h/.local/bin:/usr/local/bin:/usr/bin:/bin
+ExecStart=%h/projects/claude-cro/ops/claude-cro-daily
