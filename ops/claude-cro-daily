@@ -1,0 +1,10 @@
+#!/bin/bash
+# Daily line for ACQU-2 (Daily report): claude-cro GitHub stars and installs.
+# GitHub cannot count plugin installs, so unique clones over 14 days stand in, CI clones included.
+set -euo pipefail
+R=valentinyeo/claude-cro
+stars=$(gh api repos/$R --jq .stargazers_count)
+clones=$(gh api repos/$R/traffic/clones --jq .uniques)
+views=$(gh api repos/$R/traffic/views --jq .uniques)
+vcc comment add ACQU-2 --text "<p>Claude CRO: ${stars} stars, ${clones} unique clones and ${views} unique visitors in 14 days (clones include our own CI runs), did: automatic daily count.</p>" >/dev/null
+echo "posted: ${stars} stars, ${clones} clones, ${views} visitors"
