@@ -5,7 +5,8 @@
 set -euo pipefail
 R=valentinyeo/claude-cro
 # Post as this repo's own board login (Claude CRO), which is a member of board 8910.
-export HT_TOKEN=$(cat ~/.config/hypertask-agents/credentials/sessions/claude-cro-agent-token)
+HT_TOKEN=$(cat ~/.config/hypertask-agents/credentials/sessions/claude-cro-agent-token)
+export HT_TOKEN
 stars=$(gh api repos/$R --jq .stargazers_count)
 clones=$(gh api repos/$R/traffic/clones --jq .uniques)
 views=$(gh api repos/$R/traffic/views --jq .uniques)
