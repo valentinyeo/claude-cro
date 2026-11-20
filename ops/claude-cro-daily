@@ -1,10 +1,13 @@
 #!/bin/bash
 # Daily line for ACQU-2 (Daily report): claude-cro GitHub stars and installs.
 # GitHub cannot count plugin installs, so unique clones over 14 days stand in, CI clones included.
+# Agent comments without an audience are refused, so the line goes to the ticket's agent log.
 set -euo pipefail
 R=valentinyeo/claude-cro
+# Post as this repo's own board login (Claude CRO), which is a member of board 8910.
+export HT_TOKEN=$(cat ~/.config/hypertask-agents/credentials/sessions/claude-cro-agent-token)
 stars=$(gh api repos/$R --jq .stargazers_count)
 clones=$(gh api repos/$R/traffic/clones --jq .uniques)
 views=$(gh api repos/$R/traffic/views --jq .uniques)
-vcc comment add ACQU-2 --text "<p>Claude CRO: ${stars} stars, ${clones} unique clones and ${views} unique visitors in 14 days (clones include our own CI runs), did: automatic daily count.</p>" >/dev/null
+hypertask activity add ACQU-2 --text "Claude CRO: ${stars} stars, ${clones} unique clones and ${views} unique visitors in 14 days (clones include our own CI runs), did: automatic daily count." >/dev/null
 echo "posted: ${stars} stars, ${clones} clones, ${views} visitors"
